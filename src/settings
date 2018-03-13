@@ -32,4 +32,4 @@ umask 0027
 trap "_get_trap_SIG EXIT" EXIT
 
 # shellcheck disable=SC2173
-# trap "_get_trap_SIG SIGS" SIGHUP SIGTERM SIGKILL SIGINT
+trap "_get_trap_SIG SIGS" SIGHUP SIGTERM SIGKILL SIGINT
