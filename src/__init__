@@ -23,6 +23,14 @@ function __main__() {
   readonly _log_stdout="${_log_directory}/stdout.log"
   readonly _log_path="${_log_directory}/${_log_file}"
 
+  # We check if we are a root user.
+  if [[ "$EUID" -ne 0 ]] ; then
+
+    printf "EUID is not equal 0 (no root user)\n"
+    _exit_ "1"
+
+  fi
+
   # Path to import file.
   # shellcheck disable=SC2154
   readonly _import_path="${_src}/import"
