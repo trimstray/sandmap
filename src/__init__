@@ -98,8 +98,8 @@ function __main__() {
 
   # Specifies the call parameters of the script, the exact description
   # can be found in _help_ and file README.md.
-  local _short_opt="c:"
-  local _long_opt="help,debug,verbose,time,config:"
+  local _short_opt=""
+  local _long_opt="help"
 
   _GETOPT_PARAMS=$(getopt -o "${_short_opt}" --long "${_long_opt}" \
                    -n "${_init_name}" -- "${__script_params[@]}")
@@ -128,32 +128,6 @@ function __main__() {
         _help_
 
         shift ; _exit_ "0" ;;
-
-      --debug)
-
-        export stdout_mode="debug"
-
-        shift ;;
-
-      --verbose)
-
-        export printf_mode="verbose"
-
-        shift ;;
-
-      --time)
-
-        export time_mode="1"
-
-        shift ;;
-
-      -c|--config)
-
-        export load_state="1"
-
-        export config="${2}"
-
-        shift 2 ;;
 
       *)
 
