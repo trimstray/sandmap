@@ -111,7 +111,7 @@ function init_cli() {
 
       help)
 
-        help_cli
+        init_help
         cstate="0" ;;
 
       clear|main)
