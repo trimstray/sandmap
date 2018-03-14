@@ -94,7 +94,7 @@ function init_cli() {
   if [[ "$_motd_status" -eq 0 ]] ; then
 
     motd_cli
-    _motd_status=1
+    _motd_status=0
 
   fi
 
