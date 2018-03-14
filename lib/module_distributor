@@ -22,7 +22,7 @@ function module_distributor() {
   local _STATE=0
 
   # shellcheck disable=SC2154
-  load_module "${input_array[@]}"
+  init_module "${input_array[@]}"
 
   return $_STATE
 

@@ -13,9 +13,6 @@ readonly _nound=$(tput rmul)
 readonly _bold=$(tput bold)
 readonly _normal=$(tput sgr0)
 
-# shellcheck disable=SC2034
-__cli_commands=(sample)
-
 
 # ``````````````````````````````````````````````````````````````````````````````
 # Function name: motd_cli()
