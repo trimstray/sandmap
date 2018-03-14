@@ -13,6 +13,9 @@ readonly _nound=$(tput rmul)
 readonly _bold=$(tput bold)
 readonly _normal=$(tput sgr0)
 
+__cli_commands=()
+
+
 # ``````````````````````````````````````````````````````````````````````````````
 # Function name: motd_cli()
 #
@@ -131,6 +134,17 @@ function init_cli() {
         cstate="0" ;;
 
       *)
+
+        for _arg in "${__cli_commands[@]}" ; do
+
+          if [[ "$_arg" == "${input_array[0]}" ]] ; then
+
+            module_distributor "${input_array[@]}"
+            cstate="0"
+
+          fi
+
+        done
 
         if [ "$cstate" -eq "1" ] ; then
 
