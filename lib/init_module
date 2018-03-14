@@ -21,6 +21,10 @@ function init_module() {
   local _FUNCTION_ID="init_module"
   local _STATE=0
 
+  local _argv=("$@")
+
+  echo "${_argv[@]}"
+
   return $_STATE
 
 }
