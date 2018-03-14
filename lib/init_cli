@@ -13,7 +13,7 @@ readonly _nound=$(tput rmul)
 readonly _bold=$(tput bold)
 readonly _normal=$(tput sgr0)
 
-__cli_commands=(test)
+__cli_commands=(sample)
 
 
 # ``````````````````````````````````````````````````````````````````````````````
@@ -135,22 +135,9 @@ function init_cli() {
 
       *)
 
-        for _arg in "${__cli_commands[@]}" ; do
-
-          if [[ "$_arg" == "${input_array[0]}" ]] ; then
-
-            module_distributor "${input_array[@]}"
-            cstate="0"
-
-          fi
-
-        done
-
-        if [ "$cstate" -eq "1" ] ; then
-
-          printf "stdout: %s\n" "unknown command"
-
-        fi
+        module_distributor "${input_array[@]}"
+        # shellcheck disable=SC2034
+        cstate="0"
 
       ;;
 
