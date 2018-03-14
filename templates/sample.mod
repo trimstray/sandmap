@@ -21,7 +21,7 @@ function sample_module() {
   local _FUNCTION_ID="sample_module"
   local _STATE=0
 
-  echo "sample ok"
+  export category="scanning"
 
   return $_STATE
 
