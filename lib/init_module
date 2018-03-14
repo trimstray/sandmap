@@ -3,28 +3,28 @@
 # shellcheck shell=bash
 
 # ``````````````````````````````````````````````````````````````````````````````
-# Function name: load_module()
+# Function name: init_module()
 #
 # Description:
-#   Init modules.
+#   Load modules.
 #
 # Usage:
-#   load_module
+#   init_module
 #
 # Examples:
-#   load_module
+#   init_module
 #
 
-function load_module() {
+function init_module() {
 
   # shellcheck disable=SC2034
-  local _FUNCTION_ID="load_module"
+  local _FUNCTION_ID="init_module"
   local _STATE=0
 
   # shellcheck disable=SC2154
   _modules="${_rel}/modules"
 
-  local _argv=("$@")
+  _argv=("$@")
 
   local _mod="${_modules}/${_argv[0]}.mod"
 
@@ -32,6 +32,9 @@ function load_module() {
 
     # shellcheck disable=SC1090
     source "${_mod}"
+
+    # Run module:
+    ${_argv[0]}
 
   else
 
