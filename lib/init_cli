@@ -55,7 +55,7 @@ function motd_cli() {
 
   tput cup 2 28 ; printf "\e[0;36m%s\e[m \e[1;36m%s\e[m" "sandmap" "v1.0.0"
 
-  tput cup 4 28 ; printf "\e[1;38m%s\e[m" "Project: https://github.com/trimstray/sandmap"
+  tput cup 4 28 ; printf "%s \e[1;38m%s\e[m" "Project:" "https://github.com/trimstray/sandmap"
 
   tput cup 6 28 ; printf "%s" "This program comes with ABSOLUTELY NO WARRANTY."
   tput cup 7 28 ; printf "%s" "This is free software, and you are welcome to redistribute it"
