@@ -22,7 +22,11 @@ function module_distributor() {
   local _STATE=0
 
   # shellcheck disable=SC2154
-  ${input_array[0]}
+  if [[ "${input_array[0]}" == "test" ]] ; then
+
+    init_module "${input_array[@]}"
+
+  fi
 
   return $_STATE
 

@@ -13,7 +13,7 @@ readonly _nound=$(tput rmul)
 readonly _bold=$(tput bold)
 readonly _normal=$(tput sgr0)
 
-__cli_commands=()
+__cli_commands=(test)
 
 
 # ``````````````````````````````````````````````````````````````````````````````
