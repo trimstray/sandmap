@@ -3,28 +3,30 @@
 # shellcheck shell=bash
 
 # ``````````````````````````````````````````````````````````````````````````````
-# Function name: sample_module()
+# Function name: sample()
 #
 # Description:
 #   Sample module.
 #
 # Usage:
-#   sample_module
+#   sample
 #
 # Examples:
-#   sample_module
+#   sample
 #
 
-function sample_module() {
+function sample() {
 
   # shellcheck disable=SC2034
-  local _FUNCTION_ID="sample_module"
+  local _FUNCTION_ID="sample"
   local _STATE=0
 
-  export category="scanning"
+  # shellcheck disable=SC2034
+  local module_name="$_FUNCTION_ID"
+  local module_args=("${_argv[@]:1}")
+
+  local category="scanning"
 
   return $_STATE
 
 }
-
-sample_module
