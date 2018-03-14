@@ -3,22 +3,22 @@
 # shellcheck shell=bash
 
 # ``````````````````````````````````````````````````````````````````````````````
-# Function name: init_module()
+# Function name: load_module()
 #
 # Description:
 #   Init modules.
 #
 # Usage:
-#   init_module
+#   load_module
 #
 # Examples:
-#   init_module
+#   load_module
 #
 
-function init_module() {
+function load_module() {
 
   # shellcheck disable=SC2034
-  local _FUNCTION_ID="init_module"
+  local _FUNCTION_ID="load_module"
   local _STATE=0
 
   # shellcheck disable=SC2154

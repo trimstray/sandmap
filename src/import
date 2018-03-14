@@ -13,7 +13,7 @@
 # Example:
 #   - lib/kill_process - file with your function
 #   - _fd_stack=("kill_process") - says to include this file in the script
-readonly _fd_stack=(init_config init_cli init_help module_distributor init_module)
+readonly _fd_stack=(init_config init_cli init_help module_distributor load_module)
 
 if [[ "${#_fd_stack[@]}" -ne 0 ]] ; then
 
