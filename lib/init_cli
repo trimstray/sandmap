@@ -1,0 +1,134 @@
+#!/usr/bin/env bash
+
+# shellcheck shell=bash
+
+readonly __cli_prompt="sandman"
+# shellcheck disable=SC2034
+__cli_banner=""
+
+_motd_status=0
+
+readonly _und=$(tput smul)
+readonly _nound=$(tput rmul)
+readonly _bold=$(tput bold)
+readonly _normal=$(tput sgr0)
+
+# ``````````````````````````````````````````````````````````````````````````````
+# Function name: motd_cli()
+#
+# Description:
+#   Message of the day.
+#
+# Usage:
+#   motd_cli
+#
+# Examples:
+#   motd_cli
+#
+
+function motd_cli() {
+
+  # shellcheck disable=SC2034
+  local _FUNCTION_ID="motd_cli"
+  local _STATE=0
+
+  printf "%s" "
+  sandmap v1.0.0
+
+  Project: https://github.com/trimstray/sandmap
+
+  This program comes with ABSOLUTELY NO WARRANTY.
+  This is free software, and you are welcome to redistribute it
+  under certain conditions; for more details please see
+  <http://www.gnu.org/licenses/>.
+
+  Hint:
+
+    Try 'help' to show all cli commands and start!
+
+"
+
+  return $_STATE
+
+}
+
+# ``````````````````````````````````````````````````````````````````````````````
+# Function name: init_cli()
+#
+# Description:
+#   Init sandmap cli.
+#
+# Usage:
+#   init_cli
+#
+# Examples:
+#   init_cli
+#
+
+function init_cli() {
+
+  # shellcheck disable=SC2034
+  local _FUNCTION_ID="init_cli"
+  local _STATE=0
+
+  clear
+
+  if [[ "$_motd_status" -eq 0 ]] ; then
+
+    motd_cli
+    _motd_status=1
+
+  fi
+
+  local input_array=()
+
+  while [[ "${input_array[0]}" != "exit" ]] ; do
+
+    cstate="1"
+
+    # shellcheck disable=SC2034
+    __cli_banner="main"
+
+    # shellcheck disable=SC2154
+    printf "${_und}\e[1;30m%s\e[m${_normal}\e[1;32m >\e[m " "${__cli_prompt}" && read -ra input_array
+
+    case ${input_array[0]} in
+
+      help)
+
+        help_cli
+        cstate="0" ;;
+
+      clear|main)
+
+        init_cli
+        cstate="0" ;;
+
+      back)
+
+        printf "stdout: %s\n" "you are in main level" ;;
+
+      exit)
+        _exit_ 0 ;;
+      "")
+
+        echo -en ""
+        cstate="0" ;;
+
+      *)
+
+        if [ "$cstate" -eq "1" ] ; then
+
+          printf "stdout: %s\n" "unknown command"
+
+        fi
+
+      ;;
+
+    esac
+
+  done
+
+  return $_STATE
+
+}

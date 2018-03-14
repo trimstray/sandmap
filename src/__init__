@@ -243,6 +243,9 @@ function __main__() {
   # Initialize configuration
   init_config
 
+  # Initialize cli.
+  init_cli
+
   # ````````````````````````````````````````````````````````````````````````````
 
   if [[ "$time_tracking" == "true" ]] ; then
