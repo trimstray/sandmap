@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+# shellcheck shell=bash
+
+# ``````````````````````````````````````````````````````````````````````````````
+# Function name: init_module()
+#
+# Description:
+#   Init modules.
+#
+# Usage:
+#   init_module
+#
+# Examples:
+#   init_module
+#
+
+function init_module() {
+
+  # shellcheck disable=SC2034
+  local _FUNCTION_ID="init_module"
+  local _STATE=0
+
+  return $_STATE
+
+}
