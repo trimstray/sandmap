@@ -3,7 +3,7 @@
 # shellcheck shell=bash
 
 readonly __cli_prompt="cli"
-# shellcheck disable=SC2034
+# shellcheck disable=SC2434
 __cli_banner="main"
 
 _motd_status=0
@@ -13,6 +13,7 @@ readonly _nound=$(tput rmul)
 readonly _bold=$(tput bold)
 readonly _normal=$(tput sgr0)
 
+# shellcheck disable=SC2034
 __cli_commands=(sample)
 
 
@@ -31,12 +32,11 @@ __cli_commands=(sample)
 
 function motd_cli() {
 
-  # shellcheck disable=SC2034
+  # shellcheck disable=SC2434
   local _FUNCTION_ID="motd_cli"
   local _STATE=0
 
-  printf "${_bold}\e[2;31m%s\e[m${_normal}" "
-
+  printf "${_bold}\e[2;31m\n\n\n%s\e[m${_normal}" "
      (        )
      O        O
      ()      ()
@@ -50,21 +50,27 @@ function motd_cli() {
          ()
           ()    /
            ()__()
-            '--'
-"
+            '--'"
 
-  tput cup 2 28 ; printf "\e[0;36m%s\e[m \e[1;36m%s\e[m" "sandmap" "v1.0.0"
+  tput cup 1 21 ; printf "%s" " _______                 __"
+  tput cup 2 21 ; printf "%s" "|     __|.---.-.-----.--|  |.--------.---.-.-----."
+  tput cup 3 21 ; printf "%s" "|__     ||  _  |     |  _  ||        |  _  |  _  |"
+  tput cup 4 21 ; printf "%s" "|_______||___._|__|__|_____||__|__|__|___._|   __|"
+  tput cup 5 64 ; printf "%s" "|__|"
 
-  tput cup 4 28 ; printf "%s \e[1;38m%s\e[m" "Project:" "https://github.com/trimstray/sandmap"
+  tput cup 6 65 ; printf "\e[1;36m%s\e[m" "v1.0.0"
 
-  tput cup 6 28 ; printf "%s" "This program comes with ABSOLUTELY NO WARRANTY."
-  tput cup 7 28 ; printf "%s" "This is free software, and you are welcome to redistribute it"
-  tput cup 8 28 ; printf "%s" "under certain conditions; for more details please see"
-  tput cup 9 28 ; printf "%s" "<http://www.gnu.org/licenses/>."
+  tput cup 8 24 ; printf "%s \e[1;38m%s\e[m" "Project:" "https://github.com/trimstray/sandmap"
 
-  tput cup 12 28 ; printf "%s" "Hint:"
-  tput cup 14 28 ; printf "  %s '${_und}\e[1;38m%s\e[m${_normal}' %s" \
-                          "Try" "help" "to show all cli commands and start!" ; tput cup 18 0
+  tput cup 10 24 ; printf "%s" "This program comes with ABSOLUTELY NO WARRANTY."
+  tput cup 11 24 ; printf "%s" "This is free software, and you are welcome to redistribute it"
+  tput cup 12 24 ; printf "%s" "under certain conditions; for more details please see"
+  tput cup 13 24 ; printf "%s" "<http://www.gnu.org/licenses/>."
+
+  tput cup 15 24 ; printf "%s" "Hint:"
+  tput cup 17 26 ; printf "%s '${_und}\e[1;38m%s\e[m${_normal}' %s" \
+                          "Try" "help" "to show all cli commands and start!"
+  tput cup 20 0
 
   return $_STATE
 
@@ -94,7 +100,7 @@ function init_cli() {
   if [[ "$_motd_status" -eq 0 ]] ; then
 
     motd_cli
-    _motd_status=0
+    _motd_status=1
 
   fi
 
@@ -104,7 +110,7 @@ function init_cli() {
 
     cstate="1"
 
-    # shellcheck disable=SC2034
+    # shellcheck disable=SC2434
     __cli_banner="main"
 
     # shellcheck disable=SC2154
