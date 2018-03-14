@@ -2,9 +2,9 @@
 
 # shellcheck shell=bash
 
-readonly __cli_prompt="sandman"
+readonly __cli_prompt="cli"
 # shellcheck disable=SC2034
-__cli_banner=""
+__cli_banner="main"
 
 _motd_status=0
 
@@ -32,21 +32,35 @@ function motd_cli() {
   local _FUNCTION_ID="motd_cli"
   local _STATE=0
 
-  printf "%s" "
-  sandmap v1.0.0
+  printf "${_bold}\e[2;31m%s\e[m${_normal}" "
 
-  Project: https://github.com/trimstray/sandmap
-
-  This program comes with ABSOLUTELY NO WARRANTY.
-  This is free software, and you are welcome to redistribute it
-  under certain conditions; for more details please see
-  <http://www.gnu.org/licenses/>.
-
-  Hint:
-
-    Try 'help' to show all cli commands and start!
-
+     (        )
+     O        O
+     ()      ()
+      Oo.nn.oO
+       _mmmm_
+     \/_mmmm_\/
+     \/_mmmm_\/
+     \/ mmmm \/
+         nn
+         nn
+         ()
+          ()    /
+           ()__()
+            '--'
 "
+
+  tput cup 2 28 ; printf "sandmap v1.0.0"
+
+  tput cup 4 28 ; printf "Project: https://github.com/trimstray/sandmap"
+
+  tput cup 6 28 ; printf "This program comes with ABSOLUTELY NO WARRANTY."
+  tput cup 7 28 ; printf "This is free software, and you are welcome to redistribute it"
+  tput cup 8 28 ; printf "under certain conditions; for more details please see"
+  tput cup 9 28 ; printf "<http://www.gnu.org/licenses/>."
+
+  tput cup 12 28 ; printf "Hint:"
+  tput cup 14 28 ; printf "\tTry 'help' to show all cli commands and start!" ; tput cup 18 0
 
   return $_STATE
 
@@ -90,7 +104,7 @@ function init_cli() {
     __cli_banner="main"
 
     # shellcheck disable=SC2154
-    printf "${_und}\e[1;30m%s\e[m${_normal}\e[1;32m >\e[m " "${__cli_prompt}" && read -ra input_array
+    printf "\e[1;38m%s\e[m(\e[0;38m%s\e[m)\e[4;32m>\e[m " "${__cli_prompt}" "${__cli_banner}" && read -ra input_array
 
     case ${input_array[0]} in
 
