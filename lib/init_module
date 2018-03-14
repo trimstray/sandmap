@@ -22,15 +22,16 @@ function init_module() {
   local _STATE=0
 
   # shellcheck disable=SC2154
-  readonly _modules="${_rel}/modules"
+  _modules="${_rel}/modules"
 
   local _argv=("$@")
 
   local _mod="${_modules}/${_argv[0]}.mod"
+
   if [[ -e "${_mod}" ]] ; then
 
     # shellcheck disable=SC1090
-    source  "${_mod}"
+    source "${_mod}"
 
   else
 
