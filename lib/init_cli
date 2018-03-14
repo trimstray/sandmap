@@ -50,17 +50,18 @@ function motd_cli() {
             '--'
 "
 
-  tput cup 2 28 ; printf "sandmap v1.0.0"
+  tput cup 2 28 ; printf "\e[0;36m%s\e[m \e[1;36m%s\e[m" "sandmap" "v1.0.0"
 
-  tput cup 4 28 ; printf "Project: https://github.com/trimstray/sandmap"
+  tput cup 4 28 ; printf "\e[1;38m%s\e[m" "Project: https://github.com/trimstray/sandmap"
 
-  tput cup 6 28 ; printf "This program comes with ABSOLUTELY NO WARRANTY."
-  tput cup 7 28 ; printf "This is free software, and you are welcome to redistribute it"
-  tput cup 8 28 ; printf "under certain conditions; for more details please see"
-  tput cup 9 28 ; printf "<http://www.gnu.org/licenses/>."
+  tput cup 6 28 ; printf "%s" "This program comes with ABSOLUTELY NO WARRANTY."
+  tput cup 7 28 ; printf "%s" "This is free software, and you are welcome to redistribute it"
+  tput cup 8 28 ; printf "%s" "under certain conditions; for more details please see"
+  tput cup 9 28 ; printf "%s" "<http://www.gnu.org/licenses/>."
 
-  tput cup 12 28 ; printf "Hint:"
-  tput cup 14 28 ; printf "\tTry 'help' to show all cli commands and start!" ; tput cup 18 0
+  tput cup 12 28 ; printf "%s" "Hint:"
+  tput cup 14 28 ; printf "  %s '${_und}\e[1;38m%s\e[m${_normal}' %s" \
+                          "Try" "help" "to show all cli commands and start!" ; tput cup 18 0
 
   return $_STATE
 
