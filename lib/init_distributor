@@ -24,41 +24,65 @@ function init_distributor() {
   # shellcheck disable=SC2154
   if [[ "${input_array[0]}" == "show" ]] ; then
 
-      if [[ "${#input_array[1]}" -eq 0 ]] ; then
+      if [[ "$__cli_level" -eq 0 ]] ; then
 
-        printf "stdout: %s\n" "unknown argument"
+        if [[ "${#input_array[1]}" -eq 0 ]] ; then
 
-      elif [[ "${input_array[1]}" == "modules" ]] ; then
+          printf "stdout: %s\n" "unknown argument"
 
-        _modules_count=$(find "${_modules}" -name '*.mod' | wc -l)
+        elif [[ "${input_array[1]}" == "modules" ]] ; then
 
-        printf "\n\t%s: \e[1;31m%s\e[m\n" \
-        "Modules" "$_modules_count"
+          _modules_count=$(find "${_modules}" -name '*.mod' | wc -l)
 
-        printf "\n\t%s\n" \
-        "List:"
+          printf "\n\t%s: \e[1;31m%s\e[m\n" \
+          "Modules" "$_modules_count"
 
-        for i in $(find "${_modules}" -name '*.mod' -exec ls {} + | sort -k 10) ; do
+          printf "\n\t%s\n" \
+          "List:"
 
-          _fpath=$(basename "$i")
-          _fname=$(echo "$_fpath" | cut -d "." -f1)
+          for i in $(find "${_modules}" -name '*.mod' -exec ls {} + | sort -k 10) ; do
 
-          printf "\t  \e[1;38m%s\e[m (full name: \e[2;37m%s\e[m)\n" "$_fname" "$_fpath"
+            _fpath=$(basename "$i")
+            _fname=$(echo "$_fpath" | cut -d "." -f1)
+
+            printf "\t  \e[1;38m%s\e[m (full name: \e[2;37m%s\e[m)\n" "$_fname" "$_fpath"
+
+          done
+
+          echo
+
+        else
+
+          # shellcheck disable=SC2154
+          init_module "command" "${input_array[@]}"
+
+          # shellcheck disable=SC2154
+          printf "%s\n\n" "${_module_opts[1]}"
+
+          # shellcheck disable=SC2154
+          printf "%s\n\n" "${_module_opts[0]}"
+
+        fi
+
+      elif [[ "$__cli_level" -eq 1 ]] ; then
+
+        # shellcheck disable=SC2154
+        init_module "module" "${input_array[@]}"
+
+        echo
+
+        for i in "${_module_params[@]}" ; do
+
+          # shellcheck disable=SC2034
+          _key_id=$(echo "$i" | awk -v FS="(:|:)" '{print $1}')
+          # shellcheck disable=SC2034
+          _key_value=$(echo "$i" | awk -v FS="(:|:)" '{print $2}')
+
+          printf "  %-16s : %s\n" "$_key_id" "$_key_value"
 
         done
 
         echo
-
-      else
-
-        # shellcheck disable=SC2154
-        init_module "command" "${input_array[@]}"
-
-        # shellcheck disable=SC2154
-        printf "%s\n\n" "${_module_opts[1]}"
-
-        # shellcheck disable=SC2154
-        printf "%s\n\n" "${_module_opts[0]}"
 
       fi
 
