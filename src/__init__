@@ -35,6 +35,10 @@ function __main__() {
   # shellcheck disable=SC2154
   readonly _import_path="${_src}/import"
 
+  # Path to modules directory.
+  # shellcheck disable=SC2034
+  readonly _modules="${_rel}/modules"
+
   # External configuration file (-c|--config script param).
   config=""
   load_state="0"
