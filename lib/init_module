@@ -35,8 +35,31 @@ function init_module() {
     # shellcheck disable=SC1090
     source "${module_path}"
 
-    # Run module:
-    ${module_name}
+    if [[ "${#module_args[@]}" -eq 0 ]] ; then
+
+      # Run module without params.
+      ${module_name}
+
+    elif [[ ${module_args[0]} =~ help ]] ; then
+
+      ${module_name}
+
+      # shellcheck disable=SC2154
+      printf "%s\n\n" "${_module_opts[0]}"
+
+    elif [[ ${module_args[0]} =~ show ]] ; then
+
+      ${module_name}
+
+      # shellcheck disable=SC2154
+      printf "%s\n\n" "${_module_opts[1]}"
+
+    else
+
+      # printf "%s\n" "unknown module argument"
+      ${module_name}
+
+    fi
 
   else
 
