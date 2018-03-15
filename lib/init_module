@@ -62,12 +62,22 @@ function init_module() {
 
     else
 
-      printf "%s\n" "unknown module/command"
+      if [[ "$__cli_level" -eq 0 ]] ; then
+
+        printf "%s\n" "unknown module/command"
+
+      fi
 
     fi
 
+    if [[ ! "${module_name}" == "show" ]] ; then
+
       # shellcheck disable=SC2034
-      __cli_banner="${module_name}"
+      __cli_banner="module"
+      # shellcheck disable=SC2034
+      __cli_level=1
+
+    fi
 
   elif [[ "$_type" == "command" ]] ; then
 
