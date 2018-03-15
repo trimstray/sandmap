@@ -45,14 +45,14 @@ function init_module() {
         # Run module without params.
         ${module_name}
 
-      elif [[ ${module_args[0]} =~ help ]] ; then
+      elif [[ ${module_args[0]} =~ info ]] ; then
 
         ${module_name}
 
         # shellcheck disable=SC2154
         printf "%s\n\n" "${_module_opts[0]}"
 
-      elif [[ ${module_args[0]} =~ show ]] ; then
+      elif [[ ${module_args[0]} =~ help ]] ; then
 
         ${module_name}
 
