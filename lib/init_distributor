@@ -37,8 +37,7 @@ function init_distributor() {
           printf "\n\t%s: \e[1;31m%s\e[m\n" \
           "Modules" "$_modules_count"
 
-          printf "\n\t%s\n" \
-          "List:"
+          printf "\n\t%s\n" "List:"
 
           for i in $(find "${_modules}" -name '*.mod' -exec ls {} + | sort -k 10) ; do
 
@@ -57,10 +56,10 @@ function init_distributor() {
           init_module "command" "${input_array[@]}"
 
           # shellcheck disable=SC2154
-          printf "%s\n\n" "${_module_opts[1]}"
+          printf "%s\n\n" "${_module_opts[0]}"
 
           # shellcheck disable=SC2154
-          printf "%s\n\n" "${_module_opts[0]}"
+          printf "%s\n\n" "${_module_opts[1]}"
 
         fi
 
