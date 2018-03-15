@@ -27,6 +27,8 @@ function sample() {
 
   local category="scanning"
 
+  echo "$module_name ${module_args[*]} $category"
+
   return $_STATE
 
 }
