@@ -21,40 +21,59 @@ function init_module() {
   local _FUNCTION_ID="init_module"
   local _STATE=0
 
-  local _argv=("$@")
+  # shellcheck disable=SC2034
+
+  local _type="$1"
+  local _argv=("${@:2}")
 
   # shellcheck disable=SC2034
-  module_name="${_argv[0]}"
+  export module_name="${_argv[0]}"
   # shellcheck disable=SC2034
-  module_args=("${_argv[@]:1}")
+  export module_args=("${_argv[@]:1}")
   # shellcheck disable=SC2154
-  module_path="${_modules}/${module_name}.mod"
+  export module_path="${_modules}/${module_name}.mod"
 
-  if [[ -e "${module_path}" ]] ; then
+  if [[ "$_type" == "module" ]] ; then
 
-    # shellcheck disable=SC1090
-    source "${module_path}"
+    if [[ -e "${module_path}" ]] ; then
 
-    if [[ "${#module_args[@]}" -eq 0 ]] ; then
+      # shellcheck disable=SC1090
+      source "${module_path}"
 
-      # Run module without params.
-      ${module_name}
+      if [[ "${#module_args[@]}" -eq 0 ]] ; then
 
-    elif [[ ${module_args[0]} =~ help ]] ; then
+        # Run module without params.
+        ${module_name}
 
-      ${module_name}
+      elif [[ ${module_args[0]} =~ help ]] ; then
 
-      # shellcheck disable=SC2154
-      printf "%s\n\n" "${_module_opts[0]}"
+        ${module_name}
 
-    elif [[ ${module_args[0]} =~ show ]] ; then
+        # shellcheck disable=SC2154
+        printf "%s\n\n" "${_module_opts[0]}"
 
-      ${module_name}
+      elif [[ ${module_args[0]} =~ show ]] ; then
 
-      # shellcheck disable=SC2154
-      printf "%s\n\n" "${_module_opts[1]}"
+        ${module_name}
 
-    else
+        # shellcheck disable=SC2154
+        printf "%s\n\n" "${_module_opts[1]}"
+
+      else
+
+        # printf "%s\n" "unknown module argument"
+        ${module_name}
+
+      fi
+
+    fi
+
+  elif [[ "$_type" == "command" ]] ; then
+
+    if [[ -e "${module_path}" ]] ; then
+
+      # shellcheck disable=SC1090
+      source "${module_path}"
 
       # printf "%s\n" "unknown module argument"
       ${module_name}
