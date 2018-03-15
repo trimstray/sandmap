@@ -38,11 +38,12 @@ function init_distributor() {
         printf "\n\t%s\n" \
         "List:"
 
-        for i in $(find "${_modules}" -name '*.mod') ; do
+        for i in $(find "${_modules}" -name '*.mod' -exec ls {} + | sort -k 10) ; do
 
-          _fpath=$(basename $i)
+          _fpath=$(basename "$i")
+          _fname=$(echo "$_fpath" | cut -d "." -f1)
 
-          printf "\t  \e[1;38m%s\e[m (full name: \e[2;37m%s\e[m)\n" $(echo "$_fpath" | cut -d "." -f1) "$_fpath"
+          printf "\t  \e[1;38m%s\e[m (full name: \e[2;37m%s\e[m)\n" "$_fname" "$_fpath"
 
         done
 
