@@ -25,13 +25,15 @@ function init_help() {
   CLI Help:
 
     show <key>            show key info
+    <module> <info|help>  show key info about module
 
     Options:
 
-      <key> - modules
+      <key> - modules     displays modules information
 
     Examples:
-      show sample                     displays the sample module configuration
+      show modules
+      sample info
 
 "
 
