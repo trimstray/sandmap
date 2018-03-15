@@ -40,12 +40,7 @@ function init_module() {
       # shellcheck disable=SC1090
       source "${module_path}"
 
-      if [[ "${#module_args[@]}" -eq 0 ]] ; then
-
-        # Run module without params.
-        ${module_name}
-
-      elif [[ ${module_args[0]} =~ info ]] ; then
+      if [[ ${module_args[0]} =~ info ]] ; then
 
         ${module_name}
 
