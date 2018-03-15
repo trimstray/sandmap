@@ -3,8 +3,10 @@
 # shellcheck shell=bash
 
 readonly __cli_prompt="cli"
-# shellcheck disable=SC2434
+# shellcheck disable=SC2034
 __cli_banner="main"
+# shellcheck disable=SC2034
+__cli_level=0
 
 _motd_status=0
 
@@ -29,7 +31,7 @@ readonly _normal=$(tput sgr0)
 
 function motd_cli() {
 
-  # shellcheck disable=SC2434
+  # shellcheck disable=SC2034
   local _FUNCTION_ID="motd_cli"
   local _STATE=0
 
@@ -127,6 +129,8 @@ function init_cli() {
 
         # shellcheck disable=SC2034
         __cli_banner="main"
+        # shellcheck disable=SC2034
+        __cli_level=0
 
         init_cli
         cstate="0" ;;
@@ -134,7 +138,9 @@ function init_cli() {
       back)
 
         # shellcheck disable=SC2034
-        __cli_banner="main" ;;
+        __cli_banner="main"
+        # shellcheck disable=SC2034
+        __cli_level=0 ;;
 
       exit)
         _exit_ 0 ;;
