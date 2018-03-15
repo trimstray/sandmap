@@ -32,8 +32,13 @@ function init_help() {
       <key> - modules     displays modules information
 
     Examples:
+
       show modules
       sample info
+
+    Modules:
+
+      show                display module parameters
 
 "
 
