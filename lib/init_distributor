@@ -22,7 +22,31 @@ function init_distributor() {
   local _STATE=0
 
   # shellcheck disable=SC2154
-  init_module "${input_array[@]}"
+  if [[ "${input_array[0]}" == "show" ]] ; then
+
+      if [[ "${#input_array[1]}" -eq 0 ]] ; then
+
+        printf "stdout: %s\n" "unknown command argument"
+
+      else
+
+        # shellcheck disable=SC2154
+        init_module "command" "${input_array[@]}"
+
+        # shellcheck disable=SC2154
+        printf "%s\n\n" "${_module_opts[1]}"
+
+        # shellcheck disable=SC2154
+        printf "%s\n\n" "${_module_opts[0]}"
+
+      fi
+
+  else
+
+    # shellcheck disable=SC2154
+    init_module "module" "${input_array[@]}"
+
+  fi
 
   return $_STATE
 
