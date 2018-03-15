@@ -66,6 +66,9 @@ function init_module() {
 
     fi
 
+      # shellcheck disable=SC2034
+      __cli_banner="${module_name}"
+
   elif [[ "$_type" == "command" ]] ; then
 
     if [[ -e "${module_path}" ]] ; then

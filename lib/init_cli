@@ -108,9 +108,6 @@ function init_cli() {
 
     cstate="1"
 
-    # shellcheck disable=SC2434
-    __cli_banner="main"
-
     # shellcheck disable=SC2154
     printf "\e[1;38m%s\e[m(\e[0;38m%s\e[m)\e[4;32m>\e[m " "${__cli_prompt}" "${__cli_banner}" && read -ra input_array
 
@@ -121,14 +118,23 @@ function init_cli() {
         init_help
         cstate="0" ;;
 
-      clear|main)
+      clear)
+
+        init_cli
+        cstate="0" ;;
+
+      main)
+
+        # shellcheck disable=SC2034
+        __cli_banner="main"
 
         init_cli
         cstate="0" ;;
 
       back)
 
-        printf "stdout: %s\n" "you are in main level" ;;
+        # shellcheck disable=SC2034
+        __cli_banner="main" ;;
 
       exit)
         _exit_ 0 ;;
