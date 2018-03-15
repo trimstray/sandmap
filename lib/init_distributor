@@ -3,22 +3,22 @@
 # shellcheck shell=bash
 
 # ``````````````````````````````````````````````````````````````````````````````
-# Function name: module_distributor()
+# Function name: init_distributor()
 #
 # Description:
 #   Modules distributor.
 #
 # Usage:
-#   module_distributor
+#   init_distributor
 #
 # Examples:
-#   module_distributor
+#   init_distributor
 #
 
-function module_distributor() {
+function init_distributor() {
 
   # shellcheck disable=SC2034
-  local _FUNCTION_ID="module_distributor"
+  local _FUNCTION_ID="init_distributor"
   local _STATE=0
 
   # shellcheck disable=SC2154

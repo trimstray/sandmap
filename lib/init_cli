@@ -138,7 +138,7 @@ function init_cli() {
 
       *)
 
-        module_distributor "${input_array[@]}"
+        init_distributor "${input_array[@]}"
         # shellcheck disable=SC2034
         cstate="0"
 
