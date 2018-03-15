@@ -22,32 +22,16 @@ function init_help() {
   local _STATE=0
 
   printf "%s" "
-  CLI Modules:
-    show <submodule> <key>            show submodule key info
-    set  <submodule> <key> <param>    set submodule key value
+  CLI Help:
 
-  Submodules option:
-    show
-      config  <file|user|port|web|db>
-      cluster <status|databases>
+    show <key>            show key info
 
-    set
-      config  <file|user|port|web[add,del]|db[add,del]>
-      cluster <attach{all|[host][db]}|{all|detach[host][db]}>
+    Options:
+
+      <key> - modules
 
     Examples:
-      show config                     displays the entire configuration
-      show config user                show username key
-      show cluster status             show cluster status
-      set config user admin           set username key to 'admin'
-      set cluster web add web1-node   added web1-node host to web key
-      set cluster db del db1-node     deleted db1-node host from db key
-      set cluster attach web1-node 0  attach web1-node to the db
-                                      marked with 0 id
-      set cluster detach web1-node 1  detach web1-node from the db
-                                      marked with 1 id
-      set cluster attach all 1        attach all nodes to the db
-                                      marked with 1 id
+      show sample                     displays the sample module configuration
 
 "
 
