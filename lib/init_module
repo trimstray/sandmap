@@ -21,20 +21,22 @@ function init_module() {
   local _FUNCTION_ID="init_module"
   local _STATE=0
 
+  local _argv=("$@")
+
+  # shellcheck disable=SC2034
+  module_name="${_argv[0]}"
+  # shellcheck disable=SC2034
+  module_args=("${_argv[@]:1}")
   # shellcheck disable=SC2154
-  _modules="${_rel}/modules"
+  module_path="${_modules}/${module_name}.mod"
 
-  _argv=("$@")
-
-  local _mod="${_modules}/${_argv[0]}.mod"
-
-  if [[ -e "${_mod}" ]] ; then
+  if [[ -e "${module_path}" ]] ; then
 
     # shellcheck disable=SC1090
-    source "${_mod}"
+    source "${module_path}"
 
     # Run module:
-    ${_argv[0]}
+    ${module_name}
 
   else
 

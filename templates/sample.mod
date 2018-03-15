@@ -21,12 +21,9 @@ function sample() {
   local _FUNCTION_ID="sample"
   local _STATE=0
 
-  # shellcheck disable=SC2034
-  local module_name="$_FUNCTION_ID"
-  local module_args=("${_argv[@]:1}")
+  category="scanning"
 
-  local category="scanning"
-
+  # shellcheck disable=SC2154
   echo "$module_name ${module_args[*]} $category"
 
   return $_STATE
