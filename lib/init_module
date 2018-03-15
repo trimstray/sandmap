@@ -56,10 +56,13 @@ function init_module() {
 
       else
 
-        # printf "%s\n" "unknown module argument"
         ${module_name}
 
       fi
+
+    else
+
+      printf "%s\n" "unknown module/command"
 
     fi
 
