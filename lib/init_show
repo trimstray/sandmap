@@ -21,7 +21,8 @@ function init_show() {
   local _FUNCTION_ID="init_show"
   local _STATE=0
 
-
+  # shellcheck disable=SC2154
+  printf "%s\n\n" "${_module_opts[0]}"
 
   return $_STATE
 
