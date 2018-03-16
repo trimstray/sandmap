@@ -21,26 +21,7 @@ function init_help() {
   local _FUNCTION_ID="init_help"
   local _STATE=0
 
-  printf "%s" "
-  CLI Help:
 
-    show <key>            show key info
-    <module> <info|help>  show key info about module
-
-    Options:
-
-      <key> - modules     displays modules information
-
-    Examples:
-
-      show modules
-      sample info
-
-    Modules:
-
-      show                display module parameters
-
-"
 
   return $_STATE
 
