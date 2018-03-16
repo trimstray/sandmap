@@ -40,7 +40,7 @@ function cli_distributor() {
 
     if [[ "$__cli_level" -eq 0 ]] ; then
 
-      init_show
+      cli_show
 
     else
 
