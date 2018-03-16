@@ -24,12 +24,26 @@ function init_module() {
   # shellcheck disable=SC2034
   local _argv=("$@")
 
-  # shellcheck disable=SC2034
-  export module_name="${_argv[1]}"
-  # shellcheck disable=SC2034
-  export module_args=("${_argv[@]:2}")
   # shellcheck disable=SC2154
-  export module_path="${_modules}/${module_name}.mod"
+  if [[ "$_cli_state" -eq 0 ]] ; then
+
+    # shellcheck disable=SC2034
+    export module_name="${_argv[1]}"
+    # shellcheck disable=SC2034
+    export module_args=("${_argv[@]:2}")
+    # shellcheck disable=SC2154
+    export module_path="${_modules}/${module_name}.mod"
+
+  elif [[ "$_cli_state" -eq 1 ]] ; then
+
+    # shellcheck disable=SC2034
+    export module_name="${_argv[0]}"
+    # shellcheck disable=SC2034
+    export module_args=("${_argv[@]:1}")
+    # shellcheck disable=SC2154
+    export module_path="${_modules}/${module_name}.mod"
+
+  fi
 
   if [[ -e "${module_path}" ]] ; then
 
@@ -40,7 +54,7 @@ function init_module() {
 
   else
 
-    printf "%s\n" "unknown module/command"
+    printf "stdout: %s\n" "unknown command"
 
   fi
 
