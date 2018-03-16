@@ -33,9 +33,9 @@ function cli_show() {
   for i in "${modules_full_list[@]}" ; do
 
     # shellcheck disable=SC2034
-    _fpath=$(echo "$i" | awk -v FS="(:|:)" '{print $2}')
-    # shellcheck disable=SC2034
     _fname=$(echo "$i" | awk -v FS="(:|:)" '{print $1}')
+    # shellcheck disable=SC2034
+    _fpath=$(echo "$i" | awk -v FS="(:|:)" '{print $2}')
 
     printf "  \e[1;38m%s\e[m (full name: \e[2;37m%s\e[m)\n" "$_fname" "$_fpath"
 
