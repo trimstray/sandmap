@@ -22,79 +22,25 @@ function init_module() {
   local _STATE=0
 
   # shellcheck disable=SC2034
-
-  local _type="$1"
-  local _modn="$2"
-  local _argv=("${@:3}")
+  local _argv=("$@")
 
   # shellcheck disable=SC2034
-  export module_name="$_modn"
+  export module_name="${_argv[1]}"
   # shellcheck disable=SC2034
-  export module_args=("${_argv[@]:1}")
+  export module_args=("${_argv[@]:2}")
   # shellcheck disable=SC2154
   export module_path="${_modules}/${module_name}.mod"
 
-  if [[ "$_type" == "module" ]] ; then
+  if [[ -e "${module_path}" ]] ; then
 
-    if [[ -e "${module_path}" ]] ; then
+    # shellcheck disable=SC1090
+    source "${module_path}"
 
-      # shellcheck disable=SC1090
-      source "${module_path}"
-
-      if [[ ${module_args[0]} =~ info ]] ; then
-
-        ${module_name}
-
-        # shellcheck disable=SC2154
-        printf "%s\n\n" "${_module_opts[0]}"
-
-      elif [[ ${module_args[0]} =~ help ]] ; then
-
-        ${module_name}
-
-        # shellcheck disable=SC2154
-        printf "%s\n\n" "${_module_opts[1]}"
-
-      else
-
-        ${module_name}
-
-      fi
-
-    else
-
-      if [[ "$__cli_level" -eq 0 ]] ; then
-
-        printf "%s\n" "unknown module/command"
-
-      fi
-
-    fi
-
-    if [[ ! "${module_name}" == "show" ]] ; then
-
-      # shellcheck disable=SC2034
-      __cli_banner="module"
-      # shellcheck disable=SC2034
-      __cli_level=1
-
-    fi
-
-  elif [[ "$_type" == "command" ]] ; then
-
-    if [[ -e "${module_path}" ]] ; then
-
-      # shellcheck disable=SC1090
-      source "${module_path}"
-
-      # printf "%s\n" "unknown module argument"
-      ${module_name}
-
-    fi
+    ${module_name}
 
   else
 
-    printf "stdout: %s\n" "unknown command"
+    printf "%s\n" "unknown module/command"
 
   fi
 
