@@ -28,7 +28,7 @@ function cli_distributor() {
 
     if [[ "$__cli_level" -eq 0 ]] ; then
 
-      init_help
+      cli_help
 
     else
 
