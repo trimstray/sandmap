@@ -25,7 +25,7 @@ function init_module() {
   local _argv=("$@")
 
   # shellcheck disable=SC2154
-  if [[ "$_cli_state" -eq 0 ]] ; then
+  if [[ "${_fin[0]}" -eq 0 ]] && [[ "${_sin[0]}" -eq 0 ]] ; then
 
     # shellcheck disable=SC2034
     export module_name="${_argv[1]}"
@@ -34,27 +34,36 @@ function init_module() {
     # shellcheck disable=SC2154
     export module_path="${_modules}/${module_name}.mod"
 
-  elif [[ "$_cli_state" -eq 1 ]] ; then
+    if [[ -e "${module_path}" ]] ; then
+
+      # shellcheck disable=SC1090
+      source "${module_path}"
+
+      ${module_name}
+
+    fi
+
+  elif [[ "${_fin[1]}" -eq 1 ]] ; then
 
     # shellcheck disable=SC2034
-    export module_name="${_argv[0]}"
+    export module_name="$_ld_module"
     # shellcheck disable=SC2034
     export module_args=("${_argv[@]:1}")
     # shellcheck disable=SC2154
     export module_path="${_modules}/${module_name}.mod"
 
-  fi
+    if [[ -e "${module_path}" ]] ; then
 
-  if [[ -e "${module_path}" ]] ; then
+      # shellcheck disable=SC1090
+      source "${module_path}"
 
-    # shellcheck disable=SC1090
-    source "${module_path}"
+      ${module_name}
 
-    ${module_name}
+    fi
 
   else
 
-    printf "stdout: %s\n" "unknown command"
+    printf "stdout: %s\n" "unknown command bbb"
 
   fi
 

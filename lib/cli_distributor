@@ -23,16 +23,25 @@ function cli_distributor() {
 
   local _argv=("$@")
 
-  local _cli_state=0
-
   # shellcheck disable=SC2154
   if [[ "${_argv[0]}" == "help" ]] ; then
 
-    _cli_state=0
+    if [[ "${_fin[0]}" -eq 0 ]] && [[ "${_fin[1]}" -eq 0 ]]; then
 
-    if [[ "${#_argv[1]}" -eq 0 ]] ; then
+      if [[ "${#_argv[1]}" -eq 0 ]] ; then
 
-      cli_help
+        cli_help
+
+        _fin[0]=0
+
+      else
+
+        init_module "${_argv[@]}"
+        init_help
+
+        _fin[1]=1
+
+      fi
 
     else
 
@@ -43,11 +52,24 @@ function cli_distributor() {
 
   elif [[ "${_argv[0]}" == "show" ]] ; then
 
-    _cli_state=0
+    if [[ "${_fin[0]}" -eq 0 ]] && [[ "${_fin[1]}" -eq 0 ]]; then
 
-    if [[ "${#_argv[1]}" -eq 0 ]] ; then
+      if [[ "${#_argv[1]}" -eq 0 ]] ; then
 
-      cli_show
+        cli_show
+
+        _fin[0]=0
+
+      else
+
+        init_module "${_argv[@]}"
+        init_show
+
+        _fin[1]=1
+
+      fi
+
+      _fin=("$__cli_level")
 
     else
 
@@ -59,18 +81,21 @@ function cli_distributor() {
   else
 
     # shellcheck disable=SC2034
-    _cli_state=1
+    # _cli_state=1
+    _inerr=$(echo "${_argv[@]}" | grep -o "$_fname" | wc -w)
+    if [[ "$_inerr" -eq 1 ]] ; then
 
-    init_module "${_argv[@]}"
+      _fin[1]=1
 
-    if [[ "$_fname" =~ ${_argv[*]} ]] ; then
+      # shellcheck disable=SC2034
+      _ld_module="$_fname"
+
+      init_module "$_ld_module"
 
       "$_fname"
 
       # shellcheck disable=SC2034
       __cli_banner="$_fname"
-      # shellcheck disable=SC2034
-      __cli_state=0
 
     fi
 
