@@ -34,17 +34,19 @@ function init_distributor() {
 
           _modules_count=$(find "${_modules}" -name '*.mod' | wc -l)
 
-          printf "\n\t%s: \e[1;31m%s\e[m\n" \
+          printf "\n %s: \e[5;33m%s\e[m\n" \
           "Modules" "$_modules_count"
 
-          printf "\n\t%s\n" "List:"
+          printf "\n %s\n" "List:"
 
-          for i in $(find "${_modules}" -name '*.mod' -exec ls {} + | sort -k 10) ; do
+          for i in "${modules_full_list[@]}" ; do
 
-            _fpath=$(basename "$i")
-            _fname=$(echo "$_fpath" | cut -d "." -f1)
+            # shellcheck disable=SC2034
+            _fpath=$(echo "$i" | awk -v FS="(:|:)" '{print $2}')
+            # shellcheck disable=SC2034
+            _fname=$(echo "$i" | awk -v FS="(:|:)" '{print $1}')
 
-            printf "\t  \e[1;38m%s\e[m (full name: \e[2;37m%s\e[m)\n" "$_fname" "$_fpath"
+            printf "  \e[1;38m%s\e[m (full name: \e[2;37m%s\e[m)\n" "$_fname" "$_fpath"
 
           done
 
@@ -87,7 +89,7 @@ function init_distributor() {
 
   else
 
-    if [[ "${input_array[0]}" =~ ${modules_list_name[*]} ]] ; then
+    if [[ "${input_array[0]}" =~ ${modules_list[*]} ]] ; then
 
       # shellcheck disable=SC2154
       init_module "module" "${input_array[0]}" "${input_array[@]}"
