@@ -45,7 +45,7 @@ function cli_distributor() {
 
     else
 
-      init_module "${_argv[@]}"
+      init_module "$_ld_module"
       init_help
 
     fi
@@ -73,7 +73,7 @@ function cli_distributor() {
 
     else
 
-      init_module "${_argv[@]}"
+      init_module "$_ld_module"
       init_show
 
     fi
@@ -92,7 +92,7 @@ function cli_distributor() {
 
       init_module "$_ld_module"
 
-      "$_fname"
+      "$_ld_module"
 
       # shellcheck disable=SC2034
       __cli_banner="$_fname"
