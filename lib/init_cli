@@ -136,7 +136,9 @@ function init_cli() {
         cstate="0" ;;
 
       exit)
+
         _exit_ 0 ;;
+
       "")
 
         echo -en ""
