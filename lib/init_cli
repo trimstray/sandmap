@@ -115,11 +115,6 @@ function init_cli() {
 
     case ${input_array[0]} in
 
-      help)
-
-        init_help
-        cstate="0" ;;
-
       clear)
 
         init_cli
