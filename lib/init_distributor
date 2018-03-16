@@ -21,82 +21,30 @@ function init_distributor() {
   local _FUNCTION_ID="init_distributor"
   local _STATE=0
 
+  local _argv=("$@")
+
   # shellcheck disable=SC2154
-  if [[ "${input_array[0]}" == "show" ]] ; then
+  if [[ "${_argv[0]}" == "help" ]] ; then
 
-      if [[ "$__cli_level" -eq 0 ]] ; then
+    if [[ "$__cli_level" -eq 0 ]] ; then
 
-        if [[ "${#input_array[1]}" -eq 0 ]] ; then
-
-          printf "stdout: %s\n" "unknown argument"
-
-        elif [[ "${input_array[1]}" == "modules" ]] ; then
-
-          _modules_count=$(find "${_modules}" -name '*.mod' | wc -l)
-
-          printf "\n %s: \e[5;33m%s\e[m\n" \
-          "Modules" "$_modules_count"
-
-          printf "\n %s\n" "List:"
-
-          for i in "${modules_full_list[@]}" ; do
-
-            # shellcheck disable=SC2034
-            _fpath=$(echo "$i" | awk -v FS="(:|:)" '{print $2}')
-            # shellcheck disable=SC2034
-            _fname=$(echo "$i" | awk -v FS="(:|:)" '{print $1}')
-
-            printf "  \e[1;38m%s\e[m (full name: \e[2;37m%s\e[m)\n" "$_fname" "$_fpath"
-
-          done
-
-          echo
-
-        else
-
-          # shellcheck disable=SC2154
-          init_module "command" "${input_array[0]}" "${input_array[@]}"
-
-          # shellcheck disable=SC2154
-          printf "%s\n\n" "${_module_opts[0]}"
-
-          # shellcheck disable=SC2154
-          printf "%s\n\n" "${_module_opts[1]}"
-
-        fi
-
-      elif [[ "$__cli_level" -eq 1 ]] ; then
-
-        # shellcheck disable=SC2154
-        init_module "module" "${input_array[0]}" "${input_array[@]}"
-
-        echo
-
-        for i in "${_module_params[@]}" ; do
-
-          # shellcheck disable=SC2034
-          _key_id=$(echo "$i" | awk -v FS="(:|:)" '{print $1}')
-          # shellcheck disable=SC2034
-          _key_value=$(echo "$i" | awk -v FS="(:|:)" '{print $2}')
-
-          printf "  %-16s : %s\n" "$_key_id" "$_key_value"
-
-        done
-
-        echo
-
-      fi
-
-  else
-
-    if [[ "${input_array[0]}" =~ ${modules_list[*]} ]] ; then
-
-      # shellcheck disable=SC2154
-      init_module "module" "${input_array[0]}" "${input_array[@]}"
+      init_help
 
     else
 
-      printf "stdout: %s\n" "unknown command"
+      true
+
+    fi
+
+  elif [[ "${_argv[0]}" == "show" ]] ; then
+
+    if [[ "$__cli_level" -eq 0 ]] ; then
+
+      init_show
+
+    else
+
+      true
 
     fi
 
