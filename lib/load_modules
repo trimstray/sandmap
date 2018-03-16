@@ -28,8 +28,8 @@ function load_modules() {
     # shellcheck disable=SC2034
     _fname=$(echo "$_fpath" | cut -d "." -f1)
 
-    modules_list_path+=("$_fpath")
-    modules_list_name+=("$_fname")
+    modules_list+=("$_fname")
+    modules_full_list+=("$_fname":"$_fpath")
 
   done
 
