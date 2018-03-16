@@ -39,6 +39,12 @@ function __main__() {
   # shellcheck disable=SC2034
   readonly _modules="${_rel}/modules"
 
+  # Store modules list.
+  # shellcheck disable=SC2034
+  modules_list_path=()
+  # shellcheck disable=SC2034
+  modules_list_name=()
+
   # External configuration file (-c|--config script param).
   config=""
   load_state="0"
@@ -243,6 +249,9 @@ function __main__() {
 
   # Initialize configuration
   init_config
+
+  # Initialize modules.
+  load_modules
 
   # Initialize cli.
   init_cli
