@@ -14,7 +14,7 @@
 #   - lib/kill_process - file with your function
 #   - _fd_stack=("kill_process") - says to include this file in the script
 readonly _fd_stack=(init_config load_modules init_cli cli_distributor \
-                    cli_help init_module init_help)
+                    cli_help init_module init_help init_show)
 
 if [[ "${#_fd_stack[@]}" -ne 0 ]] ; then
 
