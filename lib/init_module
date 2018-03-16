@@ -25,7 +25,7 @@ function init_module() {
   local _argv=("$@")
 
   # shellcheck disable=SC2154
-  if [[ "${_fin[0]}" -eq 0 ]] && [[ "${_sin[0]}" -eq 0 ]] ; then
+  if [[ "${_fin[0]}" -eq 0 ]] && [[ "${_fin[1]}" -eq 0 ]] ; then
 
     # shellcheck disable=SC2034
     export module_name="${_argv[1]}"
