@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+
+# shellcheck shell=bash
+
+# ``````````````````````````````````````````````````````````````````````````````
+# Function name: load_modules()
+#
+# Description:
+#   Load modules.
+#
+# Usage:
+#   load_modules
+#
+# Examples:
+#   load_modules
+#
+
+function load_modules() {
+
+  # shellcheck disable=SC2034
+  local _FUNCTION_ID="load_modules"
+  local _STATE=0
+
+  # shellcheck disable=SC2154
+  for i in $(find "${_modules}" -name '*.mod' -exec ls {} + | sort -k 10) ; do
+
+    _fpath=$(basename "$i")
+    # shellcheck disable=SC2034
+    _fname=$(echo "$_fpath" | cut -d "." -f1)
+
+    modules_list_path+=("$_fpath")
+    modules_list_name+=("$_fname")
+
+  done
+
+  return $_STATE
+
+}
