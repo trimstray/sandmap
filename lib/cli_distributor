@@ -23,8 +23,12 @@ function cli_distributor() {
 
   local _argv=("$@")
 
+  local _cli_state=0
+
   # shellcheck disable=SC2154
   if [[ "${_argv[0]}" == "help" ]] ; then
+
+    _cli_state=0
 
     if [[ "${#_argv[1]}" -eq 0 ]] ; then
 
@@ -39,6 +43,8 @@ function cli_distributor() {
 
   elif [[ "${_argv[0]}" == "show" ]] ; then
 
+    _cli_state=0
+
     if [[ "${#_argv[1]}" -eq 0 ]] ; then
 
       cli_show
@@ -52,7 +58,21 @@ function cli_distributor() {
 
   else
 
-    printf "stdout: %s\n" "unknown command"
+    # shellcheck disable=SC2034
+    _cli_state=1
+
+    init_module "${_argv[@]}"
+
+    if [[ "$_fname" =~ ${_argv[*]} ]] ; then
+
+      "$_fname"
+
+      # shellcheck disable=SC2034
+      __cli_banner="$_fname"
+      # shellcheck disable=SC2034
+      __cli_state=0
+
+    fi
 
   fi
 
