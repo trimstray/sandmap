@@ -26,27 +26,33 @@ function cli_distributor() {
   # shellcheck disable=SC2154
   if [[ "${_argv[0]}" == "help" ]] ; then
 
-    if [[ "$__cli_level" -eq 0 ]] ; then
+    if [[ "${#_argv[1]}" -eq 0 ]] ; then
 
       cli_help
 
     else
 
-      true
+      init_module "${_argv[@]}"
+      init_help
 
     fi
 
   elif [[ "${_argv[0]}" == "show" ]] ; then
 
-    if [[ "$__cli_level" -eq 0 ]] ; then
+    if [[ "${#_argv[1]}" -eq 0 ]] ; then
 
       cli_show
 
     else
 
-      true
+      init_module "${_argv[@]}"
+      init_show
 
     fi
+
+  else
+
+    printf "stdout: %s\n" "unknown command"
 
   fi
 
