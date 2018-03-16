@@ -6,7 +6,7 @@
 # Function name: init_module()
 #
 # Description:
-#   Load modules.
+#   Init modules.
 #
 # Usage:
 #   init_module
@@ -24,10 +24,11 @@ function init_module() {
   # shellcheck disable=SC2034
 
   local _type="$1"
-  local _argv=("${@:2}")
+  local _modn="$2"
+  local _argv=("${@:3}")
 
   # shellcheck disable=SC2034
-  export module_name="${_argv[0]}"
+  export module_name="$_modn"
   # shellcheck disable=SC2034
   export module_args=("${_argv[@]:1}")
   # shellcheck disable=SC2154

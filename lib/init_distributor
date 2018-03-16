@@ -53,7 +53,7 @@ function init_distributor() {
         else
 
           # shellcheck disable=SC2154
-          init_module "command" "${input_array[@]}"
+          init_module "command" "${input_array[0]}" "${input_array[@]}"
 
           # shellcheck disable=SC2154
           printf "%s\n\n" "${_module_opts[0]}"
@@ -66,7 +66,7 @@ function init_distributor() {
       elif [[ "$__cli_level" -eq 1 ]] ; then
 
         # shellcheck disable=SC2154
-        init_module "module" "${input_array[@]}"
+        init_module "module" "${input_array[0]}" "${input_array[@]}"
 
         echo
 
@@ -87,8 +87,16 @@ function init_distributor() {
 
   else
 
-    # shellcheck disable=SC2154
-    init_module "module" "${input_array[@]}"
+    if [[ "${input_array[0]}" =~ ${modules_list_name[*]} ]] ; then
+
+      # shellcheck disable=SC2154
+      init_module "module" "${input_array[0]}" "${input_array[@]}"
+
+    else
+
+      printf "stdout: %s\n" "unknown command"
+
+    fi
 
   fi
 
