@@ -3,22 +3,22 @@
 # shellcheck shell=bash
 
 # ``````````````````````````````````````````````````````````````````````````````
-# Function name: init_distributor()
+# Function name: cli_distributor()
 #
 # Description:
 #   Modules distributor.
 #
 # Usage:
-#   init_distributor
+#   cli_distributor
 #
 # Examples:
-#   init_distributor
+#   cli_distributor
 #
 
-function init_distributor() {
+function cli_distributor() {
 
   # shellcheck disable=SC2034
-  local _FUNCTION_ID="init_distributor"
+  local _FUNCTION_ID="cli_distributor"
   local _STATE=0
 
   local _argv=("$@")
