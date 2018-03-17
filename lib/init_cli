@@ -10,15 +10,13 @@ __cli_level=0
 
 _motd_status=0
 
-  # shellcheck disable=SC2034
-  local _fin=()
-  # shellcheck disable=SC2034
-  local _cli_state=0
-  # shellcheck disable=SC2034
-  local _ld_module=""
+# shellcheck disable=SC2034
+_fin=()
+# shellcheck disable=SC2034
+_ld_module=""
 
-  _fin[0]="$_cli_state"
-  _fin[1]="$_cli_state"
+_fin[0]=0
+_fin[1]=0
 
 readonly _und=$(tput smul)
 readonly _nound=$(tput rmul)
