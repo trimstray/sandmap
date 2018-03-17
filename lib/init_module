@@ -63,7 +63,7 @@ function init_module() {
 
   else
 
-    printf "stdout: %s\n" "unknown command bbb"
+    printf "stdout: %s\n" "unknown command"
 
   fi
 
