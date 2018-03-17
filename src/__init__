@@ -254,6 +254,7 @@ function __main__() {
   load_modules
 
   # Initialize cli.
+  clear
   init_cli
 
   # ````````````````````````````````````````````````````````````````````````````

@@ -95,8 +95,6 @@ function init_cli() {
   local _FUNCTION_ID="init_cli"
   local _STATE=0
 
-  clear
-
   if [[ "$_motd_status" -eq 0 ]] ; then
 
     motd_cli
@@ -126,6 +124,8 @@ function init_cli() {
     case ${input_array[0]} in
 
       clear)
+
+        clear
 
         init_cli
         cstate="0" ;;
