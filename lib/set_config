@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+# shellcheck shell=bash
+
+# ``````````````````````````````````````````````````````````````````````````````
+# Function name: set_config()
+#
+# Description:
+#   Set config configuration.
+#
+# Usage:
+#   set_config
+#
+# Examples:
+#   set_config
+#
+
+function set_config() {
+
+  # shellcheck disable=SC2034
+  local _FUNCTION_ID="set_config"
+  local _STATE=0
+
+  # shellcheck disable=SC2034
+  local _session_arg="$1"
+
+
+  printf "stdout: %s\n" "unknown key"
+
+  return $_STATE
+
+}
