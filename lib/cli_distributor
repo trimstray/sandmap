@@ -118,19 +118,27 @@ function cli_distributor() {
         init_config
         show_config
 
-        _fin[0]=1
+        _fin[0]=0
         _fin[1]=1
 
       fi
 
-    else
+    elif [[ "${_fin[0]}" -eq 1 ]] && [[ "${_fin[1]}" -eq 1 ]]; then
 
-      init_module "$_ld_module"
+      init_module "${_argv[@]}"
       init_config
       show_config
 
       _fin[0]=1
       _fin[1]=1
+
+    else
+
+      cli_config
+      show_config
+
+      _fin[0]=0
+      _fin[1]=0
 
     fi
 
