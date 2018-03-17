@@ -33,20 +33,32 @@ function cli_distributor() {
         cli_help
 
         _fin[0]=0
+        _fin[1]=0
 
       else
 
         init_module "${_argv[@]}"
         init_help
 
+        _fin[0]=0
         _fin[1]=1
 
       fi
 
+    elif [[ "${_fin[0]}" -eq 1 ]] && [[ "${_fin[1]}" -eq 1 ]]; then
+
+      init_module "${_argv[@]}"
+      init_help
+
+      _fin[0]=1
+      _fin[1]=1
+
     else
 
-      init_module "$_ld_module"
-      init_help
+      cli_help
+
+      _fin[0]=0
+      _fin[1]=0
 
     fi
 
@@ -59,22 +71,32 @@ function cli_distributor() {
         cli_show
 
         _fin[0]=0
+        _fin[1]=0
 
       else
 
         init_module "${_argv[@]}"
         init_show
 
+        _fin[0]=0
         _fin[1]=1
 
       fi
 
-      _fin=("$__cli_level")
+    elif [[ "${_fin[0]}" -eq 1 ]] && [[ "${_fin[1]}" -eq 1 ]]; then
+
+      init_module "${_argv[@]}"
+      init_show
+
+      _fin[0]=1
+      _fin[1]=1
 
     else
 
-      init_module "$_ld_module"
-      init_show
+      cli_show
+
+      _fin[0]=0
+      _fin[1]=0
 
     fi
 
@@ -88,6 +110,7 @@ function cli_distributor() {
         show_config
 
         _fin[0]=0
+        _fin[1]=0
 
       else
 
@@ -95,17 +118,19 @@ function cli_distributor() {
         init_config
         show_config
 
+        _fin[0]=1
         _fin[1]=1
 
       fi
-
-      _fin=("$__cli_level")
 
     else
 
       init_module "$_ld_module"
       init_config
       show_config
+
+      _fin[0]=1
+      _fin[1]=1
 
     fi
 
@@ -116,17 +141,16 @@ function cli_distributor() {
       # ReInitialize modules.
       load_modules
 
-      printf "%s\n" "modules reloaded"
+      printf "stdout: %s\n" "modules reloaded"
 
     fi
 
   else
 
     # shellcheck disable=SC2034
-    # _cli_state=1
-    _inerr=$(echo "${_argv[@]}" | grep -o "$_fname" | wc -w)
-    if [[ "$_inerr" -eq 1 ]] ; then
+    if (( $(echo "${_argv[@]}" | grep -o "$_fname" | wc -w) == 1 )); then
 
+      _fin[0]=1
       _fin[1]=1
 
       # shellcheck disable=SC2034
