@@ -27,7 +27,6 @@ function sample() {
 
   _module_show=
   _module_help=
-  _module_params=
 
   # shellcheck disable=SC2034
   author="example"
@@ -48,33 +47,28 @@ function sample() {
   _module_help=$(printf "%s" "
   Module: ${module_name}
 
-    Description:
+    Description
+    -----------
 
       It's a sample module template - short description.
 
-    Options:
+    Options
+    -------
 
-      show                            show info about module
-      set                             set params for module
+      show                  show info about module
+      set                   set params for module
 
-    Examples:
+    Examples
+    --------
 
-      show config                     displays the entire configuration
+      show config           displays the entire configuration
 ")
 
-  _ipaddr="127.0.0.1"
-  _port="80"
-  _user="admin"
-  _pass=""
-  _iface="eth0"
-
-  # shellcheck disable=SC2034,SC2154
-  _module_params=(\
-  "IP ADDRESS:${_ipaddr}" \
-  "PORT NUMBER:${_port}" \
-  "USERNAME:${_user}" \
-  "PASSWORD:${_pass}" \
-  "INTERFACE:${_iface}")
+  export _ipaddr="8.8.8.8"
+  export _port="53"
+  export _user="admin"
+  export _pass="aeTeekiesoo9"
+  export _iface="eth0"
 
   # shellcheck disable=SC2034
   export _module_opts=(\
