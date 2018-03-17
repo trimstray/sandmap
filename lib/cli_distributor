@@ -175,6 +175,10 @@ function cli_distributor() {
       # shellcheck disable=SC2034
       __cli_banner="$_fname"
 
+    else
+
+      printf "stdout: %s\n" "unknown command"
+
     fi
 
   fi
