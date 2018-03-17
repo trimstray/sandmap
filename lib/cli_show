@@ -24,10 +24,10 @@ function cli_show() {
   # shellcheck disable=SC2154
   _modules_count=$(find "${_modules}" -name '*.mod' | wc -l)
 
-  printf "\n %s: \e[5;33m%s\e[m\n" \
+  printf "\n  %s: \e[5;33m%s\e[m\n" \
          "Modules" "$_modules_count"
 
-  printf "\n %s\n" "List:"
+  printf "\n  %s\n\n" "Available:"
 
   # shellcheck disable=SC2154
   for i in "${modules_full_list[@]}" ; do
@@ -37,7 +37,7 @@ function cli_show() {
     # shellcheck disable=SC2034
     _fpath=$(echo "$i" | awk -v FS="(:|:)" '{print $2}')
 
-    printf "  \e[1;38m%s\e[m (full name: \e[2;37m%s\e[m)\n" "$_fname" "$_fpath"
+    printf "   * \e[1;38m%s\e[m (file: \e[2;37m%s\e[m)\n" "$_fname" "$_fpath"
 
   done
 
