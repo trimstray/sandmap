@@ -46,6 +46,7 @@ function cli_help() {
       show
       sample                enable 'sample' module
       config sample         show 'sample' module configuration
+
 "
 
   return $_STATE
