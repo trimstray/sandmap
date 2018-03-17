@@ -2,5 +2,12 @@
 
 # shellcheck shell=bash
 
-# shellcheck disable=SC2034
-_config_file=""
+# shellcheck disable=SC2034,SC2154
+_config_file="${_etc}/config.cfg"
+
+if [[ -e "$_config_file" ]] ; then
+
+  # shellcheck disable=SC1090
+  source "$_config_file"
+
+fi
