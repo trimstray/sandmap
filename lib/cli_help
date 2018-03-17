@@ -24,21 +24,25 @@ function cli_help() {
   printf "%s" "
   CLI Help:
 
-    show <key>            show key info
-    <module> <info|help>  show key info about module
+    Main:
 
-    Options:
+      help <key>            show this message, key optional
+      show <key>            show info about all modules, key optional
+      reload                reload all modules
 
-      <key> - modules     displays modules information
+      Options:
+
+        <key>               module name
+
+    In modules:
+
+      help                  display module help
+      show                  display module info
 
     Examples:
 
-      show modules
-      sample info
-
-    Modules:
-
-      show                display module parameters
+      show
+      sample                enable sample module
 
 "
 
