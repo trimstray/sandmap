@@ -107,7 +107,7 @@ function cli_distributor() {
       if [[ "${#_argv[1]}" -eq 0 ]] ; then
 
         cli_config
-        show_config
+        show_config "${_argv[1]}"
 
         _fin[0]=0
         _fin[1]=0
@@ -116,7 +116,7 @@ function cli_distributor() {
 
         init_module "${_argv[@]}"
         init_config
-        show_config
+        show_config "${_argv[1]}"
 
         _fin[0]=0
         _fin[1]=1
@@ -127,7 +127,7 @@ function cli_distributor() {
 
       init_module "${_argv[@]}"
       init_config
-      show_config
+      show_config "${_argv[1]}"
 
       _fin[0]=1
       _fin[1]=1
@@ -135,7 +135,7 @@ function cli_distributor() {
     else
 
       cli_config
-      show_config
+      show_config "${_argv[1]}"
 
       _fin[0]=0
       _fin[1]=0
