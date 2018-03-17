@@ -28,6 +28,7 @@ function cli_help() {
 
       help <key>            show this message, key optional
       show <key>            show info about all modules, key optional
+      config <key>          show global configuration
       reload                reload all modules
 
       Options:
@@ -38,12 +39,13 @@ function cli_help() {
 
       help                  display module help
       show                  display module info
+      config                display module configuration
 
     Examples:
 
       show
-      sample                enable sample module
-
+      sample                enable 'sample' module
+      config sample         show 'sample' module configuration
 "
 
   return $_STATE
