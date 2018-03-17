@@ -78,6 +78,17 @@ function cli_distributor() {
 
     fi
 
+  elif [[ "${_argv[0]}" == "reload" ]] ; then
+
+    if [[ "${_fin[0]}" -eq 0 ]] && [[ "${_fin[1]}" -eq 0 ]]; then
+
+      # ReInitialize modules.
+      load_modules
+
+      printf "%s\n" "modules reloaded"
+
+    fi
+
   else
 
     # shellcheck disable=SC2034
