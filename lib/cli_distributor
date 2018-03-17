@@ -78,6 +78,34 @@ function cli_distributor() {
 
     fi
 
+  elif [[ "${_argv[0]}" == "config" ]] ; then
+
+    if [[ "${_fin[0]}" -eq 0 ]] && [[ "${_fin[1]}" -eq 0 ]]; then
+
+      if [[ "${#_argv[1]}" -eq 0 ]] ; then
+
+        cli_config
+
+        _fin[0]=0
+
+      else
+
+        init_module "${_argv[@]}"
+        init_config
+
+        _fin[1]=1
+
+      fi
+
+      _fin=("$__cli_level")
+
+    else
+
+      init_module "$_ld_module"
+      init_config
+
+    fi
+
   elif [[ "${_argv[0]}" == "reload" ]] ; then
 
     if [[ "${_fin[0]}" -eq 0 ]] && [[ "${_fin[1]}" -eq 0 ]]; then
