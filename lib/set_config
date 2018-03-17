@@ -24,7 +24,6 @@ function set_config() {
   # shellcheck disable=SC2034
   local _session_arg="$1"
 
-
   printf "stdout: %s\n" "unknown key"
 
   return $_STATE
