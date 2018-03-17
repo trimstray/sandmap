@@ -21,27 +21,15 @@ function cli_config() {
   local _FUNCTION_ID="cli_config"
   local _STATE=0
 
-  # shellcheck disable=SC2154
-  _modules_count=$(find "${_modules}" -name '*.mod' | wc -l)
+  # shellcheck disable=SC2034,SC2154
+  _config_file="${_cfg}/config.cfg"
 
-  printf "\n  %s: \e[5;33m%s\e[m\n" \
-         "Modules" "$_modules_count"
+  if [[ -e "$_config_file" ]] ; then
 
-  printf "\n  %s\n\n" "Available:"
+    # shellcheck disable=SC1090
+    source "$_config_file"
 
-  # shellcheck disable=SC2154
-  for i in "${modules_full_list[@]}" ; do
-
-    # shellcheck disable=SC2034
-    _fname=$(echo "$i" | awk -v FS="(:|:)" '{print $1}')
-    # shellcheck disable=SC2034
-    _fpath=$(echo "$i" | awk -v FS="(:|:)" '{print $2}')
-
-    printf "   * \e[1;38m%s\e[m (file: \e[2;37m%s\e[m)\n" "$_fname" "$_fpath"
-
-  done
-
-  echo
+  fi
 
   return $_STATE
 
