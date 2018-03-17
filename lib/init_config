@@ -2,12 +2,35 @@
 
 # shellcheck shell=bash
 
-# shellcheck disable=SC2034,SC2154
-_config_file="${_etc}/config.cfg"
+# ``````````````````````````````````````````````````````````````````````````````
+# Function name: init_config()
+#
+# Description:
+#   Init configuration file.
+#
+# Usage:
+#   init_config
+#
+# Examples:
+#   init_config
+#
 
-if [[ -e "$_config_file" ]] ; then
+function init_config() {
 
-  # shellcheck disable=SC1090
-  source "$_config_file"
+  # shellcheck disable=SC2034
+  local _FUNCTION_ID="init_config"
+  local _STATE=0
 
-fi
+  # shellcheck disable=SC2034,SC2154
+  _config_file="${_etc}/config.cfg"
+
+  if [[ -e "$_config_file" ]] ; then
+
+    # shellcheck disable=SC1090
+    source "$_config_file"
+
+  fi
+
+  return $_STATE
+
+}
