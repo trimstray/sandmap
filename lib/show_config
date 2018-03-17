@@ -17,6 +17,7 @@
 
 function show_config() {
 
+  # shellcheck disable=SC2034
   local _FUNCTION_ID="show_config"
   local _STATE=0
 

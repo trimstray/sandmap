@@ -146,6 +146,10 @@ function cli_distributor() {
 
     if [[ "${_fin[0]}" -eq 0 ]] && [[ "${_fin[1]}" -eq 0 ]]; then
 
+      # shellcheck disable=SC2034
+      modules_list=()
+      # shellcheck disable=SC2034
+      modules_full_list=()
       # ReInitialize modules.
       load_modules
 
