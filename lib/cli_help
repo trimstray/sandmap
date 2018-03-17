@@ -22,30 +22,31 @@ function cli_help() {
   local _STATE=0
 
   printf "%s" "
-  CLI Help:
+  Main Commands
+  -------------
 
-    Main:
+    help <key>            show this message, key optional
+    show <key>            show info about all modules, key optional
+    config <key>          show global configuration
+    reload                reload all modules
 
-      help <key>            show this message, key optional
-      show <key>            show info about all modules, key optional
-      config <key>          show global configuration
-      reload                reload all modules
+    Options:
 
-      Options:
+      <key>               module name
 
-        <key>               module name
+  Module Commands
+  ---------------
 
-    In modules:
+    help                  display module help
+    show                  display module info
+    config                display module configuration
 
-      help                  display module help
-      show                  display module info
-      config                display module configuration
+  Examples
+  --------
 
-    Examples:
-
-      show
-      sample                enable 'sample' module
-      config sample         show 'sample' module configuration
+    show
+    sample                enable 'sample' module
+    config sample         show 'sample' module configuration
 
 "
 
