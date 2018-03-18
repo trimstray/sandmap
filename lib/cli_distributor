@@ -81,16 +81,20 @@ function cli_distributor() {
         # shellcheck disable=SC2034
         _variables_stack=("${_session_variables[@]}")
 
+        set_config "${_argv[@]}"
+
+        _session_variables=("${_variables_stack[@]}")
+
       else
 
         # shellcheck disable=SC2034
         _variables_stack=("${_module_variables[@]}")
 
+        set_config "${_argv[@]}"
+
+        _module_variables=("${_variables_stack[@]}")
+
       fi
-
-      set_config "${_argv[@]}"
-
-      _session_variables=("${_variables_stack[@]}")
 
     fi
 
@@ -150,16 +154,54 @@ function cli_distributor() {
 
   elif [[ "${_argv[0]}" == "reload" ]] ; then
 
-    if [[ "${_fin[0]}" -eq 0 ]] && [[ "${_fin[1]}" -eq 0 ]]; then
+    if [[ "$_in_module" -eq 0 ]] ; then
 
-      # shellcheck disable=SC2034
-      modules_list=()
-      # shellcheck disable=SC2034
-      modules_full_list=()
-      # ReInitialize modules.
-      load_modules
+      if [[ "${#_argv[1]}" -eq 0 ]] ; then
 
-      printf "stdout: %s\n" "modules reloaded"
+        printf "stdout: %s\n" "unknown param"
+
+      else
+
+        if [[ "${_argv[1]}" == "config" ]] ; then
+
+          cli_config
+          init_config
+
+          printf "stdout: %s\n" "config reloaded"
+
+        elif [[ "${_argv[1]}" == "modules" ]] ; then
+
+          # shellcheck disable=SC2034
+          modules_list=()
+          # shellcheck disable=SC2034
+          modules_full_list=()
+          # ReInitialize modules.
+          load_modules
+
+          printf "stdout: %s\n" "modules reloaded"
+
+        fi
+
+      fi
+
+    else
+
+      if [[ "${#_argv[1]}" -eq 0 ]] ; then
+
+        printf "stdout: %s\n" "unknown param"
+
+      else
+
+        if [[ "${_argv[1]}" == "config" ]] ; then
+
+          cli_config
+          init_config
+
+          printf "stdout: %s\n" "config reloaded"
+
+        fi
+
+      fi
 
     fi
 
