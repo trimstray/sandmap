@@ -26,24 +26,23 @@ function cli_distributor() {
   # shellcheck disable=SC2154
   if [[ "${_argv[0]}" == "help" ]] ; then
 
-    if [[ "${_fin[0]}" -eq 0 ]] && [[ "${_fin[1]}" -eq 0 ]]; then
+    if [[ "$_in_module" -eq 0 ]] ; then
 
       if [[ "${#_argv[1]}" -eq 0 ]] ; then
 
         cli_help
-
-        _fin[0]=0
-        _fin[1]=0
 
       else
 
         init_module "${_argv[@]}"
         init_help
 
-        _fin[0]=0
-        _fin[1]=0
-
       fi
+
+    else
+
+      init_module "${_argv[@]}"
+      init_help
 
     fi
 
@@ -178,9 +177,6 @@ function cli_distributor() {
     # shellcheck disable=SC2034
     if (( $(echo "${_argv[@]}" | grep -o "$_fname" | wc -w) == 1 )) ; then
 
-      _fin[0]=0
-      _fin[1]=1
-
       _in_module=1
 
       # shellcheck disable=SC2034
@@ -192,9 +188,6 @@ function cli_distributor() {
 
       # shellcheck disable=SC2034
       __cli_banner="$_fname"
-
-      _fin[0]=0
-      _fin[1]=1
 
     else
 
