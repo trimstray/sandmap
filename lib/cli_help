@@ -29,8 +29,10 @@ function cli_help() {
     show <key>            show info about all modules, key optional
     config <opt>          show global configuration
     set [opt]             set key value
-    reload                reload all modules
     use <key>             set current module
+
+    reload                reload all modules
+    banner                show banner
 
     Options:
 
@@ -43,6 +45,7 @@ function cli_help() {
     help                  display module help
     show                  display module info
     config                display module configuration
+    set                   set key value
 
   Examples
   --------
