@@ -82,13 +82,24 @@ function cli_distributor() {
 
       else
 
-        # shellcheck disable=SC2034
-        _variables_stack=("${_session_variables[@]}")
+        if [[ "$_in_module" -eq 0 ]] ; then
+
+          # shellcheck disable=SC2034
+          _variables_stack=("${_session_variables[@]}")
+
+        else
+
+          # shellcheck disable=SC2034
+          _variables_stack=("${_module_variables[@]}")
+
+        fi
 
         set_config "${_argv[@]}"
 
         _fin[0]=0
         _fin[1]=0
+
+        _session_variables=("${_variables_stack[@]}")
 
       fi
 
@@ -122,7 +133,6 @@ function cli_distributor() {
 
           # shellcheck disable=SC2034
           _variables_stack=("${_module_variables[@]}")
-          _variables_stack+=("${_user_variables[@]}")
 
           show_config "${_argv[@]}"
 
@@ -169,7 +179,9 @@ function cli_distributor() {
     if (( $(echo "${_argv[@]}" | grep -o "$_fname" | wc -w) == 1 )) ; then
 
       _fin[0]=0
-      _fin[1]=0
+      _fin[1]=1
+
+      _in_module=1
 
       # shellcheck disable=SC2034
       _ld_module="$_fname"
@@ -180,6 +192,9 @@ function cli_distributor() {
 
       # shellcheck disable=SC2034
       __cli_banner="$_fname"
+
+      _fin[0]=0
+      _fin[1]=1
 
     else
 
