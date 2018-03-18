@@ -248,8 +248,8 @@ function __main__() {
   fi
 
   # Initialize configuration.
-  init_config
   cli_config
+  init_config
 
   # Initialize modules.
   load_modules
