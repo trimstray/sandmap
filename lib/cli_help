@@ -30,6 +30,7 @@ function cli_help() {
     config <opt>          show global configuration
     set [opt]             set key value
     reload                reload all modules
+    use <key>             set current module
 
     Options:
 

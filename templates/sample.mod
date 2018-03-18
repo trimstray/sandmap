@@ -29,7 +29,7 @@ function sample() {
   _module_help=
 
   # shellcheck disable=SC2034
-  _module_variables=("${_session_variables[@]}")
+  _module_variables=()
 
   # shellcheck disable=SC2034
   author="example"
@@ -58,18 +58,19 @@ function sample() {
     Options
     -------
 
-      show                  show info about module
-      set                   set params for module
+      help                  display module help
+      show                  display module info
+      config                display module configuration
 
     Examples
     --------
 
-      show config           displays the entire configuration
+      config                displays the entire configuration
 ")
 
   # shellcheck disable=SC2034
-  _user_variables=(\
-                "Testing:testing:_testing")
+  _module_variables=(\
+                "Testing:testing:'testing_value'")
 
   # shellcheck disable=SC2034
   export _module_opts=(\
