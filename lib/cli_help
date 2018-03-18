@@ -27,12 +27,14 @@ function cli_help() {
 
     help <key>            show this message, key optional
     show <key>            show info about all modules, key optional
-    config <key>          show global configuration
+    config <opt>          show global configuration
+    set [opt]             set key value
     reload                reload all modules
 
     Options:
 
       <key>               module name
+      [opt]               opt name
 
   Module Commands
   ---------------
