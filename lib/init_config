@@ -35,8 +35,6 @@ function init_config() {
                       "Pass through TOR:tor:_tor" \
                       "Terminal type:terminal:_terminal")
 
-  _session_variables+=("${_module_variables[@]}")
-
   return $_STATE
 
 }
