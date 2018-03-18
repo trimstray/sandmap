@@ -6,18 +6,13 @@ readonly __cli_prompt="cli"
 # shellcheck disable=SC2034
 __cli_banner="main"
 # shellcheck disable=SC2034
-__cli_level=0
+_cli_state=0
 _in_module=0
 
 _motd_status=0
 
 # shellcheck disable=SC2034
-_fin=()
-# shellcheck disable=SC2034
 _ld_module=""
-
-_fin[0]=0
-_fin[1]=0
 
 readonly _und=$(tput smul)
 readonly _nound=$(tput rmul)
@@ -139,10 +134,10 @@ function init_cli() {
 
         clear
 
-        if [[ "${_fin[1]}" -eq 1 ]] ; then
+        if [[ "$_cli_state" -eq 1 ]] ; then
 
           init_cli
-          _fin[1]=1
+          _cli_state=1
 
         else
 
@@ -157,10 +152,6 @@ function init_cli() {
         __cli_banner="main"
         # shellcheck disable=SC2034
         _in_module=0
-        # shellcheck disable=SC2034
-        _fin[0]=0
-        # shellcheck disable=SC2034
-        _fin[1]=0
 
         init_cli
         cstate="0" ;;
