@@ -70,7 +70,7 @@ function sample() {
 
   # shellcheck disable=SC2034
   _module_variables=(\
-                "Testing:testing:testing_value")
+  "Testing:testing:testing_value")
 
   # shellcheck disable=SC2034
   export _module_opts=(\
