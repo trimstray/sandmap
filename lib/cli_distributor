@@ -186,6 +186,13 @@ function cli_distributor() {
           # ReInitialize modules.
           load_modules
 
+          # shellcheck disable=SC2034
+          for i in $(find "${_modules}" -name '*.cfg' -exec ls {} + | sort -k 10) ; do
+
+            : >"$i"
+
+          done
+
           printf "stdout: %s\n" "modules reloaded"
 
         fi
