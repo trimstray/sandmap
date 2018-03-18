@@ -21,8 +21,6 @@ function show_config() {
   local _FUNCTION_ID="show_config"
   local _STATE=0
 
-  echo "1: $1 2: $2 3: $3"
-
   # shellcheck disable=SC2154
   if [[ "$session_type" == "main" ]] ; then
 
@@ -33,8 +31,6 @@ function show_config() {
     local _session_arg="$3"
 
   fi
-
-  echo "arg: $session_type - $_session_arg"
 
   # shellcheck disable=SC2154
   for _svar in "${_variables_stack[@]}" ; do
