@@ -44,52 +44,64 @@ function motd_cli() {
   local _FUNCTION_ID="motd_cli"
   local _STATE=0
 
-  tput cup 5 0
+  _rw=2
+
+  tput cup 5 "$_rw"
   printf "${_bold}   \e[2;31m%s\e[m${_normal}\n" \
   "o"
+  tput cup 6 "$_rw"
   printf "${_bold}   \e[2;31m%s\e[m${_normal}\n" \
   "\\_/\\o"
+  tput cup 7 "$_rw"
   printf "${_bold}   \e[2;31m%s\e[m${_normal}" \
   "( "
   printf "${_bold}\e[1;34m%s\e[m${_normal}" \
   "Oo"
   printf "${_bold}\e[2;31m%s\e[m${_normal}\n" \
   ")         \\|/"
+  tput cup 8 "$_rw"
   printf "${_bold}   \e[2;31m%s\e[m${_normal}\n" \
   "(_=-)  .===O-  X"
+  tput cup 9 "$_rw"
   printf "${_bold}   \e[2;31m%s\e[m${_normal}\n" \
   "/   \\_/U'     /|\\"
+  tput cup 10 "$_rw"
   printf "${_bold}   \e[2;31m%s\e[m${_normal}\n" \
   "||  |_/"
+  tput cup 11 "$_rw"
   printf "${_bold}   \e[2;31m%s\e[m${_normal}\n" \
   "\\\\  |"
+  tput cup 12 "$_rw"
   printf "${_bold}   \e[2;31m%s\e[m${_normal}\n" \
   "{K ||"
+  tput cup 13 "$_rw"
   printf "${_bold}   \e[2;31m%s\e[m${_normal}\n" \
   "| PP"
+  tput cup 14 "$_rw"
   printf "${_bold}   \e[2;31m%s\e[m${_normal}\n" \
   "| ||"
+  tput cup 15 "$_rw"
   printf "${_bold}   \e[2;31m%s\e[m${_normal}\n" \
   "(__\\\\"
 
-  tput cup 1 21 ; printf "%s" " _______                 __"
-  tput cup 2 21 ; printf "%s" "|     __|.---.-.-----.--|  |.--------.---.-.-----."
-  tput cup 3 21 ; printf "%s" "|__     ||  _  |     |  _  ||        |  _  |  _  |"
-  tput cup 4 21 ; printf "%s" "|_______||___._|__|__|_____||__|__|__|___._|   __|"
-  tput cup 5 64 ; printf "%s" "|__|"
+  tput cup 1 23 ; printf "%s" " _______                 __"
+  tput cup 2 23 ; printf "%s" "|     __|.---.-.-----.--|  |.--------.---.-.-----."
+  tput cup 3 23 ; printf "%s" "|__     ||  _  |     |  _  ||        |  _  |  _  |"
+  tput cup 4 23 ; printf "%s" "|_______||___._|__|__|_____||__|__|__|___._|   __|"
+  tput cup 5 66 ; printf "%s" "|__|"
 
-  tput cup 6 38 ; printf "%s: \e[3;36m%s\e[m" "Author" "trimstray"
-  tput cup 6 57 ; printf "%s: \e[3;36m%s\e[m" "Version" "1.0.0"
+  tput cup 6 40 ; printf "%s: \e[3;36m%s\e[m" "Author" "trimstray"
+  tput cup 6 59 ; printf "%s: \e[3;36m%s\e[m" "Version" "1.0.0"
 
-  tput cup 8 24 ; printf "%s \e[1;38m%s\e[m" "Project:" "https://github.com/trimstray/sandmap"
+  tput cup 8 26 ; printf "%s \e[1;38m%s\e[m" "Project:" "https://github.com/trimstray/sandmap"
 
-  tput cup 10 24 ; printf "%s" "This program comes with ABSOLUTELY NO WARRANTY."
-  tput cup 11 24 ; printf "%s" "This is free software, and you are welcome to redistribute it"
-  tput cup 12 24 ; printf "%s" "under certain conditions; for more details please see"
-  tput cup 13 24 ; printf "%s" "<http://www.gnu.org/licenses/>."
+  tput cup 10 26 ; printf "%s" "This program comes with ABSOLUTELY NO WARRANTY."
+  tput cup 11 26 ; printf "%s" "This is free software, and you are welcome to redistribute it"
+  tput cup 12 26 ; printf "%s" "under certain conditions; for more details please see"
+  tput cup 13 26 ; printf "%s" "<http://www.gnu.org/licenses/>."
 
-  tput cup 15 24 ; printf "%s" "Hint:"
-  tput cup 17 26 ; printf "%s '${_und}\e[1;38m%s\e[m${_normal}' %s" \
+  tput cup 15 26 ; printf "%s" "Hint:"
+  tput cup 17 28 ; printf "%s '${_und}\e[1;38m%s\e[m${_normal}' %s" \
                           "Try" "help" "to show all cli commands and start!"
   tput cup 20 0
 
@@ -130,7 +142,7 @@ function init_cli() {
 
     cstate="1"
 
-    # shellcheck disable=SC2154
+    # shellcheck disable=SC2354
     printf "\e[1;38m%s\e[m(\e[0;38m%s\e[m)\e[4;32m>\e[m " "${__cli_prompt}" "${__cli_banner}" && read -ra input_array
 
     case ${input_array[0]} in
