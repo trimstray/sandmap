@@ -107,6 +107,8 @@ function cli_distributor() {
       if [[ "${#_argv[1]}" -eq 0 ]] ; then
 
         printf "stdout: %s\n" "unknown key"
+        _fin[0]=0
+        _fin[1]=0
 
       else
 
@@ -119,12 +121,13 @@ function cli_distributor() {
 
     elif [[ "${_fin[0]}" -eq 1 ]] && [[ "${_fin[1]}" -eq 1 ]]; then
 
-      printf "stdout: %s\n" "unknown key"
+      set_config "${_argv[@]}"
+      _fin[0]=1
+      _fin[1]=1
 
     else
 
-      set_config "${_argv[@]}"
-
+      printf "stdout: %s\n" "unknown key"
       _fin[0]=0
       _fin[1]=0
 
@@ -135,36 +138,94 @@ function cli_distributor() {
     if [[ "${_fin[0]}" -eq 0 ]] && [[ "${_fin[1]}" -eq 0 ]]; then
 
       if [[ "${#_argv[1]}" -eq 0 ]] ; then
+echo 1
+        # shellcheck disable=SC2034
+        session_type="main"
 
-        cli_config
-        show_config "${_argv[1]}"
+        # shellcheck disable=SC2034
+        _variables_stack=("${_session_variables[@]}")
+
+        show_config "${_argv[@]}"
 
         _fin[0]=0
         _fin[1]=0
 
       else
+echo 2
+        if (( $(echo "${_argv[@]}" | grep -o "$_fname" | wc -w) == 1 )) ; then
+echo 3
+          # shellcheck disable=SC2034
+          session_type="module"
 
-        init_module "${_argv[@]}"
-        init_config
-        show_config "${_argv[1]}"
+          init_module "${_argv[@]}"
 
-        _fin[0]=0
-        _fin[1]=1
+          # shellcheck disable=SC2034
+          _variables_stack=("${_module_variables[@]}")
+          _variables_stack+=("${_user_variables[@]}")
+
+          show_config "${_argv[@]}"
+
+          _fin[0]=1
+          _fin[1]=1
+
+        else
+echo 4
+          # shellcheck disable=SC2034
+          session_type="main"
+
+          # shellcheck disable=SC2034
+          _variables_stack=("${_session_variables[@]}")
+
+          show_config "${_argv[@]}"
+
+          _fin[0]=0
+          _fin[1]=0
+
+        fi
 
       fi
 
     elif [[ "${_fin[0]}" -eq 1 ]] && [[ "${_fin[1]}" -eq 1 ]]; then
+echo 5
+      if (( $(echo "${_argv[@]}" | grep -o "$_fname" | wc -w) == 1 )) ; then
+echo 6
+        # shellcheck disable=SC2034
+        session_type="module"
 
-      init_module "${_argv[@]}"
-      init_config
-      show_config "${_argv[1]}"
+        init_module "${_argv[@]}"
 
-      _fin[0]=1
-      _fin[1]=1
+        # shellcheck disable=SC2034
+        _variables_stack=("${_module_variables[@]}")
+        _variables_stack+=("${_user_variables[@]}")
+
+        show_config "${_argv[@]}"
+
+        _fin[0]=1
+        _fin[1]=1
+
+      else
+echo 7
+        # shellcheck disable=SC2034
+        session_type="main"
+
+        # shellcheck disable=SC2034
+        _variables_stack=("${_session_variables[@]}")
+
+        show_config "${_argv[@]}"
+
+        _fin[0]=0
+        _fin[1]=0
+
+      fi
 
     else
+echo 7
+      # shellcheck disable=SC2034
+      session_type="main"
 
-      cli_config
+      # shellcheck disable=SC2034
+      _variables_stack=("${_session_variables[@]}")
+
       show_config "${_argv[1]}"
 
       _fin[0]=0
