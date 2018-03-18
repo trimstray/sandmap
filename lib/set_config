@@ -22,9 +22,68 @@ function set_config() {
   local _STATE=0
 
   # shellcheck disable=SC2034
-  local _session_arg="$1"
+  local _session_arg=("$@")
+  local _session_key="${_session_arg[1]}"
 
-  printf "stdout: %s\n" "unknown key"
+  # shellcheck disable=SC2154
+  local _session_num="${#_session_variables[@]}"
+  local _acount=0
+
+  # shellcheck disable=SC2154
+  for _svar in "${_session_variables[@]}" ; do
+
+    # shellcheck disable=SC2034
+    _key_description=$(echo "$_svar" | awk -v FS="(:|:)" '{print $1}')
+    # shellcheck disable=SC2034
+    _key_id=$(echo "$_svar" | awk -v FS="(:|:)" '{print $2}')
+    # shellcheck disable=SC2034
+    _key_var=$(echo "$_svar" | awk -v FS="(:|:)" '{print $3}')
+
+    if [[ "$_key_var" == "$_session_key" ]] ; then
+
+      _set_args
+      _key_var="$_args"
+
+    else
+
+      _acount=$((_acount + 1))
+
+    fi
+
+  done
+
+  if [[ "$_session_num" -eq "$_acount" ]] ; then
+
+    printf "stdout: %s\n" "unknown key"
+
+  fi
+
+  return $_STATE
+
+}
+
+# ``````````````````````````````````````````````````````````````````````````````
+# Function name: _set_args()
+#
+# Description:
+#   Set the IP address.
+#
+# Usage:
+#   _set_args
+#
+# Examples:
+#   _set_args
+#
+
+function _set_args() {
+
+  # shellcheck disable=SC2034
+  local _FUNCTION_ID="_set_args"
+  local _STATE=0
+
+  printf "args: "
+  # shellcheck disable=SC2034
+  read -ra _args
 
   return $_STATE
 
