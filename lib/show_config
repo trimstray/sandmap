@@ -23,6 +23,7 @@ function show_config() {
 
   echo "1: $1 2: $2 3: $3"
 
+  # shellcheck disable=SC2154
   if [[ "$session_type" == "main" ]] ; then
 
     local _session_arg="$2"
