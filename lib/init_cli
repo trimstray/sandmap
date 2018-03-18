@@ -13,6 +13,11 @@ _motd_status=0
 
 # shellcheck disable=SC2034
 _ld_module=""
+# shellcheck disable=SC2034
+_mstate=0
+
+# shellcheck disable=SC2034
+_module_cfg=""
 
 readonly _und=$(tput smul)
 readonly _nound=$(tput rmul)

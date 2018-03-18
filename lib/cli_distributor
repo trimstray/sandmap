@@ -87,12 +87,17 @@ function cli_distributor() {
 
       else
 
+        # shellcheck disable=SC1090
+        source "$_module_cfg"
+
         # shellcheck disable=SC2034
         _variables_stack=("${_module_variables[@]}")
 
         set_config "${_argv[@]}"
 
         _module_variables=("${_variables_stack[@]}")
+
+        printf "_module_variables=(\"%s\")\n" "${_module_variables[@]}" > "$_module_cfg"
 
       fi
 
@@ -141,6 +146,9 @@ function cli_distributor() {
       fi
 
     else
+
+      # shellcheck disable=SC1090
+      source "$_module_cfg"
 
       # shellcheck disable=SC2034
       session_type="module"
@@ -221,6 +229,9 @@ function cli_distributor() {
 
       # shellcheck disable=SC2034
       __cli_banner="$_fname"
+
+      # shellcheck disable=SC1090
+      source "$_module_cfg"
 
     else
 
