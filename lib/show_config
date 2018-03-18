@@ -21,10 +21,22 @@ function show_config() {
   local _FUNCTION_ID="show_config"
   local _STATE=0
 
-  local _session_arg="$1"
+  echo "1: $1 2: $2 3: $3"
+
+  if [[ "$session_type" == "main" ]] ; then
+
+    local _session_arg="$2"
+
+  elif [[ "$session_type" == "module" ]] ; then
+
+    local _session_arg="$3"
+
+  fi
+
+  echo "arg: $session_type - $_session_arg"
 
   # shellcheck disable=SC2154
-  for _svar in "${_session_variables[@]}" ; do
+  for _svar in "${_variables_stack[@]}" ; do
 
     _key_description=$(echo "$_svar" | awk -v FS="(:|:)" '{print $1}')
     _key_id=$(echo "$_svar" | awk -v FS="(:|:)" '{print $2}')
