@@ -26,11 +26,11 @@ function set_config() {
   local _session_key="${_session_arg[1]}"
 
   # shellcheck disable=SC2154
-  local _session_num="${#_session_variables[@]}"
+  local _session_num="${#_variables_stack[@]}"
   local _acount=0
 
   # shellcheck disable=SC2154
-  for _svar in "${_session_variables[@]}" ; do
+  for _svar in "${_variables_stack[@]}" ; do
 
     # shellcheck disable=SC2034
     _key_description=$(echo "$_svar" | awk -v FS="(:|:)" '{print $1}')
