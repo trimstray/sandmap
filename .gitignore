@@ -4,3 +4,4 @@ log/
 # Temporary.
 modules/
 etc/
+etc/modules
