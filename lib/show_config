@@ -32,6 +32,10 @@ function show_config() {
 
   fi
 
+  _break=0
+
+  echo
+
   # shellcheck disable=SC2154
   for _svar in "${_variables_stack[@]}" ; do
 
@@ -48,101 +52,19 @@ function show_config() {
 
     fi
 
-    if [[ "$_key_id" != "web" ]] || [[ "$_key_id" != "db" ]] ; then
-
-      _i="" ; eval _i='$'"$_key_var"
-
-    else
-
-      _i="true"
-
-    fi
-
     # Show specific key.
     if [[ "$_session_arg" == "$_key_id" ]] ; then
 
-      # Print without key value.
-      if [[ -z "$_i" ]] ; then
+      printf "  Description: %s\n  { \"\e[0;38m%s\e[m\":\"\e[0;36m%s\e[m\" }\n\n" "$_key_description" "$_key_id" "$_key_var"
 
-        printf "\n  Description: %s\n  { \"\e[0;38m%s\e[m\":\"\e[0;36m%s\e[m\" }\n\n" "$_key_description" "$_key_id" ""
+      _break=1
 
-      # Print with key value.
-      else
+    elif [[ "$_break" -eq 0 ]] ; then
 
-        if [[ "$_key_id" == "web" ]] ; then
+      # Show all keys.
+      if [[ -z "$_session_arg" ]] ; then
 
-          printf "\n  Description: %s\n" "$_key_description"
-
-          # shellcheck disable=SC2154
-          for i in "${_web_stack[@]}" ; do
-
-            printf "  { \"\e[0;38m%s\e[m\":\"\e[0;36m%s\e[m\" }\n" "$_key_id" "$i"
-
-          done
-
-          printf "\n"
-
-        elif [[ "$_key_id" == "db" ]] ; then
-
-          # shellcheck disable=SC2154
-          printf "\n  Description: %s\n" "$_key_description"
-
-          for i in "${_db_stack[@]}" ; do
-
-            printf "  { \"\e[0;38m%s\e[m\":\"\e[0;36m%s\e[m\" }\n" "$_key_id" "$i"
-
-          done
-
-          printf "\n"
-
-        else
-
-          printf "\n  Description: %s\n  { \"\e[0;38m%s\e[m\":\"\e[0;36m%s\e[m\" }\n\n" "$_key_description" "$_key_id" "$_i"
-
-        fi
-
-      fi
-
-    # Show all keys.
-    elif [[ -z "$_session_arg" ]] ; then
-
-      # Print without key value.
-      if [[ -z "$_i" ]] ; then
-
-        printf "\n  Description: %s\n  { \"\e[0;38m%s\e[m\":\"\e[0;36m%s\e[m\" }\n\n" "$_key_description" "$_key_id" ""
-
-      # Print with key value.
-      else
-
-        if [[ "$_key_id" == "web" ]] ; then
-
-          printf "\n  Description: %s\n" "$_key_description"
-
-          for i in "${_web_stack[@]}" ; do
-
-            printf "  { \"\e[0;38m%s\e[m\":\"\e[0;36m%s\e[m\" }\n" "$_key_id" "$i"
-
-          done
-
-          printf "\n"
-
-        elif [[ "$_key_id" == "db" ]] ; then
-
-          printf "\n  Description: %s\n" "$_key_description"
-
-          for i in "${_db_stack[@]}" ; do
-
-            printf "  { \"\e[0;38m%s\e[m\":\"\e[0;36m%s\e[m\" }\n" "$_key_id" "$i"
-
-          done
-
-          printf "\n"
-
-        else
-
-          printf "\n  Description: %s\n  { \"\e[0;38m%s\e[m\":\"\e[0;36m%s\e[m\" }\n\n" "$_key_description" "$_key_id" "$_i"
-
-        fi
+        printf "  Description: %s\n  { \"\e[0;38m%s\e[m\":\"\e[0;36m%s\e[m\" }\n\n" "$_key_description" "$_key_id" "$_key_var"
 
       fi
 
