@@ -29,6 +29,9 @@ function sample() {
   _module_help=
 
   # shellcheck disable=SC2034
+  _module_variables=("${_session_variables[@]}")
+
+  # shellcheck disable=SC2034
   author="example"
   contact="example@example.com"
   version="1.0"
@@ -64,11 +67,9 @@ function sample() {
       show config           displays the entire configuration
 ")
 
-  export _ipaddr="8.8.8.8"
-  export _port="53"
-  export _user="admin"
-  export _pass="aeTeekiesoo9"
-  export _iface="eth0"
+  # shellcheck disable=SC2034
+  _user_variables=(\
+                "Testing:testing:_testing")
 
   # shellcheck disable=SC2034
   export _module_opts=(\
