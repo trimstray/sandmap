@@ -246,6 +246,40 @@ function cli_distributor() {
 
     fi
 
+  elif [[ "${_argv[0]}" == "scans" ]] ; then
+
+    if [[ "$_in_module" -eq 1 ]] ; then
+
+      printf "\n  %-20.20s  %-20.20s  %-20.20s\n  %-20.20s  %-20.20s  %-20.20s\n\n" \
+             "Description" \
+             "Alias" \
+             "Nmap Parameters" \
+             "-----------" \
+             "-----" \
+             "---------------"
+
+      # shellcheck disable=SC2034
+      for _svar in "${_module_commands[@]}" ; do
+
+        # shellcheck disable=SC2034
+        _key_description=$(echo "$_svar" | awk -v FS="(:|:)" '{print $1}')
+        # shellcheck disable=SC2034
+        _key_id=$(echo "$_svar" | awk -v FS="(:|:)" '{print $2}')
+        # shellcheck disable=SC2034
+        _key_var=$(echo "$_svar" | awk -v FS="(:|:)" '{print $3}')
+
+        printf "  %-20.20s  %-20.20s  %-20s\n" "$_key_description" "$_key_id" "$_key_var"
+
+      done
+
+      echo
+
+    else
+
+      printf "stdout: %s\n" "unknown command"
+
+    fi
+
   else
 
     printf "stdout: %s\n" "unknown command"
