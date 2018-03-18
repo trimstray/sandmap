@@ -21,8 +21,21 @@ function init_config() {
   local _FUNCTION_ID="init_config"
   local _STATE=0
 
-  # shellcheck disable=SC2034
-  # _session_variables=("${_module_params[@]}")
+  export _session_variables=(\
+                      "IP address:ipaddr:_ipaddr" \
+                      "Service port number:port:_port" \
+                      "Username:user:_user" \
+                      "User password:pass:_pass" \
+                      "Network interface:iface:_iface" \
+                      "MAC address:hwaddr:_hwaddr" \
+                      "Domain name:domain:_domain" \
+                      "Database user name:dbuser:_dbuser" \
+                      "Database user password:dbpass:_dbpass" \
+                      "Report type:report:_report" \
+                      "Pass through TOR:tor:_tor" \
+                      "Terminal type:terminal:_terminal")
+
+  _session_variables+=("${_module_variables[@]}")
 
   return $_STATE
 
