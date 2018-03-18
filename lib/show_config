@@ -35,8 +35,11 @@ function show_config() {
   # shellcheck disable=SC2154
   for _svar in "${_variables_stack[@]}" ; do
 
+    # shellcheck disable=SC2034
     _key_description=$(echo "$_svar" | awk -v FS="(:|:)" '{print $1}')
+    # shellcheck disable=SC2034
     _key_id=$(echo "$_svar" | awk -v FS="(:|:)" '{print $2}')
+    # shellcheck disable=SC2034
     _key_var=$(echo "$_svar" | awk -v FS="(:|:)" '{print $3}')
 
     if [[ -z "$_key_id" ]] ; then
