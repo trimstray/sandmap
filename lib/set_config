@@ -28,6 +28,7 @@ function set_config() {
   # shellcheck disable=SC2154
   local _session_num="${#_variables_stack[@]}"
   local _acount=0
+  local _bcount=0
 
   # shellcheck disable=SC2154
   for _svar in "${_variables_stack[@]}" ; do
@@ -39,20 +40,27 @@ function set_config() {
     # shellcheck disable=SC2034
     _key_var=$(echo "$_svar" | awk -v FS="(:|:)" '{print $3}')
 
-    if [[ "$_key_var" == "$_session_key" ]] ; then
+    if [[ "$_key_id" == "$_session_key" ]] ; then
 
       _set_args
+      # shellcheck disable=SC2034
       _key_var="$_args"
+
+      _variables_stack[$_acount]="${_key_description}:${_key_id}:${_key_var}"
+
+      echo ${_variables_stack[$_acount]}
 
     else
 
-      _acount=$((_acount + 1))
+      _bcount=$((_acount + 1))
 
     fi
 
+    _acount=$((_acount + 1))
+
   done
 
-  if [[ "$_session_num" -eq "$_acount" ]] ; then
+  if [[ "$_session_num" -eq "$_bcount" ]] ; then
 
     printf "stdout: %s\n" "unknown key"
 
