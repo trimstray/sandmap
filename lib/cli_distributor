@@ -178,7 +178,7 @@ echo 4
 
           show_config "${_argv[@]}"
 
-          _fin[0]=0
+          _fin[0]=1
           _fin[1]=0
 
         fi
@@ -187,24 +187,44 @@ echo 4
 
     elif [[ "${_fin[0]}" -eq 1 ]] && [[ "${_fin[1]}" -eq 1 ]]; then
 echo 5
-      if (( $(echo "${_argv[@]}" | grep -o "$_fname" | wc -w) == 1 )) ; then
+      if [[ "${#_argv[1]}" -ne 0 ]] ; then
+
+        if (( $(echo "${_argv[@]}" | grep -o "$_fname" | wc -w) == 1 )) ; then
 echo 6
-        # shellcheck disable=SC2034
-        session_type="module"
+          # shellcheck disable=SC2034
+          session_type="module"
 
-        init_module "${_argv[@]}"
+          init_module "${_argv[@]}"
 
-        # shellcheck disable=SC2034
-        _variables_stack=("${_module_variables[@]}")
-        _variables_stack+=("${_user_variables[@]}")
+          # shellcheck disable=SC2034
+          _variables_stack=("${_module_variables[@]}")
+          _variables_stack+=("${_user_variables[@]}")
 
-        show_config "${_argv[@]}"
+          show_config "${_argv[@]}"
 
-        _fin[0]=1
-        _fin[1]=1
+          _fin[0]=1
+          _fin[1]=1
+
+        else
+echo 7
+          # shellcheck disable=SC2034
+          session_type="module"
+
+          init_module "${_argv[@]}"
+
+          # shellcheck disable=SC2034
+          _variables_stack=("${_module_variables[@]}")
+          _variables_stack+=("${_user_variables[@]}")
+
+          show_config "${_argv[@]}"
+
+          _fin[0]=0
+          _fin[1]=1
+
+        fi
 
       else
-echo 7
+
         # shellcheck disable=SC2034
         session_type="main"
 
@@ -219,14 +239,14 @@ echo 7
       fi
 
     else
-echo 7
+echo 8
       # shellcheck disable=SC2034
       session_type="main"
 
       # shellcheck disable=SC2034
       _variables_stack=("${_session_variables[@]}")
 
-      show_config "${_argv[1]}"
+      show_config "${_argv[@]}"
 
       _fin[0]=0
       _fin[1]=0
