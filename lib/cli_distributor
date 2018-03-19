@@ -72,7 +72,7 @@ function cli_distributor() {
 
     if [[ "${#_argv[1]}" -eq 0 ]] ; then
 
-      printf "stdout: %s\n" "unknown key"
+      printf "stdout: %s\n" "invalid key"
 
     else
 
@@ -142,7 +142,15 @@ function cli_distributor() {
           # shellcheck disable=SC2034
           _variables_stack=("${_session_variables[@]}")
 
-          show_config "${_argv[@]}"
+          if (( $(echo "${_variables_stack[@]}" | grep -o "${_argv[1]}" | wc -w) == 1 )) ; then
+
+            show_config "${_argv[@]}"
+
+          else
+
+            printf "stdout: %s\n" "invalid key"
+
+          fi
 
         fi
 
@@ -187,7 +195,7 @@ function cli_distributor() {
 
       if [[ "${#_argv[1]}" -eq 0 ]] ; then
 
-        printf "stdout: %s\n" "unknown param"
+        printf "stdout: %s\n" "invalid param"
 
       else
 
@@ -224,7 +232,7 @@ function cli_distributor() {
 
       if [[ "${#_argv[1]}" -eq 0 ]] ; then
 
-        printf "stdout: %s\n" "unknown param"
+        printf "stdout: %s\n" "invalid param"
 
       else
 
@@ -263,7 +271,7 @@ function cli_distributor() {
 
     else
 
-      printf "stdout: %s\n" "unknown command"
+      printf "stdout: %s\n" "invalid module"
 
     fi
 
@@ -303,7 +311,7 @@ function cli_distributor() {
 
     else
 
-      printf "stdout: %s\n" "unknown command"
+      printf "stdout: %s\n" "invalid command"
 
     fi
 
@@ -336,13 +344,13 @@ function cli_distributor() {
 
     else
 
-      printf "stdout: %s\n" "unknown command"
+      printf "stdout: %s\n" "invalid param"
 
     fi
 
   else
 
-    printf "stdout: %s\n" "unknown command"
+    printf "stdout: %s\n" "invalid param"
 
   fi
 
