@@ -38,6 +38,11 @@ function sample() {
   category="scanning"
 
   # shellcheck disable=SC2034,SC2154
+  _module_cfg="${_modules}/${module_name}.cfg"
+
+  touch "$_module_cfg"
+
+  # shellcheck disable=SC2034,SC2154
   _module_show=$(printf "%s" "
     Module: ${module_name}
     Author: ${author}
@@ -55,27 +60,63 @@ function sample() {
 
       It's a sample module template - short description.
 
-    Options
-    -------
+    Commands
+    --------
 
-      help                  display module help
-      show                  display module info
-      config                display module configuration
+      help                        display module help
+      show                        display module info
+      config  <key>               show module configuration
+      set     <key>               set module variable value
+      list                        display scanning list commands
+      init <value>                run predefined scanning command
+
+      Options:
+
+        <key>                     key value
 
     Examples
     --------
 
-      config                displays the entire configuration
+      config dbpass               show 'dbpass' module key value
+      init fast_scan              run 'fast_scan' scanning profile
 ")
-
-  # shellcheck disable=SC2034
-  _module_variables=(\
-  "Testing:testing:testing_value")
 
   # shellcheck disable=SC2034
   export _module_opts=(\
   "$_module_show" \
   "$_module_help")
+
+  # shellcheck disable=SC2154
+  if [[ "$_mstate" -eq 0 ]] ; then
+
+    if [[ -e "$_module_cfg" ]] && [[ -s "$_module_cfg" ]] ; then
+
+      # shellcheck disable=SC1090
+      source "$_module_cfg"
+
+    else
+
+      # shellcheck disable=SC2034
+      _module_variables=(\
+      "Testing:testing:testing_value")
+
+      printf "_module_variables=(\"%s\")\n" "${_module_variables[@]}" > "$_module_cfg"
+
+      _mstate=1
+
+    fi
+
+  else
+
+    # shellcheck disable=SC1090
+    source "$_module_cfg"
+
+  fi
+
+  # shellcheck disable=SC2034
+  _module_commands=(\
+  "Fast Scanning:fast_scan:-sV -T4 -O -F $ipaddr" \
+  "ACK Scanning:ack_scan:-sA $ipaddr")
 
   return $_STATE
 
