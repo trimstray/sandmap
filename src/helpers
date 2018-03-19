@@ -367,13 +367,13 @@ function _init_cmd() {
   if [[ "$terminal" == "external" ]] ; then
 
     printf "\n\e[1;39m%s\e[m:\n" "terminal"
-    printf "\e[1;39m%c\e[m \e[0;30m%s\e[m\n" ">" "$terminal"
+    printf "\e[1;39m%c\e[m \e[1;30m%s\e[m\n" ">" "$terminal"
     _full_command+=("${_xterm}")
 
   else
 
     printf "\n\e[1;39m%s\e[m:\n" "terminal"
-    printf "\e[1;39m%c\e[m \e[0;30m%s\e[m\n" ">" "internal"
+    printf "\e[1;39m%c\e[m \e[1;30m%s\e[m\n" ">" "internal"
 
   fi
 
@@ -418,12 +418,12 @@ function _init_cmd() {
   if [[ "$terminal" == "external" ]] ; then
 
     printf "\n\e[1;39m%s\e[m:\n" "command"
-    printf "\e[1;39m%c\e[m \e[0;30m%s\e[m\n\n" ">" "${_full_command[*]}"
+    printf "\e[1;39m%c\e[m \e[1;30m%s\e[m\n\n" ">" "${_full_command[*]}"
 
   else
 
     printf "\n\e[1;39m%s\e[m:\n" "command"
-    printf "\e[1;39m%c\e[m \e[0;30m%s\e[m\n" ">" "${_full_command[*]}"
+    printf "\e[1;39m%c\e[m \e[1;30m%s\e[m\n" ">" "${_full_command[*]}"
 
   fi
 
