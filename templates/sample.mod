@@ -63,10 +63,6 @@ function sample() {
     Commands
     --------
 
-      help                        display module help
-      show                        display module info
-      config  <key>               show module configuration
-      set     <key>               set module variable value
       list                        display scanning list commands
       init <value>                run predefined scanning command
 
