@@ -25,34 +25,34 @@ function cli_help() {
   Main Commands
   -------------
 
-    help <key>            show this message, key optional
-    show <key>            show info about all modules, key optional
-    config <opt>          show global configuration
-    set [opt]             set key value
-    use <key>             set current module
+    help    <module>              show cli help or module help
+    show    <module>              show info about modules or module
+    config  <key>|<module [key]>  show global or module configuration
+    set     <key>|<module [key]>  set global or module variable value
+    use     <module>              use module (changed env)
 
-    reload                reload all modules
-    banner                show banner
+    reload  <modules|config>      reload all modules cache or configuration
+    banner                        show banner
 
     Options:
 
-      <key>               module name
-      [opt]               opt name
+      <module>                    module name
+      <key>                       key value
 
   Module Commands
   ---------------
 
-    help                  display module help
-    show                  display module info
-    config                display module configuration
-    set                   set key value
+    help                          display module help
+    show                          display module info
+    config  <key>                 show module configuration
+    set     <key>                 set module variable value
 
   Examples
   --------
 
-    show
-    sample                enable 'sample' module
-    config sample         show 'sample' module configuration
+    show sample                   show 'sample' module info
+    config terminal               show 'terminal' key value
+    use sample                    use 'sample' module
 
 "
 
