@@ -91,7 +91,7 @@ function cli_distributor() {
         source "$_module_cfg"
 
         # shellcheck disable=SC2034
-        _variables_stack=("${_module_variables[@]}")
+        _variables_stack=("${_session_variables[@]}" "${_module_variables[@]}")
 
         set_config "${_argv[@]}"
 
