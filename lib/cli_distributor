@@ -90,12 +90,15 @@ function cli_distributor() {
         # shellcheck disable=SC1090
         source "$_module_cfg"
 
+        _sess_num="${#_session_variables[@]}"
+
         # shellcheck disable=SC2034
         _variables_stack=("${_session_variables[@]}" "${_module_variables[@]}")
 
         set_config "${_argv[@]}"
 
-        _module_variables=("${_variables_stack[@]}")
+        _session_variables=("${_variables_stack[@]:0:${_sess_num}}")
+        _module_variables=("${_variables_stack[@]:${_sess_num}}")
 
         printf "_module_variables=(\"%s\")\n" "${_module_variables[@]}" > "$_module_cfg"
 
@@ -147,16 +150,34 @@ function cli_distributor() {
 
     else
 
-      # shellcheck disable=SC1090
-      source "$_module_cfg"
+      if [[ "${#_argv[1]}" -eq 0 ]] ; then
 
-      # shellcheck disable=SC2034
-      session_type="module"
+        # shellcheck disable=SC1090
+        source "$_module_cfg"
 
-      # shellcheck disable=SC2034
-      _variables_stack=("${_session_variables[@]}" "${_module_variables[@]}")
+        # shellcheck disable=SC2034
+        session_type="module"
 
-      show_config "${_argv[@]}"
+        # shellcheck disable=SC2034
+        _variables_stack=("${_session_variables[@]}" "${_module_variables[@]}")
+
+        show_config "${_argv[@]}"
+
+      else
+
+        # shellcheck disable=SC1090
+        source "$_module_cfg"
+
+        # shellcheck disable=SC2034
+        # It's a fake - We use it for checking specific key.
+        session_type="main"
+
+        # shellcheck disable=SC2034
+        _variables_stack=("${_session_variables[@]}" "${_module_variables[@]}")
+
+        show_config "${_argv[@]}"
+
+      fi
 
     fi
 
