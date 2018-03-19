@@ -59,12 +59,18 @@ function motd_cli() {
         "="
   printf "${_bold}\e[0;37m%s\e[m${_normal}" \
         ")"
-  printf "${_bold}\e[1;30m%s\e[m${_normal}\n" "
+  printf "${_bold}\e[1;30m%s\e[m${_normal}" "
         |\^/|
-        | ' |
+        | | |
         )\ /(
-       /  |  \\
-       |  @  |
+       /  |  \\"
+  printf "${_bold}\e[1;30m%s\e[m${_normal}" "
+       |  "
+  printf "${_bold}\e[1;33m%s\e[m${_normal}" \
+        "@"
+  printf "${_bold}\e[1;30m%s\e[m${_normal}" \
+        "  |"
+  printf "${_bold}\e[1;30m%s\e[m${_normal}\n" "
        |  |  |
        | / \ |
        | | | |
