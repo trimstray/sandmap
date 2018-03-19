@@ -246,7 +246,7 @@ function cli_distributor() {
 
     fi
 
-  elif [[ "${_argv[0]}" == "scans" ]] ; then
+  elif [[ "${_argv[0]}" == "list" ]] ; then
 
     if [[ "$_in_module" -eq 1 ]] ; then
 
