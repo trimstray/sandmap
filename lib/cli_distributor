@@ -250,13 +250,17 @@ function cli_distributor() {
 
     if [[ "$_in_module" -eq 1 ]] ; then
 
-      printf "\n  %-20.20s  %-20.20s  %-20.20s\n  %-20.20s  %-20.20s  %-20.20s\n\n" \
+      printf "\n  %-20.20s  %-4.4s %-20.20s  %-20.20s\n  %-20.20s  %-4.4s %-20.20s  %-20.20s\n\n" \
              "Description" \
+             "ID" \
              "Alias" \
              "Nmap Parameters" \
              "-----------" \
+             "--" \
              "-----" \
              "---------------"
+
+      _count=0
 
       # shellcheck disable=SC2034
       for _svar in "${_module_commands[@]}" ; do
@@ -268,11 +272,46 @@ function cli_distributor() {
         # shellcheck disable=SC2034
         _key_var=$(echo "$_svar" | awk -v FS="(:|:)" '{print $3}')
 
-        printf "  %-20.20s  %-20.20s  %-20s\n" "$_key_description" "$_key_id" "$_key_var"
+        printf "  %-20.20s  %-4.4s %-20.20s  %-20s\n" "$_key_description" "$_count" "$_key_id" "$_key_var"
+
+        _count=$((_count + 1))
 
       done
 
       echo
+
+    else
+
+      printf "stdout: %s\n" "unknown command"
+
+    fi
+
+  elif [[ "${_argv[0]}" == "init" ]] ; then
+
+    if [[ "$_in_module" -eq 1 ]] ; then
+
+      _count=0
+
+      for _scan in "${_module_commands[@]}" ; do
+
+        # shellcheck disable=SC2034
+        _key_id=$(echo "$_scan" | awk -v FS="(:|:)" '{print $2}')
+        # shellcheck disable=SC2034
+        _key_var=$(echo "$_scan" | awk -v FS="(:|:)" '{print $3}')
+
+        if [[ "${_argv[1]}" == "$_key_id" ]] ; then
+
+          _init_cmd "$_key_var"
+
+        elif [[ "${_argv[1]}" == "$_count" ]] ; then
+
+          _init_cmd "$_key_var"
+
+        fi
+
+        _count=$((_count + 1))
+
+      done
 
     else
 
