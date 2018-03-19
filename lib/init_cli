@@ -44,33 +44,34 @@ function motd_cli() {
   local _FUNCTION_ID="motd_cli"
   local _STATE=0
 
-  tput cup 5 0
-  printf "${_bold}   \e[2;31m%s\e[m${_normal}\n" \
-  "o"
-  printf "${_bold}    \e[2;31m%s\e[m${_normal}\n" \
-  "\\_/\\o"
-  printf "${_bold}    \e[2;31m%s\e[m${_normal}" \
-  "( "
-  printf "${_bold}\e[1;34m%s\e[m${_normal}" \
-  "Oo"
-  printf "${_bold}\e[2;31m%s\e[m${_normal}\n" \
-  ")         \\|/"
-  printf "${_bold}    \e[2;31m%s\e[m${_normal}\n" \
-  "(_=-)  .===O-  X"
-  printf "${_bold}    \e[2;31m%s\e[m${_normal}\n" \
-  "/   \\_/U'     /|\\"
-  printf "${_bold}    \e[2;31m%s\e[m${_normal}\n" \
-  "||  |_/"
-  printf "${_bold}    \e[2;31m%s\e[m${_normal}\n" \
-  "\\\\  |"
-  printf "${_bold}    \e[2;31m%s\e[m${_normal}\n" \
-  "{K ||"
-  printf "${_bold}    \e[2;31m%s\e[m${_normal}\n" \
-  "| PP"
-  printf "${_bold}    \e[2;31m%s\e[m${_normal}\n" \
-  "| ||"
-  printf "${_bold}    \e[2;31m%s\e[m${_normal}\n" \
-  "(__\\\\"
+  tput cup 1 0
+  printf "${_bold}\e[1;30m%s\e[m${_normal}\n" "
+        |\_/|
+        | | |
+        | | |"
+  printf "        ${_bold}\e[0;37m%s\e[m${_normal}" \
+        "("
+  printf "${_bold}\e[1;36m%s\e[m${_normal}" \
+        "="
+  printf "${_bold}\e[0;37m%s\e[m${_normal}" \
+        "|"
+  printf "${_bold}\e[1;36m%s\e[m${_normal}" \
+        "="
+  printf "${_bold}\e[0;37m%s\e[m${_normal}" \
+        ")"
+  printf "${_bold}\e[1;30m%s\e[m${_normal}\n" "
+        |\^/|
+        | ' |
+        )\ /(
+       /  |  \\
+       |  @  |
+       |  |  |
+       | / \ |
+       | | | |
+       | | | |
+       |_|_|_|
+      (_______)
+     [¦][¦+¦][¦]"
 
   tput cup 1 23 ; printf "%s" " _______                 __"
   tput cup 2 23 ; printf "%s" "|     __|.---.-.-----.--|  |.--------.---.-.-----."
