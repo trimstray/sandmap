@@ -173,6 +173,11 @@ function init_cli() {
 
         cstate="0" ;;
 
+      nmap)
+
+        _init_cmd "${input_array[@]:1}"
+        cstate="0" ;;
+
       exit)
 
         _exit_ 0 ;;
