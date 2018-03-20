@@ -2,11 +2,13 @@
 
 ## Releases
 
+<p align="center">
 |            **STABLE RELEASE**            |           **TESTING RELEASE**            |
 | :--------------------------------------: | :--------------------------------------: |
 | [![](https://img.shields.io/badge/Branch-master-green.svg)]() | [![](https://img.shields.io/badge/Branch-testing-orange.svg)]() |
 | [![](https://img.shields.io/badge/Version-v1.0.0-lightgrey.svg)]() | [![](https://img.shields.io/badge/Version-v1.0.0-lightgrey.svg)]() |
 | [![Build Status](https://travis-ci.org/profile/sandmap.svg?branch=master)](https://travis-ci.org/profile/sandmap) | [![Build Status](https://travis-ci.org/profile/sandmap.svg?branch=testing)](https://travis-ci.org/profile/sandmap) |
+</p>
 
 ## Description
 
