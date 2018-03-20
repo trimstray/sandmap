@@ -295,8 +295,6 @@ function cli_distributor() {
 
       init_module "$_ld_module"
 
-      "$_ld_module"
-
       # shellcheck disable=SC2034
       __cli_banner="$_fname"
 
