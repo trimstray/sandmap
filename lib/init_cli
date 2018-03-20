@@ -66,7 +66,7 @@ function motd_cli() {
   printf "${_bold}\e[1;30m%s\e[m${_normal}" "
        |  "
   printf "${_bold}\e[1;31m%s\e[m${_normal}" \
-        "#"
+        "+"
   printf "${_bold}\e[1;30m%s\e[m${_normal}" \
         "  |"
   printf "${_bold}\e[1;30m%s\e[m${_normal}\n" "
