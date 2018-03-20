@@ -52,6 +52,7 @@ function set_config() {
       _set_args
       # shellcheck disable=SC2034
       _key_var="$_args"
+      eval "$_session_key"="$_args"
 
       _variables_stack[$_acount]="${_key_description}:${_key_id}:${_key_var}"
 
