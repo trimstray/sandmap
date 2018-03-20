@@ -1,4 +1,4 @@
-# sandmap
+<h1 align="center">Sandmap</h1>
 
 ## Releases
 
