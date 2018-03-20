@@ -122,7 +122,18 @@ function cli_distributor() {
 
       else
 
-        if (( $(echo "${_argv[@]}" | grep -o "$_fname" | wc -w) == 1 )) ; then
+        _st=0
+        for i in "${_argv[@]}" ; do
+
+          if [[ "$i" == "$_fname" ]] ; then
+
+            _st=1
+
+          fi
+
+        done
+
+        if [[ "$_st" -eq 1 ]] ; then
 
           # shellcheck disable=SC2034
           session_type="module"
@@ -142,11 +153,24 @@ function cli_distributor() {
           # shellcheck disable=SC2034
           _variables_stack=("${_session_variables[@]}")
 
-          if (( $(echo "${_variables_stack[@]}" | grep -o "${_argv[1]}" | wc -w) == 1 )) ; then
+          _tc=0
+          for i in "${_variables_stack[@]}" ; do
 
-            show_config "${_argv[@]}"
+            _pvar=$(echo "$i" | awk -v FS="(:|:)" '{print $2}')
 
-          else
+            if [[ "$_pvar" == "${_argv[1]}" ]] ; then
+
+              show_config "${_argv[@]}"
+
+            else
+
+              _tc=$((_tc + 1))
+
+            fi
+
+          done
+
+          if [[ "$_tc" -eq ${#_variables_stack[@]} ]] ; then
 
             printf "stdout: %s\n" "invalid key"
 
@@ -251,8 +275,18 @@ function cli_distributor() {
 
   elif [[ "${_argv[0]}" == "use" ]] ; then
 
-    # shellcheck disable=SC2034
-    if (( $(echo "${_argv[@]}" | grep -o "$_fname" | wc -w) == 1 )) ; then
+    _st=0
+    for i in "${_argv[@]}" ; do
+
+      if [[ "$i" == "$_fname" ]] ; then
+
+        _st=1
+
+      fi
+
+    done
+
+    if [[ "$_st" -eq 1 ]] ; then
 
       _in_module=1
 
@@ -350,7 +384,7 @@ function cli_distributor() {
 
   else
 
-    printf "stdout: %s\n" "invalid param"
+    printf "stdout: %s\n" "unknown command"
 
   fi
 
