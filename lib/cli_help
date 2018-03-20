@@ -34,7 +34,7 @@ function cli_help() {
     reload  <modules|config>      reload all modules cache or configuration
     banner                        show banner
 
-    nmap <nmap_params>            clear nmap command
+    nmap    <nmap_params>         clear nmap command
 
     Options:
 

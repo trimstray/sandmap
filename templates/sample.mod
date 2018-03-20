@@ -63,18 +63,18 @@ function sample() {
     Commands
     --------
 
-      list                        display scanning list commands
-      init <value>                run predefined scanning command
+      list                          display scanning list commands
+      init     <value>              run predefined scanning command
 
       Options:
 
-        <key>                     key value
+        <key>                       key value
 
     Examples
     --------
 
-      config dbpass               show 'dbpass' module key value
-      init fast_scan              run 'fast_scan' scanning profile
+      config dbpass                 show 'dbpass' module key value
+      init fast_scan                run 'fast_scan' scanning profile
 ")
 
   # shellcheck disable=SC2034
