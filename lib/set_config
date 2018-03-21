@@ -34,13 +34,13 @@ function set_config() {
   for _svar in "${_variables_stack[@]}" ; do
 
     # shellcheck disable=SC2034
-    _key_description=$(echo "$_svar" | awk -v FS="(,|,)" '{print $1}')
+    _key_description=$(echo "$_svar" | awk -v FS="(;|;)" '{print $1}')
     # shellcheck disable=SC2034
-    _key_values=$(echo "$_svar" | awk -v FS="(,|,)" '{print $2}')
+    _key_values=$(echo "$_svar" | awk -v FS="(;|;)" '{print $2}')
     # shellcheck disable=SC2034
-    _key_id=$(echo "$_svar" | awk -v FS="(,|,)" '{print $3}')
+    _key_id=$(echo "$_svar" | awk -v FS="(;|;)" '{print $3}')
     # shellcheck disable=SC2034
-    _key_var=$(echo "$_svar" | awk -v FS="(,|,)" '{print $4}')
+    _key_var=$(echo "$_svar" | awk -v FS="(;|;)" '{print $4}')
 
     # For debug:
     # printf "%s , %s , %s , %s\n" \
@@ -57,7 +57,7 @@ function set_config() {
       _key_var="$_args"
       eval "$_session_key"="$_args"
 
-      _variables_stack[$_acount]="${_key_description},${_key_values},${_key_id},${_key_var}"
+      _variables_stack[$_acount]="${_key_description};${_key_values};${_key_id};${_key_var}"
 
     else
 
@@ -98,7 +98,7 @@ function _set_args() {
   local _FUNCTION_ID="_set_args"
   local _STATE=0
 
-  printf "\n  value: "
+  printf "\n  new value: "
   # shellcheck disable=SC2034
   read -ra _args
 
