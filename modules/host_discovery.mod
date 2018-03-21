@@ -3,22 +3,22 @@
 # shellcheck shell=bash
 
 # ``````````````````````````````````````````````````````````````````````````````
-# Function name: znmap()
+# Function name: host_discovery()
 #
 # Description:
-#   Sample module.
+#   Nmap Host Discovery module.
 #
 # Usage:
-#   znmap
+#   host_discovery
 #
 # Examples:
-#   znmap
+#   host_discovery
 #
 
-function znmap() {
+function host_discovery() {
 
   # shellcheck disable=SC2034
-  local _FUNCTION_ID="znmap"
+  local _FUNCTION_ID="host_discovery"
   local _STATE=0
 
   # User variables:
@@ -35,7 +35,7 @@ function znmap() {
   author="trimstray"
   contact="contact@nslab.at"
   version="1.0"
-  category="zenmap"
+  category="hosts"
 
   # shellcheck disable=SC2034,SC2154
   _module_cfg="${_modules}/${module_name}.cfg"
@@ -58,7 +58,7 @@ function znmap() {
     Description
     -----------
 
-      Zenmap predefined commands.
+      Nmap Host Discovery module.
 
     Commands
     --------
@@ -73,8 +73,7 @@ function znmap() {
     Examples
     --------
 
-      init intense_udp              run Intense scan plus UDP profile
-      init slow                     run Regular scan profile
+      init port_only                No host discovery. Port scan only.
 ")
 
   # shellcheck disable=SC2034
@@ -117,16 +116,14 @@ function znmap() {
 
   # shellcheck disable=SC2034
   _module_commands=(\
-  "Intense scan;'';intense;-T4 -A -v" \
-  "Intense scan plus UDP;'';intense_udp;-sS -sU -T4 -A -v" \
-  "Intense scan, all TCP ports;'';intense_all_tcp;-p 1-65535 -T4 -A -v" \
-  "Intense scan, no ping;'';intense_no_ping;-T4 -A -v -Pn" \
-  "Ping scan;'';ping_scan;-sn" \
-  "Quick scan;'';quick;-T4 -F" \
-  "Quick scan plus;'';quick_plus;-sV -T4 -O -F --version-light" \
-  "Quick traceroute;'';quick_trace;-sn --traceroute" \
-  "Regular scan;'';regular;" \
-  "Slow comprehensive scan;'';slow;-sS -sU -T4 -A -v -PE -PP -PS80,443 -PA3389 -PU40125 -PY -g 53 --script \"default or (discovery and safe)\"" \
+  "No Scan. List targets only;'';targets;-sL" \
+  "No port scanning. Host discovery only;'';discovery;-sn" \
+  "No host discovery. Port scan only;'';port_only;-Pn" \
+  "TCP SYN discovery;'';tcp_syn_disc;-PS $port" \
+  "TCP ACK discovery;'';tcp_ack_disc;-PA $port" \
+  "UDP discovery;'';udp_disc;-PU $port" \
+  "ARP discovery on local network;'';arp_disc;-PR" \
+  "Never do DNS resolution;'';no_dns;-n" \
   )
 
   return $_STATE

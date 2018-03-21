@@ -3,22 +3,22 @@
 # shellcheck shell=bash
 
 # ``````````````````````````````````````````````````````````````````````````````
-# Function name: service_os()
+# Function name: service_detection()
 #
 # Description:
-#   Service and OS Detection module.
+#   Service and Version Detection module.
 #
 # Usage:
-#   service_os
+#   service_detection
 #
 # Examples:
-#   service_os
+#   service_detection
 #
 
-function service_os() {
+function service_detection() {
 
   # shellcheck disable=SC2034
-  local _FUNCTION_ID="service_os"
+  local _FUNCTION_ID="service_detection"
   local _STATE=0
 
   # User variables:
@@ -58,7 +58,7 @@ function service_os() {
     Description
     -----------
 
-      Service and OS Detection module.
+      Service and Version Detection module.
 
     Commands
     --------
@@ -110,6 +110,9 @@ function service_os() {
     source "$_module_cfg"
 
   fi
+
+  # In the given commands you can use variables from the CLI config
+  # command or the etc/main.cfg file.
 
   # shellcheck disable=SC2034
   _module_commands=(\
