@@ -592,6 +592,7 @@ function _before_init() {
     "${_FUNCTION_ID}()" \
     "directory change error: '$_rel'"
 
+  # shellcheck disable=SC2154
   : >"$_log_stdout"
 
   return "$_STATE"
