@@ -94,7 +94,7 @@ function sample() {
 
       # shellcheck disable=SC2034
       _module_variables=(\
-      "Testing:testing:testing_value")
+      "Testing;'test1|test2';testing;testing_value")
 
       printf "_module_variables=(\"%s\")\n" "${_module_variables[@]}" > "$_module_cfg"
 
@@ -111,8 +111,8 @@ function sample() {
 
   # shellcheck disable=SC2034
   _module_commands=(\
-  "Fast Scanning:fast_scan:-sV -T4 -O -F $ipaddr" \
-  "ACK Scanning:ack_scan:-sA $ipaddr")
+  "Fast Scanning;;fast_scan;-sV -T4 -O -F $ipaddr" \
+  "ACK Scanning;;ack_scan;-sA $ipaddr")
 
   return $_STATE
 
