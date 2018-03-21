@@ -364,7 +364,7 @@ function cli_distributor() {
 
     if [[ "$_in_module" -eq 1 ]] ; then
 
-      printf "\n  %-30.40s  %-4.4s %-30.40s  %-30.40s\n  %-30.40s  %-4.4s %-30.40s  %-30.40s\n\n" \
+      printf "\n  %-40.40s  %-4.4s %-20.20s  %-30.40s\n  %-40.40s  %-4.4s %-20.20s  %-30.40s\n\n" \
              "Description" \
              "ID" \
              "Alias" \
@@ -388,7 +388,7 @@ function cli_distributor() {
         # shellcheck disable=SC2034
         _key_var=$(echo "$_svar" | awk -v FS="(;|;)" '{print $4}')
 
-        printf "  %-30.40s  %-4.4s %-30.40s  %-40s\n" \
+        printf "  %-40.40s  %-4.4s %-20.20s  %-40s\n" \
         "$_key_description" \
         "$_count" \
         "$_key_id" \
