@@ -48,7 +48,7 @@
 
 ## Description
 
-**Sandmap** is a tool supporting network and system reconnaissance using the massive Nmap engine. It provides a user-friendly interface, automates and speeds up scanning and allows you to easily use many advanced scanning techniques.
+**Sandmap** is a tool supporting network and system reconnaissance using the massive **Nmap engine**. It provides a user-friendly interface, automates and speeds up scanning and allows you to easily use many advanced scanning techniques.
 
 ### Key Features
 
