@@ -19,8 +19,8 @@ _mstate=0
 _module_cfg=""
 
 # shellcheck disable=SC2034
-# Xterm.
-_xterm="xterm"
+# Store xterm params (for external type of terminal).
+readonly _xterm="xterm -hold -fa monaco -fs 10 -bg black -e"
 
 readonly _und=$(tput smul)
 readonly _nound=$(tput rmul)
