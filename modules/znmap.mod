@@ -114,16 +114,16 @@ function znmap() {
 
   # shellcheck disable=SC2034
   _module_commands=(\
-  "Intense scan;'';intense;-T4 -A -v $dst" \
-  "Intense scan plus UDP;'';intense_udp;-sS -sU -T4 -A -v $dst" \
-  "Intense scan, all TCP ports;'';intense_all_tcp;-p 1-65535 -T4 -A -v $dst" \
-  "Intense scan, no ping;'';intense_no_ping;-T4 -A -v -Pn $dst" \
-  "Ping scan;'';ping_scan;-sn $dst" \
-  "Quick scan;'';quick;-T4 -F $dst" \
-  "Quick scan plus;'';quick_plus;-sV -T4 -O -F --version-light $dst" \
-  "Quick traceroute;'';quick_trace;-sn --traceroute $dst" \
+  "Intense scan;'';intense;-T4 -A -v" \
+  "Intense scan plus UDP;'';intense_udp;-sS -sU -T4 -A -v" \
+  "Intense scan, all TCP ports;'';intense_all_tcp;-p 1-65535 -T4 -A -v" \
+  "Intense scan, no ping;'';intense_no_ping;-T4 -A -v -Pn" \
+  "Ping scan;'';ping_scan;-sn" \
+  "Quick scan;'';quick;-T4 -F" \
+  "Quick scan plus;'';quick_plus;-sV -T4 -O -F --version-light" \
+  "Quick traceroute;'';quick_trace;-sn --traceroute" \
   "Regular scan;'';regular;$dst" \
-  "Slow comprehensive scan;'';slow;-sS -sU -T4 -A -v -PE -PP -PS80,443 -PA3389 -PU40125 -PY -g 53 --script \"default or (discovery and safe)\" $dst" \
+  "Slow comprehensive scan;'';slow;-sS -sU -T4 -A -v -PE -PP -PS80,443 -PA3389 -PU40125 -PY -g 53 --script \"default or (discovery and safe)\"" \
   )
 
   return $_STATE

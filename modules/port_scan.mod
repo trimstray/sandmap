@@ -113,10 +113,13 @@ function port_scan() {
 
   # shellcheck disable=SC2034
   _module_commands=(\
-  "TCP connect;'';tcp_conn;-sT $dst" \
-  "TCP SYN scan;'';tcp_syn;-sS $dst" \
-  "UDP ports scan;'';udp;-sU $dst" \
-  "Ports and ignore discovery;'';ports_not_disc;-Pn -F $dst" \
+  "TCP connect;'';tcp_conn;-sT" \
+  "TCP SYN scan;'';tcp_syn;-sS" \
+  "TCP ACK port scan;'';tcp_ack;-sA" \
+  "TCP Window port scan;'';tcp_window;-sW" \
+  "TCP Maimon port scan;'';tcp_maimon;-sU" \
+  "UDP ports scan;'';udp;-sM" \
+  "Ports and ignore discovery;'';ports_not_disc;-Pn -F" \
   )
 
   return $_STATE

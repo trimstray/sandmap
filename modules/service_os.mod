@@ -113,10 +113,10 @@ function service_os() {
 
   # shellcheck disable=SC2034
   _module_commands=(\
-  "Detect OS and Services;'';os_service;-A $dst" \
-  "Standard Service Detection;'';standard;-sV $dst" \
-  "Aggressive Service Detection;'';more_aggressive;-sV --version-intensity 5 $dst" \
-  "Banner Grabbing Detection;'';banner;-sV --version-intensity 0 $dst" \
+  "Detect OS and Services;'';os_service;-A" \
+  "Standard Service Detection;'';standard;-sV" \
+  "Aggressive Service Detection;'';more_aggressive;-sV --version-intensity 5" \
+  "Banner Grabbing Detection;'';banner;-sV --version-intensity 0" \
   )
 
   return $_STATE
