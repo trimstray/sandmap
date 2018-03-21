@@ -46,7 +46,7 @@ function motd_cli() {
   _cl="1;30m"
 
   tput cup 1 0
-  printf "${_bold}\e[0;38m%s\e[m${_normal}\n" "
+  printf "${_bold}\e[${_cl}%s\e[m${_normal}\n" "
         |\_/|
         | | |
         | | |"
