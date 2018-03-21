@@ -388,19 +388,19 @@ function _init_cmd() {
 
         _output_opt="-oN"
         # shellcheck disable=SC2154
-        _output_path="${_output_directory}/scan.$(date +%s).nmap"
+        _output_path="${_out}/scan.$(date +%s).nmap"
         _output_targ=" ${_output_opt} ${_output_path}" ;;
 
       xml)
 
         _output_opt="-oX"
-        _output_path="${_output_directory}/scan.$(date +%s).xml"
+        _output_path="${_out}/scan.$(date +%s).xml"
         _output_targ=" ${_output_opt} ${_output_path}" ;;
 
       grep)
 
         _output_opt="-oG"
-        _output_path="${_output_directory}/scan.$(date +%s).grep"
+        _output_path="${_out}/scan.$(date +%s).grep"
         _output_targ=" ${_output_opt} ${_output_path}" ;;
 
       *) true ;;
