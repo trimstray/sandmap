@@ -73,7 +73,8 @@ function znmap() {
     Examples
     --------
 
-      init fast_scan                run 'fast_scan' scanning profile
+      init intense_udp              run Intense scan plus UDP profile
+      init slow                     run Regular scan profile
 ")
 
   # shellcheck disable=SC2034
