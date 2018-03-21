@@ -98,9 +98,11 @@ function _set_args() {
   local _FUNCTION_ID="_set_args"
   local _STATE=0
 
-  printf "value: "
+  printf "\n  value: "
   # shellcheck disable=SC2034
   read -ra _args
+
+  echo
 
   return $_STATE
 
