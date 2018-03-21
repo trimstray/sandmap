@@ -109,7 +109,7 @@ function znmap() {
 
   # shellcheck disable=SC2034
   _module_commands=(\
-  "Intense scan;'';intense;T4 -A -v $dst" \
+  "Intense scan;'';intense;-T4 -A -v $dst" \
   "Intense scan plus UDP;'';intense_udp;-sS -sU -T4 -A -v $dst" \
   "Intense scan, all TCP ports;'';intense_all_tcp;-p 1-65535 -T4 -A -v $dst" \
   "Intense scan, no ping;'';intense_no_ping;-T4 -A -v -Pn $dst" \
