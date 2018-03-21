@@ -156,7 +156,7 @@ function cli_distributor() {
           _tc=0
           for i in "${_variables_stack[@]}" ; do
 
-            _pvar=$(echo "$i" | awk -v FS="(:|:)" '{print $2}')
+            _pvar=$(echo "$i" | awk -v FS="(,|,)" '{print $3}')
 
             if [[ "$_pvar" == "${_argv[1]}" ]] ; then
 
@@ -327,13 +327,19 @@ function cli_distributor() {
       for _svar in "${_module_commands[@]}" ; do
 
         # shellcheck disable=SC2034
-        _key_description=$(echo "$_svar" | awk -v FS="(:|:)" '{print $1}')
+        _key_description=$(echo "$_svar" | awk -v FS="(,|,)" '{print $1}')
         # shellcheck disable=SC2034
-        _key_id=$(echo "$_svar" | awk -v FS="(:|:)" '{print $2}')
+        _key_values=$(echo "$_svar" | awk -v FS="(,|,)" '{print $2}')
         # shellcheck disable=SC2034
-        _key_var=$(echo "$_svar" | awk -v FS="(:|:)" '{print $3}')
+        _key_id=$(echo "$_svar" | awk -v FS="(,|,)" '{print $3}')
+        # shellcheck disable=SC2034
+        _key_var=$(echo "$_svar" | awk -v FS="(,|,)" '{print $4}')
 
-        printf "  %-20.20s  %-4.4s %-20.20s  %-20s\n" "$_key_description" "$_count" "$_key_id" "$_key_var"
+        printf "  %-20.20s  %-4.4s %-20.20s  %-20s\n" \
+        "$_key_description" \
+        "$_count" \
+        "$_key_id" \
+        "$_key_var"
 
         _count=$((_count + 1))
 
@@ -356,9 +362,9 @@ function cli_distributor() {
       for _scan in "${_module_commands[@]}" ; do
 
         # shellcheck disable=SC2034
-        _key_id=$(echo "$_scan" | awk -v FS="(:|:)" '{print $2}')
+        _key_id=$(echo "$_scan" | awk -v FS="(,|,)" '{print $3}')
         # shellcheck disable=SC2034
-        _key_var=$(echo "$_scan" | awk -v FS="(:|:)" '{print $3}')
+        _key_var=$(echo "$_scan" | awk -v FS="(,|,)" '{print $4}')
 
         if [[ "${_argv[1]}" == "$_key_id" ]] ; then
 

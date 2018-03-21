@@ -22,14 +22,14 @@ function init_config() {
   local _STATE=0
 
   export _session_variables=(\
-  "IP address:ipaddr:$ipaddr" \
-  "Service port number:port:$port" \
-  "Network interface:iface:$iface" \
-  "MAC address:hwaddr:$hwaddr" \
-  "Domain name:domain:$domain" \
-  "Report type:report:$report" \
-  "Pass through TOR:tor:$tor" \
-  "Terminal type:terminal:$terminal")
+  "IP address,'0.0.0.0-255.255.255.255',ipaddr,$ipaddr" \
+  "Service port number,'1-65535',port,$port" \
+  "Network interface,'interface',iface,$iface" \
+  "MAC address,'00:00:00:00:00:00-FF:FF:FF:FF:FF:FF',hwaddr,$hwaddr" \
+  "Domain name,'domain',domain,$domain" \
+  "Report type,'nmap|xml|grep',report,$report" \
+  "Pass through TOR,'true|false',tor,$tor" \
+  "Terminal type,'internal|external',terminal,$terminal")
 
   return $_STATE
 
