@@ -42,7 +42,7 @@
 <br>
 
 <p align="center">
-    <img src="https://i.imgur.com/WsdUgPl.gif"
+    <img src="https://i.imgur.com/zEDn8bm.gif"
         alt="Master">
 </p>
 
@@ -57,6 +57,7 @@
 - support Nmap Scripting Engine (NSE)
 - TOR support (with proxychains)
 - multiple scans at one time
+- at this point, the module that supports Zenmap commands
 
 ## How To Use
 
