@@ -136,13 +136,18 @@ function cli_distributor() {
       else
 
         _st=0
-        for i in "${_argv[@]}" ; do
+        for i in "${_argv[@]:1}" ; do
 
-          if [[ "$i" == "$_fname" ]] ; then
+          for j in "${modules_list[@]}" ; do
 
-            _st=1
+            if [[ "$i" == "$j" ]] ; then
 
-          fi
+              _st=1
+              _fname="$j"
+
+            fi
+
+          done
 
         done
 
@@ -319,13 +324,18 @@ function cli_distributor() {
   elif [[ "${_argv[0]}" == "use" ]] ; then
 
     _st=0
-    for i in "${_argv[@]}" ; do
+    for i in "${_argv[@]:1}" ; do
 
-      if [[ "$i" == "$_fname" ]] ; then
+      for j in "${modules_list[@]}" ; do
 
-        _st=1
+        if [[ "$i" == "$j" ]] ; then
 
-      fi
+          _st=1
+          _fname="$j"
+
+        fi
+
+      done
 
     done
 
