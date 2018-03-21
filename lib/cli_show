@@ -24,7 +24,7 @@ function cli_show() {
   # shellcheck disable=SC2154
   _modules_count=$(find "${_modules}" -name '*.mod' | wc -l)
 
-  printf "\n  %s: \e[5;33m%s\e[m\n" \
+  printf "\n  %s: \e[1;33m%s\e[m\n" \
          "Modules" "$_modules_count"
 
   printf "\n  %s\n\n" "Available:"
