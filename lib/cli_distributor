@@ -156,7 +156,7 @@ function cli_distributor() {
           if [[ "${#_module_variables[@]}" -eq 0 ]] ; then
 
             # shellcheck disable=SC2034
-            _variables_stack=()
+            true
 
           else
 
