@@ -22,7 +22,7 @@ function cli_config() {
   local _STATE=0
 
   # shellcheck disable=SC2034,SC2154
-  _config_file="${_cfg}/config.cfg"
+  _config_file="${_cfg}/main.cfg"
 
   if [[ -e "$_config_file" ]] ; then
 
