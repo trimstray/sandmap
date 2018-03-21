@@ -67,7 +67,7 @@ function show_config() {
 
       printf "  Description: \e[0;37m%s\e[m\n" \
       "$_key_description"
-      printf "    Values: \e[0;37m%s\e[m\n" \
+      printf "    Examples: \e[0;37m%s\e[m\n" \
       "$_key_values"
       printf "    { \"\e[0;38m%s\e[m\":\"\e[1;36m%s\e[m\" }\n\n" \
       "$_key_id" \
@@ -82,7 +82,7 @@ function show_config() {
 
         printf "  Description: \e[0;37m%s\e[m\n" \
         "$_key_description"
-        printf "    Values: \e[0;37m%s\e[m\n" \
+        printf "    Examples: \e[0;37m%s\e[m\n" \
         "$_key_values"
         printf "    { \"\e[0;38m%s\e[m\":\"\e[1;36m%s\e[m\" }\n\n" \
         "$_key_id" \
