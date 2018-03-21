@@ -3,22 +3,22 @@
 # shellcheck shell=bash
 
 # ``````````````````````````````````````````````````````````````````````````````
-# Function name: sample()
+# Function name: znmap()
 #
 # Description:
 #   Sample module.
 #
 # Usage:
-#   sample
+#   znmap
 #
 # Examples:
-#   sample
+#   znmap
 #
 
-function sample() {
+function znmap() {
 
   # shellcheck disable=SC2034
-  local _FUNCTION_ID="sample"
+  local _FUNCTION_ID="znmap"
   local _STATE=0
 
   # User variables:
