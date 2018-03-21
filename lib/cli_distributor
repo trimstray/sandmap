@@ -92,15 +92,28 @@ function cli_distributor() {
 
         _sess_num="${#_session_variables[@]}"
 
-        # shellcheck disable=SC2034
-        _variables_stack=("${_session_variables[@]}" "${_module_variables[@]}")
+        if [[ "${#_module_variables[@]}" -eq 0 ]] ; then
 
-        set_config "${_argv[@]}"
+          # shellcheck disable=SC2034
+          _variables_stack=("${_session_variables[@]}")
 
-        _session_variables=("${_variables_stack[@]:0:${_sess_num}}")
-        _module_variables=("${_variables_stack[@]:${_sess_num}}")
+          set_config "${_argv[@]}"
 
-        printf "_module_variables=(\"%s\")\n" "${_module_variables[@]}" > "$_module_cfg"
+          _session_variables=("${_variables_stack[@]:0:${_sess_num}}")
+
+        else
+
+          # shellcheck disable=SC2034
+          _variables_stack=("${_session_variables[@]}" "${_module_variables[@]}")
+
+          set_config "${_argv[@]}"
+
+          _session_variables=("${_variables_stack[@]:0:${_sess_num}}")
+          _module_variables=("${_variables_stack[@]:${_sess_num}}")
+
+          printf "_module_variables=(\"%s\")\n" "${_module_variables[@]}" > "$_module_cfg"
+
+        fi
 
       fi
 
@@ -140,8 +153,17 @@ function cli_distributor() {
 
           init_module "${_argv[@]}"
 
-          # shellcheck disable=SC2034
-          _variables_stack=("${_module_variables[@]}")
+          if [[ "${#_module_variables[@]}" -eq 0 ]] ; then
+
+            # shellcheck disable=SC2034
+            _variables_stack=()
+
+          else
+
+            # shellcheck disable=SC2034
+            _variables_stack=("${_module_variables[@]}")
+
+          fi
 
           show_config "${_argv[@]}"
 
@@ -190,10 +212,22 @@ function cli_distributor() {
         # shellcheck disable=SC2034
         session_type="module"
 
-        # shellcheck disable=SC2034
-        _variables_stack=("${_session_variables[@]}" "${_module_variables[@]}")
 
-        show_config "${_argv[@]}"
+        if [[ "${#_module_variables[@]}" -eq 0 ]] ; then
+
+          # shellcheck disable=SC2034
+          _variables_stack=("${_session_variables[@]}")
+
+          show_config "${_argv[@]}"
+
+        else
+
+          # shellcheck disable=SC2034
+          _variables_stack=("${_session_variables[@]}" "${_module_variables[@]}")
+
+          show_config "${_argv[@]}"
+
+        fi
 
       else
 
@@ -204,8 +238,17 @@ function cli_distributor() {
         # It's a fake - We use it for checking specific key.
         session_type="main"
 
-        # shellcheck disable=SC2034
-        _variables_stack=("${_session_variables[@]}" "${_module_variables[@]}")
+        if [[ "${#_module_variables[@]}" -eq 0 ]] ; then
+
+          # shellcheck disable=SC2034
+          _variables_stack=("${_session_variables[@]}")
+
+        else
+
+          # shellcheck disable=SC2034
+          _variables_stack=("${_session_variables[@]}" "${_module_variables[@]}")
+
+        fi
 
         show_config "${_argv[@]}"
 
