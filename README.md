@@ -85,10 +85,10 @@ The `etc/main.cfg` configuration file has the following structure:
 ```bash
 # shellcheck shell=bash
 
-# Specifies the default ip address.
+# Specifies the default destination.
 # Examples:
-#   - ipaddr=("127.0.0.1" "8.8.8.8")
-ipaddr="127.0.0.1"
+#   - dst="127.0.0.1,8.8.8.8"
+dst="127.0.0.1"
 
 # Specifies the default port number.
 # Examples:
@@ -105,14 +105,9 @@ iface="eth0"
 #   - hwaddr="00:01:02:03:04:05"
 hwaddr=""
 
-# Specifies the default domain name.
-# Examples:
-#   - domain="example.com"
-domain="example.com"
-
 # Specifies the default output type and path.
 # Examples:
-#   - report="html"
+#   - report="xml"
 report=""
 
 # Specifies the TOR connection.
@@ -124,7 +119,6 @@ tor=""
 # Examples:
 #   - terminal="internal"
 terminal="internal"
-
 ```
 
 ## Requirements
