@@ -94,7 +94,11 @@ function znmap() {
       # shellcheck disable=SC2034
       _module_variables=()
 
-      printf "_module_variables=(\"%s\")\n" "${_module_variables[@]}" > "$_module_cfg"
+      if [[ "${#_module_variables[@]}" -ne 0 ]] ; then
+
+        printf "_module_variables=(\"%s\")\n" "${_module_variables[@]}" > "$_module_cfg"
+
+      fi
 
       _mstate=1
 
