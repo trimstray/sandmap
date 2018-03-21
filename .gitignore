@@ -1,5 +1,8 @@
 # This is where the result of the script output.
 log/
 
+# Not tracking module config files.
+modules/*.cfg
+
 # Nmap output scans.
 output/
