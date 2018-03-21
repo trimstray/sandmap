@@ -21,7 +21,7 @@
 </p>
 
 <p align="center">
- • <a href="#description">Description</a>
+   <a href="#description">Description</a>
  • <a href="#how-to-use">How To Use</a>
  • <a href="#configuration-file">Configuration File</a>
  • <a href="#requirements">Requirements</a>
