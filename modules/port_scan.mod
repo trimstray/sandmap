@@ -6,7 +6,7 @@
 # Function name: port_scan()
 #
 # Description:
-#   Sample module.
+#   Nmap Port Scan types module.
 #
 # Usage:
 #   port_scan
@@ -58,7 +58,7 @@ function port_scan() {
     Description
     -----------
 
-      Zenmap predefined commands.
+      Nmap Port Scan types module.
 
     Commands
     --------
