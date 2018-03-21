@@ -11,8 +11,8 @@
     <img src="https://img.shields.io/badge/Version-v1.0.0-lightgrey.svg"
         alt="v1.0.0">
   </a>
-  <a href="https://travis-ci.org/profile/sandmap">
-    <img src="https://travis-ci.org/profile/sandmap.svg?branch=master"
+  <a href="https://travis-ci.org/trimstray/sandmap">
+    <img src="https://travis-ci.org/trimstray/sandmap.svg?branch=master"
         alt="Master">
   <a href="http://www.gnu.org/licenses/">
     <img src="https://img.shields.io/badge/license-GNU-blue.svg"
