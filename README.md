@@ -57,7 +57,7 @@
 - support **Nmap Scripting Engine** (NSE)
 - **TOR** support (with proxychains)
 - multiple scans at one time
-- at this point: **3** modules with **18** scan techniques
+- at this point: **5** modules with **36** scan techniques
 
 ## How To Use
 
