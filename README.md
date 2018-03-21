@@ -7,9 +7,9 @@
     <img src="https://img.shields.io/badge/Branch-master-green.svg"
         alt="Master">
   </a>
-  <a href="https://img.shields.io/badge/Version-v1.0.0-lightgrey.svg">
-    <img src="https://img.shields.io/badge/Version-v1.0.0-lightgrey.svg"
-        alt="v1.0.0">
+  <a href="https://img.shields.io/badge/Version-v1.0.1-lightgrey.svg">
+    <img src="https://img.shields.io/badge/Version-v1.0.1-lightgrey.svg"
+        alt="v1.0.1">
   </a>
   <a href="https://travis-ci.org/trimstray/sandmap">
     <img src="https://travis-ci.org/trimstray/sandmap.svg?branch=master"
