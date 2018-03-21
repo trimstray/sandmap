@@ -52,12 +52,12 @@
 
 ### Key Features
 
-- simple CLI with the ability to run pure Nmap engine
-- predefined scans included in the modules
-- support Nmap Scripting Engine (NSE)
-- TOR support (with proxychains)
+- simple **CLI** with the ability to run pure **Nmap engine**
+- predefined scans included in the **modules**
+- support **Nmap Scripting Engine** (NSE)
+- **TOR** support (with proxychains)
 - multiple scans at one time
-- at this point, the module that supports Zenmap commands
+- at this point: **3** modules with **18** scan techniques
 
 ## How To Use
 
