@@ -21,8 +21,41 @@ function init_show() {
   local _FUNCTION_ID="init_show"
   local _STATE=0
 
-  # shellcheck disable=SC2154
-  printf "%s\n\n" "${_module_opts[0]}"
+  _count=0
+
+  printf "\n  \e[1;38m%-40.40s  %-4.4s %-20.20s %-30.40s\e[m\n  %-40.40s  %-4.4s %-20.20s %s\n\n" \
+         "Description" \
+         "ID" \
+         "Alias" \
+         "Nmap Parameters" \
+         "-----------" \
+         "--" \
+         "-----" \
+         "---------------"
+
+  # shellcheck disable=SC2034,SC2154
+  for _svar in "${_module_commands[@]}" ; do
+
+    # shellcheck disable=SC2034
+    _key_description=$(echo "$_svar" | awk -v FS="(;|;)" '{print $1}')
+    # shellcheck disable=SC2034
+    _key_values=$(echo "$_svar" | awk -v FS="(;|;)" '{print $2}')
+    # shellcheck disable=SC2034
+    _key_id=$(echo "$_svar" | awk -v FS="(;|;)" '{print $3}')
+    # shellcheck disable=SC2034
+    _key_var=$(echo "$_svar" | awk -v FS="(;|;)" '{print $4}')
+
+    printf "  %-40.40s  \e[1;32m%-4.4s\e[m \e[1;36m%-20.20s\e[m %s\n" \
+           "$_key_description" \
+           "$_count" \
+           "$_key_id" \
+           "$_key_var"
+
+    _count=$((_count + 1))
+
+  done
+
+  echo
 
   return $_STATE
 
