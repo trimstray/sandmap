@@ -7,9 +7,9 @@
     <img src="https://img.shields.io/badge/Branch-master-green.svg"
         alt="Master">
   </a>
-  <a href="https://img.shields.io/badge/Version-v1.0.1-lightgrey.svg">
-    <img src="https://img.shields.io/badge/Version-v1.0.1-lightgrey.svg"
-        alt="v1.0.1">
+  <a href="https://img.shields.io/badge/Version-v1.0.2-lightgrey.svg">
+    <img src="https://img.shields.io/badge/Version-v1.0.2-lightgrey.svg"
+        alt="v1.0.2">
   </a>
   <a href="https://travis-ci.org/trimstray/sandmap">
     <img src="https://travis-ci.org/trimstray/sandmap.svg?branch=master"
@@ -23,6 +23,7 @@
 <p align="center">
    <a href="#description">Description</a>
  • <a href="#how-to-use">How To Use</a>
+ • <a href="#modules">Modules</a>
  • <a href="#configuration-file">Configuration File</a>
  • <a href="#requirements">Requirements</a>
  • <a href="#logging">Logging</a>
@@ -57,7 +58,7 @@
 - support **Nmap Scripting Engine** (NSE)
 - **TOR** support (with proxychains)
 - multiple scans at one time
-- at this point: **5** modules with **35** scan techniques
+- at this point: **7** modules with **43** scan profiles
 
 ## How To Use
 
@@ -79,6 +80,11 @@ sandmap
 
 > * symlink to `bin/sandmap` is placed in `/usr/local/bin`
 > * man page is placed in `/usr/local/man/man8`
+
+## Modules
+
+Available modules: **7**
+Available scan profiles: **43**
 
 ## Configuration file
 
