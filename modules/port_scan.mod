@@ -123,7 +123,6 @@ function port_scan() {
   "TCP Maimon port scan;'';tcp_maimon;-sU" \
   "UDP ports scan;'';udp;-sM" \
   "Fast port scan (100 ports);'';fast;-F" \
-  "UDP ports scan;'';udp;-sM" \
   "Ports and ignore discovery;'';ports_not_disc;-Pn -F" \
   )
 
