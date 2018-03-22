@@ -33,3 +33,6 @@ trap "_get_trap_SIG EXIT" EXIT
 
 # shellcheck disable=SC2173
 trap "_get_trap_SIG SIGS" SIGHUP SIGTERM SIGKILL SIGINT
+
+# Set properly terminal size if you use X-Session.
+if [ ! -z "${DISPLAY:-}" ]; then resize -s 40 180 > /dev/null ; fi
