@@ -42,8 +42,12 @@ function __main__() {
   # Store modules list.
   # shellcheck disable=SC2034
   modules_list=()
-# shellcheck disable=SC2034
+  # shellcheck disable=SC2034
   modules_full_list=()
+  # shellcheck disable=SC2034
+  _module_commands_count=0
+  # shellcheck disable=SC2034
+  _module_commands_count_all=0
 
   # External configuration file (-c|--config script param).
   config=""
