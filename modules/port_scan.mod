@@ -57,7 +57,7 @@ function port_scan() {
     --------
 
       show                          display info about module
-      list                          display scanning list commands
+      list                          display scanning list profiles (commands)
       init     <value>              run predefined scanning command
 
       Options:
