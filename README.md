@@ -83,7 +83,7 @@ sandmap
 
 ## Modules
 
-Available modules: **7**
+Available modules: **7**  
 Available scan profiles: **43**
 
 ## Configuration file
