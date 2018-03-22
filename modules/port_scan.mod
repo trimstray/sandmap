@@ -25,8 +25,10 @@ function port_scan() {
   # - module_name: store module name
   # - module_args: store module arguments
 
-  _module_show=
-  _module_help=
+  export _module_show=
+  export _module_help=
+  export _module_opts=
+  export _module_commands=
 
   # shellcheck disable=SC2034
   _module_variables=()
@@ -35,21 +37,12 @@ function port_scan() {
   author="trimstray"
   contact="contact@nslab.at"
   version="1.0"
-  category="ports"
+  description="Nmap Port Scan types module"
 
   # shellcheck disable=SC2034,SC2154
   _module_cfg="${_modules}/${module_name}.cfg"
 
   touch "$_module_cfg"
-
-  # shellcheck disable=SC2034,SC2154
-  _module_show=$(printf "%s" "
-    Module: ${module_name}
-    Author: ${author}
-   Contact: ${contact}
-   Version: ${version}
-  Category: ${category}
-")
 
   # shellcheck disable=SC2034,SC2154
   _module_help=$(printf "%s" "
@@ -63,6 +56,7 @@ function port_scan() {
     Commands
     --------
 
+      show                          display info about module
       list                          display scanning list commands
       init     <value>              run predefined scanning command
 
@@ -75,11 +69,6 @@ function port_scan() {
 
       init tcp_conn                 run TCP connect profile
 ")
-
-  # shellcheck disable=SC2034
-  export _module_opts=(\
-  "$_module_show" \
-  "$_module_help")
 
   # shellcheck disable=SC2154
   if [[ "$_mstate" -eq 0 ]] ; then
@@ -125,6 +114,20 @@ function port_scan() {
   "Fast port scan (100 ports);'';fast;-F" \
   "Ports and ignore discovery;'';ports_not_disc;-Pn -F" \
   )
+
+  # shellcheck disable=SC2034,SC2154
+  _module_show=(\
+      "${module_name}" \
+      "${version}" \
+      "${#_module_commands[@]}" \
+      "${author}" \
+      "${contact}" \
+      "${description}" \
+      )
+
+  # shellcheck disable=SC2034
+  export _module_opts=(\
+  "$_module_help")
 
   return $_STATE
 

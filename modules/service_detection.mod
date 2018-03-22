@@ -25,8 +25,10 @@ function service_detection() {
   # - module_name: store module name
   # - module_args: store module arguments
 
-  _module_show=
-  _module_help=
+  export _module_show=
+  export _module_help=
+  export _module_opts=
+  export _module_commands=
 
   # shellcheck disable=SC2034
   _module_variables=()
@@ -35,21 +37,12 @@ function service_detection() {
   author="trimstray"
   contact="contact@nslab.at"
   version="1.0"
-  category="services"
+  description="Service and Version Detection module"
 
   # shellcheck disable=SC2034,SC2154
   _module_cfg="${_modules}/${module_name}.cfg"
 
   touch "$_module_cfg"
-
-  # shellcheck disable=SC2034,SC2154
-  _module_show=$(printf "%s" "
-    Module: ${module_name}
-    Author: ${author}
-   Contact: ${contact}
-   Version: ${version}
-  Category: ${category}
-")
 
   # shellcheck disable=SC2034,SC2154
   _module_help=$(printf "%s" "
@@ -63,6 +56,7 @@ function service_detection() {
     Commands
     --------
 
+      show                          display info about module
       list                          display scanning list commands
       init     <value>              run predefined scanning command
 
@@ -75,11 +69,6 @@ function service_detection() {
 
       init more_aggressive          run Aggressive Service Detection profile
 ")
-
-  # shellcheck disable=SC2034
-  export _module_opts=(\
-  "$_module_show" \
-  "$_module_help")
 
   # shellcheck disable=SC2154
   if [[ "$_mstate" -eq 0 ]] ; then
@@ -121,6 +110,20 @@ function service_detection() {
   "Aggressive Service Detection;'';more_aggressive;-sV --version-intensity 5" \
   "Banner Grabbing Detection;'';banner;-sV --version-intensity 0" \
   )
+
+  # shellcheck disable=SC2034,SC2154
+  _module_show=(\
+      "${module_name}" \
+      "${version}" \
+      "${#_module_commands[@]}" \
+      "${author}" \
+      "${contact}" \
+      "${description}" \
+      )
+
+  # shellcheck disable=SC2034
+  export _module_opts=(\
+  "$_module_help")
 
   return $_STATE
 
