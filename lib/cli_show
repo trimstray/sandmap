@@ -21,27 +21,48 @@ function cli_show() {
   local _FUNCTION_ID="cli_show"
   local _STATE=0
 
+  _module_commands_count=0
+  _module_commands_count_all=0
+
   # shellcheck disable=SC2154
   _modules_count=$(find "${_modules}" -name '*.mod' | wc -l)
 
-  printf "\n  %s: \e[1;33m%s\e[m\n" \
-         "Modules" "$_modules_count"
-
-  printf "\n  %s\n\n" "Available:"
+  printf "\n\e[1;38m    %-25.25s %-12.10s %s\e[m\n    %-25.25s %-12.10s %s\n\n" \
+         "Module" \
+         "Profiles" \
+         "Description" \
+         "------" \
+         "--------" \
+         "-----------"
 
   # shellcheck disable=SC2154
   for i in "${modules_full_list[@]}" ; do
+
+    _module_commands_count=0
 
     # shellcheck disable=SC2034
     _fname=$(echo "$i" | awk -v FS="(:|:)" '{print $1}')
     # shellcheck disable=SC2034
     _fpath=$(echo "$i" | awk -v FS="(:|:)" '{print $2}')
 
-    printf "   * \e[1;38m%s\e[m (file: \e[2;37m%s\e[m)\n" "$_fname" "$_fpath"
+    # shellcheck disable=SC1090
+    source "${_modules}/${_fpath}"
+
+    # shellcheck disable=SC2034
+    module_name="$_fname"
+
+    "${_fname}"
+
+    _module_commands_count=$((_module_commands_count + ${#_module_commands[*]}))
+    _module_commands_count_all=$((_module_commands_count_all + _module_commands_count))
+
+    printf "    \e[1;36m%-25.25s\e[m \e[1;33m%-12.10s\e[m %s\n" \
+           "$_fname" "$_module_commands_count" "$description"
 
   done
 
-  echo
+  printf "\n    %s: \e[1;33m%s\e[m  %s: \e[1;33m%s\e[m\n\n" \
+         "All Modules" "$_modules_count" "All Profiles" "$_module_commands_count_all"
 
   return $_STATE
 
