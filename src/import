@@ -15,7 +15,7 @@
 #   - _fd_stack=("kill_process") - says to include this file in the script
 readonly _fd_stack=(init_config load_modules init_cli cli_distributor \
                     cli_help cli_show init_module init_help init_show \
-                    cli_config show_config set_config)
+                    init_info cli_config show_config set_config)
 
 if [[ "${#_fd_stack[@]}" -ne 0 ]] ; then
 
