@@ -42,7 +42,7 @@
 <br>
 
 <p align="center">
-    <img src="https://i.imgur.com/6hopUQK.gif"
+    <img src="https://i.imgur.com/FhSnoyB.gif"
         alt="Master">
 </p>
 
@@ -57,7 +57,7 @@
 - support **Nmap Scripting Engine** (NSE)
 - **TOR** support (with proxychains)
 - multiple scans at one time
-- at this point: **5** modules with **36** scan techniques
+- at this point: **5** modules with **35** scan techniques
 
 ## How To Use
 
