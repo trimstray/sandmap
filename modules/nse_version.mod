@@ -106,7 +106,11 @@ function nse_version() {
   # shellcheck disable=SC2034
   _module_commands=(\
   "Detects the All-Seeing Eye service;'';allseeingeye-info;-Pn -sU -sV --script allseeingeye-info -p $port" \
-  "Gathers information from an AMQP;'';amqp-info;--script amqp-info -p $port"
+  "Gathers information from an AMQP;'';amqp-info;--script amqp-info -p $port" \
+  "Discovers and enumerates BACNet Devices;'';bacnet-info;--script bacnet-info -sU -p $port" \
+  "Detects the CCcam service (port: 12000);'';cccam-version;-sV $port" \
+  "Connects to the IBM DB2 (port: 523);'';db2-das-info;-sV $port" \
+  "Detects the Docker service (port: 2375);'';docker-version;-sV $port"
   )
 
   # shellcheck disable=SC2034,SC2154
