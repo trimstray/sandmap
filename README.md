@@ -42,7 +42,7 @@
 <br>
 
 <p align="center">
-    <img src="https://i.imgur.com/FhSnoyB.gif"
+    <img src="https://i.imgur.com/zYuUGPN.gif"
         alt="Master">
 </p>
 
