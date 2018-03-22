@@ -377,7 +377,15 @@ function _init_cmd() {
 
   fi
 
-  _full_command+=("nmap" "${_cmd[@]}" "$dst")
+  if [[ "${input_array[0]}" == "nmap" ]] ; then
+
+    _full_command+=("nmap" "${_cmd[@]}")
+
+  else
+
+    _full_command+=("nmap" "${_cmd[@]}" "$dst")
+
+  fi
 
   # shellcheck disable=SC2154
   if [[ ! -z "$report" ]] ; then
