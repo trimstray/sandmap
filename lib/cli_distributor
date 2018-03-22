@@ -115,6 +115,14 @@ function cli_distributor() {
 
         fi
 
+        init_module "$_ld_module"
+
+        # shellcheck disable=SC2034
+        __cli_banner="$_fname"
+
+        # shellcheck disable=SC1090
+        source "$_module_cfg"
+
       fi
 
     fi
@@ -362,13 +370,24 @@ function cli_distributor() {
 
   elif [[ "${_argv[0]}" == "list" ]] ; then
 
-    if [[ "$_in_module" -eq 1 ]] ; then
+    if [[ "$_in_module" -eq 0 ]] ; then
 
-      init_show
+      if [[ "${#_argv[1]}" -eq 0 ]] ; then
+
+        printf "stdout: %s\n" "invalid module"
+
+      else
+
+        _in_module=0
+
+        init_module "${_argv[@]}"
+        init_show
+
+      fi
 
     else
 
-      printf "stdout: %s\n" "invalid command"
+      init_show
 
     fi
 
