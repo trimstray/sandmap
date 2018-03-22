@@ -83,7 +83,7 @@ sandmap
 
 ## Modules
 
-Available modules: **7**  
+Available modules: **7**
 Available scan profiles: **43**
 
 ## Configuration file
@@ -95,8 +95,8 @@ The `etc/main.cfg` configuration file has the following structure:
 
 # Specifies the default destination.
 # Examples:
-#   - dst="127.0.0.1,8.8.8.8"
-dst="127.0.0.1"
+#   - dest="127.0.0.1,8.8.8.8"
+dest="127.0.0.1"
 
 # Specifies the default port number.
 # Examples:

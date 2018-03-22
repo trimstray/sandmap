@@ -22,7 +22,7 @@ function init_config() {
   local _STATE=0
 
   export _session_variables=(\
-  "Destination;'127.0.0.1,example.com';dst;$dst" \
+  "Destination;'127.0.0.1,example.com';dest;$dest" \
   "Service port number;'T:20-110';port;$port" \
   "Network interface;'eth0';iface;$iface" \
   "MAC address;'fe:54:00:fe:7f:00';hwaddr;$hwaddr" \

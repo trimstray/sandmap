@@ -111,8 +111,8 @@ function sample() {
 
   # shellcheck disable=SC2034
   _module_commands=(\
-  "Fast Scanning;;fast_scan;-sV -T4 -O -F $dst" \
-  "ACK Scanning;;ack_scan;-sA $dst")
+  "Fast Scanning;;fast_scan;-sV -T4 -O -F" \
+  "ACK Scanning;;ack_scan;-sA")
 
   return $_STATE
 
