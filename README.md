@@ -5,18 +5,26 @@
 <p align="center">
   <a href="https://img.shields.io/badge/Branch-master-green.svg">
     <img src="https://img.shields.io/badge/Branch-master-green.svg"
-        alt="Master">
+        alt="Branch">
   </a>
   <a href="https://img.shields.io/badge/Version-v1.0.2-lightgrey.svg">
     <img src="https://img.shields.io/badge/Version-v1.0.2-lightgrey.svg"
-        alt="v1.0.2">
+        alt="Version">
+  </a>
+  <a href="https://img.shields.io/badge/Modules-7-red.svg">
+    <img src="https://img.shields.io/badge/Modules-7-red.svg"
+        alt="Modules">
+  </a>
+  <a href="https://img.shields.io/badge/Profiles-47-orange.svg">
+    <img src="https://img.shields.io/badge/Profiles-47-orange.svg"
+        alt="Profiles">
   </a>
   <a href="https://travis-ci.org/trimstray/sandmap">
     <img src="https://travis-ci.org/trimstray/sandmap.svg?branch=master"
-        alt="Master">
+        alt="Travis-CI">
   <a href="http://www.gnu.org/licenses/">
     <img src="https://img.shields.io/badge/license-GNU-blue.svg"
-        alt="GNU">
+        alt="License">
   </a>
 </p>
 
@@ -83,7 +91,7 @@ sandmap
 
 ## Modules
 
-Available modules: **7**
+Available modules: **7**  
 Available scan profiles: **43**
 
 ## Configuration file
