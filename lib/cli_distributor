@@ -57,14 +57,14 @@ function cli_distributor() {
       else
 
         init_module "${_argv[@]}"
-        init_show
+        init_info
 
       fi
 
     else
 
       init_module "${_argv[@]}"
-      init_show
+      init_info
 
     fi
 
@@ -364,41 +364,7 @@ function cli_distributor() {
 
     if [[ "$_in_module" -eq 1 ]] ; then
 
-      printf "\n  %-40.40s  %-4.4s %-20.20s  %-30.40s\n  %-40.40s  %-4.4s %-20.20s  %-30.40s\n\n" \
-             "Description" \
-             "ID" \
-             "Alias" \
-             "Nmap Parameters" \
-             "-----------" \
-             "--" \
-             "-----" \
-             "---------------"
-
-      _count=0
-
-      # shellcheck disable=SC2034
-      for _svar in "${_module_commands[@]}" ; do
-
-        # shellcheck disable=SC2034
-        _key_description=$(echo "$_svar" | awk -v FS="(;|;)" '{print $1}')
-        # shellcheck disable=SC2034
-        _key_values=$(echo "$_svar" | awk -v FS="(;|;)" '{print $2}')
-        # shellcheck disable=SC2034
-        _key_id=$(echo "$_svar" | awk -v FS="(;|;)" '{print $3}')
-        # shellcheck disable=SC2034
-        _key_var=$(echo "$_svar" | awk -v FS="(;|;)" '{print $4}')
-
-        printf "  %-40.40s  %-4.4s %-20.20s  %-40s\n" \
-        "$_key_description" \
-        "$_count" \
-        "$_key_id" \
-        "$_key_var"
-
-        _count=$((_count + 1))
-
-      done
-
-      echo
+      init_show
 
     else
 
