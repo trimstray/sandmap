@@ -105,14 +105,30 @@ function host_discovery() {
 
   # shellcheck disable=SC2034
   _module_commands=(\
-  "No Scan. List targets only;'';targets;-sL" \
-  "No port scanning. Host discovery only;'';discovery;-sn" \
-  "No host discovery. Port scan only;'';port_only;-Pn" \
-  "TCP SYN discovery;'';tcp_syn_disc;-PS $port" \
-  "TCP ACK discovery;'';tcp_ack_disc;-PA $port" \
-  "UDP discovery;'';udp_disc;-PU $port" \
-  "ARP discovery on local network;'';arp_disc;-PR" \
-  "Never do DNS resolution;'';no_dns;-n" \
+  #
+  "No Scan, List targets only;\
+  ;targets;-sL" \
+  #
+  "No port scanning, Host discovery only;\
+  ;discovery;-sn" \
+  #
+  "No host discovery, Port scan only;\
+  ;port_only;-Pn" \
+  #
+  "TCP SYN discovery;\
+  ;tcp_syn_disc;-PS $port" \
+  #
+  "TCP ACK discovery;\
+  ;tcp_ack_disc;-PA $port" \
+  #
+  "UDP discovery;\
+  ;udp_disc;-PU $port" \
+  #
+  "ARP discovery on local network;\
+  ;arp_disc;-PR" \
+  #
+  "Never do DNS resolution;\
+  ;no_dns;-n" \
   )
 
   # shellcheck disable=SC2034,SC2154

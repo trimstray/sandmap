@@ -105,11 +105,21 @@ function os_detection() {
 
   # shellcheck disable=SC2034
   _module_commands=(\
-  "OS detection (TCP/IP fingerprint);'';os_finger;-O" \
-  "OS detection when one open/closed TCP port are not found;'';os_limit;-O --osscan-limit" \
-  "Makes Nmap guess more aggressively;'';guess_aggressive;-O --osscan-guess" \
-  "Maximum number x of OS detection;'';max_detect;-O --max-os-tries 1" \
-  "Detect OS and Services;'';os_service;-A" \
+  #
+  "OS detection (TCP/IP fingerprint);\
+  ;os_finger;-O" \
+  #
+  "OS detection (open/closed TCP port are not found);\
+  ;os_limit;-O --osscan-limit" \
+  #
+  "Makes Nmap guess more aggressively;\
+  ;guess_aggressive;-O --osscan-guess" \
+  #
+  "Maximum number x of OS detection;\
+  ;max_detect;-O --max-os-tries 1" \
+  #
+  "Detect OS and Services;\
+  ;os_service;-A" \
   )
 
   # shellcheck disable=SC2034,SC2154

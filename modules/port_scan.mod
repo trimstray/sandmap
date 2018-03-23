@@ -105,14 +105,30 @@ function port_scan() {
 
   # shellcheck disable=SC2034
   _module_commands=(\
-  "TCP connect;'';tcp_conn;-sT" \
-  "TCP SYN scan;'';tcp_syn;-sS" \
-  "TCP ACK port scan;'';tcp_ack;-sA" \
-  "TCP Window port scan;'';tcp_window;-sW" \
-  "TCP Maimon port scan;'';tcp_maimon;-sU" \
-  "UDP ports scan;'';udp;-sM" \
-  "Fast port scan (100 ports);'';fast;-F" \
-  "Ports and ignore discovery;'';ports_not_disc;-Pn -F" \
+  #
+  "TCP connect;\
+  ;tcp_conn;-sT" \
+  #
+  "TCP SYN scan;\
+  ;tcp_syn;-sS" \
+  #
+  "TCP ACK port scan;\
+  ;tcp_ack;-sA" \
+  #
+  "TCP Window port scan;\
+  ;tcp_window;-sW" \
+  #
+  "TCP Maimon port scan;\
+  ;tcp_maimon;-sU" \
+  #
+  "UDP ports scan;\
+  ;udp;-sM" \
+  #
+  "Fast port scan (100 ports);\
+  ;fast;-F" \
+  #
+  "Ports and ignore discovery;\
+  ;ports_not_disc;-Pn -F" \
   )
 
   # shellcheck disable=SC2034,SC2154

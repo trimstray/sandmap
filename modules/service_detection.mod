@@ -105,10 +105,18 @@ function service_detection() {
 
   # shellcheck disable=SC2034
   _module_commands=(\
-  "Detect OS and Services;'';os_service;-A" \
-  "Standard Service Detection;'';standard;-sV" \
-  "Aggressive Service Detection;'';more_aggressive;-sV --version-intensity 5" \
-  "Banner Grabbing Detection;'';banner;-sV --version-intensity 0" \
+  #
+  "Detect OS and Services;\
+  ;os_service;-A" \
+  #
+  "Standard Service Detection;\
+  ;standard;-sV" \
+  #
+  "Aggressive Service Detection;\
+  ;more_aggressive;-sV --version-intensity 5" \
+  #
+  "Banner Grabbing Detection;\
+  ;banner;-sV --version-intensity 0" \
   )
 
   # shellcheck disable=SC2034,SC2154

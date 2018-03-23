@@ -105,12 +105,24 @@ function timing_and_perf() {
 
   # shellcheck disable=SC2034
   _module_commands=(\
-  "Paranoid (0) Intrusion Detection System evasion;'';t0;-T0" \
-  "Sneaky (1) Intrusion Detection System evasion;'';t1;-T1" \
-  "Polite (2) Slows down the scan;'';t2;-T2" \
-  "Normal (3) Which is default speed;'';t3;-T3" \
-  "Aggressive (4) Assumes you are on a reasonably fast and reliable network;'';t4;-T4" \
-  "Insane (5) Assumes you are on an extraordinarily fast network;'';t5;-T5" \
+  #
+  "Paranoid (0) Intrusion Detection System evasion;\
+  ;t0;-T0" \
+  #
+  "Sneaky (1) Intrusion Detection System evasion;\
+  ;t1;-T1" \
+  #
+  "Polite (2) Slows down the scan;\
+  ;t2;-T2" \
+  #
+  "Normal (3) Which is default speed;\
+  ;t3;-T3" \
+  #
+  "Aggressive (4) If you are on a fast and reliable network;\
+  ;t4;-T4" \
+  #
+  "Insane (5) If you are on an extraordinarily fast network;\
+  ;t5;-T5" \
   )
 
   # shellcheck disable=SC2034,SC2154
