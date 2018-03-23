@@ -61,7 +61,7 @@ function cli_show() {
 
   done
 
-  printf "\n    %s: \e[1;33m%s\e[m  %s: \e[1;33m%s\e[m\n\n" \
+  printf "\n    %s:  \e[1;33m%s\e[m\n    %s: \e[1;33m%s\e[m\n\n" \
          "All Modules" "$_modules_count" "All Profiles" "$_module_commands_count_all"
 
   return $_STATE
