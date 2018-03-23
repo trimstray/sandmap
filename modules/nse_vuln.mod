@@ -37,6 +37,7 @@ function nse_vuln() {
   author="trimstray"
   contact="contact@nslab.at"
   version="1.0"
+  description="NSE Vuln category module"
 
   # shellcheck disable=SC2034,SC2154
   _module_cfg="${_modules}/${module_name}.cfg"

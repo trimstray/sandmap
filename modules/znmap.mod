@@ -37,6 +37,7 @@ function znmap() {
   author="trimstray"
   contact="contact@nslab.at"
   version="1.0"
+  description="Zenmap module"
 
   # shellcheck disable=SC2034,SC2154
   _module_cfg="${_modules}/${module_name}.cfg"

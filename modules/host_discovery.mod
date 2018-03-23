@@ -37,6 +37,7 @@ function host_discovery() {
   author="trimstray"
   contact="contact@nslab.at"
   version="1.0"
+  description="Nmap Host Discovery module"
 
   # shellcheck disable=SC2034,SC2154
   _module_cfg="${_modules}/${module_name}.cfg"

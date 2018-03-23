@@ -37,6 +37,7 @@ function service_detection() {
   author="trimstray"
   contact="contact@nslab.at"
   version="1.0"
+  description="Service and Version Detection module"
 
   # shellcheck disable=SC2034,SC2154
   _module_cfg="${_modules}/${module_name}.cfg"
