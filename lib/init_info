@@ -21,28 +21,25 @@ function init_info() {
   local _FUNCTION_ID="init_info"
   local _STATE=0
 
-  printf "\n  \e[1;38m%-20.20s %-10.10s %-10.10s %-20.20s %-25.25s %s\e[m\n  %-20.20s %-10.10s %-10.10s %-20.20s %-25.25s %s\n\n" \
+  printf "\n  \e[1;38m%-20.20s %-10.10s %-10.10s %-20.20s %-25.25s\e[m\n  %-20.20s %-10.10s %-10.10s %-20.20s %-25.25s\n\n" \
          "Module" \
          "Version" \
          "Profiles" \
          "Author" \
          "Contact" \
-         "Description" \
          "------" \
          "-------" \
          "--------" \
          "------" \
          "-------" \
-         "-----------"
 
   # shellcheck disable=SC2154
-  printf "  %-20.20s %-10.10s %-10.10s %-20.20s %-25.25s %s\n\n" \
+  printf "  %-20.20s %-10.10s %-10.10s %-20.20s %-25.25s\n\n" \
          "${_module_show[0]}" \
          "${_module_show[1]}" \
          "${_module_show[2]}" \
          "${_module_show[3]}" \
-         "${_module_show[4]}" \
-         "${_module_show[5]}"
+         "${_module_show[4]}"
 
   return $_STATE
 
