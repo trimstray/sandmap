@@ -143,7 +143,7 @@ function nse_version() {
   -p 80,8080;hnap-info;--script hnap-info -p 80,8080" \
   #
   "Uses the HTTP Server header for missing version info;\
-  -p 80,443,8080;http-server-header;-sV -p -p 80,443,8080" \
+  -p 80,443,8080;http-server-header;-sV -p 80,443,8080" \
   #
   "Attempts to obtain info from Trane Tracer SC devices;\
   -p 80;http-trane-info;--script trane-info.nse -p 80" \
