@@ -23,14 +23,14 @@ function init_show() {
 
   _count=0
 
-  printf "\n  \e[1;38m%-40.40s  %-4.4s %-20.20s %-30.40s\e[m\n  %-40.40s  %-4.4s %-20.20s %s\n\n" \
-         "Description" \
+  printf "\n  \e[1;38m%-4.4s %-20.20s %-60.60s %s\e[m\n  %-4.4s %-20.20s %-60.60s %s\n\n" \
          "ID" \
          "Alias" \
+         "Description" \
          "Nmap Parameters" \
-         "-----------" \
          "--" \
          "-----" \
+         "-----------" \
          "---------------"
 
   # shellcheck disable=SC2034,SC2154
@@ -45,11 +45,38 @@ function init_show() {
     # shellcheck disable=SC2034
     _key_var=$(echo "$_svar" | awk -v FS="(;|;)" '{print $4}')
 
-    printf "  %-40.40s  \e[1;32m%-4.4s\e[m \e[1;36m%-20.20s\e[m %s\n" \
-           "$_key_description" \
-           "$_count" \
-           "$_key_id" \
-           "$_key_var"
+    _cols_show=$((_cols - 2))
+
+    _key_desc_len=${#_key_var}
+    if [[ "$_key_desc_len" -gt 80 ]] ; then
+
+      _fstr=$(echo "$_key_var" | cut -c1-80)
+      _lstr=$(echo "$_key_var" | cut -c81-)
+
+      printf "  \e[1;32m%-4.4s\e[m \e[1;36m%-20.20s\e[m %-60.60s %s\n  %112s\n" \
+             "$_count" \
+             "$_key_id" \
+             "$_key_description" \
+             "$_fstr" \
+             "$_lstr"
+
+      # printf " "
+      # printf "%.s-" $(seq 1 ${_cols_show})
+      # echo
+
+    else
+
+      printf "  \e[1;32m%-4.4s\e[m \e[1;36m%-20.20s\e[m %-60.60s %s\n" \
+             "$_count" \
+             "$_key_id" \
+             "$_key_description" \
+             "$_key_var"
+
+      # printf " "
+      # printf "%.s-" $(seq 1 ${_cols_show})
+      # echo
+
+    fi
 
     _count=$((_count + 1))
 
