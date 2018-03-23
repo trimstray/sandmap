@@ -15,8 +15,8 @@
     <img src="https://img.shields.io/badge/Modules-7-red.svg"
         alt="Modules">
   </a>
-  <a href="https://img.shields.io/badge/Profiles-47-orange.svg">
-    <img src="https://img.shields.io/badge/Profiles-47-orange.svg"
+  <a href="https://img.shields.io/badge/Profiles-84-orange.svg">
+    <img src="https://img.shields.io/badge/Profiles-84-orange.svg"
         alt="Profiles">
   </a>
   <a href="https://travis-ci.org/trimstray/sandmap">
@@ -51,7 +51,7 @@
 <br>
 
 <p align="center">
-    <img src="https://i.imgur.com/zYuUGPN.gif"
+    <img src="https://i.imgur.com/NeMZKx1.gif"
         alt="Master">
 </p>
 
@@ -66,7 +66,7 @@
 - support **Nmap Scripting Engine** (NSE)
 - **TOR** support (with proxychains)
 - multiple scans at one time
-- at this point: **7** modules with **43** scan profiles
+- at this point: **7** modules with **84** scan profiles
 
 ## How To Use
 
@@ -92,7 +92,10 @@ sandmap
 ## Modules
 
 Available modules: **7**  
-Available scan profiles: **43**
+Available scan profiles: **84**
+
+NSE Modules: **1**  
+NSE Profiles: **43**
 
 ## Configuration file
 
