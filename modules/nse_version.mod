@@ -37,7 +37,6 @@ function nse_version() {
   author="trimstray"
   contact="contact@nslab.at"
   version="1.0"
-  description="NSE Version category module"
 
   # shellcheck disable=SC2034,SC2154
   _module_cfg="${_modules}/${module_name}.cfg"
@@ -64,10 +63,6 @@ function nse_version() {
 
         <key>                       key value
 
-    Examples
-    --------
-
-      init allseeingeye-info        Detects the All-Seeing Eye service
 ")
 
   # shellcheck disable=SC2154

@@ -37,7 +37,6 @@ function nse_vuln() {
   author="trimstray"
   contact="contact@nslab.at"
   version="1.0"
-  description="NSE Vuln category module"
 
   # shellcheck disable=SC2034,SC2154
   _module_cfg="${_modules}/${module_name}.cfg"
@@ -64,10 +63,6 @@ function nse_vuln() {
 
         <key>                       key value
 
-    Examples
-    --------
-
-      init allseeingeye-info        Detects the All-Seeing Eye service
 ")
 
   # shellcheck disable=SC2154
@@ -112,8 +107,8 @@ function nse_vuln() {
   "Discover hosts using DNS and NULL UDP packet, CVE-2011-1002;\
   ;broadcast-avahi-dos;--script=broadcast-avahi-dos" \
   #
-  "Exploits ClamAV servers to unauth comand execution;\
-  ;clamav-exec;-sV --script clamav-exec" \
+  "Exploits ClamAV servers to unauth comand execution (1);\
+  ;clamav-exec.1;-sV --script clamav-exec" \
   #
   "Exploits ClamAV servers to unauth comand execution (2);\
   ;clamav-exec.2;--script clamav-exec --script-args cmd='scan',scandb='files.txt'" \

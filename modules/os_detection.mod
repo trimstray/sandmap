@@ -37,7 +37,6 @@ function os_detection() {
   author="trimstray"
   contact="contact@nslab.at"
   version="1.0"
-  description="OS Detection module"
 
   # shellcheck disable=SC2034,SC2154
   _module_cfg="${_modules}/${module_name}.cfg"
@@ -64,10 +63,6 @@ function os_detection() {
 
         <key>                       key value
 
-    Examples
-    --------
-
-      init more_aggressive          run Aggressive Service Detection profile
 ")
 
   # shellcheck disable=SC2154

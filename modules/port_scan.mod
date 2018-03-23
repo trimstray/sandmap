@@ -37,7 +37,6 @@ function port_scan() {
   author="trimstray"
   contact="contact@nslab.at"
   version="1.0"
-  description="Nmap Port Scan types module"
 
   # shellcheck disable=SC2034,SC2154
   _module_cfg="${_modules}/${module_name}.cfg"
@@ -64,10 +63,6 @@ function port_scan() {
 
         <key>                       key value
 
-    Examples
-    --------
-
-      init tcp_conn                 run TCP connect profile
 ")
 
   # shellcheck disable=SC2154

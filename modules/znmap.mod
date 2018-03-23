@@ -37,7 +37,6 @@ function znmap() {
   author="trimstray"
   contact="contact@nslab.at"
   version="1.0"
-  description="Zenmap module"
 
   # shellcheck disable=SC2034,SC2154
   _module_cfg="${_modules}/${module_name}.cfg"
@@ -64,11 +63,6 @@ function znmap() {
 
         <key>                       key value
 
-    Examples
-    --------
-
-      init intense_udp              run Intense scan plus UDP profile
-      init slow                     run Regular scan profile
 ")
 
   # shellcheck disable=SC2154
