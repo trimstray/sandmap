@@ -7,8 +7,8 @@
     <img src="https://img.shields.io/badge/Branch-master-green.svg"
         alt="Branch">
   </a>
-  <a href="https://img.shields.io/badge/Version-v1.1.0-lightgrey.svg">
-    <img src="https://img.shields.io/badge/Version-v1.1.0-lightgrey.svg"
+  <a href="https://img.shields.io/badge/Version-v1.0.3-lightgrey.svg">
+    <img src="https://img.shields.io/badge/Version-v1.0.3-lightgrey.svg"
         alt="Version">
   </a>
   <a href="https://img.shields.io/badge/Modules-7-red.svg">
