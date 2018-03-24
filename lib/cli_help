@@ -28,7 +28,7 @@ function cli_help() {
     help    <module>              show cli help or module help
     show    <module>              show info about modules or module
     config  <key>|<module [key]>  show global or module configuration
-    list    <module>              show available module profiles (commands)
+    list    <module [key]>        show available module profiles (scripts)
     set     <key>|<module [key]>  set global or module variable value
     use     <module>              use module (changed env)
 
@@ -48,6 +48,7 @@ function cli_help() {
     help                          display module help
     show                          display module info
     config  <key>                 show module configuration
+    list    <key>                 show available module profiles (scripts)
     set     <key>                 set module variable value
 
   Examples
