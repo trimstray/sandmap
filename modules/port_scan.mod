@@ -102,6 +102,8 @@ function port_scan() {
   # In the given commands you can use variables from the CLI config
   # command or the etc/main.cfg file.
 
+  # ---------------------------------------------------------------------------------------\n
+
   # shellcheck disable=SC2034
   _module_commands=(\
   #

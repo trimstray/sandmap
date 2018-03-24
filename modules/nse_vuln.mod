@@ -102,22 +102,24 @@ function nse_vuln() {
   # In the given commands you can use variables from the CLI config
   # command or the etc/main.cfg file.
 
+  # ---------------------------------------------------------------------------------------\n
+
   # shellcheck disable=SC2034
   _module_commands=(\
   #
-  "Mac OS X AFP directory traversal, CVE-2010-0533;\
+  "Detects the Mac OS X AFP directory traversal vulnerability, CVE-2010-0533.;\
   -p 548;afp-path-vuln;-sV --script=afp-path-vuln -p 548" \
   #
-  "Discover hosts using DNS and NULL UDP packet, CVE-2011-1002;\
+  "Attempts to discover hosts in the local network using the DNS Service Discovery protocol\n and sends a NULL UDP packet to each host to test if it is vulnerable to the Avahi NULL UDP\n packet denial of service (CVE-2011-1002).;\
   ;broadcast-avahi-dos;--script=broadcast-avahi-dos" \
   #
-  "Exploits ClamAV servers to unauth comand execution (1);\
+  "Exploits ClamAV servers vulnerable to unauthenticated clamav comand execution (1).;\
   ;clamav-exec-1;-sV --script clamav-exec" \
   #
-  "Exploits ClamAV servers to unauth comand execution (2);\
+  "Exploits ClamAV servers vulnerable to unauthenticated clamav comand execution (2).;\
   ;clamav-exec-2;--script clamav-exec --script-args cmd='scan',scandb='files.txt'" \
   #
-  "Exploits ClamAV servers to unauth comand execution (3);\
+  "Exploits ClamAV servers vulnerable to unauthenticated clamav comand execution (3).;\
   ;clamav-exec-3;--script clamav-exec --script-args cmd='shutdown'" \
   )
 
