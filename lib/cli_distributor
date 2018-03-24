@@ -421,7 +421,7 @@ function cli_distributor() {
 
               printf "  \e[1;38m%s\e[m:\n\n" "Description"
 
-              printf "    %s\n\n" "$_key_id"
+              printf "    %s\n\n" "$_key_id" | sed 's/\\n \+/\n    /g'
 
             fi
 
@@ -457,7 +457,7 @@ function cli_distributor() {
 
             printf "  \e[1;38m%s\e[m:\n\n" "Description"
 
-            printf "    %s\n\n" "$_key_id"
+            printf "    %s\n\n" "$_key_id" | sed 's/\\n \+/\n    /g'
 
           else
 
