@@ -46,7 +46,7 @@ function cli_distributor() {
 
     fi
 
-  elif [[ "${_argv[0]}" == "show" ]] ; then
+  elif [[ "${_argv[0]}" == "list" ]] ; then
 
     if [[ "$_in_module" -eq 0 ]] ; then
 
@@ -54,17 +54,7 @@ function cli_distributor() {
 
         cli_show
 
-      else
-
-        init_module "${_argv[@]}"
-        init_info
-
       fi
-
-    else
-
-      init_module "${_argv[@]}"
-      init_info
 
     fi
 
@@ -368,7 +358,7 @@ function cli_distributor() {
 
     fi
 
-  elif [[ "${_argv[0]}" == "list" ]] ; then
+  elif [[ "${_argv[0]}" == "show" ]] ; then
 
     if [[ "$_in_module" -eq 0 ]] ; then
 
@@ -390,6 +380,7 @@ function cli_distributor() {
           _in_module=0
 
           init_module "${_argv[@]}"
+          init_info
 
           for i in "${_module_commands[@]}" ; do
 
@@ -425,6 +416,7 @@ function cli_distributor() {
       else
 
         _in_module=1
+        init_info
 
         for i in "${_module_commands[@]}" ; do
 
