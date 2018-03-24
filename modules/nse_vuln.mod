@@ -51,7 +51,8 @@ function nse_vuln() {
     Description
     -----------
 
-      NSE Vuln category module.
+      These scripts check for specific known vulnerabilities
+      and generally only report results if they are found.
 
     Commands
     --------
@@ -218,8 +219,95 @@ function nse_vuln() {
   "Determines if the web server leaks its internal IP address when sending an HTTP/1.0\n request without a Host header.\n \n https://nmap.org/nsedoc/scripts/http-internal-ip-disclosure.html;\
   ;http-internal-ip-disclosure-1;--script http-internal-ip-disclosure" \
   # Script Arguments
-  "Determines if the web server leaks its internal IP address when sending an HTTP/1.0\n request without a Host header.\n \n https://nmap.org/nsedoc/scripts/http-internal-ip-disclosure.html;\
-  ;http-internal-ip-disclosure-2;--script http-internal-ip-disclosure --script-args http-internal-ip-disclosure.path=/path" \
+  "Attempts to discover JSONP endpoints in web servers. JSONP endpoints can be used to bypass\n Same-origin Policy restrictions in web browsers. The script searches for callback functions in the response\n to detect JSONP endpoints. It also tries to determine callback function through URL(callback function may be fully or partially\n controllable from URL) and also tries to bruteforce the most common callback variables through the URL.\n \n https://nmap.org/nsedoc/scripts/http-jsonp-detection.html;\
+  ;http-jsonp-detection;--script http-jsonp-detection -p" \
+  # Script Arguments
+  "Exploits a null-byte poisoning vulnerability in Litespeed Web Servers 4.0.x before 4.0.15\n to retrieve the target script's source code by sending a HTTP request with a null byte followed by a .txt file extension (CVE-2010-2333).\n \n https://nmap.org/nsedoc/scripts/http-litespeed-sourcecode-download.html;\
+  ;http-litespeed-sourcecode-download-1;--script http-litespeed-sourcecode-download -p 8088" \
+  # Script Arguments
+  "Exploits a null-byte poisoning vulnerability in Litespeed Web Servers 4.0.x before 4.0.15\n to retrieve the target script's source code by sending a HTTP request with a null byte followed by a .txt file extension (CVE-2010-2333).\n \n https://nmap.org/nsedoc/scripts/http-litespeed-sourcecode-download.html;\
+  ;http-litespeed-sourcecode-download-2;--script http-litespeed-sourcecode-download --script-args http-litespeed-sourcecode-download.uri=/phpinfo.php -p 80" \
+  # Script Arguments
+  "Exploits a directory traversal vulnerability existing in Majordomo2 to retrieve remote files.\n (CVE-2011-0049).\n \n https://nmap.org/nsedoc/scripts/http-majordomo2-dir-traversal.html;\
+  ;http-majordomo2-dir-traversal;--script http-majordomo2-dir-traversal -p 80" \
+  # Script Arguments
+  "Attempts to bypass password protected resources (HTTP 401 status) by performing HTTP verb tampering.\n If an array of paths to check is not set, it will crawl the web server and perform the check against any password protected\n resource that it finds.\n \n https://nmap.org/nsedoc/scripts/http-method-tamper.html;\
+  ;http-method-tamper-1;-sV --script http-method-tamper" \
+  # Script Arguments
+  "Attempts to bypass password protected resources (HTTP 401 status) by performing HTTP verb tampering.\n If an array of paths to check is not set, it will crawl the web server and perform the check against any password protected\n resource that it finds.\n \n https://nmap.org/nsedoc/scripts/http-method-tamper.html;\
+  ;http-method-tamper-2;--script http-method-tamper --script-args 'http-method-tamper.paths={/protected/db.php,/protected/index.php}' -p 80" \
+  # Script Arguments
+  "Checks if a web server is vulnerable to directory traversal by attempting to retrieve /etc/passwd\n or \boot.ini.\n \n ;\
+  ;http-passwd;--script http-passwd --script-args http-passwd.root=/test/" \
+  # Script Arguments
+  "Exploits a directory traversal vulnerability in phpMyAdmin 2.6.4-pl1 (and possibly other versions)\n to retrieve remote files on the web server.\n \n https://nmap.org/nsedoc/scripts/http-phpmyadmin-dir-traversal.html;\
+  ;http-phpmyadmin-dir-traversal-1;--script http-phpmyadmin-dir-traversal -p 80" \
+  # Script Arguments
+  "Exploits a directory traversal vulnerability in phpMyAdmin 2.6.4-pl1 (and possibly other versions)\n to retrieve remote files on the web server.\n \n https://nmap.org/nsedoc/scripts/http-phpmyadmin-dir-traversal.html;\
+  ;http-phpmyadmin-dir-traversal-2;--script http-phpmyadmin-dir-traversal --script-args=\"dir='/pma/',file='../../../../../../../../etc/passwd',outfile='passwd.txt'\" -p 80" \
+  # Script Arguments
+  "Crawls a web server and attempts to find PHP files vulnerable to reflected cross site scripting\n via the variable '\$_SERVER[\"PHP_SELF\"]'.\n \n https://nmap.org/nsedoc/scripts/http-phpself-xss.html;\
+  ;http-phpself-xss-1;-sV --script http-self-xss" \
+  # Script Arguments
+  "Crawls a web server and attempts to find PHP files vulnerable to reflected cross site scripting\n via the variable '\$_SERVER[\"PHP_SELF\"]'.\n \n https://nmap.org/nsedoc/scripts/http-phpself-xss.html;\
+  ;http-phpself-xss-2;--script=http-phpself-xss -p 80" \
+  # Script Arguments
+  "Attempts to exploit the \"shellshock\" vulnerability (CVE-2014-6271 and CVE-2014-7169)\n in web applications.\n \n https://nmap.org/nsedoc/scripts/http-shellshock.html;\
+  ;http-shellshock-1;-sV -p- --script http-shellshock" \
+  # Script Arguments
+  "Attempts to exploit the \"shellshock\" vulnerability (CVE-2014-6271 and CVE-2014-7169)\n in web applications.\n \n https://nmap.org/nsedoc/scripts/http-shellshock.html;\
+  ;http-shellshock-2;-sV -p- --script http-shellshock --script-args uri=/cgi-bin/bin,cmd=ls" \
+  # Script Arguments
+  "Tests a web server for vulnerability to the Slowloris DoS attack without actually launching\n a DoS attack.\n \n https://nmap.org/nsedoc/scripts/http-slowloris-check.html;\
+  ;http-slowloris-check;--script http-slowloris-check -p 80,443,8080" \
+  # Script Arguments
+  "Spiders an HTTP server looking for URLs containing queries vulnerable to an SQL injection attack. It also\n extracts forms from found websites and tries to identify fields that are vulnerable.\n \n https://nmap.org/nsedoc/scripts/http-sql-injection.html;\
+  ;http-sql-injection;-sV --script=http-sql-injection -p 80" \
+  # Script Arguments
+  "Unfiltered '>' (greater than sign). An indication of potential XSS vulnerability.\n \n https://nmap.org/nsedoc/scripts/http-stored-xss.html;\
+  ;http-stored-xss;--script http-stored-xss.nse -p 80" \
+  # Script Arguments
+  "Exploits a directory traversal vulnerability existing in several TP-Link wireless routers.\n Attackers may exploit this vulnerability to read any of the configuration and password files remotely\n and without authentication.\n \n https://nmap.org/nsedoc/scripts/http-tplink-dir-traversal.html;\
+  ;http-tplink-dir-traversal-1;--script http-tplink-dir-traversal.nse -p 80" \
+  # Script Arguments
+  "Exploits a directory traversal vulnerability existing in several TP-Link wireless routers.\n Attackers may exploit this vulnerability to read any of the configuration and password files remotely\n and without authentication.\n \n https://nmap.org/nsedoc/scripts/http-tplink-dir-traversal.html;\
+  ;http-tplink-dir-traversal-2;-Pn -n --script http-tplink-dir-traversal.nse -p 80" \
+  # Script Arguments
+  "Exploits a directory traversal vulnerability existing in several TP-Link wireless routers.\n Attackers may exploit this vulnerability to read any of the configuration and password files remotely\n and without authentication.\n \n https://nmap.org/nsedoc/scripts/http-tplink-dir-traversal.html;\
+  ;http-tplink-dir-traversal-3;--script http-tplink-dir-traversal.nse --script-args rfile=/etc/topology.conf -d -n -Pn -p 80" \
+  # Script Arguments
+  "Sends an HTTP TRACE request and shows if the method TRACE is enabled.\n If debug is enabled, it returns the header fields that were modified in the response.\n \n https://nmap.org/nsedoc/scripts/http-trace.html;\
+  ;http-trace;--script http-trace -d" \
+  # Script Arguments
+  "Checks for a path-traversal vulnerability in VMWare ESX, ESXi, and Server (CVE-2009-3733).\n \n https://nmap.org/nsedoc/scripts/http-vmware-path-vuln.html;\
+  ;http-vmware-path-vuln;--script http-vmware-path-vuln -p80,443,8222,8333" \
+  # Script Arguments
+  "Exploits a file disclosure vulnerability in Webmin (CVE-2006-3392)\n \n https://nmap.org/nsedoc/scripts/http-vuln-cve2006-3392.html;\
+  ;http-vuln-cve2006-3392-1;-sV --script http-vuln-cve2006-3392" \
+  # Script Arguments
+  "Exploits a file disclosure vulnerability in Webmin (CVE-2006-3392)\n \n https://nmap.org/nsedoc/scripts/http-vuln-cve2006-3392.html;\
+  ;http-vuln-cve2006-3392-2;--script http-vuln-cve2006-3392 --script-args http-vuln-cve2006-3392.file=/etc/shadow -p 80" \
+  # Script Arguments
+  "Exploits cve-2009-3960 also known as Adobe XML External Entity Injection.\n \n https://nmap.org/nsedoc/scripts/http-vuln-cve2009-3960.html;\
+  ;http-vuln-cve2009-3960;--script=http-vuln-cve2009-3960 --script-args http-http-vuln-cve2009-3960.root=\"/root/\"" \
+  # Script Arguments
+  "Tests whether a JBoss target is vulnerable to jmx console authentication bypass\n (CVE-2010-0738).\n \n https://nmap.org/nsedoc/scripts/http-vuln-cve2010-0738.html;\
+  ;http-vuln-cve2010-0738;--script=http-vuln-cve2010-0738 --script-args 'http-vuln-cve2010-0738.paths={/path1/,/path2/}'" \
+  # Script Arguments
+  "Executes a directory traversal attack against a ColdFusion server and tries to\n grab the password hash for the administrator user. It then uses the salt value (hidden in the web page)\n to create the SHA1 HMAC hash that the web server needs for authentication as admin.\n You can pass this value to the ColdFusion server as the admin without cracking the password hash.\n \n https://nmap.org/nsedoc/scripts/http-vuln-cve2010-2861.html;\
+  ;http-vuln-cve2010-2861;--script http-vuln-cve2010-2861" \
+  # Script Arguments
+  "Detects a denial of service vulnerability in the way the Apache web server handles\n requests for multiple overlapping/simple ranges of a page.\n \n ;\
+  ;http-vuln-cve2011-3192;--script http-vuln-cve2011-3192.nse [--script-args http-vuln-cve2011-3192.hostname=nmap.scanme.org] -pT:80,443" \
+  # Script Arguments
+  "Tests for the CVE-2011-3368 (Reverse Proxy Bypass) vulnerability in Apache HTTP\n server's reverse proxy mode.\n \n https://nmap.org/nsedoc/scripts/http-vuln-cve2011-3368.html;\
+  ;http-vuln-cve2011-3368;--script http-vuln-cve2011-3368" \
+  # Script Arguments
+  "Detects PHP-CGI installations that are vulnerable to CVE-2012-1823, This critical\n vulnerability allows attackers to retrieve source code and execute code remotely.\n \n https://nmap.org/nsedoc/scripts/http-vuln-cve2012-1823.html;\
+  ;http-vuln-cve2012-1823-1;-sV --script http-vuln-cve2012-1823" \
+   # Script Arguments
+  "Detects PHP-CGI installations that are vulnerable to CVE-2012-1823, This critical\n vulnerability allows attackers to retrieve source code and execute code remotely.\n \n https://nmap.org/nsedoc/scripts/http-vuln-cve2012-1823.html;\
+  ;http-vuln-cve2012-1823-2;--script http-vuln-cve2012-1823 --script-args http-vuln-cve2012-1823.uri=/test.php -p 80" \
   )
 
   # shellcheck disable=SC2034,SC2154
