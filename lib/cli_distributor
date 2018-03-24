@@ -54,7 +54,15 @@ function cli_distributor() {
 
         cli_show
 
+      else
+
+        printf "stdout: %s\n" "unknown module"
+
       fi
+
+    else
+
+      printf "stdout: %s\n" "unknown command"
 
     fi
 
@@ -370,17 +378,35 @@ function cli_distributor() {
 
         if [[ "${#_argv[2]}" -eq 0 ]] ; then
 
-          _in_module=0
+          _tc=0
+          for i in "${modules_list[@]}" ; do
 
-          init_module "${_argv[@]}"
-          init_show
+            if [[ "$i" == "${_argv[1]}" ]] ; then
+
+              _in_module=0
+
+              init_module "${_argv[@]}"
+              init_show
+
+            else
+
+              _tc=$((_tc + 1))
+
+            fi
+
+          done
+
+          if [[ "$_tc" -eq ${#modules_list[@]} ]] ; then
+
+            printf "stdout: %s\n" "invalid key"
+
+          fi
 
         else
 
           _in_module=0
 
           init_module "${_argv[@]}"
-          init_info
 
           for i in "${_module_commands[@]}" ; do
 
@@ -416,26 +442,44 @@ function cli_distributor() {
       else
 
         _in_module=1
-        init_info
 
-        for i in "${_module_commands[@]}" ; do
+        _tc=0
+        for i in "${modules_list[@]}" ; do
 
-          # shellcheck disable=SC2034
-          _key_id=$(echo "$i" | awk -v FS="(;|;)" '{print $1}')
-          # shellcheck disable=SC2034
-          _key_var=$(echo "$i" | awk -v FS="(;|;)" '{print $3}')
+          if [[ "$i" == "${_argv[1]}" ]] ; then
 
-          if [[ "$_key_var" == "${_argv[1]}" ]] ; then
+            for j in "${_module_commands[@]}" ; do
 
-            init_show "${_argv[1]}"
+              # shellcheck disable=SC2034
+              _key_id=$(echo "$j" | awk -v FS="(;|;)" '{print $1}')
+              # shellcheck disable=SC2034
+              _key_var=$(echo "$j" | awk -v FS="(;|;)" '{print $3}')
 
-            printf "  \e[1;38m%s\e[m:\n\n" "Description"
+              if [[ "$_key_var" == "${_argv[1]}" ]] ; then
 
-            printf "    %s\n\n" "$_key_id"
+                init_show "${_argv[1]}"
+
+                printf "  \e[1;38m%s\e[m:\n\n" "Description"
+
+                printf "    %s\n\n" "$_key_id"
+
+              fi
+
+            done
+
+          else
+
+            _tc=$((_tc + 1))
 
           fi
 
         done
+
+        if [[ "$_tc" -eq ${#modules_list[@]} ]] ; then
+
+          printf "stdout: %s\n" "invalid key"
+
+        fi
 
       fi
 
