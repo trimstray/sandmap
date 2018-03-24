@@ -47,7 +47,7 @@ function motd_cli() {
   local _FUNCTION_ID="motd_cli"
   local _STATE=0
 
-  tput cup 7 0
+  tput cup 3 0
   printf "%s" "
              _..__.          .__.._
            .^\"-.._ '-(\__/)-' _..-\"^.
@@ -56,8 +56,20 @@ function motd_cli() {
        "oo"
   printf "%s" " '.-'"
 
-  printf "%s\n" "
+  printf "%s" "
                      \`-..-'  fsc
+"
+
+  printf "%s\n" "
+                 _
+                / \        _
+              , | | ,     / \\
+             ((_| |_))  , | | ,
+             \`--, ,--\` ((_| |_))
+                | |    \`--, ,--\`
+            ^^^^| |^^^^^^^| |^^^^^^^
+               \`\"\"\"\`      | |
+           jgs           \`\"\"\"\`
 "
 
   _t=24
