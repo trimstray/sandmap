@@ -109,13 +109,13 @@ function nse_vuln() {
   ;broadcast-avahi-dos;--script=broadcast-avahi-dos" \
   #
   "Exploits ClamAV servers to unauth comand execution (1);\
-  ;clamav-exec.1;-sV --script clamav-exec" \
+  ;clamav-exec-1;-sV --script clamav-exec" \
   #
   "Exploits ClamAV servers to unauth comand execution (2);\
-  ;clamav-exec.2;--script clamav-exec --script-args cmd='scan',scandb='files.txt'" \
+  ;clamav-exec-2;--script clamav-exec --script-args cmd='scan',scandb='files.txt'" \
   #
   "Exploits ClamAV servers to unauth comand execution (3);\
-  ;clamav-exec.3;--script clamav-exec --script-args cmd='shutdown'" \
+  ;clamav-exec-3;--script clamav-exec --script-args cmd='shutdown'" \
   )
 
   # shellcheck disable=SC2034,SC2154
