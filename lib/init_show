@@ -21,6 +21,8 @@ function init_show() {
   local _FUNCTION_ID="init_show"
   local _STATE=0
 
+  local _marg="$1"
+
   _count=0
 
   printf "\n  \e[1;38m%-4.4s %-25.25s %s\e[m\n  %-4.4s %-25.25s %s\n\n" \
@@ -35,44 +37,29 @@ function init_show() {
   for _svar in "${_module_commands[@]}" ; do
 
     # shellcheck disable=SC2034
-    _key_description=$(echo "$_svar" | awk -v FS="(;|;)" '{print $1}')
+    _key_desc=$(echo "$_svar" | awk -v FS="(;|;)" '{print $1}')
     # shellcheck disable=SC2034
-    _key_values=$(echo "$_svar" | awk -v FS="(;|;)" '{print $2}')
+    _key_comm=$(echo "$_svar" | awk -v FS="(;|;)" '{print $2}')
     # shellcheck disable=SC2034
-    _key_id=$(echo "$_svar" | awk -v FS="(;|;)" '{print $3}')
+    _key_alias=$(echo "$_svar" | awk -v FS="(;|;)" '{print $3}')
     # shellcheck disable=SC2034
-    _key_var=$(echo "$_svar" | awk -v FS="(;|;)" '{print $4}')
+    _key_cmd=$(echo "$_svar" | awk -v FS="(;|;)" '{print $4}')
 
-    # _cols_show=$((_cols - 2))
-
-    # _key_desc_len=${#_key_var}
-    # if [[ "$_key_desc_len" -gt 60 ]] ; then
-
-      # _fstr=$(echo "$_key_var" | cut -c1-60)
-      # _lstr=$(echo "$_key_var" | cut -c61-)
-
-      # printf "  \e[1;32m%-4.4s\e[m \e[1;36m%-25.25s\e[m %s\n  %35s\n" \
-      #        "$_count" \
-      #        "$_key_id" \
-      #        "$_fstr" \
-      #        "$_lstr"
-
-      # printf " "
-      # printf "%.s-" $(seq 1 ${_cols_show})
-      # echo
-
-    # else
+    if [[ "$_key_alias" == "$_marg" ]] ; then
 
       printf "  \e[1;32m%-4.4s\e[m \e[1;36m%-25.25s\e[m %s\n" \
              "$_count" \
-             "$_key_id" \
-             "$_key_var"
+             "$_key_alias" \
+             "$_key_cmd"
 
-      # printf " "
-      # printf "%.s-" $(seq 1 ${_cols_show})
-      # echo
+    elif [[ -z "$_marg" ]] ; then
 
-    # fi
+      printf "  \e[1;32m%-4.4s\e[m \e[1;36m%-25.25s\e[m %s\n" \
+             "$_count" \
+             "$_key_alias" \
+             "$_key_cmd"
+
+    fi
 
     _count=$((_count + 1))
 

@@ -378,16 +378,74 @@ function cli_distributor() {
 
       else
 
-        _in_module=0
+        if [[ "${#_argv[2]}" -eq 0 ]] ; then
 
-        init_module "${_argv[@]}"
-        init_show
+          _in_module=0
+
+          init_module "${_argv[@]}"
+          init_show
+
+        else
+
+          _in_module=0
+
+          init_module "${_argv[@]}"
+
+          for i in "${_module_commands[@]}" ; do
+
+            # shellcheck disable=SC2034
+            _key_id=$(echo "$i" | awk -v FS="(;|;)" '{print $1}')
+            # shellcheck disable=SC2034
+            _key_var=$(echo "$i" | awk -v FS="(;|;)" '{print $3}')
+
+            if [[ "$_key_var" == "${_argv[2]}" ]] ; then
+
+              init_show "${_argv[2]}"
+
+              printf "  \e[1;38m%s\e[m:\n\n" "Description"
+
+              printf "    %s\n\n" "$_key_id"
+
+            fi
+
+          done
+
+        fi
 
       fi
 
     else
 
-      init_show
+      if [[ "${#_argv[1]}" -eq 0 ]] ; then
+
+        _in_module=1
+
+        init_show
+
+      else
+
+        _in_module=1
+
+        for i in "${_module_commands[@]}" ; do
+
+          # shellcheck disable=SC2034
+          _key_id=$(echo "$i" | awk -v FS="(;|;)" '{print $1}')
+          # shellcheck disable=SC2034
+          _key_var=$(echo "$i" | awk -v FS="(;|;)" '{print $3}')
+
+          if [[ "$_key_var" == "${_argv[1]}" ]] ; then
+
+            init_show "${_argv[1]}"
+
+            printf "  \e[1;38m%s\e[m:\n\n" "Description"
+
+            printf "    %s\n\n" "$_key_id"
+
+          fi
+
+        done
+
+      fi
 
     fi
 
