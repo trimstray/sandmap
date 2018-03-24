@@ -444,28 +444,20 @@ function cli_distributor() {
         _in_module=1
 
         _tc=0
-        for i in "${modules_list[@]}" ; do
+        for j in "${_module_commands[@]}" ; do
 
-          if [[ "$i" == "${_argv[1]}" ]] ; then
+          # shellcheck disable=SC2034
+          _key_id=$(echo "$j" | awk -v FS="(;|;)" '{print $1}')
+          # shellcheck disable=SC2034
+          _key_var=$(echo "$j" | awk -v FS="(;|;)" '{print $3}')
 
-            for j in "${_module_commands[@]}" ; do
+          if [[ "$_key_var" == "${_argv[1]}" ]] ; then
 
-              # shellcheck disable=SC2034
-              _key_id=$(echo "$j" | awk -v FS="(;|;)" '{print $1}')
-              # shellcheck disable=SC2034
-              _key_var=$(echo "$j" | awk -v FS="(;|;)" '{print $3}')
+            init_show "${_argv[1]}"
 
-              if [[ "$_key_var" == "${_argv[1]}" ]] ; then
+            printf "  \e[1;38m%s\e[m:\n\n" "Description"
 
-                init_show "${_argv[1]}"
-
-                printf "  \e[1;38m%s\e[m:\n\n" "Description"
-
-                printf "    %s\n\n" "$_key_id"
-
-              fi
-
-            done
+            printf "    %s\n\n" "$_key_id"
 
           else
 
@@ -475,9 +467,9 @@ function cli_distributor() {
 
         done
 
-        if [[ "$_tc" -eq ${#modules_list[@]} ]] ; then
+        if [[ "$_tc" -eq ${#_module_commands[@]} ]] ; then
 
-          printf "stdout: %s\n" "invalid key"
+          printf "stdout: %s\n" "invalid profile"
 
         fi
 
