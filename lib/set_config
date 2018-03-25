@@ -24,6 +24,7 @@ function set_config() {
   # shellcheck disable=SC2034
   local _session_arg=("$@")
   local _session_key="${_session_arg[1]}"
+  local _session_value="${_session_arg[*]:2}"
 
   # shellcheck disable=SC2154
   local _session_num="${#_variables_stack[@]}"
@@ -52,10 +53,8 @@ function set_config() {
 
     if [[ "$_key_id" == "$_session_key" ]] ; then
 
-      _set_args
       # shellcheck disable=SC2034
-      _key_var="$_args"
-      eval "$_session_key"="$_args"
+      _key_var="$_session_value"
 
       _variables_stack[$_acount]="${_key_description};${_key_values};${_key_id};${_key_var}"
 
@@ -73,36 +72,11 @@ function set_config() {
 
     printf "stdout: %s\n" "unknown key"
 
+  else
+
+    init_values
+
   fi
-
-  return $_STATE
-
-}
-
-# ``````````````````````````````````````````````````````````````````````````````
-# Function name: _set_args()
-#
-# Description:
-#   Set the IP address.
-#
-# Usage:
-#   _set_args
-#
-# Examples:
-#   _set_args
-#
-
-function _set_args() {
-
-  # shellcheck disable=SC2034
-  local _FUNCTION_ID="_set_args"
-  local _STATE=0
-
-  printf "\n  new value: "
-  # shellcheck disable=SC2034
-  read -ra _args
-
-  echo
 
   return $_STATE
 
