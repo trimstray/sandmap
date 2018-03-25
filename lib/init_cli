@@ -91,7 +91,7 @@ function motd_cli() {
   tput cup 5 $((66 + _t)) ; printf "%s" "|__|"
 
   tput cup 6 $((40 + _t)) ; printf "%s: \e[3;36m%s\e[m" "Author" "trimstray"
-  tput cup 6 $((59 + _t)) ; printf "%s: \e[3;36m%s\e[m" "Version" "1.0.2"
+  tput cup 6 $((59 + _t)) ; printf "%s: \e[3;36m%s\e[m" "Version" "1.0.3"
 
   tput cup 8 $((26 + _t)) ; printf "%s \e[1;38m%s\e[m" "Project:" "https://github.com/trimstray/sandmap"
 
