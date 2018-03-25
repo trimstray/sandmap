@@ -64,6 +64,7 @@ function nse_vuln() {
       config  <key>                   show module configuration
       set     <key>                   set module variable value
       init    <value>                 run predefined scanning command
+      pushd   <key>|init|show|flush   command line commands stack
 
       Options:
 
