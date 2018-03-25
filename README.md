@@ -15,8 +15,8 @@
     <img src="https://img.shields.io/badge/Modules-7-red.svg"
         alt="Modules">
   </a>
-  <a href="https://img.shields.io/badge/Profiles-84-orange.svg">
-    <img src="https://img.shields.io/badge/Profiles-84-orange.svg"
+  <a href="https://img.shields.io/badge/Profiles-174-orange.svg">
+    <img src="https://img.shields.io/badge/Profiles-174-orange.svg"
         alt="Profiles">
   </a>
   <a href="https://travis-ci.org/trimstray/sandmap">
@@ -66,7 +66,7 @@
 - support **Nmap Scripting Engine** (NSE)
 - **TOR** support (with proxychains)
 - multiple scans at one time
-- at this point: **7** modules with **84** scan profiles
+- at this point: **7** modules with **174** scan profiles
 
 ## How To Use
 
@@ -92,10 +92,10 @@ sandmap
 ## Modules
 
 Available modules: **7**  
-Available scan profiles: **84**
+Available scan profiles: **174**
 
-NSE Modules: **1**  
-NSE Profiles: **43**
+NSE Modules: **2**  
+NSE Profiles: **133**
 
 ## Configuration file
 
@@ -109,20 +109,10 @@ The `etc/main.cfg` configuration file has the following structure:
 #   - dest="127.0.0.1,8.8.8.8"
 dest="127.0.0.1"
 
-# Specifies the default port number.
+# Specifies the extended Nmap parameters.
 # Examples:
-#   - port="80"
-port="80"
-
-# Specifies the default MAC address.
-# Examples:
-#   - iface="eth0"
-iface="eth0"
-
-# Specifies the default network interface.
-# Examples:
-#   - hwaddr="00:01:02:03:04:05"
-hwaddr=""
+#   - params="--script ssl-ccs-injection -p 443"
+params=""
 
 # Specifies the default output type and path.
 # Examples:
