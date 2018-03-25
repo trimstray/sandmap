@@ -63,16 +63,16 @@ function service_detection() {
     Commands
     --------
 
-      help                          display module help
-      show    <key>                 display module or profile info
-      config  <key>                 show module configuration
-      set     <key>                 set module variable value
-      init    <value>               run predefined scanning command
+      help                            display module help
+      show    <key>                   display module or profile info
+      config  <key>                   show module configuration
+      set     <key>                   set module variable value
+      init    <value>                 run predefined scanning command
 
       Options:
 
-        <key>                       key value
-        <value>                     profile alias or id
+        <key>                         key value
+        <value>                       profile alias or id
 
 ")
 
