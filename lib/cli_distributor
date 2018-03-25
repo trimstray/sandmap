@@ -498,15 +498,100 @@ function cli_distributor() {
 
           _init_cmd "$_key_var"
 
+        else
+
+          _count=$((_count + 1))
+
         fi
 
-        _count=$((_count + 1))
-
       done
+
+      if [[ "$_count" -eq "${#_module_commands[@]}" ]] ; then
+
+        printf "stdout: %s\n" "unknown command"
+
+      fi
 
     else
 
       printf "stdout: %s\n" "invalid param"
+
+    fi
+
+  elif [[ "${_argv[0]}" == "pushd" ]] ; then
+
+    if [[ "${#_argv[1]}" -eq 0 ]] ; then
+
+      printf "stdout: %s\n" "invalid key"
+
+    else
+
+      if [[ "${_argv[1]}" == "init" ]] ; then
+
+        if [[ "${#_pushd_stack[@]}" -ne 0 ]] ; then
+
+          _init_cmd "${_pushd_stack[@]}"
+
+        else
+
+          printf "stdout: %s\n" "pushd empty"
+
+        fi
+
+      elif [[ "${_argv[1]}" == "show" ]] ; then
+
+        if [[ "${#_pushd_stack[@]}" -ne 0 ]] ; then
+
+          # shellcheck disable=SC2034
+          printf "pushd cmd: %s\n" "${_init_cmd[@]}"
+
+        else
+
+          printf "stdout: %s\n" "pushd empty"
+
+        fi
+
+      elif [[ "${_argv[1]}" == "flush" ]] ; then
+
+        # shellcheck disable=SC2034
+        _init_cmd=()
+
+        printf "stdout: %s\n" "pushd flushed"
+
+      else
+
+        _count=0
+
+        for _scan in "${_module_commands[@]}" ; do
+
+          # shellcheck disable=SC2034
+          _key_id=$(echo "$_scan" | awk -v FS="(;|;)" '{print $3}')
+          # shellcheck disable=SC2034
+          _key_var=$(echo "$_scan" | awk -v FS="(;|;)" '{print $4}')
+
+          if [[ "${_argv[1]}" == "$_key_id" ]] ; then
+
+            _pushd_stack+=("$_key_var")
+
+          elif [[ "${_argv[1]}" == "$_count" ]] ; then
+
+            _pushd_stack+=("$_key_var")
+
+          else
+
+            _count=$((_count + 1))
+
+          fi
+
+        done
+
+        if [[ "$_count" -eq "${#_module_commands[@]}" ]] ; then
+
+          printf "stdout: %s\n" "unknown command"
+
+        fi
+
+      fi
 
     fi
 
