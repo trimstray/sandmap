@@ -6,7 +6,7 @@
 # Function name: nse_version()
 #
 # Description:
-#   NSE Version category module.
+#   NSE 'version' category module.
 #
 # Usage:
 #   nse_version
@@ -37,7 +37,7 @@ function nse_version() {
   author="trimstray"
   contact="contact@nslab.at"
   version="1.0"
-  description="NSE Version category module"
+  description="NSE 'version' category module"
 
   # shellcheck disable=SC2034,SC2154
   _module_cfg="${_modules}/${module_name}.cfg"
@@ -51,7 +51,13 @@ function nse_version() {
     Description
     -----------
 
-      NSE Version category module.
+      The scripts in this special category are an extension to the version
+      detection feature and cannot be selected explicitly. They are selected to
+      run only if version detection (-sV) was requested. Their output cannot be
+      distinguished from version detection output and they do not produce
+      service or host script results.
+
+      URL: https://nmap.org/nsedoc/categories/version.html
 
     Commands
     --------
@@ -107,134 +113,130 @@ function nse_version() {
   # shellcheck disable=SC2034
   _module_commands=(\
   #
-  "Detects the All-Seeing Eye service;\
-  -p 27015;allseeingeye-info;-Pn -sU -sV --script allseeingeye-info -p 27015)" \
+  "Gathers information (a list of all server properties) from an AMQP (advanced\n \
+  message queuing protocol) server.\n \
+  \n \n https://nmap.org/nsedoc/scripts/amqp-info.html;\
+  ;amqp-info;--script amqp-info -p 5672 $_cmd_params" \
   #
-  "Gathers info from an AMQP;\
-  -p 5672;amqp-info;--script amqp-info -p 5672" \
+  "Connects to the IBM DB2 Administration Server (DAS) on TCP or UDP port 523\n \
+  and exports the server profile. No authentication is required for this request.\n \
+  \n \n https://nmap.org/nsedoc/scripts/db2-das-info.html;\
+  ;db2-das-info;-sV -p 523 $_cmd_params" \
   #
-  "Discovers and enumerates BACNet Devices;\
-  -p 47808;bacnet-info;--script bacnet-info -sU -p 47808" \
+  "Detects the Docker service version.\n \
+  \n \n https://nmap.org/nsedoc/scripts/docker-version.html;\
+  ;docker-version;-sV -p 2375 $_cmd_params" \
   #
-  "Detects the CCcam service;\
-  -p 12000;cccam-version;-sV -p 12000" \
+  "This NSE script is used to send a EtherNet/IP packet to a remote device that\n \
+  has TCP 44818 open. The script will send a Request Identity Packet and once a\n \
+  response is received, it validates that it was a proper response to the\n \
+  command that was sent, and then will parse out the data. Information that is\n \
+  parsed includes Vendor ID, Device Type, Product name, Serial Number, Product\n \
+  code, Revision Number, as well as the Device IP.\n \
+  \n https://nmap.org/nsedoc/scripts/enip-info.html;\
+  ;enip-info;--script enip-info -sU -p 44818 $_cmd_params" \
   #
-  "Connects to the IBM DB2;\
-  -p 523;db2-das-info;-sV -p 523" \
+  "Prints the readable strings from service fingerprints of unknown services.\n \
+  \n https://nmap.org/nsedoc/scripts/fingerprint-strings.html;\
+  ;fingerprint-strings;-sV --script fingerprint-strings $_cmd_params" \
   #
-  "Detects the Docker service;\
-  -p 2375;docker-version;-sV -p 2375" \
+  "Retrieve hardwares details and configuration information utilizing HNAP, the\n \
+  \"Home Network Administration Protocol\". It is an HTTP-Simple Object Access\n \
+  Protocol (SOAP)-based protocol which allows for remote topology discovery,\n \
+  configuration, and management of devices (routers, cameras, PCs, NAS, etc.)\n \
+  \n https://nmap.org/nsedoc/scripts/hnap-info.html;\
+  ;hnap-info;--script hnap-info -p 80,8080 $_cmd_params" \
   #
-  "Extract info from DB with the DRDA proto;\
-  -p 50000;drda-info;-sV -p 50000" \
+  "Uses the HTTP Server header for missing version info. This is currently\n \
+  infeasible with version probes because of the need to match non-HTTP services\n \
+  correctly.\n \
+  \n https://nmap.org/nsedoc/scripts/http-server-header.html;\
+  ;http-server-header;-sV -p 80,443,8080 $_cmd_params" \
   #
-  "Send a EtherNet/IP packet;\
-  -p 44818;enip-info;--script enip-info -sU -p 44818" \
+  "Obtains information (such as vendor and device type where available) from an\n \
+  IKE service by sending four packets to the host. This scripts tests with both\n \
+  Main and Aggressive Mode and sends multiple transforms per request.\n \
+  \n https://nmap.org/nsedoc/scripts/ike-version.html;\
+  ;ike-version;-sU --script ike-version -p 500 $_cmd_params" \
   #
-  "Prints strings from unknown services;\
-  ;fingerprint-strings;-sV --script fingerprint-strings" \
+  "Detects the Java Debug Wire Protocol. This protocol is used by Java programs\n \
+  to be debugged via the network. It should not be open to the public Internet,\n \
+  as it does not provide any security against malicious attackers who can inject\n \
+  their own bytecode into the debugged process.\n \
+  \n https://nmap.org/nsedoc/scripts/jdwp-version.html;\
+  ;jdwp-version;-sV -p 9999 $_cmd_params" \
   #
-  "Tridium Niagara Fox protocol;\
-  -p 1911;fox-info;--script fox-info.nse -p 1911" \
+  "Dumps message traffic from MQTT brokers.\n \
+  \n https://nmap.org/nsedoc/scripts/mqtt-subscribe.html;\
+  ;mqtt-subscribe;--script mqtt-subscribe -p 1883 $_cmd_params" \
   #
-  "Detects the Freelancer game server, FLServer.exe;\
-  -p 2302;freelancer-info;-sU --script=freelancer-info -p 2302" \
+  "Retrieves version information from the remote Network Data Management\n \
+  Protocol (ndmp) service. NDMP is a protocol intended to transport data between\n \
+  a NAS device and the backup device, removing the need for the data to pass\n \
+  through the backup server.\n \
+  \n https://nmap.org/nsedoc/scripts/ndmp-version.html;\
+  ;ndmp-version;-sV -p 10000 $_cmd_params" \
   #
-  "Retrieve hardwares and config details utilizing HNAP;\
-  -p 80,8080;hnap-info;--script hnap-info -p 80,8080" \
+  "Parses and displays the banner information of an OpenLookup (network\n \
+  key-value store) server.\n \
+  \n https://nmap.org/nsedoc/scripts/openlookup-info.html;\
+  ;openlookup-info;--script openlookup-info -p 5850 $_cmd_params" \
   #
-  "Uses the HTTP Server header for missing version info;\
-  -p 80,443,8080;http-server-header;-sV -p 80,443,8080" \
+  "Detects the version of an Oracle Virtual Server Agent by fingerprinting\n \
+  responses to an HTTP GET request and an XML-RPC method call.\n \
+  \n https://nmap.org/nsedoc/scripts/ovs-agent-version.html;\
+  ;ovs-agent-version;-sV -p 8899 $_cmd_params" \
   #
-  "Attempts to obtain info from Trane Tracer SC devices;\
-  -p 80;http-trane-info;--script trane-info.nse -p 80" \
+  "Attempts to extract system information from the point-to-point tunneling\n \
+  protocol (PPTP) service.\n \
+  \n https://nmap.org/nsedoc/scripts/pptp-version.html;\
+  ;pptp-version;-sV -p 1723 $_cmd_params" \
   #
-  "Detects the UDP IAX2 service;\
-  -p 4569;iax2-version;-sU -sV -p 4569" \
+  "Retrieves the day and time from the Time service.\n \
+  \n https://nmap.org/nsedoc/scripts/rfc868-time.html;\
+  ;rfc868-time;-sV -p 37 $_cmd_params" \
   #
-  "Obtains info (such as vendor and device) from an IKE;\
-  -p 500;ike-version;-sU --script ike-version -p 500" \
+  "Fingerprints the target RPC port to extract the target service, RPC number\n \
+  and version.\n \
+  \n https://nmap.org/nsedoc/scripts/rpc-grind.html;\
+  ;rpc-grind;--script rpc-grind --script-args 'rpc-grind.threads=8' -p 53344 $_cmd_params" \
   #
-  "Detects the Java Debug Wire Protocol;\
-  -p 9999;jdwp-version;-sV -p 9999" \
+  "Connects to portmapper and fetches a list of all registered programs. It then\n \
+  prints out a table including (for each program) the RPC program number,\n \
+  supported version numbers, port number and protocol, and program name.\n \
+  \n https://nmap.org/nsedoc/scripts/rpcinfo.html;\
+  ;rpcinfo;-sV -p 111 $_cmd_params" \
   #
-  "Retrieves version and db info from a SAP Max DB;\
-  -p 7210;maxdb-info;--script maxdb-info -p 7210" \
+  "Detects the Skype version 2 service.\n \
+  \n https://nmap.org/nsedoc/scripts/skypev2-version.html;\
+  ;skypev2-version;-sV -p 80 $_cmd_params" \
   #
-  "Check if ePO agent is running on ePO Agent port;\
-  -p 8081;mcafee-epo-agent;-sV -p 8081" \
+  "Extracts basic information from an SNMPv3 GET request. The same probe is used\n \
+  here as in the service version detection scan.\n \
+  \n https://nmap.org/nsedoc/scripts/snmp-info.html;\
+  ;snmp-info;-sV -p 161 $_cmd_params" \
   #
-  "Dumps message traffic from MQTT brokers;\
-  -p 1883;mqtt-subscribe;--script mqtt-subscribe -p 1883" \
+  "Sends a binding request to the server and attempts to extract version\n \
+  information from the response, if the server attribute is present.\n \
+  \n https://nmap.org/nsedoc/scripts/stun-version.html;\
+  ;stun-version;-sU -sV -p 3478 $_cmd_params" \
   #
-  "Detects the Murmur service;\
-  -p 64740;murmur-version;-sV -p 64740" \
+  "Detects the TeamSpeak 2 voice communication server and attempts to determine\n \
+  version and configuration information.\n \
+  \n https://nmap.org/nsedoc/scripts/teamspeak2-version.html;\
+  ;teamspeak2-version;-sU -sV -p 8767 $_cmd_params" \
   #
-  "Retrieves version info from NDMP service;\
-  ;ndmp-version;-sV -p $port" \
+  "Queries VMware server (vCenter, ESX, ESXi) SOAP API to extract the version\n \
+  information.\n \
+  \n https://nmap.org/nsedoc/scripts/vmware-version.html;\
+  ;vmware-version;--script vmware-version -p 443 $_cmd_params" \
   #
-  "Extends version detection to detect NetBuster;\
-  -p 12345;netbus-version;-sV --script netbus-version -p 12345" \
-  #
-  "Send a FINS packet to a remote device;\
-  -p 9600;omron-info;--script omron-info -sU -p 9600" \
-  #
-  "Parses and displays the banner info of an OpenLookup;\
-  -p 5850;openlookup-info;--script openlookup-info -p 5850" \
-  #
-  "Decodes the VSNNUM version number (Oracle TNS listener);\
-  ;oracle-tns-version;-sV -p $port" \
-  #
-  "Detects the version of an Oracle Virtual Server Agent;\
-  -p 8899;ovs-agent-version;-sV -p 8899" \
-  #
-  "Attempts to extract system info from the PPTP;\
-  -p 1723;pptp-version;-sV -p 1723" \
-  #
-  "Extracts info from Quake game servers;\
-  U:26000-26004;quake1-info;-n -sU -Pn --script quake1-info -p U:26000-26004" \
-  #
-  "Extracts info from a Quake3 game server;\
-  -p 27960;quake3-info;-sU -sV -Pn --script quake3-info.nse -p 27960" \
-  #
-  "Retrieves the day and time from the Time service;\
-  -p 37;rfc868-time;-sV -p 37" \
-  #
-  "Fingerprints the target RPC port to extract the target;\
-  -p 53344;rpc-grind;--script rpc-grind --script-args 'rpc-grind.threads=8' -p 53344" \
-  #
-  "Connects to portmapper and fetches a list of all programs;\
-  -p 111;rpcinfo;-sV -p 111" \
-  #
-  "Enumerates Siemens S7 PLC Devices and collects device info;\
-  -p 102;s7-info;--script s7-info.nse -p 102" \
-  #
-  "Detects the Skype version 2 service;\
-  -p 80;skypev2-version;-sV -p 80" \
-  #
-  "Extracts basic info from an SNMPv3 GET request;\
-  -p 161;snmp-info;-sV -p 161" \
-  #
-  "Sends req to the server and get info from the res;\
-  -p 3478;stun-version;-sU -sV -p 3478" \
-  #
-  "Detects the TeamSpeak 2;\
-  -p 8767;teamspeak2-version;-sU -sV -p 8767" \
-  #
-  "Detects the Ventrilo voice communication server;\
-  -p 9408;ventrilo-info;-Pn -sU -sV --script ventrilo-info -p 9408" \
-  #
-  "Queries VMware server (vCenter, ESX, ESXi) SOAP API;\
-  -p 443;vmware-version;--script vmware-version -p 443" \
-  #
-  "Detects vulns and gathers info from VxWorks Wind DeBug;\
-  -p 17185;wdb-version;-sU --script wdb-version -p 17185" \
-  #
-  "Detect the T3 RMI protocol and Weblogic version;\
-  ;weblogic-t3-info;-sV -p $port" \
-  #
-  "Connects to XMPP server and collects server info;\
-  -p 5222;xmpp-info;-sV -p 5222"
+  "Connects to XMPP server (port 5222) and collects server information such as:\n \
+  supported auth mechanisms, compression methods, whether TLS is supported and\n \
+  mandatory, stream management, language, support of In-Band registration,\n \
+  server capabilities. If possible, studies server vendor.\n \
+  \n https://nmap.org/nsedoc/scripts/xmpp-info.html;\
+  ;xmpp-info;-sV -p 5222 $_cmd_params"
   )
 
   # shellcheck disable=SC2034,SC2154
