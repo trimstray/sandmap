@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+
+# shellcheck shell=bash
+
+# ``````````````````````````````````````````````````````````````````````````````
+# Function name: init_values()
+#
+# Description:
+#   Init configuration values.
+#
+# Usage:
+#   init_values
+#
+# Examples:
+#   init_values
+#
+
+function init_values() {
+
+  # shellcheck disable=SC2034
+  local _FUNCTION_ID="init_values"
+  local _STATE=0
+
+    # shellcheck disable=SC2034,SC2154
+  _cmd_dest=$(echo "${_variables_stack[0]}" | awk -v FS="(;|;)" '{print $4}')
+  # shellcheck disable=SC2034,SC2154
+  _cmd_params=$(echo "${_variables_stack[1]}" | awk -v FS="(;|;)" '{print $4}')
+  # shellcheck disable=SC2034,SC2154
+  _cmd_report=$(echo "${_variables_stack[2]}" | awk -v FS="(;|;)" '{print $4}')
+  # shellcheck disable=SC2034,SC2154
+  _cmd_tor=$(echo "${_variables_stack[3]}" | awk -v FS="(;|;)" '{print $4}')
+  # shellcheck disable=SC2034,SC2154
+  _cmd_terminal=$(echo "${_variables_stack[4]}" | awk -v FS="(;|;)" '{print $4}')
+
+  return $_STATE
+
+}
