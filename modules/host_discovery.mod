@@ -51,7 +51,8 @@ function host_discovery() {
     Description
     -----------
 
-      Nmap Host Discovery module.
+      Nmap does host discovery and then performs a port
+      scan against each host it determines is online.
 
     Commands
     --------
@@ -107,23 +108,23 @@ function host_discovery() {
   # shellcheck disable=SC2034
   _module_commands=(\
   #
-  "No Scan, List targets only;\
-  ;targets;-sL" \
+  "No Scan, List targets only. When a List Scan is performed, Nmap will attempt\n to perform a reverse DNS lookup to identify the FQDN of the host(s) to be scanned.\n Resolved names will be included as part of the scan results.\n \n https://nmap.org/book/man-host-discovery.html;\
+  ;list_scan;-sL" \
   #
-  "No port scanning, Host discovery only;\
-  ;discovery;-sn" \
+  "No port scanning, Host discovery only. This option tells Nmap not to do a port\n scan after host discovery, and only print out the available hosts that responded\n to the host discovery probes. This is often known as a \"ping scan\",\n but you can also request that traceroute and NSE host scripts be run.\n \n https://nmap.org/book/man-host-discovery.html;\
+  ;no_port_scan;-sn" \
   #
-  "No host discovery, Port scan only;\
-  ;port_only;-Pn" \
+  "No host discovery, Port scan only. This option skips the Nmap discovery stage altogether.\n Normally, Nmap uses this stage to determine active machines for heavier scanning.\n By default, Nmap only performs heavy probing such as port scans, version detection\n or OS detection against hosts that are found to be up. Disabling host discovery with -Pn\n causes Nmap to attempt the requested scanning functions against every target IP address specified.\n \n https://nmap.org/book/man-host-discovery.html;\
+  ;no_ping;-Pn" \
   #
-  "TCP SYN discovery;\
-  ;tcp_syn_disc;-PS $port" \
+  "TCP SYN discovery. This option sends an empty TCP packet with the SYN flag set. The default\n destination port is 80 (configurable at compile time by changing DEFAULT_TCP_PROBE_PORT_SPEC\n in nmap.h). Alternate ports can be specified as a parameter.\n \n https://nmap.org/book/man-host-discovery.html;\
+  ;tcp_syn_ping;-PS -p $port" \
   #
-  "TCP ACK discovery;\
-  ;tcp_ack_disc;-PA $port" \
+  "TCP ACK discovery. The TCP ACK ping is quite similar to the just-discussed SYN ping.\n The difference, as you could likely guess, is that the TCP ACK flag is set instead of\n the SYN flag. Such an ACK packet purports to be acknowledging data over an established\n TCP connection, but no such connection exists. So remote hosts should\n always respond with a RST packet, disclosing their existence in the process.\n \n https://nmap.org/book/man-host-discovery.html;\
+  ;tcp_ack_ping;-PA -p $port" \
   #
-  "UDP discovery;\
-  ;udp_disc;-PU $port" \
+  "UDP discovery. Another host discovery option is the UDP ping, which sends a UDP packet\n to the given ports. For most ports, the packet will be empty, though some use\n a protocol-specific payload that is more likely to elicit a response.\n \n https://nmap.org/book/man-host-discovery.html;\
+  ;udp_ping;-PU -p $port" \
   #
   "ARP discovery on local network;\
   ;arp_disc;-PR" \
