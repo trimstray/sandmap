@@ -357,17 +357,17 @@ function _init_cmd() {
   local _full_command=()
 
   # shellcheck disable=SC2154
-  if [[ "$tor" == "true" ]] ; then
+  if [[ "$_cmd_tor" == "true" ]] ; then
 
     _full_command+=("proxychains")
 
   fi
 
   # shellcheck disable=SC2154
-  if [[ "$terminal" == "external" ]] ; then
+  if [[ "$_cmd_terminal" == "external" ]] ; then
 
     printf "\n\e[1;39m%s\e[m:\n" "terminal"
-    printf "\e[1;39m%c\e[m \e[1;30m%s\e[m\n" ">" "$terminal"
+    printf "\e[1;39m%c\e[m \e[1;30m%s\e[m\n" ">" "$_cmd_terminal"
     _full_command+=("${_xterm}")
 
   else
@@ -384,14 +384,14 @@ function _init_cmd() {
 
   else
 
-    _full_command+=("nmap" "${_cmd[@]}" "$dest")
+    _full_command+=("nmap" "${_cmd[@]}" "$_cmd_dest")
 
   fi
 
   # shellcheck disable=SC2154
-  if [[ ! -z "$report" ]] ; then
+  if [[ ! -z "$_cmd_report" ]] ; then
 
-    case $report in
+    case $_cmd_report in
 
       standard)
 
@@ -424,7 +424,7 @@ function _init_cmd() {
 
   fi
 
-  if [[ "$terminal" == "external" ]] ; then
+  if [[ "$_cmd_terminal" == "external" ]] ; then
 
     printf "\n\e[1;39m%s\e[m:\n" "command"
     printf "\e[1;39m%c\e[m \e[1;30m%s\e[m\n\n" ">" "${_full_command[*]}"
@@ -439,7 +439,7 @@ function _init_cmd() {
   # Execute command and exit.
   # For shellcheck code:
   #   - after closing the array with double quotes, some commands are not executed properly
-  if [[ "$terminal" == "external" ]] ; then
+  if [[ "$_cmd_terminal" == "external" ]] ; then
 
     # shellcheck disable=SC2068
     ${_full_command[@]} &
