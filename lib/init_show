@@ -25,7 +25,8 @@ function init_show() {
 
   _count=0
 
-  printf "\n  \e[1;38m%-4.4s %-35.35s %s\e[m\n  %-4.4s %-35.35s %s\n\n" \
+  _cr="-40.40"
+  printf "\n  \e[1;38m%-4.4s %${_cr}s %s\e[m\n  %-4.4s %${_cr}s %s\n\n" \
          "ID" \
          "Alias" \
          "Nmap Parameters" \
@@ -47,14 +48,14 @@ function init_show() {
 
     if [[ "$_key_alias" == "$_marg" ]] ; then
 
-      printf "  \e[1;32m%-4.4s\e[m \e[1;36m%-35.35s\e[m %s\n" \
+      printf "  \e[1;32m%-4.4s\e[m \e[1;36m%${_cr}s\e[m %s\n" \
              "$_count" \
              "$_key_alias" \
              "$_key_cmd"
 
     elif [[ -z "$_marg" ]] ; then
 
-      printf "  \e[1;32m%-4.4s\e[m \e[1;36m%-35.35s\e[m %s\n" \
+      printf "  \e[1;32m%-4.4s\e[m \e[1;36m%${_cr}s\e[m %s\n" \
              "$_count" \
              "$_key_alias" \
              "$_key_cmd"
