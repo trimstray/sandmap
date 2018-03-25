@@ -543,7 +543,7 @@ function cli_distributor() {
         if [[ "${#_pushd_stack[@]}" -ne 0 ]] ; then
 
           # shellcheck disable=SC2034
-          printf "pushd cmd: %s\n" "${_init_cmd[@]}"
+          printf "pushd: %s\n" "${_pushd_stack[@]}"
 
         else
 
@@ -554,7 +554,7 @@ function cli_distributor() {
       elif [[ "${_argv[1]}" == "flush" ]] ; then
 
         # shellcheck disable=SC2034
-        _init_cmd=()
+        _pushd_stack=()
 
         printf "stdout: %s\n" "pushd flushed"
 
