@@ -280,7 +280,7 @@ function cli_distributor() {
         if [[ "${_argv[1]}" == "config" ]] ; then
 
           cli_config
-          init_config
+          init_session
 
           printf "stdout: %s\n" "config reloaded"
 
@@ -317,7 +317,7 @@ function cli_distributor() {
         if [[ "${_argv[1]}" == "config" ]] ; then
 
           cli_config
-          init_config
+          init_session
 
           printf "stdout: %s\n" "config reloaded"
 
