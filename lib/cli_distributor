@@ -482,6 +482,7 @@ function cli_distributor() {
     if [[ "$_in_module" -eq 1 ]] ; then
 
       _count=0
+      _cmd_state=0
 
       for _scan in "${_module_commands[@]}" ; do
 
@@ -493,20 +494,20 @@ function cli_distributor() {
         if [[ "${_argv[1]}" == "$_key_id" ]] ; then
 
           _init_cmd "$_key_var"
+          _cmd_state=1
 
         elif [[ "${_argv[1]}" == "$_count" ]] ; then
 
           _init_cmd "$_key_var"
-
-        else
-
-          _count=$((_count + 1))
+          _cmd_state=1
 
         fi
 
+        _count=$((_count + 1))
+
       done
 
-      if [[ "$_count" -eq "${#_module_commands[@]}" ]] ; then
+      if [[ "$_cmd_state" -eq 0 ]] ; then
 
         printf "stdout: %s\n" "unknown command"
 
@@ -561,6 +562,7 @@ function cli_distributor() {
       else
 
         _count=0
+        _cmd_state=0
 
         for _scan in "${_module_commands[@]}" ; do
 
@@ -572,20 +574,20 @@ function cli_distributor() {
           if [[ "${_argv[1]}" == "$_key_id" ]] ; then
 
             _pushd_stack+=("$_key_var")
+            _cmd_state=1
 
           elif [[ "${_argv[1]}" == "$_count" ]] ; then
 
             _pushd_stack+=("$_key_var")
-
-          else
-
-            _count=$((_count + 1))
+            _cmd_state=1
 
           fi
 
+          _count=$((_count + 1))
+
         done
 
-        if [[ "$_count" -eq "${#_module_commands[@]}" ]] ; then
+        if [[ "$_cmd_state" -eq 0 ]] ; then
 
           printf "stdout: %s\n" "unknown command"
 
