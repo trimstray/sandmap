@@ -72,10 +72,6 @@ function set_config() {
 
     printf "stdout: %s\n" "unknown key"
 
-  else
-
-    init_values
-
   fi
 
   return $_STATE
