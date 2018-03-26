@@ -6,7 +6,7 @@
 # Function name: sample()
 #
 # Description:
-#   Sample module.
+#   Sample module template.
 #
 # Usage:
 #   sample
@@ -25,31 +25,24 @@ function sample() {
   # - module_name: store module name
   # - module_args: store module arguments
 
-  _module_show=
-  _module_help=
+  export _module_show=
+  export _module_help=
+  export _module_opts=
+  export _module_commands=
 
   # shellcheck disable=SC2034
   _module_variables=()
 
   # shellcheck disable=SC2034
-  author="example"
-  contact="example@example.com"
-  version="1.0"
-  category="scanning"
+  author=""
+  contact=""
+  version=""
+  description="Sample module template"
 
   # shellcheck disable=SC2034,SC2154
   _module_cfg="${_modules}/${module_name}.cfg"
 
   touch "$_module_cfg"
-
-  # shellcheck disable=SC2034,SC2154
-  _module_show=$(printf "%s" "
-    Module: ${module_name}
-    Author: ${author}
-   Contact: ${contact}
-   Version: ${version}
-  Category: ${category}
-")
 
   # shellcheck disable=SC2034,SC2154
   _module_help=$(printf "%s" "
@@ -58,29 +51,24 @@ function sample() {
     Description
     -----------
 
-      It's a sample module template - short description.
+      Sample module template - short module description.
 
     Commands
     --------
 
-      list                            display scanning list commands
-      init     <value>                run predefined scanning command
+      help                            display module help
+      show    <key>                   display module or profile info
+      config  <key>                   show module configuration
+      set     <key>                   set module variable value
+      use     <module>                reuse module (changed env)
+      pushd   <key>|init|show|flush   command line commands stack
 
       Options:
 
         <key>                         key value
+        <value>                       profile alias or id
 
-    Examples
-    --------
-
-      config dbpass                   show 'dbpass' module key value
-      init fast_scan                  run 'fast_scan' scanning profile
 ")
-
-  # shellcheck disable=SC2034
-  export _module_opts=(\
-  "$_module_show" \
-  "$_module_help")
 
   # shellcheck disable=SC2154
   if [[ "$_mstate" -eq 0 ]] ; then
@@ -93,10 +81,13 @@ function sample() {
     else
 
       # shellcheck disable=SC2034
-      _module_variables=(\
-      "Testing;'test1|test2';testing;testing_value")
+      _module_variables=()
 
-      printf "_module_variables=(\"%s\")\n" "${_module_variables[@]}" > "$_module_cfg"
+      if [[ "${#_module_variables[@]}" -ne 0 ]] ; then
+
+        printf "_module_variables=(\"%s\")\n" "${_module_variables[@]}" > "$_module_cfg"
+
+      fi
 
       _mstate=1
 
@@ -109,10 +100,32 @@ function sample() {
 
   fi
 
+  # In the given commands you can use variables from the CLI config
+  # command or the etc/main.cfg file.
+
+  # ---------------------------------------------------------------------------------------\n
+
   # shellcheck disable=SC2034
   _module_commands=(\
-  "Fast Scanning;;fast_scan;-sV -T4 -O -F" \
-  "ACK Scanning;;ack_scan;-sA")
+  #
+  "Sample module description.\n \
+  \n https://example.com/sample;\
+  ;sample_scan;--params $_cmd_params" \
+  )
+
+  # shellcheck disable=SC2034,SC2154
+  _module_show=(\
+      "${module_name}" \
+      "${version}" \
+      "${#_module_commands[@]}" \
+      "${author}" \
+      "${contact}" \
+      "${description}" \
+      )
+
+  # shellcheck disable=SC2034
+  export _module_opts=(\
+  "$_module_help")
 
   return $_STATE
 
