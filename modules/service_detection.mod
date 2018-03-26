@@ -67,7 +67,7 @@ function service_detection() {
       show    <key>                   display module or profile info
       config  <key>                   show module configuration
       set     <key>                   set module variable value
-      init    <value>                 run predefined scanning command
+      use     <module>                reuse module (changed env)
       pushd   <key>|init|show|flush   command line commands stack
 
       Options:

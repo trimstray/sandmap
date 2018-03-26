@@ -31,7 +31,7 @@ function cli_help() {
     config  <key>|<module [key]>    show global or module configuration
     set     <key>|<module [key]>    set global or module variable value
     use     <module>                use module (changed env)
-    pushd   init|show|flush         command line commands stack (experimental)
+    pushd   init|show|flush         command line commands stack
 
     reload  <modules|config>        reload all modules cache or configuration
     banner                          show banner
@@ -50,6 +50,7 @@ function cli_help() {
     show    <key>                   display module or profile info
     config  <key>                   show module configuration
     set     <key>                   set module variable value
+    use     <module>                reuse module (changed env)
     pushd   <key>|init|show|flush   command line commands stack (experimental)
 
   Examples
