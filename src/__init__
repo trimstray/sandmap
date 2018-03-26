@@ -252,7 +252,7 @@ function __main__() {
   fi
 
   # Initialize configuration.
-  cli_config
+  init_config
   init_session
 
   # Initialize modules.

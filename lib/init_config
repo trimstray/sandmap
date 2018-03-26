@@ -3,22 +3,22 @@
 # shellcheck shell=bash
 
 # ``````````````````````````````````````````````````````````````````````````````
-# Function name: cli_config()
+# Function name: init_config()
 #
 # Description:
 #   Show help in cli.
 #
 # Usage:
-#   cli_config
+#   init_config
 #
 # Examples:
-#   cli_config
+#   init_config
 #
 
-function cli_config() {
+function init_config() {
 
   # shellcheck disable=SC2034
-  local _FUNCTION_ID="cli_config"
+  local _FUNCTION_ID="init_config"
   local _STATE=0
 
   # shellcheck disable=SC2034,SC2154
