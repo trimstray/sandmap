@@ -35,14 +35,14 @@ function cli_distributor() {
       else
 
         init_module "${_argv[@]}"
-        init_help
+        module_help
 
       fi
 
     else
 
       init_module "${_argv[@]}"
-      init_help
+      module_help
 
     fi
 
@@ -386,7 +386,7 @@ function cli_distributor() {
               _in_module=0
 
               init_module "${_argv[@]}"
-              init_show
+              module_show
 
             else
 
@@ -417,7 +417,7 @@ function cli_distributor() {
 
             if [[ "$_key_var" == "${_argv[2]}" ]] ; then
 
-              init_show "${_argv[2]}"
+              module_show "${_argv[2]}"
 
               printf "  \e[1;38m%s\e[m:\n\n" "Description"
 
@@ -437,7 +437,7 @@ function cli_distributor() {
 
         _in_module=1
 
-        init_show
+        module_show
 
       else
 
@@ -453,7 +453,7 @@ function cli_distributor() {
 
           if [[ "$_key_var" == "${_argv[1]}" ]] ; then
 
-            init_show "${_argv[1]}"
+            module_show "${_argv[1]}"
 
             printf "  \e[1;38m%s\e[m:\n\n" "Description"
 

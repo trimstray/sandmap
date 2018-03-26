@@ -3,22 +3,22 @@
 # shellcheck shell=bash
 
 # ``````````````````````````````````````````````````````````````````````````````
-# Function name: init_show()
+# Function name: module_show()
 #
 # Description:
 #   Show help in cli.
 #
 # Usage:
-#   init_show
+#   module_show
 #
 # Examples:
-#   init_show
+#   module_show
 #
 
-function init_show() {
+function module_show() {
 
   # shellcheck disable=SC2034
-  local _FUNCTION_ID="init_show"
+  local _FUNCTION_ID="module_show"
   local _STATE=0
 
   local _marg="$1"

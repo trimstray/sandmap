@@ -3,22 +3,22 @@
 # shellcheck shell=bash
 
 # ``````````````````````````````````````````````````````````````````````````````
-# Function name: init_help()
+# Function name: module_help()
 #
 # Description:
 #   Show help in cli.
 #
 # Usage:
-#   init_help
+#   module_help
 #
 # Examples:
-#   init_help
+#   module_help
 #
 
-function init_help() {
+function module_help() {
 
   # shellcheck disable=SC2034
-  local _FUNCTION_ID="init_help"
+  local _FUNCTION_ID="module_help"
   local _STATE=0
 
   # shellcheck disable=SC2154
