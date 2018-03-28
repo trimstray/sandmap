@@ -251,8 +251,26 @@ function __main__() {
 
   fi
 
+  export _cmd_dest
+  export _cmd_params
+  export _cmd_report
+  export _cmd_tor
+  export _cmd_terminal
+
   # Initialize configuration.
   init_config
+
+  # shellcheck disable=SC2154
+  _cmd_dest="$dest"
+  # shellcheck disable=SC2154
+  _cmd_params="$params"
+  # shellcheck disable=SC2154
+  _cmd_report="$report"
+  # shellcheck disable=SC2154
+  _cmd_tor="$tor"
+  # shellcheck disable=SC2154
+  _cmd_terminal="$terminal"
+
   init_session
 
   # Initialize modules.

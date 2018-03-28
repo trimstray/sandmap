@@ -21,17 +21,6 @@ function init_session() {
   local _FUNCTION_ID="init_session"
   local _STATE=0
 
-  # shellcheck disable=SC2154
-  _cmd_dest="$dest"
-  # shellcheck disable=SC2154
-  _cmd_params="$params"
-  # shellcheck disable=SC2154
-  _cmd_report="$report"
-  # shellcheck disable=SC2154
-  _cmd_tor="$tor"
-  # shellcheck disable=SC2154
-  _cmd_terminal="$terminal"
-
   export _session_variables=(\
   "Destination;'127.0.0.1,example.com';dest;$_cmd_dest" \
   "Nmap Parameters;'--script ssl-ccs-injection -p 443';params;$_cmd_params" \
