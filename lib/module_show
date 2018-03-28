@@ -26,13 +26,18 @@ function module_show() {
   _count=0
 
   _cr="-40.40"
-  printf "\n  \e[1;38m%-4.4s %${_cr}s %s\e[m\n  %-4.4s %${_cr}s %s\n\n" \
-         "ID" \
-         "Alias" \
-         "Nmap Parameters" \
-         "--" \
-         "-----" \
-         "---------------"
+
+  if [[ -z "$_marg" ]] ; then
+
+    printf "\n  \e[1;38m%-4.4s %${_cr}s %s\e[m\n  %-4.4s %${_cr}s %s\n\n" \
+           "ID" \
+           "Alias" \
+           "Nmap Parameters" \
+           "--" \
+           "-----" \
+           "---------------"
+
+  fi
 
   # shellcheck disable=SC2034,SC2154
   for _svar in "${_module_commands[@]}" ; do
@@ -47,6 +52,14 @@ function module_show() {
     _key_cmd=$(echo "$_svar" | awk -v FS="(;|;)" '{print $4}')
 
     if [[ "$_key_alias" == "$_marg" ]] ; then
+
+      printf "\n  \e[1;38m%-4.4s %${_cr}s %s\e[m\n  %-4.4s %${_cr}s %s\n\n" \
+             "ID" \
+             "Alias" \
+             "Nmap Parameters" \
+             "--" \
+             "-----" \
+             "---------------"
 
       printf "  \e[1;32m%-4.4s\e[m \e[1;36m%${_cr}s\e[m %s\n" \
              "$_count" \
