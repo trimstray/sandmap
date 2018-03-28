@@ -107,7 +107,7 @@ function awesome_nmap() {
   _module_commands=(\
   #
   "Show only open ports;\
-  ;open_ports;-F -p 1-65535 --open" \
+  ;open_ports;-F --open $params" \
   )
 
   # shellcheck disable=SC2034,SC2154
