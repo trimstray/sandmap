@@ -116,16 +116,16 @@ function nse_version() {
   #
   "Gathers information (a list of all server properties) from an AMQP (advanced\n \
   message queuing protocol) server.\n \
-  \n \n https://nmap.org/nsedoc/scripts/amqp-info.html;\
+  \n https://nmap.org/nsedoc/scripts/amqp-info.html;\
   ;amqp-info;--script amqp-info -p 5672 $_cmd_params" \
   #
   "Connects to the IBM DB2 Administration Server (DAS) on TCP or UDP port 523\n \
   and exports the server profile. No authentication is required for this request.\n \
-  \n \n https://nmap.org/nsedoc/scripts/db2-das-info.html;\
+  \n https://nmap.org/nsedoc/scripts/db2-das-info.html;\
   ;db2-das-info;-sV -p 523 $_cmd_params" \
   #
   "Detects the Docker service version.\n \
-  \n \n https://nmap.org/nsedoc/scripts/docker-version.html;\
+  \n https://nmap.org/nsedoc/scripts/docker-version.html;\
   ;docker-version;-sV -p 2375 $_cmd_params" \
   #
   "This NSE script is used to send a EtherNet/IP packet to a remote device that\n \
