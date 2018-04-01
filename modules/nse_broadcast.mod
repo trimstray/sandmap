@@ -245,6 +245,128 @@ function nse_broadcast() {
   enumerate common DNS SRV records.\n \
   \n https://nmap.org/nsedoc/scripts/dns-brute.html;\
   ;dns-brute-2;--script dns-brute --script-args dns-brute.domain=foo.com,dns-brute.threads=6,dns-brute.hostlist=./hostfile.txt,newtargets -sS -p 80 $_cmd_params" \
+  #
+  "Performs DNS cache snooping against a DNS server.\n \
+  \n https://nmap.org/nsedoc/scripts/dns-cache-snoop.html;\
+  ;dns-cache-snoop;-sU --script dns-cache-snoop.nse --script-args 'dns-cache-snoop.mode=timed,dns-cache-snoop.domains={host1,host2,host3}' -p 53 $_cmd_params" \
+  #
+  "Attempts to enumerate DNS hostnames by brute force guessing of common\n \
+  subdomains. With the dns-brute.srv argument, dns-brute will also try to\n \
+  enumerate common DNS SRV records.\n \
+  \n https://nmap.org/nsedoc/scripts/dns-check-zone.html;\
+  ;dns-check-zone;-sn -Pn ns1.example.com --script dns-check-zone --script-args='dns-check-zone.domain=example.com' $_cmd_params" \
+  #
+  "Performs a domain lookup using the edns-client-subnet option which allows\n \
+  clients to specify the subnet that queries supposedly originate from. The\n \
+  script uses this option to supply a number of geographically distributed\n \
+  locations in an attempt to enumerate as many different address records as\n \
+  possible. The script also supports requests using a given subnet.\n \
+  \n https://nmap.org/nsedoc/scripts/dns-client-subnet-scan.html;\
+  ;dns-client-subnet-scan-1;-sU --script dns-client-subnet-scan --script-args 'dns-client-subnet-scan.domain=www.example.com, dns-client-subnet-scan.address=192.168.0.1 [,dns-client-subnet-scan.nameserver=8.8.8.8] [,dns-client-subnet-scan.mask=24]' -p 53 $_cmd_params" \
+  #
+  "Performs a domain lookup using the edns-client-subnet option which allows\n \
+  clients to specify the subnet that queries supposedly originate from. The\n \
+  script uses this option to supply a number of geographically distributed\n \
+  locations in an attempt to enumerate as many different address records as\n \
+  possible. The script also supports requests using a given subnet.\n \
+  \n https://nmap.org/nsedoc/scripts/dns-client-subnet-scan.html;\
+  ;dns-client-subnet-scan-2;--script dns-client-subnet-scan --script-args 'dns-client-subnet-scan.domain=www.example.com, dns-client-subnet-scan.address=192.168.0.1 dns-client-subnet-scan.nameserver=8.8.8.8, [,dns-client-subnet-scan.mask=24]' $_cmd_params" \
+  #
+  "Enumerates DNS names using the DNSSEC NSEC-walking technique.\n \
+  \n https://nmap.org/nsedoc/scripts/dns-nsec-enum.html;\
+  ;dns-nsec-enum;-sSU --script dns-nsec-enum --script-args dns-nsec-enum.domains=example.com -p 53 $_cmd_params" \
+  #
+  "Tries to enumerate domain names from the DNS server that supports DNSSEC
+  NSEC3 records.\n \
+  \n https://nmap.org/nsedoc/scripts/dns-nsec3-enum.html;\
+  ;dns-nsec3-enum;-sU --script=dns-nsec3-enum --script-args dns-nsec3-enum.domains=example.com -p 53 $_cmd_params" \
+  #
+  "Retrieves information from a DNS nameserver by requesting its nameserver ID
+  (nsid) and asking for its id.server and version.bind values. This script
+  performs the same queries as the following two dig commands: - dig CH TXT
+  bind.version @target - dig +nsid CH TXT id.server @target\n \
+  \n https://nmap.org/nsedoc/scripts/dns-nsid.html;\
+  ;dns-nsid;-sSU --script dns-nsid -p 53 $_cmd_params" \
+  #
+  "Attempts to discover target hosts' services using the DNS Service Discovery
+  protocol.\n \
+  \n https://nmap.org/nsedoc/scripts/dns-service-discovery.html;\
+  ;dns-service-discovery;--script=dns-service-discovery -p 5353 $_cmd_params" \
+  #
+  "Requests a zone transfer (AXFR) from a DNS server.\n \
+  \n https://nmap.org/nsedoc/scripts/dns-zone-transfer.html;\
+  ;dns-zone-transfer;--script dns-zone-transfer.nse --script-args dns-zone-transfer.domain=<domain> $_cmd_params" \
+  #
+  "Performs a Forward-confirmed Reverse DNS lookup and reports anomalous
+  results.\n \
+  \n https://nmap.org/nsedoc/scripts/fcrdns.html;\
+  ;fcrdns;-sn -Pn --script fcrdns $_cmd_params" \
+  #
+  "Tries to discover firewall rules using an IP TTL expiration technique known
+  as firewalking.\n \
+  \n https://nmap.org/nsedoc/scripts/firewalk.html;\
+  ;firewalk;--script=firewalk --traceroute $_cmd_params" \
+  #
+  "Sends FTP SYST and STAT commands and returns the result.\n \
+  \n https://nmap.org/nsedoc/scripts/ftp-syst.html;\
+  ;ftp-syst;-sV -sC $_cmd_params" \
+  #
+  "Sends FTP SYST and STAT commands and returns the result.\n \
+  \n https://nmap.org/nsedoc/scripts/ftp-syst.html;\
+  ;ftp-syst;-sV -sC $_cmd_params" \
+  #
+  "Sends FTP SYST and STAT commands and returns the result.\n \
+  \n https://nmap.org/nsedoc/scripts/ftp-syst.html;\
+  ;ftp-syst;-sV -sC $_cmd_params" \
+  #
+  "Sends FTP SYST and STAT commands and returns the result.\n \
+  \n https://nmap.org/nsedoc/scripts/ftp-syst.html;\
+  ;ftp-syst;-sV -sC $_cmd_params" \
+  "Sends FTP SYST and STAT commands and returns the result.\n \
+  \n https://nmap.org/nsedoc/scripts/ftp-syst.html;\
+  ;ftp-syst;-sV -sC $_cmd_params" \
+  #
+  "Sends FTP SYST and STAT commands and returns the result.\n \
+  \n https://nmap.org/nsedoc/scripts/ftp-syst.html;\
+  ;ftp-syst;-sV -sC $_cmd_params" \
+  #
+  "Sends FTP SYST and STAT commands and returns the result.\n \
+  \n https://nmap.org/nsedoc/scripts/ftp-syst.html;\
+  ;ftp-syst;-sV -sC $_cmd_params" \
+  #
+  "Sends FTP SYST and STAT commands and returns the result.\n \
+  \n https://nmap.org/nsedoc/scripts/ftp-syst.html;\
+  ;ftp-syst;-sV -sC $_cmd_params" \
+  "Sends FTP SYST and STAT commands and returns the result.\n \
+  \n https://nmap.org/nsedoc/scripts/ftp-syst.html;\
+  ;ftp-syst;-sV -sC $_cmd_params" \
+  #
+  "Sends FTP SYST and STAT commands and returns the result.\n \
+  \n https://nmap.org/nsedoc/scripts/ftp-syst.html;\
+  ;ftp-syst;-sV -sC $_cmd_params" \
+  #
+  "Sends FTP SYST and STAT commands and returns the result.\n \
+  \n https://nmap.org/nsedoc/scripts/ftp-syst.html;\
+  ;ftp-syst;-sV -sC $_cmd_params" \
+  #
+  "Sends FTP SYST and STAT commands and returns the result.\n \
+  \n https://nmap.org/nsedoc/scripts/ftp-syst.html;\
+  ;ftp-syst;-sV -sC $_cmd_params" \
+  "Sends FTP SYST and STAT commands and returns the result.\n \
+  \n https://nmap.org/nsedoc/scripts/ftp-syst.html;\
+  ;ftp-syst;-sV -sC $_cmd_params" \
+  #
+  "Sends FTP SYST and STAT commands and returns the result.\n \
+  \n https://nmap.org/nsedoc/scripts/ftp-syst.html;\
+  ;ftp-syst;-sV -sC $_cmd_params" \
+  #
+  "Sends FTP SYST and STAT commands and returns the result.\n \
+  \n https://nmap.org/nsedoc/scripts/ftp-syst.html;\
+  ;ftp-syst;-sV -sC $_cmd_params" \
+  #
+  "Sends FTP SYST and STAT commands and returns the result.\n \
+  \n https://nmap.org/nsedoc/scripts/ftp-syst.html;\
+  ;ftp-syst;-sV -sC $_cmd_params" \
   )
 
   # shellcheck disable=SC2034,SC2154
