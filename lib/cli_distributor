@@ -597,6 +597,10 @@ function cli_distributor() {
 
     fi
 
+  elif [[ "${_argv[0]}" == "search" ]] ; then
+
+    true
+
   else
 
     printf "stdout: %s\n" "unknown command"

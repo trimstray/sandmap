@@ -16,7 +16,7 @@
 readonly _fd_stack=(init_config init_session load_modules init_cli \
                     cli_distributor cli_help cli_show init_module \
                     module_help module_show module_info show_config \
-                    set_config)
+                    set_config init_search)
 
 if [[ "${#_fd_stack[@]}" -ne 0 ]] ; then
 

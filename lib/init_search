@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+# shellcheck shell=bash
+
+# ``````````````````````````````````````````````````````````````````````````````
+# Function name: init_search()
+#
+# Description:
+#   Init search module.
+#
+# Usage:
+#   init_search
+#
+# Examples:
+#   init_search
+#
+
+function init_search() {
+
+  # shellcheck disable=SC2034
+  local _FUNCTION_ID="init_search"
+  local _STATE=0
+
+
+
+  return $_STATE
+
+}
