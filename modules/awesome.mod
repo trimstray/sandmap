@@ -3,22 +3,22 @@
 # shellcheck shell=bash
 
 # ``````````````````````````````````````````````````````````````````````````````
-# Function name: awesome_nmap()
+# Function name: awesome()
 #
 # Description:
 #   Awesome Nmap predefined commands module.
 #
 # Usage:
-#   awesome_nmap
+#   awesome
 #
 # Examples:
-#   awesome_nmap
+#   awesome
 #
 
-function awesome_nmap() {
+function awesome() {
 
   # shellcheck disable=SC2034
-  local _FUNCTION_ID="awesome_nmap"
+  local _FUNCTION_ID="awesome"
   local _STATE=0
 
   # User variables:
@@ -35,7 +35,7 @@ function awesome_nmap() {
 
   # shellcheck disable=SC2034
   author="trimstray"
-  contact="contact@nslab.at"
+  contact="trimstray@gmail.com"
   version="1.0"
   description="Awesome Nmap predefined commands module"
 
