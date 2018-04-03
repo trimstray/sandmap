@@ -599,7 +599,7 @@ function cli_distributor() {
 
   elif [[ "${_argv[0]}" == "search" ]] ; then
 
-    true
+    init_search "${_argv[1]}"
 
   else
 
