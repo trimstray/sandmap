@@ -21,6 +21,8 @@ function load_modules() {
   local _FUNCTION_ID="load_modules"
   local _STATE=0
 
+  export _profiles_list=()
+
   # shellcheck disable=SC2154
   for i in $(find "${_modules}" -name '*.mod' -exec ls {} + | sort -k 10) ; do
 
@@ -30,6 +32,22 @@ function load_modules() {
 
     modules_list+=("$_fname")
     modules_full_list+=("$_fname":"$_fpath")
+
+    # shellcheck disable=SC1090
+    source "${_modules}/${_fpath}"
+
+    ${_fname}
+
+    for j in "${_module_commands[@]}" ; do
+
+      # shellcheck disable=SC2034
+      _key_alias=$(echo "$j" | awk -v FS="(;|;)" '{print $3}')
+      # shellcheck disable=SC2034
+      _key_cmd=$(echo "$j" | awk -v FS="(;|;)" '{print $4}')
+
+      _profiles_list+=("${_key_alias};${_key_cmd};${_fname}")
+
+    done
 
   done
 
