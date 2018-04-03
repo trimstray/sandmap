@@ -67,6 +67,7 @@ function nse_broadcast() {
       set     <key>                   set module variable value
       use     <module>                reuse module (changed env)
       pushd   <key>|init|show|flush   command line commands stack
+      search  <key>                   search key in all commands
 
       Options:
 

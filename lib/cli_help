@@ -32,6 +32,7 @@ function cli_help() {
     set     <key>|<module [key]>    set global or module variable value
     use     <module>                use module (changed env)
     pushd   init|show|flush         command line commands stack
+    search  <key>                   search key in all commands
 
     reload  <modules|config>        reload all modules cache or configuration
     banner                          show banner
@@ -52,6 +53,7 @@ function cli_help() {
     set     <key>                   set module variable value
     use     <module>                reuse module (changed env)
     pushd   <key>|init|show|flush   command line commands stack (experimental)
+    search  <key>                   search key in all commands
 
   Examples
   --------
@@ -59,6 +61,7 @@ function cli_help() {
     show sample                     show 'sample' module info
     config terminal                 show 'terminal' key value
     use sample                      use 'sample' module
+    search http                     search 'http' in all commands
 
 "
 
