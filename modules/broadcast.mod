@@ -173,17 +173,17 @@ function broadcast() {
   script then parses the update responses for routing information.\n \n \
   Script Arguments:\n \n \
   - broadcast-eigrp-discovery.kparams\n \
-  The K metrics. Defaults to 101000.\n \
+  The K metrics. Defaults to 101000.\n \n \
   - broadcast-eigrp-discovery.as\n \
   Autonomous System value to announce on. If not set, the script will listen\n \
-  for announcements on 224.0.0.10 to grab an A.S value.\n \
+  for announcements on 224.0.0.10 to grab an A.S value.\n \n \
   - broadcast-eigrp-discovery.interface\n \
-  Interface to send on (overrides -e).\n \
+  Interface to send on (overrides -e).\n \n \
   - broadcast-eigrp-discovery.timeout\n \
   Max amount of time to listen for A.S announcements and updates.\n \
-  Defaults to 10 seconds.\n \
+  Defaults to 10 seconds.\n \n \
   - newtargets, max-newtargets\n \
-  See the documentation for the library.\n \
+  See the documentation for the library.\n \n \
   - -Pn\n \
   Treat all hosts as online -- skip host discovery (see discovery module).\n \
   \n https://nmap.org/nsedoc/scripts/broadcast-eigrp-discovery.html;\
@@ -197,16 +197,16 @@ function broadcast() {
   report messages such as the version, group, mode, source addresses (depending\n \
   on the version).\n \n \
   Script Arguments:\n \n \
-  - broadcast-igmp-discovery.mgroupnamesdb:\n \
-  Database with multicast group names\n \
+  - broadcast-igmp-discovery.mgroupnamesdb\n \
+  Database with multicast group names.\n \n \
   - broadcast-igmp-discovery.version\n \
-  IGMP version to use. Could be 1, 2, 3 or all. Defaults to 2\n \
+  IGMP version to use. Could be 1, 2, 3 or all. Defaults to 2.\n \n \
   - broadcast-igmp-discovery.timeout\n \
-  Time to wait for reports in seconds. Defaults to 5 seconds\n \
+  Time to wait for reports in seconds. Defaults to 5 seconds.\n \n \
   - broadcast-igmp-discovery.interface\n \
-  Network interface to use\n \
+  Network interface to use.\n \n \
   - newtargets, max-newtargets\n \
-  See the documentation for the library.\n \
+  See the documentation for the library.\n \n \
   - -e <interface>\n \
   Use specified interface.\n \
   \n https://nmap.org/nsedoc/scripts/broadcast-igmp-discovery.html;\
@@ -218,7 +218,7 @@ function broadcast() {
   DHCP, ARP and a few more. See packetdecoders.lua for more information.\n \n \
   Script Arguments:\n \n \
   - broadcast-listener.timeout\n \
-  Specifies the amount of seconds to sniff the network interface (default 30s).\n \
+  Specifies the amount of seconds to sniff the network interface (default 30s).\n \n \
   - -e <interface>\n \
   Use specified interface.\n \
   \n https://nmap.org/nsedoc/scripts/broadcast-listener.html;\
@@ -231,11 +231,11 @@ function broadcast() {
   Script Arguments:\n \n \
   - mssql.domain, mssql.instance-all, mssql.instance-name, mssql.instance-port,\n \
   mssql.password, mssql.protocol, mssql.scanned-ports-only, mssql.timeout, mssql.username\n \
-  See the documentation for the mssql library.\n \
+  See the documentation for the mssql library.\n \n \
   - randomseed, smbbasic, smbport, smbsign\n \
-  See the documentation for the smb library.\n \
+  See the documentation for the smb library.\n \n \
   - smbdomain, smbhash, smbnoguest, smbpassword, smbtype, smbusername\n \
-  See the documentation for the smbauth library.\n \
+  See the documentation for the smbauth library.\n \n \
   - newtargets, max-newtargets\n \
   See the documentation for the library.\n \
   \n https://nmap.org/nsedoc/scripts/broadcast-ms-sql-discover.html;\
@@ -261,21 +261,21 @@ function broadcast() {
   in order to discover network database.\n \n \
   Script Arguments:\n \n \
   - broadcast-ospf2-discover.md5_key\n \
-  MD5 digest key to use if message digest authentication is disclosed.\n \
+  MD5 digest key to use if message digest authentication is disclosed.\n \n \
   - broadcast-ospf2-discover.router_id\n \
-  Router ID to use. Defaults to 0.0.0.1.\n \
+  Router ID to use. Defaults to 0.0.0.1.\n \n \
   - broadcast-ospf2-discover.timeout\n \
   Time in seconds that the script waits for hello from other routers.\n \
-  Defaults to 10 seconds, matching OSPFv2 default value for hello interval.\n \
+  Defaults to 10 seconds, matching OSPFv2 default value for hello interval.\n \n \
   - broadcast-ospf2-discover.interface\n \
   Interface to send on (overrides -e). Mandatory if not using -e and multiple\n \
-  interfaces are present.\n \
+  interfaces are present\n \n \
   - newtargets, max-newtargets\n \
-  See the documentation for the library.\n \
+  See the documentation for the library.\n \n \
   - -e <interface>\n \
-  Use specified interface.\n \
-  \n --script=broadcast-ospf2-discover;\
-  ;broadcast-ospf2-discover;--script db2-discover $params" \
+  Use specified interface.\n \n \
+  \n https://nmap.org/nsedoc/scripts/broadcast-ospf2-discover.html;\
+  ;broadcast-ospf2-discover;--script=broadcast-ospf2-discover $params" \
   #
   "User Summary:\n \n \
   Sends broadcast pings on a selected interface using raw ethernet packets and\n \
@@ -288,17 +288,17 @@ function broadcast() {
   broadcasts on all ethernet interfaces which have an IPv4 address defined.\n \n \
   Script Arguments:\n \n \
   - broadcast-ping.timeout\n \
-  Timespec specifying how long to wait for response (default 3s).\n \
+  Timespec specifying how long to wait for response (default 3s).\n \n \
   - broadcast-ping.num_probes\n \
-  Number specifying how many ICMP probes should be sent (default 1).\n \
+  Number specifying how many ICMP probes should be sent (default 1).\n \n \
   - broadcast-ping.interface\n \
-  String specifying which interface to use for this script (default all interfaces).\n \
+  String specifying which interface to use for this script (default all interfaces).\n \n \
   - newtargets, max-newtargets\n \
-  See the documentation for the library.\n \
+  See the documentation for the library.\n \n \
   - -e <interface>\n \
-  Use specified interface.\n \
+  Use specified interface.\n \n \
   - --ttl <val>\n \
-  Set IP time-to-live field.\n \
+  Set IP time-to-live field.\n \n \
   - --data-length <num>\n \
   Append random data to sent packets.\n \
   \n https://nmap.org/nsedoc/scripts/broadcast-ping.html;\
@@ -337,11 +337,11 @@ function broadcast() {
   a multicast query, then collecting, parsing, and displaying all responses.\n \n \
   Script Arguments:\n \n \
   - slaxml.debug\n \
-  See the documentation for the slaxml library.\n \
+  See the documentation for the slaxml library.\n \n \
   - http.max-cache-size, http.max-pipeline, http.pipeline, http.useragent\n \
-  See the documentation for the http library.\n \
+  See the documentation for the http library.\n \n \
   - smbdomain, smbhash, smbnoguest, smbpassword, smbtype, smbusername\n \
-  See the documentation for the smbauth library.\n \
+  See the documentation for the smbauth library.\n \n \
   - newtargets, max-newtargets\n \
   See the documentation for the library.\n \
   \n https://nmap.org/nsedoc/scripts/broadcast-upnp-info.html;\
@@ -352,7 +352,7 @@ function broadcast() {
   a multicast query, then collecting, parsing, and displaying all responses.\n \n \
   Script Arguments:\n \n \
   - broadcast-wake-on-lan.address\n \
-  The broadcast address to which the WoL packet is sent.\n \
+  The broadcast address to which the WoL packet is sent.\n \n \
   - broadcast-wake-on-lan.MAC\n \
   The MAC address of the remote system to wake up.\n \
   \n https://nmap.org/nsedoc/scripts/broadcast-db2-discover.html;\
