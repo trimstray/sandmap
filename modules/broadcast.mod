@@ -250,9 +250,11 @@ function broadcast() {
   "User Summary:\n \n \
   Attempts to use the Service Location Protocol to discover Novell NetWare\n \
   Core Protocol (NCP) servers.\n \n \
-  Script Arguments:\n \
+  Script Arguments:\n \n \
+  - -sV\n \
+  Probe open ports to determine service/version info.\n \
   \n https://nmap.org/nsedoc/scripts/broadcast-novell-locate.html;\
-  ;broadcast-novell-locate;--script=broadcast-novell-locate -sV $params" \
+  ;broadcast-novell-locate;--script=broadcast-novell-locate $params" \
   #
   "User Summary:\n \n \
   Discover IPv4 networks using Open Shortest Path First version 2(OSPFv2) protocol.\n \
@@ -343,9 +345,11 @@ function broadcast() {
   - smbdomain, smbhash, smbnoguest, smbpassword, smbtype, smbusername\n \
   See the documentation for the smbauth library.\n \n \
   - newtargets, max-newtargets\n \
-  See the documentation for the library.\n \
+  See the documentation for the library.\n \n \
+  - -sV\n \
+  Probe open ports to determine service/version info.\n \
   \n https://nmap.org/nsedoc/scripts/broadcast-upnp-info.html;\
-  ;broadcast-upnp-info;--script=broadcast-upnp-info -sV $params" \
+  ;broadcast-upnp-info;--script=broadcast-upnp-info $params" \
   #
   "User Summary:\n \n \
   Attempts to extract system information from the UPnP service by sending\n \
