@@ -3,22 +3,22 @@
 # shellcheck shell=bash
 
 # ``````````````````````````````````````````````````````````````````````````````
-# Function name: dns()
+# Function name: dns_dhcp()
 #
 # Description:
-#   DNS Module.
+#   DNS and DHCP Module.
 #
 # Usage:
-#   dns
+#   dns_dhcp
 #
 # Examples:
-#   dns
+#   dns_dhcp
 #
 
-function dns() {
+function dns_dhcp() {
 
   # shellcheck disable=SC2034
-  local _FUNCTION_ID="dns"
+  local _FUNCTION_ID="dns_dhcp"
   local _STATE=0
 
   # User variables:
@@ -37,7 +37,7 @@ function dns() {
   author="trimstray"
   contact="trimstray@gmail.com"
   version="1.0"
-  description="DNS Module"
+  description="DNS and DHCP Module"
 
   # shellcheck disable=SC2034,SC2154
   _module_cfg="${_modules}/${module_name}.cfg"
@@ -51,7 +51,7 @@ function dns() {
     Description
     -----------
 
-      DNS Module.
+      DNS and DHCP Module.
 
     Commands
     --------
@@ -533,6 +533,35 @@ function dns() {
   See the documentation for the library.\n \n \
   \n https://nmap.org/nsedoc/scripts/resolveall.html;\
   ;resolveall;--script=resolveall $params" \
+  "User Summary:\n \n \
+  Sends a DHCPINFORM request to a host on UDP port 67 to obtain all the local\n \
+  configuration parameters without allocating a new address. DHCPINFORM is a\n \
+  DHCP request that returns useful information from a DHCP server, without\n \
+  allocating an IP address. The request sends a list of which fields it wants to\n \
+  know (a handful by default, every field if verbosity is turned on), and the\n \
+  server responds with the fields that were requested. It should be noted that\n \
+  the server doesn't have to return every field, nor does it have to return them\n \
+  in the same order, or honour the request at all. A Linksys WRT54g, for\n \
+  example, completely ignores the list of requested fields and returns a few\n \
+  standard ones. This script displays every field it receives.\n \n \
+  Script Arguments:\n \n \
+  - randomize_mac\n \
+  Set to true or 1 to send a random MAC address with the request (keep in mind\n \
+  that you may not see the response). This should cause the router to reserve a\n \
+  new IP address each time.\n \n \
+  - requests\n \
+  Set to an integer to make up to that many requests (and display the results).\n \n \
+  - dhcptype\n \
+  The type of DHCP request to make. By default, DHCPINFORM is sent, but this\n \
+  argument can change it to DHCPOFFER, DHCPREQUEST, DHCPDECLINE, DHCPACK,\n \
+  DHCPNAK, DHCPRELEASE or DHCPINFORM. Not all types will evoke a response from\n \
+  all servers, and many require different fields to contain specific values.\n \n \
+  - -sU\n \
+  UDP Scan.\n \n \
+  - -p <port>\n \
+  Only scan specified ports (for this: 67).\n \
+  \n https://nmap.org/nsedoc/scripts/dhcp-discover.html;\
+  ;dhcp-discover;--script=dhcp-discover $params" \
   )
 
   # shellcheck disable=SC2034,SC2154
