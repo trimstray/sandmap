@@ -113,7 +113,7 @@ function services() {
   Script Arguments:\n \n \
   - amqp.version\n \
   Can be used to specify the client version to use\n \
-  (currently, 0-8, 0-9 or 0-9-1)\n \n \
+  (currently, 0-8, 0-9 or 0-9-1).\n \n \
   - -p <port>\n \
   Only scan specified ports (for this: 5672).\n \
   \n https://nmap.org/nsedoc/scripts/amqp-info.html;\
