@@ -71,6 +71,7 @@ function port_scan() {
       use     <module>                reuse module (changed env)
       pushd   <key>|init|show|flush   command line commands stack
       search  <key>                   search key in all commands
+      init    <alias|id>              run profile
 
       Options:
 
