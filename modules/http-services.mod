@@ -152,8 +152,41 @@ function http-services() {
   "https://nmap.org/nsedoc/scripts/http-malware-host.html;\
   ;http-malware-host;--script=http-malware-host $params" \
   #
-  "https://nmap.org/nsedoc/scripts/amqp-info.html;\
-  ;amqp-info;--script amqp-info $params" \
+  "https://nmap.org/nsedoc/scripts/http-passwd.html;\
+  ;http-passwd;--script http-passwd $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/http-php-version.html;\
+  ;http-php-version;--script http-php-version $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/http-phpmyadmin-dir-traversal.html;\
+  ;http-phpmyadmin-dir-traversal;--script http-phpmyadmin-dir-traversal $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/http-robots.txt.html;\
+  ;http-robots;--script http-robots.txt $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/http-tplink-dir-traversal.html;\
+  ;http-tplink-dir-traversal;--script http-tplink-dir-traversal $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/http-virustotal.html;\
+  ;http-virustotal;--script http-virustotal $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/http-waf-detect.html;\
+  ;http-waf-detect;--script http-waf-detect $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/http-waf-fingerprint.html;\
+  ;http-waf-fingerprint;--script http-waf-fingerprint $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/http-webdav-scan.html;\
+  ;http-webdav-scan;--script http-webdav-scan $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/http-wordpress-brute.html;\
+  ;http-wordpress-brute;--script http-wordpress-brute $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/http-wordpress-enum.html;\
+  ;http-wordpress-enum;--script http-wordpress-enum $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/http-wordpress-users.html;\
+  ;http-wordpress-users;--script http-wordpress-users $params" \
   )
 
   # shellcheck disable=SC2034,SC2154

@@ -152,9 +152,6 @@ function http-protocol() {
   "https://nmap.org/nsedoc/scripts/http-devframework.html;\
   ;http-devframework;--script http-devframework $params" \
   #
-  "https://nmap.org/nsedoc/scripts/http-dlink-backdoor.html;\
-  ;http-dlink-backdoor;--script http-dlink-backdoor $params" \
-  #
   "https://nmap.org/nsedoc/scripts/http-dombased-xss.html;\
   ;http-dombased-xss;--script http-dombased-xss $params" \
   #
@@ -197,11 +194,68 @@ function http-protocol() {
   "https://nmap.org/nsedoc/scripts/http-open-proxy.html;\
   ;http-open-proxy;-script http-open-proxy $params" \
   #
-  "https://nmap.org/nsedoc/scripts/amqp-info.html;\
-  ;amqp-info;--script amqp-info $params" \
+  "https://nmap.org/nsedoc/scripts/http-open-redirect.html;\
+  ;http-open-redirect;--script=http-open-redirect $params" \
   #
-  "https://nmap.org/nsedoc/scripts/amqp-info.html;\
-  ;amqp-info;--script amqp-info $params" \
+  "https://nmap.org/nsedoc/scripts/http-phpself-xss.html;\
+  ;http-phpself-xss;--script http-phpself-xss $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/http-proxy-brute.html;\
+  ;http-proxy-brute;--script http-proxy-brute $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/http-put.html;\
+  ;http-put;--script http-put $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/http-referer-checker.html;\
+  ;http-referer-checker;--script http-referer-checker $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/http-security-headers.html;\
+  ;http-security-headers;--script http-security-headers $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/http-server-header.html;\
+  ;http-server-header;--script http-server-header $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/http-sitemap-generator.html;\
+  ;http-sitemap-generator;--script http-sitemap-generator $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/http-shellshock.html;\
+  ;http-shellshock;--script http-shellshock $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/http-slowloris.html;\
+  ;http-slowloris;--script http-slowloris $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/http-slowloris-check.html;\
+  ;http-slowloris-check;--script http-slowloris-check $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/http-sql-injection.html;\
+  ;http-sql-injection;--script http-sql-injection $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/http-stored-xss.html;\
+  ;http-stored-xss;--script http-stored-xss $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/http-trace.html;\
+  ;http-trace;--script http-trace $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/http-traceroute.html;\
+  ;http-traceroute;--script http-traceroute $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/http-unsafe-output-escaping.html;\
+  ;http-unsafe-output-escaping;--script http-unsafe-output-escaping $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/http-useragent-tester.html;\
+  ;http-useragent-tester;--script http-useragent-tester $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/http-userdir-enum.html;\
+  ;http-userdir-enum;--script http-userdir-enum $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/http-vhosts.html;\
+  ;http-vhosts;--script http-vhosts $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/http-xssed.html;\
+  ;http-xssed;--script http-xssed $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/url-snarf.html;\
+  ;url-snarf;--script url-snarf $params" \
   )
 
   # shellcheck disable=SC2034,SC2154
