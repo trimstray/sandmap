@@ -107,16 +107,7 @@ function services() {
   # shellcheck disable=SC2034
   _module_commands=(\
   #
-  "User Summary:\n \n \
-  Gathers information (a list of all server properties) from an AMQP\n \
-  (advanced message queuing protocol) server.\n \n \
-  Script Arguments:\n \n \
-  - amqp.version\n \
-  Can be used to specify the client version to use\n \
-  (currently, 0-8, 0-9 or 0-9-1).\n \n \
-  - -p <port>\n \
-  Only scan specified ports (for this: 5672).\n \
-  \n https://nmap.org/nsedoc/scripts/amqp-info.html;\
+  "https://nmap.org/nsedoc/scripts/amqp-info.html;\
   ;amqp-info;--script amqp-info $params" \
   )
 
