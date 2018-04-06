@@ -170,6 +170,9 @@ function http-services() {
   "https://nmap.org/nsedoc/scripts/http-virustotal.html;\
   ;http-virustotal;--script http-virustotal $params" \
   #
+  "https://nmap.org/nsedoc/scripts/http-vmware-path-vuln.html;\
+  ;http-vmware-path-vuln;--script http-vmware-path-vuln $params" \
+  #
   "https://nmap.org/nsedoc/scripts/http-waf-detect.html;\
   ;http-waf-detect;--script http-waf-detect $params" \
   #
