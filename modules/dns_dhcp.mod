@@ -181,6 +181,12 @@ function dns_dhcp() {
   #
   "https://nmap.org/nsedoc/scripts/dhcp-discover.html;\
   ;dhcp-discover;--script=dhcp-discover $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/http-robtex-reverse-ip.html;\
+  ;http-robtex-reverse-ip;--script=http-robtex-reverse-ip $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/http-robtex-shared-ns.html;\
+  ;http-robtex-shared-ns;--script=http-robtex-shared-ns $params" \
   )
 
   # shellcheck disable=SC2034,SC2154
