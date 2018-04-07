@@ -23,6 +23,8 @@ function load_modules() {
 
   export _profiles_list=()
 
+  printf "%s" "Please wait, loading modules..."
+
   # shellcheck disable=SC2154
   for i in $(find "${_modules}" -name '*.mod' -exec ls {} + | sort -k 10) ; do
 
