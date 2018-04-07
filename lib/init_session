@@ -28,6 +28,8 @@ function init_session() {
   "Pass through TOR;'true|false';tor;$_cmd_tor" \
   "Terminal type;'internal|external';terminal;$_cmd_terminal")
 
+  export _variables_stack=("${_session_variables[@]}")
+
   return $_STATE
 
 }
