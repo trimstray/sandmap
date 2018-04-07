@@ -172,7 +172,7 @@ function cli_distributor() {
           else
 
             # shellcheck disable=SC2034
-            _variables_stack=("${_module_variables[@]}")
+            _variables_stack=("${_session_variables[@]}" "${_module_variables[@]}")
 
           fi
 
@@ -357,8 +357,18 @@ function cli_distributor() {
       # shellcheck disable=SC2034
       __cli_banner="$_fname"
 
-      # shellcheck disable=SC1090
-      source "$_module_cfg"
+      if [[ -e "$_module_cfg" ]] ; then
+
+        # shellcheck disable=SC1090
+        source "$_module_cfg"
+
+        _variables_stack=("${_session_variables[@]}" "${_module_variables[@]}")
+
+      else
+
+        _variables_stack=("${_session_variables[@]}")
+
+      fi
 
     else
 
@@ -484,6 +494,9 @@ function cli_distributor() {
       _count=0
       _cmd_state=0
 
+      # shellcheck disable=SC2034
+      _variables_stack=("${_session_variables[@]}" "${_module_variables[@]}")
+
       for _scan in "${_module_commands[@]}" ; do
 
         # shellcheck disable=SC2034
@@ -493,16 +506,37 @@ function cli_distributor() {
 
         if [[ "${_argv[1]}" == "$_key_id" ]] ; then
 
-          _init_cmd "$_key_var"
-          _cmd_state=1
+          _argvA=("${_argv[@]:2}")
+
+          if [[ "${#_argvA[@]}" -eq 0 ]] ; then
+
+            _init_cmd "${_key_var}"
+            _cmd_state=1
+
+          else
+
+            _init_cmd "${_key_var}" "${_argvA[@]}"
+
+          fi
 
         elif [[ "${_argv[1]}" == "$_count" ]] ; then
 
-          _init_cmd "$_key_var"
-          _cmd_state=1
+          _argvA=("${_argv[@]:2}")
+
+          if [[ "${#_argvA[@]}" -eq 0 ]] ; then
+
+            _init_cmd "${_key_var}"
+            _cmd_state=1
+
+          else
+
+            _init_cmd "${_key_var}" "${_argvA[@]}"
+
+          fi
 
         fi
 
+        _argvA=()
         _count=$((_count + 1))
 
       done
