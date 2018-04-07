@@ -109,22 +109,22 @@ function nse_oracle() {
   _module_commands=(\
   #
   "https://nmap.org/nsedoc/scripts/oracle-brute-stealth.html;\
-  ;oracle-brute-stealth;--script oracle-brute-stealth $params" \
+  ;oracle-brute-stealth;--script oracle-brute-stealth" \
   #
   "https://nmap.org/nsedoc/scripts/oracle-brute.html;\
-  ;oracle-brute;--script oracle-brute $params" \
+  ;oracle-brute;--script oracle-brute" \
   #
   "https://nmap.org/nsedoc/scripts/oracle-enum-users.html;\
-  ;oracle-enum-users;--script oracle-enum-users $params" \
+  ;oracle-enum-users;--script oracle-enum-users" \
   #
   "https://nmap.org/nsedoc/scripts/oracle-sid-brute.html;\
-  ;oracle-sid-brute;--script oracle-sid-brute $params" \
+  ;oracle-sid-brute;--script oracle-sid-brute" \
   #
   "https://nmap.org/nsedoc/scripts/oracle-tns-version.html;\
-  ;oracle-tns-version;--script oracle-tns-version $params" \
+  ;oracle-tns-version;--script oracle-tns-version" \
   #
   "https://nmap.org/nsedoc/scripts/ovs-agent-version.html;\
-  ;ovs-agent-version;--script ovs-agent-version $params" \
+  ;ovs-agent-version;--script ovs-agent-version" \
   )
 
   # shellcheck disable=SC2034,SC2154

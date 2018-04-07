@@ -109,40 +109,40 @@ function nse_snmp() {
   _module_commands=(\
   #
   "https://nmap.org/nsedoc/scripts/snmp-brute.html;\
-  ;snmp-brute;--script snmp-brute $params" \
+  ;snmp-brute;--script snmp-brute" \
   #
   "https://nmap.org/nsedoc/scripts/snmp-hh3c-logins.html;\
-  ;snmp-hh3c-logins;--script snmp-hh3c-logins $params" \
+  ;snmp-hh3c-logins;--script snmp-hh3c-logins" \
   #
   "https://nmap.org/nsedoc/scripts/snmp-info.html;\
-  ;snmp-info;--script snmp-info $params" \
+  ;snmp-info;--script snmp-info" \
   #
   "https://nmap.org/nsedoc/scripts/snmp-interfaces.html;\
-  ;snmp-interfaces;--script snmp-interfaces $params" \
+  ;snmp-interfaces;--script snmp-interfaces" \
   #
   "https://nmap.org/nsedoc/scripts/snmp-ios-config.html;\
-  ;snmp-ios-config;--script snmp-ios-config $params" \
+  ;snmp-ios-config;--script snmp-ios-config" \
   #
   "https://nmap.org/nsedoc/scripts/snmp-netstat.html;\
-  ;snmp-netstat;--script snmp-netstat $params" \
+  ;snmp-netstat;--script snmp-netstat" \
   #
   "https://nmap.org/nsedoc/scripts/snmp-processes.html;\
-  ;snmp-processes;--script snmp-processes $params" \
+  ;snmp-processes;--script snmp-processes" \
   #
   "https://nmap.org/nsedoc/scripts/snmp-sysdescr.html;\
-  ;snmp-sysdescr;--script snmp-sysdescr $params" \
+  ;snmp-sysdescr;--script snmp-sysdescr" \
   #
   "https://nmap.org/nsedoc/scripts/snmp-win32-services.html;\
-  ;snmp-win32-services;--script snmp-win32-services $params" \
+  ;snmp-win32-services;--script snmp-win32-services" \
   #
   "https://nmap.org/nsedoc/scripts/snmp-win32-shares.html;\
-  ;snmp-win32-shares;--script snmp-win32-shares $params" \
+  ;snmp-win32-shares;--script snmp-win32-shares" \
   #
   "https://nmap.org/nsedoc/scripts/snmp-win32-software.html;\
-  ;snmp-win32-software;--script snmp-win32-software $params" \
+  ;snmp-win32-software;--script snmp-win32-software" \
   #
   "https://nmap.org/nsedoc/scripts/snmp-win32-users.html;\
-  ;snmp-win32-users;--script snmp-win32-users $params" \
+  ;snmp-win32-users;--script snmp-win32-users" \
   )
 
   # shellcheck disable=SC2034,SC2154

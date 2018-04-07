@@ -109,97 +109,97 @@ function nse_databases() {
   _module_commands=(\
   #
   "https://nmap.org/nsedoc/scripts/couchdb-databases.html;\
-  ;couchdb-databases;--script couchdb-databases $params" \
+  ;couchdb-databases;--script couchdb-databases" \
   #
   "https://nmap.org/nsedoc/scripts/couchdb-stats.html;\
-  ;couchdb-stats;--script couchdb-stats $params" \
+  ;couchdb-stats;--script couchdb-stats" \
   #
   "https://nmap.org/nsedoc/scripts/db2-das-info.html;\
-  ;db2-das-info;--script db2-das-info $params" \
+  ;db2-das-info;--script db2-das-info" \
   #
   "https://nmap.org/nsedoc/scripts/membase-brute.html;\
-  ;membase-brute;--script membase-brute $params" \
+  ;membase-brute;--script membase-brute" \
   #
   "https://nmap.org/nsedoc/scripts/membase-http-info.html;\
-  ;membase-http-info;--script membase-http-info $params" \
+  ;membase-http-info;--script membase-http-info" \
   #
   "https://nmap.org/nsedoc/scripts/mongodb-brute.html;\
-  ;mongodb-brute;--script mongodb-brute $params" \
+  ;mongodb-brute;--script mongodb-brute" \
   #
   "https://nmap.org/nsedoc/scripts/mongodb-databases.html;\
-  ;mongodb-databases;--script mongodb-databases $params" \
+  ;mongodb-databases;--script mongodb-databases" \
   #
   "https://nmap.org/nsedoc/scripts/mongodb-info.html;\
-  ;mongodb-info;--script mongodb-info $params" \
+  ;mongodb-info;--script mongodb-info" \
   #
   "https://nmap.org/nsedoc/scripts/ms-sql-brute.html;\
-  ;ms-sql-brute;--script ms-sql-brute $params" \
+  ;ms-sql-brute;--script ms-sql-brute" \
   #
   "https://nmap.org/nsedoc/scripts/ms-sql-config.html;\
-  ;ms-sql-config;--script ms-sql-config $params" \
+  ;ms-sql-config;--script ms-sql-config" \
   #
   "https://nmap.org/nsedoc/scripts/ms-sql-dac.html;\
-  ;ms-sql-dac;--script ms-sql-dac $params" \
+  ;ms-sql-dac;--script ms-sql-dac" \
   #
   "https://nmap.org/nsedoc/scripts/ms-sql-dump-hashes.html;\
-  ;ms-sql-dump-hashes;--script ms-sql-dump-hashes $params" \
+  ;ms-sql-dump-hashes;--script ms-sql-dump-hashes" \
   #
   "https://nmap.org/nsedoc/scripts/ms-sql-empty-password.html;\
-  ;ms-sql-empty-password;--script ms-sql-empty-password $params" \
+  ;ms-sql-empty-password;--script ms-sql-empty-password" \
   #
   "https://nmap.org/nsedoc/scripts/ms-sql-hasdbaccess.html;\
-  ;ms-sql-hasdbaccess;--script ms-sql-hasdbaccess $params" \
+  ;ms-sql-hasdbaccess;--script ms-sql-hasdbaccess" \
   #
   "https://nmap.org/nsedoc/scripts/ms-sql-info.html;\
-  ;ms-sql-info;--script ms-sql-info $params" \
+  ;ms-sql-info;--script ms-sql-info" \
   #
   "https://nmap.org/nsedoc/scripts/ms-sql-ntlm-info.html;\
-  ;ms-sql-ntlm-info;--script ms-sql-ntlm-info $params" \
+  ;ms-sql-ntlm-info;--script ms-sql-ntlm-info" \
   #
   "https://nmap.org/nsedoc/scripts/ms-sql-query.html;\
-  ;ms-sql-query;--script ms-sql-query $params" \
+  ;ms-sql-query;--script ms-sql-query" \
   #
   "https://nmap.org/nsedoc/scripts/ms-sql-tables.html;\
-  ;ms-sql-tables;--script ms-sql-tables $params" \
+  ;ms-sql-tables;--script ms-sql-tables" \
   #
   "https://nmap.org/nsedoc/scripts/ms-sql-xp-cmdshell.html;\
-  ;ms-sql-xp-cmdshell;--script ms-sql-xp-cmdshell $params" \
+  ;ms-sql-xp-cmdshell;--script ms-sql-xp-cmdshell" \
   #
   "https://nmap.org/nsedoc/scripts/mysql-audit.html;\
-  ;mysql-audit;--script mysql-audit $params" \
+  ;mysql-audit;--script mysql-audit" \
   #
   "https://nmap.org/nsedoc/scripts/mysql-brute.html;\
-  ;mysql-brute;--script mysql-brute $params" \
+  ;mysql-brute;--script mysql-brute" \
   #
   "https://nmap.org/nsedoc/scripts/mysql-databases.html;\
-  ;mysql-databases;--script mysql-databases $params" \
+  ;mysql-databases;--script mysql-databases" \
   #
   "https://nmap.org/nsedoc/scripts/mysql-dump-hashes.html;\
-  ;mysql-dump-hashes;--script mysql-dump-hashes $params" \
+  ;mysql-dump-hashes;--script mysql-dump-hashes" \
   #
   "https://nmap.org/nsedoc/scripts/mysql-empty-password.html;\
-  ;mysql-empty-password;--script mysql-empty-password $params" \
+  ;mysql-empty-password;--script mysql-empty-password" \
   #
   "https://nmap.org/nsedoc/scripts/mysql-enum.html;\
-  ;mysql-enum;--script mysql-enum $params" \
+  ;mysql-enum;--script mysql-enum" \
   #
   "https://nmap.org/nsedoc/scripts/mysql-info.html;\
-  ;mysql-info;--script mysql-info $params" \
+  ;mysql-info;--script mysql-info" \
   #
   "https://nmap.org/nsedoc/scripts/mysql-query.html;\
-  ;mysql-query;--script mysql-query $params" \
+  ;mysql-query;--script mysql-query" \
   #
   "https://nmap.org/nsedoc/scripts/mysql-users.html;\
-  ;mysql-users;--script mysql-users $params" \
+  ;mysql-users;--script mysql-users" \
   #
   "https://nmap.org/nsedoc/scripts/mysql-variables.html;\
-  ;mysql-variables;--script mysql-variables $params" \
+  ;mysql-variables;--script mysql-variables" \
   #
   "https://nmap.org/nsedoc/scripts/mysql-vuln-cve2012-2122.html;\
-  ;mysql-vuln-cve2012-2122;--script mysql-vuln-cve2012-2122 $params" \
+  ;mysql-vuln-cve2012-2122;--script mysql-vuln-cve2012-2122" \
   #
   "https://nmap.org/nsedoc/scripts/pgsql-brute.html;\
-  ;pgsql-brute;--script pgsql-brute $params" \
+  ;pgsql-brute;--script pgsql-brute" \
   )
 
   # shellcheck disable=SC2034,SC2154

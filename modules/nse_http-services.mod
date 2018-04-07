@@ -109,88 +109,88 @@ function nse_http-services() {
   _module_commands=(\
   #
   "https://nmap.org/nsedoc/scripts/http-apache-negotiation.html;\
-  ;http-apache-negotiation;--script=http-apache-negotiation $params" \
+  ;http-apache-negotiation;--script=http-apache-negotiation" \
   #
   "https://nmap.org/nsedoc/scripts/http-apache-server-status.html;\
-  ;http-apache-server-status;--script http-apache-server-status $params" \
+  ;http-apache-server-status;--script http-apache-server-status" \
   #
   "https://nmap.org/nsedoc/scripts/http-aspnet-debug.html;\
-  ;http-aspnet-debug;--script http-aspnet-debug $params" \
+  ;http-aspnet-debug;--script http-aspnet-debug" \
   #
   "https://nmap.org/nsedoc/scripts/http-awstatstotals-exec.html;\
-  ;http-awstatstotals-exec;--script http-awstatstotals-exec.nse $params" \
+  ;http-awstatstotals-exec;--script http-awstatstotals-exec.nse" \
   #
   "https://nmap.org/nsedoc/scripts/http-bigip-cookie.html;\
-  ;http-bigip-cookie;--script http-bigip-cookie $params" \
+  ;http-bigip-cookie;--script http-bigip-cookie" \
   #
   "https://nmap.org/nsedoc/scripts/http-cakephp-version.html;\
-  ;http-cakephp-version;--script http-cakephp-version $params" \
+  ;http-cakephp-version;--script http-cakephp-version" \
   #
   "https://nmap.org/nsedoc/scripts/http-dlink-backdoor.html;\
-  ;http-dlink-backdoor;--script http-dlink-backdoor $params" \
+  ;http-dlink-backdoor;--script http-dlink-backdoor" \
   #
   "https://nmap.org/nsedoc/scripts/http-drupal-enum.html;\
-  ;http-drupal-enum;--script http-drupal-enum $params" \
+  ;http-drupal-enum;--script http-drupal-enum" \
   #
   "https://nmap.org/nsedoc/scripts/http-drupal-enum-users.html;\
-  ;http-drupal-enum-users;--script=http-drupal-enum-users $params" \
+  ;http-drupal-enum-users;--script=http-drupal-enum-users" \
   #
   "https://nmap.org/nsedoc/scripts/http-git.html;\
-  ;http-git;--script http-git $params" \
+  ;http-git;--script http-git" \
   #
   "https://nmap.org/nsedoc/scripts/http-iis-short-name-brute.html;\
-  ;http-iis-short-name-brute;--script http-iis-short-name-brute $params" \
+  ;http-iis-short-name-brute;--script http-iis-short-name-brute" \
   #
   "https://nmap.org/nsedoc/scripts/http-iis-webdav-vuln.html;\
-  ;http-iis-webdav-vuln;--script http-iis-webdav-vuln $params" \
+  ;http-iis-webdav-vuln;--script http-iis-webdav-vuln" \
   #
   "https://nmap.org/nsedoc/scripts/http-joomla-brute.html;\
-  ;http-joomla-brute;--script http-joomla-brute $params" \
+  ;http-joomla-brute;--script http-joomla-brute" \
   #
   "https://nmap.org/nsedoc/scripts/http-jsonp-detection.html;\
-  ;http-jsonp-detection;--script http-jsonp-detection $params" \
+  ;http-jsonp-detection;--script http-jsonp-detection" \
   #
   "https://nmap.org/nsedoc/scripts/http-malware-host.html;\
-  ;http-malware-host;--script=http-malware-host $params" \
+  ;http-malware-host;--script=http-malware-host" \
   #
   "https://nmap.org/nsedoc/scripts/http-passwd.html;\
-  ;http-passwd;--script http-passwd $params" \
+  ;http-passwd;--script http-passwd" \
   #
   "https://nmap.org/nsedoc/scripts/http-php-version.html;\
-  ;http-php-version;--script http-php-version $params" \
+  ;http-php-version;--script http-php-version" \
   #
   "https://nmap.org/nsedoc/scripts/http-phpmyadmin-dir-traversal.html;\
-  ;http-phpmyadmin-dir-traversal;--script http-phpmyadmin-dir-traversal $params" \
+  ;http-phpmyadmin-dir-traversal;--script http-phpmyadmin-dir-traversal" \
   #
   "https://nmap.org/nsedoc/scripts/http-robots.txt.html;\
-  ;http-robots;--script http-robots.txt $params" \
+  ;http-robots;--script http-robots.txt" \
   #
   "https://nmap.org/nsedoc/scripts/http-tplink-dir-traversal.html;\
-  ;http-tplink-dir-traversal;--script http-tplink-dir-traversal $params" \
+  ;http-tplink-dir-traversal;--script http-tplink-dir-traversal" \
   #
   "https://nmap.org/nsedoc/scripts/http-virustotal.html;\
-  ;http-virustotal;--script http-virustotal $params" \
+  ;http-virustotal;--script http-virustotal" \
   #
   "https://nmap.org/nsedoc/scripts/http-vmware-path-vuln.html;\
-  ;http-vmware-path-vuln;--script http-vmware-path-vuln $params" \
+  ;http-vmware-path-vuln;--script http-vmware-path-vuln" \
   #
   "https://nmap.org/nsedoc/scripts/http-waf-detect.html;\
-  ;http-waf-detect;--script http-waf-detect $params" \
+  ;http-waf-detect;--script http-waf-detect" \
   #
   "https://nmap.org/nsedoc/scripts/http-waf-fingerprint.html;\
-  ;http-waf-fingerprint;--script http-waf-fingerprint $params" \
+  ;http-waf-fingerprint;--script http-waf-fingerprint" \
   #
   "https://nmap.org/nsedoc/scripts/http-webdav-scan.html;\
-  ;http-webdav-scan;--script http-webdav-scan $params" \
+  ;http-webdav-scan;--script http-webdav-scan" \
   #
   "https://nmap.org/nsedoc/scripts/http-wordpress-brute.html;\
-  ;http-wordpress-brute;--script http-wordpress-brute $params" \
+  ;http-wordpress-brute;--script http-wordpress-brute" \
   #
   "https://nmap.org/nsedoc/scripts/http-wordpress-enum.html;\
-  ;http-wordpress-enum;--script http-wordpress-enum $params" \
+  ;http-wordpress-enum;--script http-wordpress-enum" \
   #
   "https://nmap.org/nsedoc/scripts/http-wordpress-users.html;\
-  ;http-wordpress-users;--script http-wordpress-users $params" \
+  ;http-wordpress-users;--script http-wordpress-users" \
   )
 
   # shellcheck disable=SC2034,SC2154

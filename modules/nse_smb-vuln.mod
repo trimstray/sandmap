@@ -109,37 +109,37 @@ function nse_smb-vuln() {
   _module_commands=(\
   #
   "https://nmap.org/nsedoc/scripts/samba-vuln-cve-2012-1182.html;\
-  ;samba-vuln-cve-2012-1182;--script samba-vuln-cve-2012-1182 $params" \
+  ;samba-vuln-cve-2012-1182;--script samba-vuln-cve-2012-1182" \
   #
   "https://nmap.org/nsedoc/scripts/smb-vuln-conficker.html;\
-  ;smb-vuln-conficker;--script smb-vuln-conficker $params" \
+  ;smb-vuln-conficker;--script smb-vuln-conficker" \
   #
   "https://nmap.org/nsedoc/scripts/smb-vuln-cve-2017-7494.html;\
-  ;smb-vuln-cve-2017-7494;--script smb-vuln-cve-2017-7494 $params" \
+  ;smb-vuln-cve-2017-7494;--script smb-vuln-cve-2017-7494" \
   #
   "https://nmap.org/nsedoc/scripts/smb-vuln-cve2009-3103.html;\
-  ;smb-vuln-cve2009-3103;--script smb-vuln-cve2009-3103 $params" \
+  ;smb-vuln-cve2009-3103;--script smb-vuln-cve2009-3103" \
   #
   "https://nmap.org/nsedoc/scripts/smb-vuln-ms06-025.html;\
-  ;smb-vuln-ms06-025;--script smb-vuln-ms06-025 $params" \
+  ;smb-vuln-ms06-025;--script smb-vuln-ms06-025" \
   #
   "https://nmap.org/nsedoc/scripts/smb-vuln-ms07-029.html;\
-  ;smb-vuln-ms07-029;--script smb-vuln-ms07-029 $params" \
+  ;smb-vuln-ms07-029;--script smb-vuln-ms07-029" \
   #
   "https://nmap.org/nsedoc/scripts/smb-vuln-ms08-067.html;\
-  ;smb-vuln-ms08-067;--script smb-vuln-ms08-067 $params" \
+  ;smb-vuln-ms08-067;--script smb-vuln-ms08-067" \
   #
   "https://nmap.org/nsedoc/scripts/smb-vuln-ms10-054.html;\
-  ;smb-vuln-ms10-054;--script smb-vuln-ms10-054 $params" \
+  ;smb-vuln-ms10-054;--script smb-vuln-ms10-054" \
   #
   "https://nmap.org/nsedoc/scripts/smb-vuln-ms10-061.html;\
-  ;smb-vuln-ms10-061;--script smb-vuln-ms10-061 $params" \
+  ;smb-vuln-ms10-061;--script smb-vuln-ms10-061" \
   #
   "https://nmap.org/nsedoc/scripts/smb-vuln-ms17-010.html;\
-  ;smb-vuln-ms17-010;--script smb-vuln-ms17-010 $params" \
+  ;smb-vuln-ms17-010;--script smb-vuln-ms17-010" \
   #
   "https://nmap.org/nsedoc/scripts/smb-vuln-regsvc-dos.html;\
-  ;smb-vuln-regsvc-dos;--script smb-vuln-regsvc-dos $params" \
+  ;smb-vuln-regsvc-dos;--script smb-vuln-regsvc-dos" \
   )
 
   # shellcheck disable=SC2034,SC2154

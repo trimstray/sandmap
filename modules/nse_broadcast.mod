@@ -109,61 +109,61 @@ function nse_broadcast() {
   _module_commands=(\
   #
   "https://nmap.org/nsedoc/scripts/broadcast-avahi-dos.html;\
-  ;broadcast-avahi-dos;--script=broadcast-avahi-dos $params" \
+  ;broadcast-avahi-dos;--script=broadcast-avahi-dos" \
   #
   "https://nmap.org/nsedoc/scripts/broadcast-db2-discover.html;\
-  ;broadcast-db2-discover;--script db2-discover $params" \
+  ;broadcast-db2-discover;--script db2-discover" \
   #
   "https://nmap.org/nsedoc/scripts/broadcast-dhcp-discover.html;\
-  ;broadcast-dhcp-discover;--script broadcast-dhcp-discover $params" \
+  ;broadcast-dhcp-discover;--script broadcast-dhcp-discover" \
   #
   "https://nmap.org/nsedoc/scripts/broadcast-dhcp6-discover.html;\
-  ;broadcast-dhcp6-discover;--script broadcast-dhcp6-discover -6 $params" \
+  ;broadcast-dhcp6-discover;--script broadcast-dhcp6-discover -6" \
   #
   "https://nmap.org/nsedoc/scripts/broadcast-dns-service-discovery.html;\
-  ;broadcast-dns-service-discovery;--script=broadcast-dns-service-discovery $params" \
+  ;broadcast-dns-service-discovery;--script=broadcast-dns-service-discovery" \
   #
   "https://nmap.org/nsedoc/scripts/broadcast-dropbox-listener.html;\
-  ;broadcast-dropbox-listener;--script=broadcast-dropbox-listener $params" \
+  ;broadcast-dropbox-listener;--script=broadcast-dropbox-listener" \
   #
   "https://nmap.org/nsedoc/scripts/broadcast-eigrp-discovery.html;\
-  ;broadcast-eigrp-discovery;--script=broadcast-eigrp-discovery $params" \
+  ;broadcast-eigrp-discovery;--script=broadcast-eigrp-discovery" \
   #
   "https://nmap.org/nsedoc/scripts/broadcast-igmp-discovery.html;\
-  ;broadcast-igmp-discovery;--script broadcast-igmp-discovery $params" \
+  ;broadcast-igmp-discovery;--script broadcast-igmp-discovery" \
   #
   "https://nmap.org/nsedoc/scripts/broadcast-listener.html;\
-  ;broadcast-listener;--script broadcast-listener $params" \
+  ;broadcast-listener;--script broadcast-listener" \
   #
   "https://nmap.org/nsedoc/scripts/broadcast-ms-sql-discover.html;\
-  ;broadcast-ms-sql-discover;--script broadcast-ms-sql-discover $params" \
+  ;broadcast-ms-sql-discover;--script broadcast-ms-sql-discover" \
   #
   "https://nmap.org/nsedoc/scripts/broadcast-netbios-master-browser.html;\
-  ;broadcast-netbios-master-browser;--script=broadcast-netbios-master-browser $params" \
+  ;broadcast-netbios-master-browser;--script=broadcast-netbios-master-browser" \
   #
   "https://nmap.org/nsedoc/scripts/broadcast-novell-locate.html;\
-  ;broadcast-novell-locate;--script=broadcast-novell-locate $params" \
+  ;broadcast-novell-locate;--script=broadcast-novell-locate" \
   #
   "https://nmap.org/nsedoc/scripts/broadcast-ospf2-discover.html;\
-  ;broadcast-ospf2-discover;--script=broadcast-ospf2-discover $params" \
+  ;broadcast-ospf2-discover;--script=broadcast-ospf2-discover" \
   #
   "https://nmap.org/nsedoc/scripts/broadcast-ping.html;\
-  ;broadcast-ping;--script broadcast-ping $params" \
+  ;broadcast-ping;--script broadcast-ping" \
   #
   "https://nmap.org/nsedoc/scripts/broadcast-pppoe-discover.html;\
-  ;broadcast-pppoe-discover;--script broadcast-pppoe-discover $params" \
+  ;broadcast-pppoe-discover;--script broadcast-pppoe-discover" \
   #
   "https://nmap.org/nsedoc/scripts/broadcast-rip-discover.html;\
-  ;broadcast-rip-discover;--script broadcast-rip-discover $params" \
+  ;broadcast-rip-discover;--script broadcast-rip-discover" \
   #
   "https://nmap.org/nsedoc/scripts/broadcast-ripng-discover.html;\
-  ;broadcast-ripng-discover;--script broadcast-ripng-discover $params" \
+  ;broadcast-ripng-discover;--script broadcast-ripng-discover" \
   #
   "https://nmap.org/nsedoc/scripts/broadcast-upnp-info.html;\
-  ;broadcast-upnp-info;--script=broadcast-upnp-info $params" \
+  ;broadcast-upnp-info;--script=broadcast-upnp-info" \
   #
   "https://nmap.org/nsedoc/scripts/broadcast-db2-discover.html;\
-  ;broadcast-wake-on-lan;--script broadcast-wake-on-lan $params" \
+  ;broadcast-wake-on-lan;--script broadcast-wake-on-lan" \
   )
 
   # shellcheck disable=SC2034,SC2154

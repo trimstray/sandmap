@@ -112,37 +112,37 @@ function host_discovery() {
   _module_commands=(\
   #
   "https://nmap.org/book/man-host-discovery.html;\
-  ;list_scan;-sL $_cmd_params" \
+  ;list_scan;-sL" \
   #
   "https://nmap.org/book/man-host-discovery.html;\
-  ;no_port_scan;-sn $_cmd_params" \
+  ;no_port_scan;-sn" \
   #
   "https://nmap.org/book/man-host-discovery.html;\
-  ;no_ping;-Pn $_cmd_params" \
+  ;no_ping;-Pn" \
   #
   "https://nmap.org/book/man-host-discovery.html;\
-  ;tcp_syn_ping;-PS -p $_cmd_params" \
+  ;tcp_syn_ping;-PS -p" \
   #
   "https://nmap.org/book/man-host-discovery.html;\
-  ;tcp_ack_ping;-PA -p 80 $_cmd_params" \
+  ;tcp_ack_ping;-PA -p 80" \
   #
   "https://nmap.org/book/man-host-discovery.html;\
-  ;udp_ping;-PU -p 80 $_cmd_params" \
+  ;udp_ping;-PU -p 80" \
   #
   "https://nmap.org/book/man-host-discovery.html;\
-  ;sctp_init_ping;-PY -p 80 $_cmd_params" \
+  ;sctp_init_ping;-PY -p 80" \
   #
   "https://nmap.org/book/man-host-discovery.html;\
-  ;arp_ping;-PR $_cmd_params" \
+  ;arp_ping;-PR" \
   #
   "https://nmap.org/book/man-host-discovery.html;\
-  ;icmp_ping-1;-PE $_cmd_params" \
+  ;icmp_ping-1;-PE" \
   #
   "https://nmap.org/book/man-host-discovery.html;\
-  ;icmp_ping-2;-PP $_cmd_params" \
+  ;icmp_ping-2;-PP" \
   #
   "https://nmap.org/book/man-host-discovery.html;\
-  ;icmp_ping-3;-PM $_cmd_params" \
+  ;icmp_ping-3;-PM" \
   )
 
   # shellcheck disable=SC2034,SC2154

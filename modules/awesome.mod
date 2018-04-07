@@ -109,7 +109,7 @@ function awesome() {
   _module_commands=(\
   #
   "Show only open ports;\
-  ;open_ports;-F --open $params" \
+  ;open_ports;-F --open" \
   )
 
   # shellcheck disable=SC2034,SC2154

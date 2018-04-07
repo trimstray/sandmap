@@ -109,52 +109,52 @@ function nse_remote-access() {
   _module_commands=(\
   #
   "https://nmap.org/nsedoc/scripts/rdp-enum-encryption.html;\
-  ;rdp-enum-encryption;--script rdp-enum-encryption $params" \
+  ;rdp-enum-encryption;--script rdp-enum-encryption" \
   #
   "https://nmap.org/nsedoc/scripts/rdp-vuln-ms12-020.html;\
-  ;rdp-vuln-ms12-020;--script rdp-vuln-ms12-020 $params" \
+  ;rdp-vuln-ms12-020;--script rdp-vuln-ms12-020" \
   #
   "https://nmap.org/nsedoc/scripts/realvnc-auth-bypass.html;\
-  ;realvnc-auth-bypass;--script realvnc-auth-bypass $params" \
+  ;realvnc-auth-bypass;--script realvnc-auth-bypass" \
   #
   "https://nmap.org/nsedoc/scripts/ssh-auth-methods.html;\
-  ;ssh-auth-methods;--script ssh-auth-methods $params" \
+  ;ssh-auth-methods;--script ssh-auth-methods" \
   #
   "https://nmap.org/nsedoc/scripts/ssh-brute.html;\
-  ;ssh-brute;--script ssh-brute $params" \
+  ;ssh-brute;--script ssh-brute" \
   #
   "https://nmap.org/nsedoc/scripts/ssh-hostkey.html;\
-  ;ssh-hostkey;--script ssh-hostkey $params" \
+  ;ssh-hostkey;--script ssh-hostkey" \
   #
   "https://nmap.org/nsedoc/scripts/ssh-publickey-acceptance.html;\
-  ;ssh-publickey-acceptance;--script ssh-publickey-acceptance $params" \
+  ;ssh-publickey-acceptance;--script ssh-publickey-acceptance" \
   #
   "https://nmap.org/nsedoc/scripts/ssh-run.html;\
-  ;ssh-run;--script ssh-run $params" \
+  ;ssh-run;--script ssh-run" \
   #
   "https://nmap.org/nsedoc/scripts/ssh2-enum-algos.html;\
-  ;ssh2-enum-algos;--script ssh2-enum-algos $params" \
+  ;ssh2-enum-algos;--script ssh2-enum-algos" \
   #
   "https://nmap.org/nsedoc/scripts/sshv1.html;\
-  ;sshv1;--script sshv1 $params" \
+  ;sshv1;--script sshv1" \
   #
   "https://nmap.org/nsedoc/scripts/telnet-brute.html;\
-  ;telnet-brute;--script telnet-brute $params" \
+  ;telnet-brute;--script telnet-brute" \
   #
   "https://nmap.org/nsedoc/scripts/telnet-encryption.html;\
-  ;telnet-encryption;--script telnet-encryption $params" \
+  ;telnet-encryption;--script telnet-encryption" \
   #
   "https://nmap.org/nsedoc/scripts/telnet-ntlm-info.html;\
-  ;telnet-ntlm-info;--script telnet-ntlm-info $params" \
+  ;telnet-ntlm-info;--script telnet-ntlm-info" \
   #
   "https://nmap.org/nsedoc/scripts/vnc-brute.html;\
-  ;vnc-brute;--script vnc-brute $params" \
+  ;vnc-brute;--script vnc-brute" \
   #
   "https://nmap.org/nsedoc/scripts/vnc-info.html;\
-  ;vnc-info;--script vnc-info $params" \
+  ;vnc-info;--script vnc-info" \
   #
   "https://nmap.org/nsedoc/scripts/vnc-title.html;\
-  ;vnc-title;--script vnc-title $params" \
+  ;vnc-title;--script vnc-title" \
   )
 
   # shellcheck disable=SC2034,SC2154

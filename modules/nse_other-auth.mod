@@ -109,13 +109,13 @@ function nse_other-auth() {
   _module_commands=(\
   #
   "https://nmap.org/nsedoc/scripts/creds-summary.html;\
-  ;creds-summary;--script creds-summary $params" \
+  ;creds-summary;--script creds-summary" \
   #
   "https://nmap.org/nsedoc/scripts/krb5-enum-users.html;\
-  ;krb5-enum-users;--script krb5-enum-users $params" \
+  ;krb5-enum-users;--script krb5-enum-users" \
   #
   "https://nmap.org/nsedoc/scripts/x11-access.html;\
-  ;x11-access;--script x11-access $params" \
+  ;x11-access;--script x11-access" \
   )
 
   # shellcheck disable=SC2034,SC2154

@@ -109,19 +109,19 @@ function nse_citrix() {
   _module_commands=(\
   #
   "https://nmap.org/nsedoc/scripts/citrix-brute-xml.html;\
-  ;citrix-brute-xml;--script citrix-brute-xml $params" \
+  ;citrix-brute-xml;--script citrix-brute-xml" \
   #
   "https://nmap.org/nsedoc/scripts/citrix-enum-apps-xml.html;\
-  ;citrix-enum-apps-xml;--script citrix-enum-apps-xml $params" \
+  ;citrix-enum-apps-xml;--script citrix-enum-apps-xml" \
   #
   "https://nmap.org/nsedoc/scripts/citrix-enum-apps.html;\
-  ;citrix-enum-apps;--script citrix-enum-apps $params" \
+  ;citrix-enum-apps;--script citrix-enum-apps" \
   #
   "https://nmap.org/nsedoc/scripts/citrix-enum-servers-xml.html;\
-  ;citrix-enum-servers-xml;--script citrix-enum-servers-xml $params" \
+  ;citrix-enum-servers-xml;--script citrix-enum-servers-xml" \
   #
   "https://nmap.org/nsedoc/scripts/citrix-enum-servers.html;\
-  ;citrix-enum-servers;--script citrix-enum-servers $params" \
+  ;citrix-enum-servers;--script citrix-enum-servers" \
   )
 
   # shellcheck disable=SC2034,SC2154

@@ -109,73 +109,73 @@ function nse_smb() {
   _module_commands=(\
   #
   "https://nmap.org/nsedoc/scripts/smb-brute.html;\
-  ;smb-brute;--script smb-brute $params" \
+  ;smb-brute;--script smb-brute" \
   #
   "https://nmap.org/nsedoc/scripts/smb-double-pulsar-backdoor.html;\
-  ;smb-double-pulsar-backdoor;--script smb-double-pulsar-backdoor $params" \
+  ;smb-double-pulsar-backdoor;--script smb-double-pulsar-backdoor" \
   #
   "https://nmap.org/nsedoc/scripts/smb-enum-domains.html;\
-  ;smb-enum-domains;--script smb-enum-domains $params" \
+  ;smb-enum-domains;--script smb-enum-domains" \
   #
   "https://nmap.org/nsedoc/scripts/smb-enum-groups.html;\
-  ;smb-enum-groups;--script smb-enum-groups $params" \
+  ;smb-enum-groups;--script smb-enum-groups" \
   #
   "https://nmap.org/nsedoc/scripts/smb-enum-processes.html;\
-  ;smb-enum-processes;--script smb-enum-processes $params" \
+  ;smb-enum-processes;--script smb-enum-processes" \
   #
   "https://nmap.org/nsedoc/scripts/smb-enum-services.html;\
-  ;smb-enum-services;--script smb-enum-services $params" \
+  ;smb-enum-services;--script smb-enum-services" \
   #
   "https://nmap.org/nsedoc/scripts/smb-enum-sessions.html;\
-  ;smb-enum-sessions;--script smb-enum-sessions $params" \
+  ;smb-enum-sessions;--script smb-enum-sessions" \
   #
   "https://nmap.org/nsedoc/scripts/smb-enum-shares.html;\
-  ;smb-enum-shares;--script smb-enum-shares $params" \
+  ;smb-enum-shares;--script smb-enum-shares" \
   #
   "https://nmap.org/nsedoc/scripts/smb-enum-users.html;\
-  ;smb-enum-users;--script smb-enum-users $params" \
+  ;smb-enum-users;--script smb-enum-users" \
   #
   "https://nmap.org/nsedoc/scripts/smb-flood.html;\
-  ;smb-flood;--script smb-flood $params" \
+  ;smb-flood;--script smb-flood" \
   #
   "https://nmap.org/nsedoc/scripts/smb-ls.html;\
-  ;smb-ls;--script smb-ls $params" \
+  ;smb-ls;--script smb-ls" \
   #
   "https://nmap.org/nsedoc/scripts/smb-mbenum.html;\
-  ;smb-mbenum;--script smb-mbenum $params" \
+  ;smb-mbenum;--script smb-mbenum" \
   #
   "https://nmap.org/nsedoc/scripts/smb-os-discovery.html;\
-  ;smb-os-discovery;--script smb-os-discovery $params" \
+  ;smb-os-discovery;--script smb-os-discovery" \
   #
   "https://nmap.org/nsedoc/scripts/smb-print-text.html;\
-  ;smb-print-text;--script smb-print-text $params" \
+  ;smb-print-text;--script smb-print-text" \
   #
   "https://nmap.org/nsedoc/scripts/smb-protocols.html;\
-  ;smb-protocols;--script smb-protocols $params" \
+  ;smb-protocols;--script smb-protocols" \
   #
   "https://nmap.org/nsedoc/scripts/smb-psexec.html;\
-  ;smb-psexec;--script smb-psexec $params" \
+  ;smb-psexec;--script smb-psexec" \
   #
   "https://nmap.org/nsedoc/scripts/smb-security-mode.html;\
-  ;smb-security-mode;--script smb-security-mode $params" \
+  ;smb-security-mode;--script smb-security-mode" \
   #
   "https://nmap.org/nsedoc/scripts/smb-server-stats.html;\
-  ;smb-server-stats;--script smb-server-stats $params" \
+  ;smb-server-stats;--script smb-server-stats" \
   #
   "https://nmap.org/nsedoc/scripts/smb-system-info.html;\
-  ;smb-system-info;--script smb-system-info $params" \
+  ;smb-system-info;--script smb-system-info" \
   #
   "https://nmap.org/nsedoc/scripts/smb2-capabilities.html;\
-  ;smb2-capabilities;--script smb2-capabilities $params" \
+  ;smb2-capabilities;--script smb2-capabilities" \
   #
   "https://nmap.org/nsedoc/scripts/smb2-security-mode.html;\
-  ;smb2-security-mode;--script smb2-security-mode $params" \
+  ;smb2-security-mode;--script smb2-security-mode" \
   #
   "https://nmap.org/nsedoc/scripts/smb2-time.html;\
-  ;smb2-time;--script smb2-time $params" \
+  ;smb2-time;--script smb2-time" \
   #
   "https://nmap.org/nsedoc/scripts/smb2-vuln-uptime.html;\
-  ;smb2-vuln-uptime;--script smb2-vuln-uptime $params" \
+  ;smb2-vuln-uptime;--script smb2-vuln-uptime" \
   )
 
   # shellcheck disable=SC2034,SC2154

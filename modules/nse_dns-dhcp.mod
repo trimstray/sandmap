@@ -109,85 +109,85 @@ function nse_dns-dhcp() {
   _module_commands=(\
   #
   "https://nmap.org/nsedoc/scripts/asn-query.html;\
-  ;asn-query;--script asn-query $params" \
+  ;asn-query;--script asn-query" \
   #
   "https://nmap.org/nsedoc/scripts/dns-blacklist.html;\
-  ;dns-blacklist;--script dns-blacklist $params" \
+  ;dns-blacklist;--script dns-blacklist" \
   #
   "https://nmap.org/nsedoc/scripts/dns-brute.html;\
-  ;dns-brute;--script dns-brute $params" \
+  ;dns-brute;--script dns-brute" \
   #
   "https://nmap.org/nsedoc/scripts/dns-cache-snoop.html;\
-  ;dns-cache-snoop;--script dns-cache-snoop.nse $params" \
+  ;dns-cache-snoop;--script dns-cache-snoop.nse" \
   #
   "https://nmap.org/nsedoc/scripts/dns-check-zone.html;\
-  ;dns-check-zone;--script dns-check-zone $params" \
+  ;dns-check-zone;--script dns-check-zone" \
   #
   "https://nmap.org/nsedoc/scripts/dns-client-subnet-scan.html;\
-  ;dns-client-subnet-scan;--script dns-client-subnet-scan $params" \
+  ;dns-client-subnet-scan;--script dns-client-subnet-scan" \
   #
   "https://nmap.org/nsedoc/scripts/dns-fuzz.html;\
-  ;dns-fuzz;--script dns-fuzz $params" \
+  ;dns-fuzz;--script dns-fuzz" \
   #
   "https://nmap.org/nsedoc/scripts/dns-ip6-arpa-scan.html;\
-  ;dns-ip6-arpa-scan;--script dns-ip6-arpa-scan $params" \
+  ;dns-ip6-arpa-scan;--script dns-ip6-arpa-scan" \
   #
   "https://nmap.org/nsedoc/scripts/dns-nsec-enum.html;\
-  ;dns-nsec-enum;--script dns-nsec-enum $params" \
+  ;dns-nsec-enum;--script dns-nsec-enum" \
   #
   "https://nmap.org/nsedoc/scripts/dns-nsec3-enum.html;\
-  ;dns-nsec3-enum;--script=dns-nsec3-enum $params" \
+  ;dns-nsec3-enum;--script=dns-nsec3-enum" \
   #
   "https://nmap.org/nsedoc/scripts/dns-nsid.html;\
-  ;dns-nsid;--script dns-nsid $params" \
+  ;dns-nsid;--script dns-nsid" \
   #
   "https://nmap.org/nsedoc/scripts/dns-random-srcport.html;\
-  ;dns-random-srcport;--script=dns-random-srcport $params" \
+  ;dns-random-srcport;--script=dns-random-srcport" \
   #
   "https://nmap.org/nsedoc/scripts/dns-random-txid.html;\
-  ;dns-random-txid;--script=dns-random-txid $params" \
+  ;dns-random-txid;--script=dns-random-txid" \
   #
   "https://nmap.org/nsedoc/scripts/dns-recursion.html;\
-  ;dns-recursion;--script=dns-recursion $params" \
+  ;dns-recursion;--script=dns-recursion" \
   #
   "https://nmap.org/nsedoc/scripts/dns-service-discovery.html;\
-  ;dns-service-discovery;--script=dns-service-discovery $params" \
+  ;dns-service-discovery;--script=dns-service-discovery" \
   #
   "https://nmap.org/nsedoc/scripts/dns-srv-enum.html;\
-  ;dns-srv-enum;--script dns-srv-enum $params" \
+  ;dns-srv-enum;--script dns-srv-enum" \
   #
   "https://nmap.org/nsedoc/scripts/dns-update.html;\
-  ;dns-update;--script=dns-update $params" \
+  ;dns-update;--script=dns-update" \
   #
   "https://nmap.org/nsedoc/scripts/dns-zone-transfer.html;\
-  ;dns-zone-transfer;--script dns-zone-transfer.nse $params" \
+  ;dns-zone-transfer;--script dns-zone-transfer.nse" \
   #
   "https://nmap.org/nsedoc/scripts/fcrdns.html;\
-  ;fcrdns;--script fcrdns $params" \
+  ;fcrdns;--script fcrdns" \
   #
   "https://nmap.org/nsedoc/scripts/hostmap-bfk.html;\
-  ;hostmap-bfk;--script hostmap-bfk $params" \
+  ;hostmap-bfk;--script hostmap-bfk" \
   #
   "https://nmap.org/nsedoc/scripts/hostmap-crtsh.html;\
-  ;hostmap-crtsh;--script hostmap-crtsh $params" \
+  ;hostmap-crtsh;--script hostmap-crtsh" \
   #
   "https://nmap.org/nsedoc/scripts/hostmap-ip2hosts.html;\
-  ;hostmap-ip2hosts;--script hostmap-ip2hosts $params" \
+  ;hostmap-ip2hosts;--script hostmap-ip2hosts" \
   #
   "https://nmap.org/nsedoc/scripts/hostmap-robtex.html;\
-  ;hostmap-robtex;--script hostmap-robtex $params" \
+  ;hostmap-robtex;--script hostmap-robtex" \
   #
   "https://nmap.org/nsedoc/scripts/llmnr-resolve.html;\
-  ;llmnr-resolve;--script llmnr-resolve $params" \
+  ;llmnr-resolve;--script llmnr-resolve" \
   #
   "https://nmap.org/nsedoc/scripts/dhcp-discover.html;\
-  ;dhcp-discover;--script=dhcp-discover $params" \
+  ;dhcp-discover;--script=dhcp-discover" \
   #
   "https://nmap.org/nsedoc/scripts/http-robtex-reverse-ip.html;\
-  ;http-robtex-reverse-ip;--script=http-robtex-reverse-ip $params" \
+  ;http-robtex-reverse-ip;--script=http-robtex-reverse-ip" \
   #
   "https://nmap.org/nsedoc/scripts/http-robtex-shared-ns.html;\
-  ;http-robtex-shared-ns;--script=http-robtex-shared-ns $params" \
+  ;http-robtex-shared-ns;--script=http-robtex-shared-ns" \
   )
 
   # shellcheck disable=SC2034,SC2154
