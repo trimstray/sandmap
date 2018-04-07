@@ -111,11 +111,41 @@ function other-network() {
   "https://nmap.org/nsedoc/scripts/address-info.html;\
   ;address-info;--script address-info $params" \
   #
+  "https://nmap.org/nsedoc/scripts/firewall-bypass.html;\
+  ;firewall-bypass;--script firewall-bypass $params" \
+  #
   "https://nmap.org/nsedoc/scripts/ip-forwarding.html;\
   ;ip-forwarding;--script ip-forwarding $params" \
   #
+  "https://nmap.org/nsedoc/scripts/ip-geolocation-geoplugin.html;\
+  ;ip-geolocation-geoplugin;--script ip-geolocation-geoplugin $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/ip-geolocation-ipinfodb.html;\
+  ;ip-geolocation-ipinfodb;--script ip-geolocation-ipinfodb $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/ip-geolocation-map-bing.html;\
+  ;ip-geolocation-map-bing;--script ip-geolocation-map-bing $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/ip-geolocation-map-google.html;\
+  ;ip-geolocation-map-google;--script ip-geolocation-map-google $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/ip-geolocation-map-kml.html;\
+  ;ip-geolocation-map-kml;--script ip-geolocation-map-kml $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/ip-geolocation-maxmind.html;\
+  ;ip-geolocation-maxmind;--script ip-geolocation-maxmind $params" \
+  #
   "https://nmap.org/nsedoc/scripts/ip-https-discover.html;\
   ;ip-https-discover;--script ip-https-discover $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/ipv6-multicast-mld-list.html;\
+  ;ipv6-multicast-mld-list;--script ipv6-multicast-mld-list $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/ipv6-node-info.html;\
+  ;ipv6-node-info;--script ipv6-node-info $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/ipv6-ra-flood.html;\
+  ;ipv6-ra-flood;--script ipv6-ra-flood $params" \
   #
   "https://nmap.org/nsedoc/scripts/mrinfo.html;\
   ;mrinfo;--script mrinfo $params" \
@@ -144,6 +174,9 @@ function other-network() {
   "https://nmap.org/nsedoc/scripts/qscan.html;\
   ;qscan;--script qscan $params" \
   #
+  "https://nmap.org/nsedoc/scripts/reverse-index.html;\
+  ;reverse-index;--script reverse-index $params" \
+  #
   "https://nmap.org/nsedoc/scripts/sniffer-detect.html;\
   ;sniffer-detect;--script sniffer-detect $params" \
   #
@@ -155,6 +188,24 @@ function other-network() {
   #
   "https://nmap.org/nsedoc/scripts/targets-asn.html;\
   ;targets-asn;--script targets-asn $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/targets-ipv6-map4to6.html;\
+  ;targets-ipv6-map4to6;--script targets-ipv6-map4to6 $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/targets-ipv6-multicast-echo.html;\
+  ;targets-ipv6-multicast-echo;--script targets-ipv6-multicast-echo $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/targets-ipv6-multicast-invalid-dst.html;\
+  ;targets-ipv6-multicast-invalid-dst;--script targets-ipv6-multicast-invalid-dst $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/targets-ipv6-multicast-mld.html;\
+  ;targets-ipv6-multicast-mld;--script targets-ipv6-multicast-mld $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/targets-ipv6-multicast-slaac.html;\
+  ;targets-ipv6-multicast-slaac;--script targets-ipv6-multicast-slaac $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/targets-ipv6-wordlist.html;\
+  ;targets-ipv6-wordlist;--script targets-ipv6-wordlist $params" \
   #
   "https://nmap.org/nsedoc/scripts/targets-sniffer.html;\
   ;targets-sniffer;--script targets-sniffer $params" \
