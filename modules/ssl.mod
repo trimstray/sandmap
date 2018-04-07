@@ -108,6 +108,9 @@ function ssl() {
   # shellcheck disable=SC2034
   _module_commands=(\
   #
+  "https://nmap.org/nsedoc/scripts/rsa-vuln-roca.html;\
+  ;rsa-vuln-roca;--script rsa-vuln-roca $params" \
+  #
   "https://nmap.org/nsedoc/scripts/ssl-ccs-injection.html;\
   ;ssl-ccs-injection;--script ssl-ccs-injection $params" \
   #
