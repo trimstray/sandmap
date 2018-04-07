@@ -121,16 +121,16 @@ function host_discovery() {
   ;no_ping;-Pn" \
   #
   "https://nmap.org/book/man-host-discovery.html;\
-  ;tcp_syn_ping;-PS -p" \
+  ;tcp_syn_ping;-PS" \
   #
   "https://nmap.org/book/man-host-discovery.html;\
-  ;tcp_ack_ping;-PA -p 80" \
+  ;tcp_ack_ping;-PA" \
   #
   "https://nmap.org/book/man-host-discovery.html;\
-  ;udp_ping;-PU -p 80" \
+  ;udp_ping;-PU" \
   #
   "https://nmap.org/book/man-host-discovery.html;\
-  ;sctp_init_ping;-PY -p 80" \
+  ;sctp_init_ping;-PY" \
   #
   "https://nmap.org/book/man-host-discovery.html;\
   ;arp_ping;-PR" \
