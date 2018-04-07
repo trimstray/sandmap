@@ -3,22 +3,22 @@
 # shellcheck shell=bash
 
 # ``````````````````````````````````````````````````````````````````````````````
-# Function name: broadcast()
+# Function name: nse_broadcast()
 #
 # Description:
-#   Broadcast Module.
+#   NSE Broadcast Module.
 #
 # Usage:
-#   broadcast
+#   nse_broadcast
 #
 # Examples:
-#   broadcast
+#   nse_broadcast
 #
 
-function broadcast() {
+function nse_broadcast() {
 
   # shellcheck disable=SC2034
-  local _FUNCTION_ID="broadcast"
+  local _FUNCTION_ID="nse_broadcast"
   local _STATE=0
 
   # User variables:
@@ -37,7 +37,7 @@ function broadcast() {
   author="trimstray"
   contact="trimstray@gmail.com"
   version="1.0"
-  description="Broadcast Module"
+  description="NSE Broadcast Module"
 
   # shellcheck disable=SC2034,SC2154
   _module_cfg="${_modules}/${module_name}.cfg"
@@ -51,7 +51,7 @@ function broadcast() {
     Description
     -----------
 
-      Broadcast Module.
+      NSE Broadcast Module.
 
     Commands
     --------

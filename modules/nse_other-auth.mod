@@ -3,22 +3,22 @@
 # shellcheck shell=bash
 
 # ``````````````````````````````````````````````````````````````````````````````
-# Function name: citrix()
+# Function name: nse_other-auth()
 #
 # Description:
-#   Citrix Module.
+#   NSE Other Auth Module.
 #
 # Usage:
-#   citrix
+#   nse_other-auth
 #
 # Examples:
-#   citrix
+#   nse_other-auth
 #
 
-function citrix() {
+function nse_other-auth() {
 
   # shellcheck disable=SC2034
-  local _FUNCTION_ID="citrix"
+  local _FUNCTION_ID="nse_other-auth"
   local _STATE=0
 
   # User variables:
@@ -37,7 +37,7 @@ function citrix() {
   author="trimstray"
   contact="trimstray@gmail.com"
   version="1.0"
-  description="Citrix Module"
+  description="NSE Other Auth Module"
 
   # shellcheck disable=SC2034,SC2154
   _module_cfg="${_modules}/${module_name}.cfg"
@@ -51,7 +51,7 @@ function citrix() {
     Description
     -----------
 
-      Citrix Module.
+      NSE Other Auth Module.
 
     Commands
     --------
@@ -108,20 +108,14 @@ function citrix() {
   # shellcheck disable=SC2034
   _module_commands=(\
   #
-  "https://nmap.org/nsedoc/scripts/citrix-brute-xml.html;\
-  ;citrix-brute-xml;--script citrix-brute-xml $params" \
+  "https://nmap.org/nsedoc/scripts/creds-summary.html;\
+  ;creds-summary;--script creds-summary $params" \
   #
-  "https://nmap.org/nsedoc/scripts/citrix-enum-apps-xml.html;\
-  ;citrix-enum-apps-xml;--script citrix-enum-apps-xml $params" \
+  "https://nmap.org/nsedoc/scripts/krb5-enum-users.html;\
+  ;krb5-enum-users;--script krb5-enum-users $params" \
   #
-  "https://nmap.org/nsedoc/scripts/citrix-enum-apps.html;\
-  ;citrix-enum-apps;--script citrix-enum-apps $params" \
-  #
-  "https://nmap.org/nsedoc/scripts/citrix-enum-servers-xml.html;\
-  ;citrix-enum-servers-xml;--script citrix-enum-servers-xml $params" \
-  #
-  "https://nmap.org/nsedoc/scripts/citrix-enum-servers.html;\
-  ;citrix-enum-servers;--script citrix-enum-servers $params" \
+  "https://nmap.org/nsedoc/scripts/x11-access.html;\
+  ;x11-access;--script x11-access $params" \
   )
 
   # shellcheck disable=SC2034,SC2154

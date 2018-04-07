@@ -3,22 +3,22 @@
 # shellcheck shell=bash
 
 # ``````````````````````````````````````````````````````````````````````````````
-# Function name: ftp()
+# Function name: nse_smb-vuln()
 #
 # Description:
-#   FTP Module.
+#   NSE SMB Protocol Vulnerability Module.
 #
 # Usage:
-#   ftp
+#   nse_smb-vuln
 #
 # Examples:
-#   ftp
+#   nse_smb-vuln
 #
 
-function ftp() {
+function nse_smb-vuln() {
 
   # shellcheck disable=SC2034
-  local _FUNCTION_ID="ftp"
+  local _FUNCTION_ID="nse_smb-vuln"
   local _STATE=0
 
   # User variables:
@@ -37,7 +37,7 @@ function ftp() {
   author="trimstray"
   contact="trimstray@gmail.com"
   version="1.0"
-  description="FTP Module"
+  description="NSE SMB Protocol Vulnerability Module"
 
   # shellcheck disable=SC2034,SC2154
   _module_cfg="${_modules}/${module_name}.cfg"
@@ -51,7 +51,7 @@ function ftp() {
     Description
     -----------
 
-      FTP Module.
+      NSE SMB Protocol Vulnerability Module.
 
     Commands
     --------
@@ -108,32 +108,38 @@ function ftp() {
   # shellcheck disable=SC2034
   _module_commands=(\
   #
-  "https://nmap.org/nsedoc/scripts/ftp-anon.html;\
-  ;ftp-anon;--script ftp-anon $params" \
+  "https://nmap.org/nsedoc/scripts/samba-vuln-cve-2012-1182.html;\
+  ;samba-vuln-cve-2012-1182;--script samba-vuln-cve-2012-1182 $params" \
   #
-  "https://nmap.org/nsedoc/scripts/ftp-bounce.html;\
-  ;ftp-bounce;--script ftp-bounce $params" \
+  "https://nmap.org/nsedoc/scripts/smb-vuln-conficker.html;\
+  ;smb-vuln-conficker;--script smb-vuln-conficker $params" \
   #
-  "https://nmap.org/nsedoc/scripts/ftp-brute.html;\
-  ;ftp-brute;--script ftp-brute $params" \
+  "https://nmap.org/nsedoc/scripts/smb-vuln-cve-2017-7494.html;\
+  ;smb-vuln-cve-2017-7494;--script smb-vuln-cve-2017-7494 $params" \
   #
-  "https://nmap.org/nsedoc/scripts/ftp-libopie.html;\
-  ;ftp-libopie;--script ftp-libopie $params" \
+  "https://nmap.org/nsedoc/scripts/smb-vuln-cve2009-3103.html;\
+  ;smb-vuln-cve2009-3103;--script smb-vuln-cve2009-3103 $params" \
   #
-  "https://nmap.org/nsedoc/scripts/ftp-proftpd-backdoor.html;\
-  ;ftp-proftpd-backdoor;--script ftp-proftpd-backdoor $params" \
+  "https://nmap.org/nsedoc/scripts/smb-vuln-ms06-025.html;\
+  ;smb-vuln-ms06-025;--script smb-vuln-ms06-025 $params" \
   #
-  "https://nmap.org/nsedoc/scripts/ftp-syst.html;\
-  ;ftp-syst;--script ftp-syst $params" \
+  "https://nmap.org/nsedoc/scripts/smb-vuln-ms07-029.html;\
+  ;smb-vuln-ms07-029;--script smb-vuln-ms07-029 $params" \
   #
-  "https://nmap.org/nsedoc/scripts/ftp-vsftpd-backdoor.html;\
-  ;ftp-vsftpd-backdoor;--script ftp-vsftpd-backdoor $params" \
+  "https://nmap.org/nsedoc/scripts/smb-vuln-ms08-067.html;\
+  ;smb-vuln-ms08-067;--script smb-vuln-ms08-067 $params" \
   #
-  "https://nmap.org/nsedoc/scripts/ftp-vuln-cve2010-4221.html;\
-  ;ftp-vuln-cve2010-4221;--script ftp-vuln-cve2010-4221 $params" \
+  "https://nmap.org/nsedoc/scripts/smb-vuln-ms10-054.html;\
+  ;smb-vuln-ms10-054;--script smb-vuln-ms10-054 $params" \
   #
-  "https://nmap.org/nsedoc/scripts/tftp-enum.html;\
-  ;tftp-enum;--script tftp-enum $params" \
+  "https://nmap.org/nsedoc/scripts/smb-vuln-ms10-061.html;\
+  ;smb-vuln-ms10-061;--script smb-vuln-ms10-061 $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/smb-vuln-ms17-010.html;\
+  ;smb-vuln-ms17-010;--script smb-vuln-ms17-010 $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/smb-vuln-regsvc-dos.html;\
+  ;smb-vuln-regsvc-dos;--script smb-vuln-regsvc-dos $params" \
   )
 
   # shellcheck disable=SC2034,SC2154

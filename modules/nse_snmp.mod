@@ -3,22 +3,22 @@
 # shellcheck shell=bash
 
 # ``````````````````````````````````````````````````````````````````````````````
-# Function name: snmp()
+# Function name: nse_snmp()
 #
 # Description:
-#   SNMP Protocol Module.
+#   NSE SNMP Protocol Module.
 #
 # Usage:
-#   snmp
+#   nse_snmp
 #
 # Examples:
-#   snmp
+#   nse_snmp
 #
 
-function snmp() {
+function nse_snmp() {
 
   # shellcheck disable=SC2034
-  local _FUNCTION_ID="snmp"
+  local _FUNCTION_ID="nse_snmp"
   local _STATE=0
 
   # User variables:
@@ -37,7 +37,7 @@ function snmp() {
   author="trimstray"
   contact="trimstray@gmail.com"
   version="1.0"
-  description="SNMP Protocol Module"
+  description="NSE SNMP Protocol Module"
 
   # shellcheck disable=SC2034,SC2154
   _module_cfg="${_modules}/${module_name}.cfg"
@@ -51,7 +51,7 @@ function snmp() {
     Description
     -----------
 
-      SNMP Protocol Module.
+      NSE SNMP Protocol Module.
 
     Commands
     --------

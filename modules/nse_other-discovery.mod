@@ -3,22 +3,22 @@
 # shellcheck shell=bash
 
 # ``````````````````````````````````````````````````````````````````````````````
-# Function name: whois()
+# Function name: nse_other-discovery()
 #
 # Description:
-#   Whois Database Module.
+#   NSE Other Discovery Module.
 #
 # Usage:
-#   whois
+#   nse_other-discovery
 #
 # Examples:
-#   whois
+#   nse_other-discovery
 #
 
-function whois() {
+function nse_other-discovery() {
 
   # shellcheck disable=SC2034
-  local _FUNCTION_ID="whois"
+  local _FUNCTION_ID="nse_other-discovery"
   local _STATE=0
 
   # User variables:
@@ -37,7 +37,7 @@ function whois() {
   author="trimstray"
   contact="trimstray@gmail.com"
   version="1.0"
-  description="Whois Database Module"
+  description="NSE Other Discovery Module"
 
   # shellcheck disable=SC2034,SC2154
   _module_cfg="${_modules}/${module_name}.cfg"
@@ -51,7 +51,7 @@ function whois() {
     Description
     -----------
 
-      Whois Database Module.
+      NSE Other Discovery Module.
 
     Commands
     --------
@@ -108,11 +108,14 @@ function whois() {
   # shellcheck disable=SC2034
   _module_commands=(\
   #
-  "https://nmap.org/nsedoc/scripts/whois-domain.html;\
-  ;whois-domain;--script whois-domain $params" \
+  "https://nmap.org/nsedoc/scripts/banner.html;\
+  ;banner;--script banner $params" \
   #
-  "https://nmap.org/nsedoc/scripts/whois-ip.html;\
-  ;whois-ip;--script whois-ip $params" \
+  "https://nmap.org/nsedoc/scripts/duplicates.html;\
+  ;duplicates;--script duplicates $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/lltd-discovery.html;\
+  ;lltd-discovery;--script lltd-discovery $params" \
   )
 
   # shellcheck disable=SC2034,SC2154

@@ -3,22 +3,22 @@
 # shellcheck shell=bash
 
 # ``````````````````````````````````````````````````````````````````````````````
-# Function name: smb()
+# Function name: nse_smb()
 #
 # Description:
-#   SMB Protocol Module.
+#   NSE SMB Protocol Module.
 #
 # Usage:
-#   smb
+#   nse_smb
 #
 # Examples:
-#   smb
+#   nse_smb
 #
 
-function smb() {
+function nse_smb() {
 
   # shellcheck disable=SC2034
-  local _FUNCTION_ID="smb"
+  local _FUNCTION_ID="nse_smb"
   local _STATE=0
 
   # User variables:
@@ -37,7 +37,7 @@ function smb() {
   author="trimstray"
   contact="trimstray@gmail.com"
   version="1.0"
-  description="SMB Protocol Module"
+  description="NSE SMB Protocol Module"
 
   # shellcheck disable=SC2034,SC2154
   _module_cfg="${_modules}/${module_name}.cfg"
@@ -51,7 +51,7 @@ function smb() {
     Description
     -----------
 
-      SMB Protocol Module.
+      NSE SMB Protocol Module.
 
     Commands
     --------

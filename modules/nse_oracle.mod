@@ -3,22 +3,22 @@
 # shellcheck shell=bash
 
 # ``````````````````````````````````````````````````````````````````````````````
-# Function name: oracle()
+# Function name: nse_oracle()
 #
 # Description:
-#   Oracle Services Module.
+#   NSE Oracle Services Module.
 #
 # Usage:
-#   oracle
+#   nse_oracle
 #
 # Examples:
-#   oracle
+#   nse_oracle
 #
 
-function oracle() {
+function nse_oracle() {
 
   # shellcheck disable=SC2034
-  local _FUNCTION_ID="oracle"
+  local _FUNCTION_ID="nse_oracle"
   local _STATE=0
 
   # User variables:
@@ -37,7 +37,7 @@ function oracle() {
   author="trimstray"
   contact="trimstray@gmail.com"
   version="1.0"
-  description="Oracle Services Module"
+  description="NSE Oracle Services Module"
 
   # shellcheck disable=SC2034,SC2154
   _module_cfg="${_modules}/${module_name}.cfg"
@@ -51,7 +51,7 @@ function oracle() {
     Description
     -----------
 
-      Oracle Services Module.
+      NSE Oracle Services Module.
 
     Commands
     --------

@@ -3,22 +3,22 @@
 # shellcheck shell=bash
 
 # ``````````````````````````````````````````````````````````````````````````````
-# Function name: remote-access()
+# Function name: nse_socks()
 #
 # Description:
-#   Remote Access Module.
+#   NSE SOCKS Module.
 #
 # Usage:
-#   remote-access
+#   nse_socks
 #
 # Examples:
-#   remote-access
+#   nse_socks
 #
 
-function remote-access() {
+function nse_socks() {
 
   # shellcheck disable=SC2034
-  local _FUNCTION_ID="remote-access"
+  local _FUNCTION_ID="nse_socks"
   local _STATE=0
 
   # User variables:
@@ -37,7 +37,7 @@ function remote-access() {
   author="trimstray"
   contact="trimstray@gmail.com"
   version="1.0"
-  description="Remote Access Module"
+  description="NSE SOCKS Module"
 
   # shellcheck disable=SC2034,SC2154
   _module_cfg="${_modules}/${module_name}.cfg"
@@ -51,7 +51,7 @@ function remote-access() {
     Description
     -----------
 
-      Remote Access Module.
+      NSE SOCKS Module.
 
     Commands
     --------
@@ -108,23 +108,14 @@ function remote-access() {
   # shellcheck disable=SC2034
   _module_commands=(\
   #
-  "https://nmap.org/nsedoc/scripts/rdp-enum-encryption.html;\
-  ;rdp-enum-encryption;--script rdp-enum-encryption $params" \
+  "https://nmap.org/nsedoc/scripts/socks-auth-info.html;\
+  ;socks-auth-info;--script socks-auth-info $params" \
   #
-  "https://nmap.org/nsedoc/scripts/rdp-vuln-ms12-020.html;\
-  ;rdp-vuln-ms12-020;--script rdp-vuln-ms12-020 $params" \
+  "https://nmap.org/nsedoc/scripts/socks-brute.html;\
+  ;socks-brute;--script socks-brute $params" \
   #
-  "https://nmap.org/nsedoc/scripts/realvnc-auth-bypass.html;\
-  ;realvnc-auth-bypass;--script realvnc-auth-bypass $params" \
-  #
-  "https://nmap.org/nsedoc/scripts/vnc-brute.html;\
-  ;vnc-brute;--script vnc-brute $params" \
-  #
-  "https://nmap.org/nsedoc/scripts/vnc-info.html;\
-  ;vnc-info;--script vnc-info $params" \
-  #
-  "https://nmap.org/nsedoc/scripts/vnc-title.html;\
-  ;vnc-title;--script vnc-title $params" \
+  "https://nmap.org/nsedoc/scripts/socks-open-proxy.html;\
+  ;socks-open-proxy;--script socks-open-proxy $params" \
   )
 
   # shellcheck disable=SC2034,SC2154

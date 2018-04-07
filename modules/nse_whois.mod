@@ -3,22 +3,22 @@
 # shellcheck shell=bash
 
 # ``````````````````````````````````````````````````````````````````````````````
-# Function name: vtty()
+# Function name: nse_whois()
 #
 # Description:
-#   VTTY (SSH and Telnet) Module.
+#   NSE Whois Database Module.
 #
 # Usage:
-#   vtty
+#   nse_whois
 #
 # Examples:
-#   vtty
+#   nse_whois
 #
 
-function vtty() {
+function nse_whois() {
 
   # shellcheck disable=SC2034
-  local _FUNCTION_ID="vtty"
+  local _FUNCTION_ID="nse_whois"
   local _STATE=0
 
   # User variables:
@@ -37,7 +37,7 @@ function vtty() {
   author="trimstray"
   contact="trimstray@gmail.com"
   version="1.0"
-  description="VTTY (SSH and Telnet) Module"
+  description="NSE Whois Database Module"
 
   # shellcheck disable=SC2034,SC2154
   _module_cfg="${_modules}/${module_name}.cfg"
@@ -51,7 +51,7 @@ function vtty() {
     Description
     -----------
 
-      VTTY (SSH and Telnet) Module.
+      NSE Whois Database Module.
 
     Commands
     --------
@@ -108,35 +108,11 @@ function vtty() {
   # shellcheck disable=SC2034
   _module_commands=(\
   #
-  "https://nmap.org/nsedoc/scripts/ssh-auth-methods.html;\
-  ;ssh-auth-methods;--script ssh-auth-methods $params" \
+  "https://nmap.org/nsedoc/scripts/whois-domain.html;\
+  ;whois-domain;--script whois-domain $params" \
   #
-  "https://nmap.org/nsedoc/scripts/ssh-brute.html;\
-  ;ssh-brute;--script ssh-brute $params" \
-  #
-  "https://nmap.org/nsedoc/scripts/ssh-hostkey.html;\
-  ;ssh-hostkey;--script ssh-hostkey $params" \
-  #
-  "https://nmap.org/nsedoc/scripts/ssh-publickey-acceptance.html;\
-  ;ssh-publickey-acceptance;--script ssh-publickey-acceptance $params" \
-  #
-  "https://nmap.org/nsedoc/scripts/ssh-run.html;\
-  ;ssh-run;--script ssh-run $params" \
-  #
-  "https://nmap.org/nsedoc/scripts/ssh2-enum-algos.html;\
-  ;ssh2-enum-algos;--script ssh2-enum-algos $params" \
-  #
-  "https://nmap.org/nsedoc/scripts/sshv1.html;\
-  ;sshv1;--script sshv1 $params" \
-  #
-  "https://nmap.org/nsedoc/scripts/telnet-brute.html;\
-  ;telnet-brute;--script telnet-brute $params" \
-  #
-  "https://nmap.org/nsedoc/scripts/telnet-encryption.html;\
-  ;telnet-encryption;--script telnet-encryption $params" \
-  #
-  "https://nmap.org/nsedoc/scripts/telnet-ntlm-info.html;\
-  ;telnet-ntlm-info;--script telnet-ntlm-info $params" \
+  "https://nmap.org/nsedoc/scripts/whois-ip.html;\
+  ;whois-ip;--script whois-ip $params" \
   )
 
   # shellcheck disable=SC2034,SC2154

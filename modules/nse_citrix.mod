@@ -3,22 +3,22 @@
 # shellcheck shell=bash
 
 # ``````````````````````````````````````````````````````````````````````````````
-# Function name: hadoop()
+# Function name: nse_citrix()
 #
 # Description:
-#   Hadoop Services Module.
+#   NSE Citrix Service Module.
 #
 # Usage:
-#   hadoop
+#   nse_citrix
 #
 # Examples:
-#   hadoop
+#   nse_citrix
 #
 
-function hadoop() {
+function nse_citrix() {
 
   # shellcheck disable=SC2034
-  local _FUNCTION_ID="hadoop"
+  local _FUNCTION_ID="nse_citrix"
   local _STATE=0
 
   # User variables:
@@ -37,7 +37,7 @@ function hadoop() {
   author="trimstray"
   contact="trimstray@gmail.com"
   version="1.0"
-  description="Hadoop Services Module"
+  description="NSE Citrix Service Module"
 
   # shellcheck disable=SC2034,SC2154
   _module_cfg="${_modules}/${module_name}.cfg"
@@ -51,7 +51,7 @@ function hadoop() {
     Description
     -----------
 
-      Hadoop Services Module.
+      NSE Citrix Service Module.
 
     Commands
     --------
@@ -108,26 +108,20 @@ function hadoop() {
   # shellcheck disable=SC2034
   _module_commands=(\
   #
-  "https://nmap.org/nsedoc/scripts/hadoop-datanode-info.html;\
-  ;hadoop-datanode-info;--script hadoop-datanode-info $params" \
+  "https://nmap.org/nsedoc/scripts/citrix-brute-xml.html;\
+  ;citrix-brute-xml;--script citrix-brute-xml $params" \
   #
-  "https://nmap.org/nsedoc/scripts/hadoop-jobtracker-info.html;\
-  ;hadoop-jobtracker-info;--script hadoop-jobtracker-info $params" \
+  "https://nmap.org/nsedoc/scripts/citrix-enum-apps-xml.html;\
+  ;citrix-enum-apps-xml;--script citrix-enum-apps-xml $params" \
   #
-  "https://nmap.org/nsedoc/scripts/hadoop-namenode-info.html;\
-  ;hadoop-namenode-info;--script hadoop-namenode-info $params" \
+  "https://nmap.org/nsedoc/scripts/citrix-enum-apps.html;\
+  ;citrix-enum-apps;--script citrix-enum-apps $params" \
   #
-  "https://nmap.org/nsedoc/scripts/hadoop-secondary-namenode-info.html;\
-  ;hadoop-secondary-namenode-info;--script hadoop-secondary-namenode-info $params" \
+  "https://nmap.org/nsedoc/scripts/citrix-enum-servers-xml.html;\
+  ;citrix-enum-servers-xml;--script citrix-enum-servers-xml $params" \
   #
-  "https://nmap.org/nsedoc/scripts/hadoop-tasktracker-info.html;\
-  ;hadoop-tasktracker-info;--script hadoop-tasktracker-info $params" \
-  #
-  "https://nmap.org/nsedoc/scripts/hbase-master-info.html;\
-  ;hbase-master-info;--script hbase-master-info $params" \
-  #
-  "https://nmap.org/nsedoc/scripts/hbase-region-info.html;\
-  ;hbase-region-info;--script hbase-region-info $params" \
+  "https://nmap.org/nsedoc/scripts/citrix-enum-servers.html;\
+  ;citrix-enum-servers;--script citrix-enum-servers $params" \
   )
 
   # shellcheck disable=SC2034,SC2154

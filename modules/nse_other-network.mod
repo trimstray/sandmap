@@ -3,22 +3,22 @@
 # shellcheck shell=bash
 
 # ``````````````````````````````````````````````````````````````````````````````
-# Function name: other-network()
+# Function name: nse_other-network()
 #
 # Description:
-#   Other Network Module.
+#   NSE Other Network Module.
 #
 # Usage:
-#   other-network
+#   nse_other-network
 #
 # Examples:
-#   other-network
+#   nse_other-network
 #
 
-function other-network() {
+function nse_other-network() {
 
   # shellcheck disable=SC2034
-  local _FUNCTION_ID="other-network"
+  local _FUNCTION_ID="nse_other-network"
   local _STATE=0
 
   # User variables:
@@ -37,7 +37,7 @@ function other-network() {
   author="trimstray"
   contact="trimstray@gmail.com"
   version="1.0"
-  description="Other Network Module"
+  description="NSE Other Network Module"
 
   # shellcheck disable=SC2034,SC2154
   _module_cfg="${_modules}/${module_name}.cfg"
@@ -51,7 +51,7 @@ function other-network() {
     Description
     -----------
 
-      Other Network Module.
+      NSE Other Network Module.
 
     Commands
     --------

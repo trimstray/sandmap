@@ -3,22 +3,22 @@
 # shellcheck shell=bash
 
 # ``````````````````````````````````````````````````````````````````````````````
-# Function name: databases()
+# Function name: nse_databases()
 #
 # Description:
-#   Databases Module.
+#   NSE Databases Service Module.
 #
 # Usage:
-#   databases
+#   nse_databases
 #
 # Examples:
-#   databases
+#   nse_databases
 #
 
-function databases() {
+function nse_databases() {
 
   # shellcheck disable=SC2034
-  local _FUNCTION_ID="databases"
+  local _FUNCTION_ID="nse_databases"
   local _STATE=0
 
   # User variables:
@@ -37,7 +37,7 @@ function databases() {
   author="trimstray"
   contact="trimstray@gmail.com"
   version="1.0"
-  description="Databases Module"
+  description="NSE Databases Service Module"
 
   # shellcheck disable=SC2034,SC2154
   _module_cfg="${_modules}/${module_name}.cfg"
@@ -51,7 +51,7 @@ function databases() {
     Description
     -----------
 
-      Databases Module.
+      NSE Databases Service Module.
 
     Commands
     --------

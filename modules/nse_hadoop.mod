@@ -3,22 +3,22 @@
 # shellcheck shell=bash
 
 # ``````````````````````````````````````````````````````````````````````````````
-# Function name: socks()
+# Function name: nse_hadoop()
 #
 # Description:
-#   SOCKS Module.
+#   NSE Hadoop Services Module.
 #
 # Usage:
-#   socks
+#   nse_hadoop
 #
 # Examples:
-#   socks
+#   nse_hadoop
 #
 
-function socks() {
+function nse_hadoop() {
 
   # shellcheck disable=SC2034
-  local _FUNCTION_ID="socks"
+  local _FUNCTION_ID="nse_hadoop"
   local _STATE=0
 
   # User variables:
@@ -37,7 +37,7 @@ function socks() {
   author="trimstray"
   contact="trimstray@gmail.com"
   version="1.0"
-  description="SOCKS Module"
+  description="NSE Hadoop Services Module"
 
   # shellcheck disable=SC2034,SC2154
   _module_cfg="${_modules}/${module_name}.cfg"
@@ -51,7 +51,7 @@ function socks() {
     Description
     -----------
 
-      SOCKS Module.
+      NSE Hadoop Services Module.
 
     Commands
     --------
@@ -108,14 +108,26 @@ function socks() {
   # shellcheck disable=SC2034
   _module_commands=(\
   #
-  "https://nmap.org/nsedoc/scripts/socks-auth-info.html;\
-  ;socks-auth-info;--script socks-auth-info $params" \
+  "https://nmap.org/nsedoc/scripts/hadoop-datanode-info.html;\
+  ;hadoop-datanode-info;--script hadoop-datanode-info $params" \
   #
-  "https://nmap.org/nsedoc/scripts/socks-brute.html;\
-  ;socks-brute;--script socks-brute $params" \
+  "https://nmap.org/nsedoc/scripts/hadoop-jobtracker-info.html;\
+  ;hadoop-jobtracker-info;--script hadoop-jobtracker-info $params" \
   #
-  "https://nmap.org/nsedoc/scripts/socks-open-proxy.html;\
-  ;socks-open-proxy;--script socks-open-proxy $params" \
+  "https://nmap.org/nsedoc/scripts/hadoop-namenode-info.html;\
+  ;hadoop-namenode-info;--script hadoop-namenode-info $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/hadoop-secondary-namenode-info.html;\
+  ;hadoop-secondary-namenode-info;--script hadoop-secondary-namenode-info $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/hadoop-tasktracker-info.html;\
+  ;hadoop-tasktracker-info;--script hadoop-tasktracker-info $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/hbase-master-info.html;\
+  ;hbase-master-info;--script hbase-master-info $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/hbase-region-info.html;\
+  ;hbase-region-info;--script hbase-region-info $params" \
   )
 
   # shellcheck disable=SC2034,SC2154

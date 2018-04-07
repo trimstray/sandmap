@@ -3,22 +3,22 @@
 # shellcheck shell=bash
 
 # ``````````````````````````````````````````````````````````````````````````````
-# Function name: other-discovery()
+# Function name: nse_remote-access()
 #
 # Description:
-#   Other Discovery Module.
+#   NSE Remote Access Module.
 #
 # Usage:
-#   other-discovery
+#   nse_remote-access
 #
 # Examples:
-#   other-discovery
+#   nse_remote-access
 #
 
-function other-discovery() {
+function nse_remote-access() {
 
   # shellcheck disable=SC2034
-  local _FUNCTION_ID="other-discovery"
+  local _FUNCTION_ID="nse_remote-access"
   local _STATE=0
 
   # User variables:
@@ -37,7 +37,7 @@ function other-discovery() {
   author="trimstray"
   contact="trimstray@gmail.com"
   version="1.0"
-  description="Other Discovery Module"
+  description="NSE Remote Access Module"
 
   # shellcheck disable=SC2034,SC2154
   _module_cfg="${_modules}/${module_name}.cfg"
@@ -51,7 +51,7 @@ function other-discovery() {
     Description
     -----------
 
-      Other Discovery Module.
+      NSE Remote Access Module.
 
     Commands
     --------
@@ -108,14 +108,53 @@ function other-discovery() {
   # shellcheck disable=SC2034
   _module_commands=(\
   #
-  "https://nmap.org/nsedoc/scripts/banner.html;\
-  ;banner;--script banner $params" \
+  "https://nmap.org/nsedoc/scripts/rdp-enum-encryption.html;\
+  ;rdp-enum-encryption;--script rdp-enum-encryption $params" \
   #
-  "https://nmap.org/nsedoc/scripts/duplicates.html;\
-  ;duplicates;--script duplicates $params" \
+  "https://nmap.org/nsedoc/scripts/rdp-vuln-ms12-020.html;\
+  ;rdp-vuln-ms12-020;--script rdp-vuln-ms12-020 $params" \
   #
-  "https://nmap.org/nsedoc/scripts/lltd-discovery.html;\
-  ;lltd-discovery;--script lltd-discovery $params" \
+  "https://nmap.org/nsedoc/scripts/realvnc-auth-bypass.html;\
+  ;realvnc-auth-bypass;--script realvnc-auth-bypass $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/ssh-auth-methods.html;\
+  ;ssh-auth-methods;--script ssh-auth-methods $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/ssh-brute.html;\
+  ;ssh-brute;--script ssh-brute $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/ssh-hostkey.html;\
+  ;ssh-hostkey;--script ssh-hostkey $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/ssh-publickey-acceptance.html;\
+  ;ssh-publickey-acceptance;--script ssh-publickey-acceptance $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/ssh-run.html;\
+  ;ssh-run;--script ssh-run $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/ssh2-enum-algos.html;\
+  ;ssh2-enum-algos;--script ssh2-enum-algos $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/sshv1.html;\
+  ;sshv1;--script sshv1 $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/telnet-brute.html;\
+  ;telnet-brute;--script telnet-brute $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/telnet-encryption.html;\
+  ;telnet-encryption;--script telnet-encryption $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/telnet-ntlm-info.html;\
+  ;telnet-ntlm-info;--script telnet-ntlm-info $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/vnc-brute.html;\
+  ;vnc-brute;--script vnc-brute $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/vnc-info.html;\
+  ;vnc-info;--script vnc-info $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/vnc-title.html;\
+  ;vnc-title;--script vnc-title $params" \
   )
 
   # shellcheck disable=SC2034,SC2154

@@ -3,22 +3,22 @@
 # shellcheck shell=bash
 
 # ``````````````````````````````````````````````````````````````````````````````
-# Function name: mail()
+# Function name: nse_ftp()
 #
 # Description:
-#   Mail Module.
+#   NSE FTP Service Module.
 #
 # Usage:
-#   mail
+#   nse_ftp
 #
 # Examples:
-#   mail
+#   nse_ftp
 #
 
-function mail() {
+function nse_ftp() {
 
   # shellcheck disable=SC2034
-  local _FUNCTION_ID="mail"
+  local _FUNCTION_ID="nse_ftp"
   local _STATE=0
 
   # User variables:
@@ -37,7 +37,7 @@ function mail() {
   author="trimstray"
   contact="trimstray@gmail.com"
   version="1.0"
-  description="Mail Module"
+  description="NSE FTP Service Module"
 
   # shellcheck disable=SC2034,SC2154
   _module_cfg="${_modules}/${module_name}.cfg"
@@ -51,7 +51,7 @@ function mail() {
     Description
     -----------
 
-      Mail Module.
+      NSE FTP Service Module.
 
     Commands
     --------
@@ -108,50 +108,32 @@ function mail() {
   # shellcheck disable=SC2034
   _module_commands=(\
   #
-  "https://nmap.org/nsedoc/scripts/imap-brute.html;\
-  ;imap-brute;--script imap-brute $params" \
+  "https://nmap.org/nsedoc/scripts/ftp-anon.html;\
+  ;ftp-anon;--script ftp-anon $params" \
   #
-  "https://nmap.org/nsedoc/scripts/imap-capabilities.html;\
-  ;imap-capabilities;--script imap-capabilities $params" \
+  "https://nmap.org/nsedoc/scripts/ftp-bounce.html;\
+  ;ftp-bounce;--script ftp-bounce $params" \
   #
-  "https://nmap.org/nsedoc/scripts/imap-ntlm-info.html;\
-  ;imap-ntlm-info;--script imap-ntlm-info $params" \
+  "https://nmap.org/nsedoc/scripts/ftp-brute.html;\
+  ;ftp-brute;--script ftp-brute $params" \
   #
-  "https://nmap.org/nsedoc/scripts/pop3-brute.html;\
-  ;pop3-brute;--script pop3-brute $params" \
+  "https://nmap.org/nsedoc/scripts/ftp-libopie.html;\
+  ;ftp-libopie;--script ftp-libopie $params" \
   #
-  "https://nmap.org/nsedoc/scripts/pop3-capabilities.html;\
-  ;pop3-capabilities;--script pop3-capabilities $params" \
+  "https://nmap.org/nsedoc/scripts/ftp-proftpd-backdoor.html;\
+  ;ftp-proftpd-backdoor;--script ftp-proftpd-backdoor $params" \
   #
-  "https://nmap.org/nsedoc/scripts/pop3-ntlm-info.html;\
-  ;pop3-ntlm-info;--script pop3-ntlm-info $params" \
+  "https://nmap.org/nsedoc/scripts/ftp-syst.html;\
+  ;ftp-syst;--script ftp-syst $params" \
   #
-  "https://nmap.org/nsedoc/scripts/smtp-brute.html;\
-  ;smtp-brute;--script smtp-brute $params" \
+  "https://nmap.org/nsedoc/scripts/ftp-vsftpd-backdoor.html;\
+  ;ftp-vsftpd-backdoor;--script ftp-vsftpd-backdoor $params" \
   #
-  "https://nmap.org/nsedoc/scripts/smtp-commands.html;\
-  ;smtp-commands;--script smtp-commands $params" \
+  "https://nmap.org/nsedoc/scripts/ftp-vuln-cve2010-4221.html;\
+  ;ftp-vuln-cve2010-4221;--script ftp-vuln-cve2010-4221 $params" \
   #
-  "https://nmap.org/nsedoc/scripts/smtp-enum-users.html;\
-  ;smtp-enum-users;--script smtp-enum-users $params" \
-  #
-  "https://nmap.org/nsedoc/scripts/smtp-ntlm-info.html;\
-  ;smtp-ntlm-info;--script smtp-ntlm-info $params" \
-  #
-  "https://nmap.org/nsedoc/scripts/smtp-open-relay.html;\
-  ;smtp-open-relay;--script smtp-open-relay $params" \
-  #
-  "https://nmap.org/nsedoc/scripts/smtp-strangeport.html;\
-  ;smtp-strangeport;--script smtp-strangeport $params" \
-  #
-  "https://nmap.org/nsedoc/scripts/smtp-vuln-cve2010-4344.html;\
-  ;smtp-vuln-cve2010-4344;--script smtp-vuln-cve2010-4344 $params" \
-  #
-  "https://nmap.org/nsedoc/scripts/smtp-vuln-cve2011-1720.html;\
-  ;smtp-vuln-cve2011-1720;--script smtp-vuln-cve2011-1720 $params" \
-  #
-  "https://nmap.org/nsedoc/scripts/smtp-vuln-cve2011-1764.html;\
-  ;smtp-vuln-cve2011-1764;--script smtp-vuln-cve2011-1764 $params" \
+  "https://nmap.org/nsedoc/scripts/tftp-enum.html;\
+  ;tftp-enum;--script tftp-enum $params" \
   )
 
   # shellcheck disable=SC2034,SC2154

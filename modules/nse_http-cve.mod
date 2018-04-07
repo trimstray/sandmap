@@ -3,22 +3,22 @@
 # shellcheck shell=bash
 
 # ``````````````````````````````````````````````````````````````````````````````
-# Function name: http-cve()
+# Function name: nse_http-cve()
 #
 # Description:
-#   HTTP Vulnerability CVE Module.
+#   NSE HTTP Vulnerability CVE Module.
 #
 # Usage:
-#   http-cve
+#   nse_http-cve
 #
 # Examples:
-#   http-cve
+#   nse_http-cve
 #
 
-function http-cve() {
+function nse_http-cve() {
 
   # shellcheck disable=SC2034
-  local _FUNCTION_ID="http-cve"
+  local _FUNCTION_ID="nse_http-cve"
   local _STATE=0
 
   # User variables:
@@ -37,7 +37,7 @@ function http-cve() {
   author="trimstray"
   contact="trimstray@gmail.com"
   version="1.0"
-  description="HTTP Vulnerability CVE Module"
+  description="NSE HTTP Vulnerability CVE Module"
 
   # shellcheck disable=SC2034,SC2154
   _module_cfg="${_modules}/${module_name}.cfg"
@@ -51,7 +51,7 @@ function http-cve() {
     Description
     -----------
 
-      HTTP Vulnerability CVE Module.
+      NSE HTTP Vulnerability CVE Module.
 
     Commands
     --------

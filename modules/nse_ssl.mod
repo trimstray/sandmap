@@ -3,22 +3,22 @@
 # shellcheck shell=bash
 
 # ``````````````````````````````````````````````````````````````````````````````
-# Function name: ssl()
+# Function name: nse_ssl()
 #
 # Description:
-#   SSL Module.
+#   NSE SSL Protocol Module.
 #
 # Usage:
-#   ssl
+#   nse_ssl
 #
 # Examples:
-#   ssl
+#   nse_ssl
 #
 
-function ssl() {
+function nse_ssl() {
 
   # shellcheck disable=SC2034
-  local _FUNCTION_ID="ssl"
+  local _FUNCTION_ID="nse_ssl"
   local _STATE=0
 
   # User variables:
@@ -37,7 +37,7 @@ function ssl() {
   author="trimstray"
   contact="trimstray@gmail.com"
   version="1.0"
-  description="SSL Module"
+  description="NSE SSL Protocol Module"
 
   # shellcheck disable=SC2034,SC2154
   _module_cfg="${_modules}/${module_name}.cfg"
@@ -51,7 +51,7 @@ function ssl() {
     Description
     -----------
 
-      SSL Module.
+      NSE SSL Protocol Module.
 
     Commands
     --------

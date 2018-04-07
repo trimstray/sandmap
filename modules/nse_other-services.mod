@@ -3,22 +3,22 @@
 # shellcheck shell=bash
 
 # ``````````````````````````````````````````````````````````````````````````````
-# Function name: other-services()
+# Function name: nse_other-services()
 #
 # Description:
-#   Other Services Module.
+#   NSE Other Services Module.
 #
 # Usage:
-#   other-services
+#   nse_other-services
 #
 # Examples:
-#   other-services
+#   nse_other-services
 #
 
-function other-services() {
+function nse_other-services() {
 
   # shellcheck disable=SC2034
-  local _FUNCTION_ID="other-services"
+  local _FUNCTION_ID="nse_other-services"
   local _STATE=0
 
   # User variables:
@@ -37,7 +37,7 @@ function other-services() {
   author="trimstray"
   contact="trimstray@gmail.com"
   version="1.0"
-  description="Other Services Module"
+  description="NSE Other Services Module"
 
   # shellcheck disable=SC2034,SC2154
   _module_cfg="${_modules}/${module_name}.cfg"
@@ -51,7 +51,7 @@ function other-services() {
     Description
     -----------
 
-      Other Services Module.
+      NSE Other Services Module.
 
     Commands
     --------

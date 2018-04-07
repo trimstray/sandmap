@@ -3,22 +3,22 @@
 # shellcheck shell=bash
 
 # ``````````````````````````````````````````````````````````````````````````````
-# Function name: http-services()
+# Function name: nse_http-services()
 #
 # Description:
-#   HTTP Services Module.
+#   NSE HTTP Services Module.
 #
 # Usage:
-#   http-services
+#   nse_http-services
 #
 # Examples:
-#   http-services
+#   nse_http-services
 #
 
-function http-services() {
+function nse_http-services() {
 
   # shellcheck disable=SC2034
-  local _FUNCTION_ID="http-services"
+  local _FUNCTION_ID="nse_http-services"
   local _STATE=0
 
   # User variables:
@@ -37,7 +37,7 @@ function http-services() {
   author="trimstray"
   contact="trimstray@gmail.com"
   version="1.0"
-  description="HTTP Services Module"
+  description="NSE HTTP Services Module"
 
   # shellcheck disable=SC2034,SC2154
   _module_cfg="${_modules}/${module_name}.cfg"
@@ -51,7 +51,7 @@ function http-services() {
     Description
     -----------
 
-      HTTP Services Module.
+      NSE HTTP Services Module.
 
     Commands
     --------

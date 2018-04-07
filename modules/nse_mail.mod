@@ -3,22 +3,22 @@
 # shellcheck shell=bash
 
 # ``````````````````````````````````````````````````````````````````````````````
-# Function name: other-version()
+# Function name: nse_mail()
 #
 # Description:
-#   Other Version Module.
+#   NSE Mail Services Module.
 #
 # Usage:
-#   other-version
+#   nse_mail
 #
 # Examples:
-#   other-version
+#   nse_mail
 #
 
-function other-version() {
+function nse_mail() {
 
   # shellcheck disable=SC2034
-  local _FUNCTION_ID="other-version"
+  local _FUNCTION_ID="nse_mail"
   local _STATE=0
 
   # User variables:
@@ -37,7 +37,7 @@ function other-version() {
   author="trimstray"
   contact="trimstray@gmail.com"
   version="1.0"
-  description="Other Version Module"
+  description="NSE Mail Services Module"
 
   # shellcheck disable=SC2034,SC2154
   _module_cfg="${_modules}/${module_name}.cfg"
@@ -51,7 +51,7 @@ function other-version() {
     Description
     -----------
 
-      Other Version Module.
+      NSE Mail Services Module.
 
     Commands
     --------
@@ -108,8 +108,50 @@ function other-version() {
   # shellcheck disable=SC2034
   _module_commands=(\
   #
-  "https://nmap.org/nsedoc/scripts/fingerprint-strings.html;\
-  ;fingerprint-strings;--script fingerprint-strings $params" \
+  "https://nmap.org/nsedoc/scripts/imap-brute.html;\
+  ;imap-brute;--script imap-brute $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/imap-capabilities.html;\
+  ;imap-capabilities;--script imap-capabilities $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/imap-ntlm-info.html;\
+  ;imap-ntlm-info;--script imap-ntlm-info $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/pop3-brute.html;\
+  ;pop3-brute;--script pop3-brute $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/pop3-capabilities.html;\
+  ;pop3-capabilities;--script pop3-capabilities $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/pop3-ntlm-info.html;\
+  ;pop3-ntlm-info;--script pop3-ntlm-info $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/smtp-brute.html;\
+  ;smtp-brute;--script smtp-brute $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/smtp-commands.html;\
+  ;smtp-commands;--script smtp-commands $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/smtp-enum-users.html;\
+  ;smtp-enum-users;--script smtp-enum-users $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/smtp-ntlm-info.html;\
+  ;smtp-ntlm-info;--script smtp-ntlm-info $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/smtp-open-relay.html;\
+  ;smtp-open-relay;--script smtp-open-relay $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/smtp-strangeport.html;\
+  ;smtp-strangeport;--script smtp-strangeport $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/smtp-vuln-cve2010-4344.html;\
+  ;smtp-vuln-cve2010-4344;--script smtp-vuln-cve2010-4344 $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/smtp-vuln-cve2011-1720.html;\
+  ;smtp-vuln-cve2011-1720;--script smtp-vuln-cve2011-1720 $params" \
+  #
+  "https://nmap.org/nsedoc/scripts/smtp-vuln-cve2011-1764.html;\
+  ;smtp-vuln-cve2011-1764;--script smtp-vuln-cve2011-1764 $params" \
   )
 
   # shellcheck disable=SC2034,SC2154

@@ -3,22 +3,22 @@
 # shellcheck shell=bash
 
 # ``````````````````````````````````````````````````````````````````````````````
-# Function name: smb-vuln()
+# Function name: nse_vuln-scanners()
 #
 # Description:
-#   SMB Protocol Vulnerability Module.
+#   NSE Vulnerability Scanners Module.
 #
 # Usage:
-#   smb-vuln
+#   nse_vuln-scanners
 #
 # Examples:
-#   smb-vuln
+#   nse_vuln-scanners
 #
 
-function smb-vuln() {
+function nse_vuln-scanners() {
 
   # shellcheck disable=SC2034
-  local _FUNCTION_ID="smb-vuln"
+  local _FUNCTION_ID="nse_vuln-scanners"
   local _STATE=0
 
   # User variables:
@@ -37,7 +37,7 @@ function smb-vuln() {
   author="trimstray"
   contact="trimstray@gmail.com"
   version="1.0"
-  description="SMB Protocol Vulnerability Module"
+  description="NSE Vulnerability Scanners Module"
 
   # shellcheck disable=SC2034,SC2154
   _module_cfg="${_modules}/${module_name}.cfg"
@@ -51,7 +51,7 @@ function smb-vuln() {
     Description
     -----------
 
-      SMB Protocol Vulnerability Module.
+      NSE Vulnerability Scanners Module.
 
     Commands
     --------
@@ -108,38 +108,26 @@ function smb-vuln() {
   # shellcheck disable=SC2034
   _module_commands=(\
   #
-  "https://nmap.org/nsedoc/scripts/samba-vuln-cve-2012-1182.html;\
-  ;samba-vuln-cve-2012-1182;--script samba-vuln-cve-2012-1182 $params" \
+  "https://nmap.org/nsedoc/scripts/nessus-brute.html;\
+  ;nessus-brute;--script nessus-brute $params" \
   #
-  "https://nmap.org/nsedoc/scripts/smb-vuln-conficker.html;\
-  ;smb-vuln-conficker;--script smb-vuln-conficker $params" \
+  "https://nmap.org/nsedoc/scripts/nessus-xmlrpc-brute.html;\
+  ;nessus-xmlrpc-brute;--script=nessus-xmlrpc-brute $params" \
   #
-  "https://nmap.org/nsedoc/scripts/smb-vuln-cve-2017-7494.html;\
-  ;smb-vuln-cve-2017-7494;--script smb-vuln-cve-2017-7494 $params" \
+  "https://nmap.org/nsedoc/scripts/nexpose-brute.html;\
+  ;nexpose-brute;--script nexpose-brute $params" \
   #
-  "https://nmap.org/nsedoc/scripts/smb-vuln-cve2009-3103.html;\
-  ;smb-vuln-cve2009-3103;--script smb-vuln-cve2009-3103 $params" \
+  "https://nmap.org/nsedoc/scripts/omp2-brute.html;\
+  ;omp2-brute;--script omp2-brute $params" \
   #
-  "https://nmap.org/nsedoc/scripts/smb-vuln-ms06-025.html;\
-  ;smb-vuln-ms06-025;--script smb-vuln-ms06-025 $params" \
+  "https://nmap.org/nsedoc/scripts/omp2-enum-targets.html;\
+  ;omp2-enum-targets;--script omp2-enum-targets $params" \
   #
-  "https://nmap.org/nsedoc/scripts/smb-vuln-ms07-029.html;\
-  ;smb-vuln-ms07-029;--script smb-vuln-ms07-029 $params" \
+  "https://nmap.org/nsedoc/scripts/openvas-otp-brute.html;\
+  ;openvas-otp-brute;--script=openvas-otp-brute $params" \
   #
-  "https://nmap.org/nsedoc/scripts/smb-vuln-ms08-067.html;\
-  ;smb-vuln-ms08-067;--script smb-vuln-ms08-067 $params" \
-  #
-  "https://nmap.org/nsedoc/scripts/smb-vuln-ms10-054.html;\
-  ;smb-vuln-ms10-054;--script smb-vuln-ms10-054 $params" \
-  #
-  "https://nmap.org/nsedoc/scripts/smb-vuln-ms10-061.html;\
-  ;smb-vuln-ms10-061;--script smb-vuln-ms10-061 $params" \
-  #
-  "https://nmap.org/nsedoc/scripts/smb-vuln-ms17-010.html;\
-  ;smb-vuln-ms17-010;--script smb-vuln-ms17-010 $params" \
-  #
-  "https://nmap.org/nsedoc/scripts/smb-vuln-regsvc-dos.html;\
-  ;smb-vuln-regsvc-dos;--script smb-vuln-regsvc-dos $params" \
+  "https://nmap.org/nsedoc/scripts/shodan-api.html;\
+  ;shodan-api;--script shodan-api $params" \
   )
 
   # shellcheck disable=SC2034,SC2154

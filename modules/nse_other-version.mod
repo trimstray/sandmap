@@ -3,22 +3,22 @@
 # shellcheck shell=bash
 
 # ``````````````````````````````````````````````````````````````````````````````
-# Function name: other-auth()
+# Function name: nse_other-version()
 #
 # Description:
-#   Other Auth Module.
+#   NSE Other Version Module.
 #
 # Usage:
-#   other-auth
+#   nse_other-version
 #
 # Examples:
-#   other-auth
+#   nse_other-version
 #
 
-function other-auth() {
+function nse_other-version() {
 
   # shellcheck disable=SC2034
-  local _FUNCTION_ID="other-auth"
+  local _FUNCTION_ID="nse_other-version"
   local _STATE=0
 
   # User variables:
@@ -37,7 +37,7 @@ function other-auth() {
   author="trimstray"
   contact="trimstray@gmail.com"
   version="1.0"
-  description="Other Auth Module"
+  description="NSE Other Version Module"
 
   # shellcheck disable=SC2034,SC2154
   _module_cfg="${_modules}/${module_name}.cfg"
@@ -51,7 +51,7 @@ function other-auth() {
     Description
     -----------
 
-      Other Auth Module.
+      NSE Other Version Module.
 
     Commands
     --------
@@ -108,14 +108,8 @@ function other-auth() {
   # shellcheck disable=SC2034
   _module_commands=(\
   #
-  "https://nmap.org/nsedoc/scripts/creds-summary.html;\
-  ;creds-summary;--script creds-summary $params" \
-  #
-  "https://nmap.org/nsedoc/scripts/krb5-enum-users.html;\
-  ;krb5-enum-users;--script krb5-enum-users $params" \
-  #
-  "https://nmap.org/nsedoc/scripts/x11-access.html;\
-  ;x11-access;--script x11-access $params" \
+  "https://nmap.org/nsedoc/scripts/fingerprint-strings.html;\
+  ;fingerprint-strings;--script fingerprint-strings $params" \
   )
 
   # shellcheck disable=SC2034,SC2154

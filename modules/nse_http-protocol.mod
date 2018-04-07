@@ -3,22 +3,22 @@
 # shellcheck shell=bash
 
 # ``````````````````````````````````````````````````````````````````````````````
-# Function name: http-protocol()
+# Function name: nse_http-protocol()
 #
 # Description:
-#   HTTP Protocol Module.
+#   NSE HTTP Protocol Module.
 #
 # Usage:
-#   http-protocol
+#   nse_http-protocol
 #
 # Examples:
-#   http-protocol
+#   nse_http-protocol
 #
 
-function http-protocol() {
+function nse_http-protocol() {
 
   # shellcheck disable=SC2034
-  local _FUNCTION_ID="http-protocol"
+  local _FUNCTION_ID="nse_http-protocol"
   local _STATE=0
 
   # User variables:
@@ -37,7 +37,7 @@ function http-protocol() {
   author="trimstray"
   contact="trimstray@gmail.com"
   version="1.0"
-  description="HTTP Protocol Module"
+  description="NSE HTTP Protocol Module"
 
   # shellcheck disable=SC2034,SC2154
   _module_cfg="${_modules}/${module_name}.cfg"
@@ -51,7 +51,7 @@ function http-protocol() {
     Description
     -----------
 
-      HTTP Protocol Module.
+      NSE HTTP Protocol Module.
 
     Commands
     --------

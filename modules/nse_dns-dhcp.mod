@@ -3,22 +3,22 @@
 # shellcheck shell=bash
 
 # ``````````````````````````````````````````````````````````````````````````````
-# Function name: dns_dhcp()
+# Function name: nse_dns-dhcp()
 #
 # Description:
-#   DNS and DHCP Module.
+#   NSE DNS and DHCP Module.
 #
 # Usage:
-#   dns_dhcp
+#   nse_dns-dhcp
 #
 # Examples:
-#   dns_dhcp
+#   nse_dns-dhcp
 #
 
-function dns_dhcp() {
+function nse_dns-dhcp() {
 
   # shellcheck disable=SC2034
-  local _FUNCTION_ID="dns_dhcp"
+  local _FUNCTION_ID="nse_dns-dhcp"
   local _STATE=0
 
   # User variables:
@@ -37,7 +37,7 @@ function dns_dhcp() {
   author="trimstray"
   contact="trimstray@gmail.com"
   version="1.0"
-  description="DNS and DHCP Module"
+  description="NSE DNS and DHCP Module"
 
   # shellcheck disable=SC2034,SC2154
   _module_cfg="${_modules}/${module_name}.cfg"
@@ -51,7 +51,7 @@ function dns_dhcp() {
     Description
     -----------
 
-      DNS and DHCP Module.
+      NSE DNS and DHCP Module.
 
     Commands
     --------
