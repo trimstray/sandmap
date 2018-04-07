@@ -25,11 +25,11 @@ function module_show() {
 
   _count=0
 
-  _cr="-40.40"
+  _cr="-35.35"
 
   if [[ -z "$_marg" ]] ; then
 
-    printf "\n  \e[1;38m%-4.4s %${_cr}s %s\e[m\n  %-4.4s %${_cr}s %s\n\n" \
+    printf "\n    \e[1;38m%-4.4s %${_cr}s %s\e[m\n    %-4.4s %${_cr}s %s\n\n" \
            "ID" \
            "Alias" \
            "Nmap Parameters" \
@@ -53,7 +53,7 @@ function module_show() {
 
     if [[ "$_key_alias" == "$_marg" ]] ; then
 
-      printf "\n  \e[1;38m%-4.4s %${_cr}s %s\e[m\n  %-4.4s %${_cr}s %s\n\n" \
+      printf "\n    \e[1;38m%-4.4s %${_cr}s %s\e[m\n    %-4.4s %${_cr}s %s\n\n" \
              "ID" \
              "Alias" \
              "Nmap Parameters" \
@@ -61,14 +61,14 @@ function module_show() {
              "-----" \
              "---------------"
 
-      printf "  \e[1;32m%-4.4s\e[m \e[1;36m%${_cr}s\e[m %s\n" \
+      printf "    \e[1;32m%-4.4s\e[m \e[1;34m%${_cr}s\e[m %s\n" \
              "$_count" \
              "$_key_alias" \
              "$_key_cmd"
 
     elif [[ -z "$_marg" ]] ; then
 
-      printf "  \e[1;32m%-4.4s\e[m \e[1;36m%${_cr}s\e[m %s\n" \
+      printf "    \e[1;32m%-4.4s\e[m \e[1;34m%${_cr}s\e[m %s\n" \
              "$_count" \
              "$_key_alias" \
              "$_key_cmd"
