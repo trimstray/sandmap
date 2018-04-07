@@ -23,9 +23,9 @@ function init_search() {
 
   local _spattern="$1"
 
-  _cr="-40.40"
+  _cr="-35.35"
 
-  printf "\n  \e[1;38m%-15.15s %${_cr}s %s\e[m\n  %-15.15s %${_cr}s %s\n\n" \
+  printf "\n    \e[1;38m%-25.25s %${_cr}s %s\e[m\n    %-25.25s %${_cr}s %s\n\n" \
          "Module" \
          "Alias" \
          "Nmap Parameters" \
@@ -45,7 +45,7 @@ function init_search() {
 
     if [[ "$_key_alias" == *"$_spattern"* ]] ; then
 
-      printf "  \e[1;32m%-15.15s\e[m \e[1;36m%${_cr}s\e[m %s\n" \
+      printf "    \e[1;36m%-25.25s\e[m \e[1;34m%${_cr}s\e[m %s\n" \
              "$_key_mod" \
              "$_key_alias" \
              "$_key_cmd"
