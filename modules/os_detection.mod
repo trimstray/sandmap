@@ -115,39 +115,16 @@ function os_detection() {
   # shellcheck disable=SC2034
   _module_commands=(\
   #
-  "Enables OS detection (TCP/IP fingerprint), as discussed above.\n \
-  Alternatively, you can use -A to enable OS detection along with other\n \
-  things.\n \
-  \n https://nmap.org/book/man-os-detection.html;\
+  "https://nmap.org/book/man-os-detection.html;\
   ;os_detection;-O" \
   #
-  "OS detection (open/closed TCP port are not found). OS detection is far more\n \
-  effective if at least one open and one closed TCP port are found. Set this\n \
-  option and Nmap will not even try OS detection against hosts that do not meet\n \
-  this criteria. This can save substantial time, particularly on -Pn scans\n \
-  against many hosts. It only matters when OS detection is requested with -O or\n \
-  -A.\n \
-  \n https://nmap.org/book/man-os-detection.html;\
+  "https://nmap.org/book/man-os-detection.html;\
   ;os_limit;-O --osscan-limit" \
   #
-  "When Nmap is unable to detect a perfect OS match, it sometimes offers up\n \
-  near-matches as possibilities. The match has to be very close for Nmap to do\n \
-  this by default. Either of these (equivalent) options make Nmap guess more\n \
-  aggressively. Nmap will still tell you when an imperfect match is printed\n \
-  and display its confidence level (percentage) for each guess.\n \
-  \n https://nmap.org/book/man-os-detection.html;\
+  "https://nmap.org/book/man-os-detection.html;\
   ;guess_aggressive;-O --osscan-guess" \
   #
-  "When Nmap performs OS detection against a target and fails to find a perfect\n \
-  match, it usually repeats the attempt. By default, Nmap tries five times if\n \
-  conditions are favorable for OS fingerprint submission, and twice when\n \
-  conditions aren't so good. Specifying a lower --max-os-tries value (such as 1)\n \
-  speeds Nmap up, though you miss out on retries which could potentially\n \
-  identify the OS. Alternatively, a high value may be set to allow even more\n \
-  retries when conditions are favorable. This is rarely done, except to generate\n \
-  better fingerprints for submission and integration into the Nmap OS\n \
-  database.\n \
-  \n https://nmap.org/book/man-os-detection.html;\
+  "https://nmap.org/book/man-os-detection.html;\
   ;max_detect;-O --max-os-tries 1" \
   )
 
