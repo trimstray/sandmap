@@ -425,7 +425,15 @@ function _init_cmd() {
 
   else
 
-    _full_command+=("nmap" "${_cmd[@]}" "$_destination")
+    if [[ -z "$_parameters" ]] ; then
+
+      _full_command+=("nmap" "${_cmd[@]}" "${_destination}")
+
+    else
+
+      _full_command+=("nmap" "${_cmd[@]}" "${_parameters}" "${_destination}")
+
+    fi
 
   fi
 
@@ -468,12 +476,12 @@ function _init_cmd() {
   if [[ "$_output_terminal" == "external" ]] ; then
 
     printf "\n\e[1;39m%s\e[m:\n" "command"
-    printf "\e[1;39m%c\e[m \e[1;30m%s\e[m\n\n" ">" "${_full_command[*]}"
+    printf "\e[1;39m%c\e[m \e[1;30m%s\e[m\n\n\n" ">" "${_full_command[*]}"
 
   else
 
     printf "\n\e[1;39m%s\e[m:\n" "command"
-    printf "\e[1;39m%c\e[m \e[1;30m%s\e[m\n" ">" "${_full_command[*]}"
+    printf "\e[1;39m%c\e[m \e[1;30m%s\e[m\n\n" ">" "${_full_command[*]}"
 
   fi
 
