@@ -7,16 +7,16 @@
     <img src="https://img.shields.io/badge/Branch-master-green.svg"
         alt="Branch">
   </a>
-  <a href="https://img.shields.io/badge/Version-v1.0.3-lightgrey.svg">
-    <img src="https://img.shields.io/badge/Version-v1.0.3-lightgrey.svg"
+  <a href="https://img.shields.io/badge/Version-v1.1.0-lightgrey.svg">
+    <img src="https://img.shields.io/badge/Version-v1.1.0-lightgrey.svg"
         alt="Version">
   </a>
-  <a href="https://img.shields.io/badge/Modules-9-red.svg">
-    <img src="https://img.shields.io/badge/Modules-9-red.svg"
+  <a href="https://img.shields.io/badge/Modules-30-red.svg">
+    <img src="https://img.shields.io/badge/Modules-30-red.svg"
         alt="Modules">
   </a>
-  <a href="https://img.shields.io/badge/Profiles-201-orange.svg">
-    <img src="https://img.shields.io/badge/Profiles-201-orange.svg"
+  <a href="https://img.shields.io/badge/Profiles-450-orange.svg">
+    <img src="https://img.shields.io/badge/Profiles-450-orange.svg"
         alt="Profiles">
   </a>
   <a href="https://travis-ci.org/trimstray/sandmap">
@@ -67,7 +67,7 @@
 - support **Nmap Scripting Engine** (NSE)
 - **TOR** support (with proxychains)
 - multiple scans at one time
-- at this point: **9** modules with **201** scan profiles
+- at this point: **30** modules with **450** scan profiles
 
 ## How To Use
 
@@ -92,11 +92,8 @@ sandmap
 
 ## Modules
 
-Available modules: **8**  
-Available scan profiles: **201**
-
-NSE Modules: **3**  
-NSE Profiles: **159**
+Available modules: **30**
+Available scan profiles: **450**
 
 ## Configuration file
 
