@@ -27,6 +27,11 @@ function module_show() {
 
   _cr="-35.35"
 
+  # shellcheck disable=SC2034,SC2154
+  _static_menu="${_tmp}/.static.menu"
+
+  : >"${_static_menu}"
+
   if [[ -z "$_marg" ]] ; then
 
     printf "\n    \e[1;38m%-4.4s %${_cr}s %s\e[m\n    %-4.4s %${_cr}s %s\n\n" \
@@ -35,7 +40,7 @@ function module_show() {
            "Nmap Parameters" \
            "--" \
            "-----" \
-           "---------------"
+           "---------------" >> "${_static_menu}"
 
   fi
 
@@ -59,19 +64,19 @@ function module_show() {
              "Nmap Parameters" \
              "--" \
              "-----" \
-             "---------------"
+             "---------------" >> "${_static_menu}"
 
       printf "    \e[1;32m%-4.4s\e[m \e[1;34m%${_cr}s\e[m %s\n" \
              "$_count" \
              "$_key_alias" \
-             "$_key_cmd"
+             "$_key_cmd" >> "${_static_menu}"
 
     elif [[ -z "$_marg" ]] ; then
 
       printf "    \e[1;32m%-4.4s\e[m \e[1;34m%${_cr}s\e[m %s\n" \
              "$_count" \
              "$_key_alias" \
-             "$_key_cmd"
+             "$_key_cmd" >> "${_static_menu}"
 
     fi
 
@@ -79,7 +84,11 @@ function module_show() {
 
   done
 
+  cat "${_static_menu}"
+
   echo
+
+  : >"${_static_menu}"
 
   return $_STATE
 
