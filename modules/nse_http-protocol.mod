@@ -193,7 +193,7 @@ function nse_http-protocol() {
   ;http-methods;--script http-methods" \
   #
   "https://nmap.org/nsedoc/scripts/http-open-proxy.html;\
-  ;http-open-proxy;-script http-open-proxy" \
+  ;http-open-proxy;--script http-open-proxy" \
   #
   "https://nmap.org/nsedoc/scripts/http-open-redirect.html;\
   ;http-open-redirect;--script=http-open-redirect" \
