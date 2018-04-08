@@ -52,7 +52,7 @@
 <br>
 
 <p align="center">
-    <img src="https://i.imgur.com/6yw3YzJ.gif"
+    <img src="https://i.imgur.com/XyKTUAL.gif"
         alt="Master">
 </p>
 
@@ -92,7 +92,7 @@ sandmap
 
 ## Modules
 
-Available modules: **30**
+Available modules: **30**  
 Available scan profiles: **450**
 
 ## Configuration file
