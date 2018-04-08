@@ -6,3 +6,6 @@ modules/*.cfg
 
 # Nmap output scans.
 output/
+
+# Temporary files.
+tmp/.static*
