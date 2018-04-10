@@ -109,118 +109,118 @@ function nse_other-network() {
   _module_commands=(\
   #
   "https://nmap.org/nsedoc/scripts/address-info.html;\
-  ;address-info;--script address-info" \
+  ;address-info;--script=address-info" \
   #
   "https://nmap.org/nsedoc/scripts/firewall-bypass.html;\
-  ;firewall-bypass;--script firewall-bypass" \
+  ;firewall-bypass;--script=firewall-bypass" \
   #
   "https://nmap.org/nsedoc/scripts/ip-forwarding.html;\
-  ;ip-forwarding;--script ip-forwarding" \
+  ;ip-forwarding;--script=ip-forwarding" \
   #
   "https://nmap.org/nsedoc/scripts/ip-geolocation-geoplugin.html;\
-  ;ip-geolocation-geoplugin;--script ip-geolocation-geoplugin" \
+  ;ip-geolocation-geoplugin;--script=ip-geolocation-geoplugin" \
   #
   "https://nmap.org/nsedoc/scripts/ip-geolocation-ipinfodb.html;\
-  ;ip-geolocation-ipinfodb;--script ip-geolocation-ipinfodb" \
+  ;ip-geolocation-ipinfodb;--script=ip-geolocation-ipinfodb" \
   #
   "https://nmap.org/nsedoc/scripts/ip-geolocation-map-bing.html;\
-  ;ip-geolocation-map-bing;--script ip-geolocation-map-bing" \
+  ;ip-geolocation-map-bing;--script=ip-geolocation-map-bing" \
   #
   "https://nmap.org/nsedoc/scripts/ip-geolocation-map-google.html;\
-  ;ip-geolocation-map-google;--script ip-geolocation-map-google" \
+  ;ip-geolocation-map-google;--script=ip-geolocation-map-google" \
   #
   "https://nmap.org/nsedoc/scripts/ip-geolocation-map-kml.html;\
-  ;ip-geolocation-map-kml;--script ip-geolocation-map-kml" \
+  ;ip-geolocation-map-kml;--script=ip-geolocation-map-kml" \
   #
   "https://nmap.org/nsedoc/scripts/ip-geolocation-maxmind.html;\
-  ;ip-geolocation-maxmind;--script ip-geolocation-maxmind" \
+  ;ip-geolocation-maxmind;--script=ip-geolocation-maxmind" \
   #
   "https://nmap.org/nsedoc/scripts/ip-https-discover.html;\
-  ;ip-https-discover;--script ip-https-discover" \
+  ;ip-https-discover;--script=ip-https-discover" \
   #
   "https://nmap.org/nsedoc/scripts/ipv6-multicast-mld-list.html;\
-  ;ipv6-multicast-mld-list;--script ipv6-multicast-mld-list" \
+  ;ipv6-multicast-mld-list;--script=ipv6-multicast-mld-list" \
   #
   "https://nmap.org/nsedoc/scripts/ipv6-node-info.html;\
-  ;ipv6-node-info;--script ipv6-node-info" \
+  ;ipv6-node-info;--script=ipv6-node-info" \
   #
   "https://nmap.org/nsedoc/scripts/ipv6-ra-flood.html;\
-  ;ipv6-ra-flood;--script ipv6-ra-flood" \
+  ;ipv6-ra-flood;--script=ipv6-ra-flood" \
   #
   "https://nmap.org/nsedoc/scripts/mrinfo.html;\
-  ;mrinfo;--script mrinfo" \
+  ;mrinfo;--script=mrinfo" \
   #
   "https://nmap.org/nsedoc/scripts/mtrace.html;\
-  ;mtrace;--script mtrace" \
+  ;mtrace;--script=mtrace" \
   #
   "https://nmap.org/nsedoc/scripts/nat-pmp-info.html;\
-  ;nat-pmp-info;--script nat-pmp-info" \
+  ;nat-pmp-info;--script=nat-pmp-info" \
   #
   "https://nmap.org/nsedoc/scripts/nat-pmp-mapport.html;\
-  ;nat-pmp-mapport;--script nat-pmp-mapport" \
+  ;nat-pmp-mapport;--script=nat-pmp-mapport" \
   #
   "https://nmap.org/nsedoc/scripts/nbstat.html;\
-  ;nbstat;--script nbstat" \
+  ;nbstat;--script=nbstat" \
   #
   "https://nmap.org/nsedoc/scripts/nping-brute.html;\
-  ;nping-brute;--script nping-brute" \
+  ;nping-brute;--script=nping-brute" \
   #
   "https://nmap.org/nsedoc/scripts/path-mtu.html;\
-  ;path-mtu;--script path-mtu" \
+  ;path-mtu;--script=path-mtu" \
   #
   "https://nmap.org/nsedoc/scripts/pptp-version.html;\
-  ;pptp-version;--script pptp-version" \
+  ;pptp-version;--script=pptp-version" \
   #
   "https://nmap.org/nsedoc/scripts/qscan.html;\
-  ;qscan;--script qscan" \
+  ;qscan;--script=qscan" \
   #
   "https://nmap.org/nsedoc/scripts/reverse-index.html;\
-  ;reverse-index;--script reverse-index" \
+  ;reverse-index;--script=reverse-index" \
   #
   "https://nmap.org/nsedoc/scripts/sniffer-detect.html;\
-  ;sniffer-detect;--script sniffer-detect" \
+  ;sniffer-detect;--script=sniffer-detect" \
   #
   "https://nmap.org/nsedoc/scripts/stun-info.html;\
-  ;stun-info;--script stun-info" \
+  ;stun-info;--script=stun-info" \
   #
   "https://nmap.org/nsedoc/scripts/stun-version.html;\
-  ;stun-version;--script stun-version" \
+  ;stun-version;--script=stun-version" \
   #
   "https://nmap.org/nsedoc/scripts/targets-asn.html;\
-  ;targets-asn;--script targets-asn" \
+  ;targets-asn;--script=targets-asn" \
   #
   "https://nmap.org/nsedoc/scripts/targets-ipv6-map4to6.html;\
-  ;targets-ipv6-map4to6;--script targets-ipv6-map4to6" \
+  ;targets-ipv6-map4to6;--script=targets-ipv6-map4to6" \
   #
   "https://nmap.org/nsedoc/scripts/targets-ipv6-multicast-echo.html;\
-  ;targets-ipv6-multicast-echo;--script targets-ipv6-multicast-echo" \
+  ;targets-ipv6-multicast-echo;--script=targets-ipv6-multicast-echo" \
   #
   "https://nmap.org/nsedoc/scripts/targets-ipv6-multicast-invalid-dst.html;\
-  ;targets-ipv6-multicast-invalid-dst;--script targets-ipv6-multicast-invalid-dst" \
+  ;targets-ipv6-multicast-invalid-dst;--script=targets-ipv6-multicast-invalid-dst" \
   #
   "https://nmap.org/nsedoc/scripts/targets-ipv6-multicast-mld.html;\
-  ;targets-ipv6-multicast-mld;--script targets-ipv6-multicast-mld" \
+  ;targets-ipv6-multicast-mld;--script=targets-ipv6-multicast-mld" \
   #
   "https://nmap.org/nsedoc/scripts/targets-ipv6-multicast-slaac.html;\
-  ;targets-ipv6-multicast-slaac;--script targets-ipv6-multicast-slaac" \
+  ;targets-ipv6-multicast-slaac;--script=targets-ipv6-multicast-slaac" \
   #
   "https://nmap.org/nsedoc/scripts/targets-ipv6-wordlist.html;\
-  ;targets-ipv6-wordlist;--script targets-ipv6-wordlist" \
+  ;targets-ipv6-wordlist;--script=targets-ipv6-wordlist" \
   #
   "https://nmap.org/nsedoc/scripts/targets-sniffer.html;\
-  ;targets-sniffer;--script targets-sniffer" \
+  ;targets-sniffer;--script=targets-sniffer" \
   #
   "https://nmap.org/nsedoc/scripts/targets-traceroute.html;\
-  ;targets-traceroute;--script targets-traceroute" \
+  ;targets-traceroute;--script=targets-traceroute" \
   #
   "https://nmap.org/nsedoc/scripts/targets-xml.html;\
-  ;targets-xml;--script targets-xml" \
+  ;targets-xml;--script=targets-xml" \
   #
   "https://nmap.org/nsedoc/scripts/tor-consensus-checker.html;\
-  ;tor-consensus-checker;--script tor-consensus-checker" \
+  ;tor-consensus-checker;--script=tor-consensus-checker" \
   #
   "https://nmap.org/nsedoc/scripts/traceroute-geolocation.html;\
-  ;traceroute-geolocation;--script traceroute-geolocation" \
+  ;traceroute-geolocation;--script=traceroute-geolocation" \
   )
 
   # shellcheck disable=SC2034,SC2154

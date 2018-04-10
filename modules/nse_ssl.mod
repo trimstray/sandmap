@@ -109,52 +109,52 @@ function nse_ssl() {
   _module_commands=(\
   #
   "https://nmap.org/nsedoc/scripts/rsa-vuln-roca.html;\
-  ;rsa-vuln-roca;--script rsa-vuln-roca" \
+  ;rsa-vuln-roca;--script=rsa-vuln-roca" \
   #
   "https://nmap.org/nsedoc/scripts/ssl-ccs-injection.html;\
-  ;ssl-ccs-injection;--script ssl-ccs-injection" \
+  ;ssl-ccs-injection;--script=ssl-ccs-injection" \
   #
   "https://nmap.org/nsedoc/scripts/ssl-cert-intaddr.html;\
-  ;ssl-cert-intaddr;--script ssl-cert-intaddr" \
+  ;ssl-cert-intaddr;--script=ssl-cert-intaddr" \
   #
   "https://nmap.org/nsedoc/scripts/ssl-cert.html;\
-  ;ssl-cert;--script ssl-cert" \
+  ;ssl-cert;--script=ssl-cert" \
   #
   "https://nmap.org/nsedoc/scripts/ssl-date.html;\
-  ;ssl-date;--script ssl-date" \
+  ;ssl-date;--script=ssl-date" \
   #
   "https://nmap.org/nsedoc/scripts/ssl-dh-params.html;\
-  ;ssl-dh-params;--script ssl-dh-params" \
+  ;ssl-dh-params;--script=ssl-dh-params" \
   #
   "https://nmap.org/nsedoc/scripts/ssl-enum-ciphers.html;\
-  ;ssl-enum-ciphers;--script ssl-enum-ciphers" \
+  ;ssl-enum-ciphers;--script=ssl-enum-ciphers" \
   #
   "https://nmap.org/nsedoc/scripts/ssl-heartbleed.html;\
-  ;ssl-heartbleed;--script ssl-heartbleed" \
+  ;ssl-heartbleed;--script=ssl-heartbleed" \
   #
   "https://nmap.org/nsedoc/scripts/ssl-known-key.html;\
-  ;ssl-known-key;--script ssl-known-key" \
+  ;ssl-known-key;--script=ssl-known-key" \
   #
   "https://nmap.org/nsedoc/scripts/ssl-poodle.html;\
-  ;ssl-poodle;--script ssl-poodle" \
+  ;ssl-poodle;--script=ssl-poodle" \
   #
   "https://nmap.org/nsedoc/scripts/sslv2-drown.html;\
-  ;sslv2-drown;--script sslv2-drown" \
+  ;sslv2-drown;--script=sslv2-drown" \
   #
   "https://nmap.org/nsedoc/scripts/sslv2.html;\
-  ;sslv2;--script sslv2" \
+  ;sslv2;--script=sslv2" \
   #
   "https://nmap.org/nsedoc/scripts/sstp-discover.html;\
-  ;sstp-discover;--script sstp-discover" \
+  ;sstp-discover;--script=sstp-discover" \
   #
   "https://nmap.org/nsedoc/scripts/tls-alpn.html;\
-  ;tls-alpn;--script tls-alpn" \
+  ;tls-alpn;--script=tls-alpn" \
   #
   "https://nmap.org/nsedoc/scripts/tls-nextprotoneg.html;\
-  ;tls-nextprotoneg;--script tls-nextprotoneg" \
+  ;tls-nextprotoneg;--script=tls-nextprotoneg" \
   #
   "https://nmap.org/nsedoc/scripts/tls-ticketbleed.html;\
-  ;tls-ticketbleed;--script tls-ticketbleed" \
+  ;tls-ticketbleed;--script=tls-ticketbleed" \
   )
 
   # shellcheck disable=SC2034,SC2154

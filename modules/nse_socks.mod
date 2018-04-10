@@ -109,13 +109,13 @@ function nse_socks() {
   _module_commands=(\
   #
   "https://nmap.org/nsedoc/scripts/socks-auth-info.html;\
-  ;socks-auth-info;--script socks-auth-info" \
+  ;socks-auth-info;--script=socks-auth-info" \
   #
   "https://nmap.org/nsedoc/scripts/socks-brute.html;\
-  ;socks-brute;--script socks-brute" \
+  ;socks-brute;--script=socks-brute" \
   #
   "https://nmap.org/nsedoc/scripts/socks-open-proxy.html;\
-  ;socks-open-proxy;--script socks-open-proxy" \
+  ;socks-open-proxy;--script=socks-open-proxy" \
   )
 
   # shellcheck disable=SC2034,SC2154

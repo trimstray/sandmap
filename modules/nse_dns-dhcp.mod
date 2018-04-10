@@ -109,37 +109,37 @@ function nse_dns-dhcp() {
   _module_commands=(\
   #
   "https://nmap.org/nsedoc/scripts/asn-query.html;\
-  ;asn-query;--script asn-query" \
+  ;asn-query;--script=asn-query" \
   #
   "https://nmap.org/nsedoc/scripts/dns-blacklist.html;\
-  ;dns-blacklist;--script dns-blacklist" \
+  ;dns-blacklist;--script=dns-blacklist" \
   #
   "https://nmap.org/nsedoc/scripts/dns-brute.html;\
-  ;dns-brute;--script dns-brute" \
+  ;dns-brute;--script=dns-brute" \
   #
   "https://nmap.org/nsedoc/scripts/dns-cache-snoop.html;\
-  ;dns-cache-snoop;--script dns-cache-snoop.nse" \
+  ;dns-cache-snoop;--script=dns-cache-snoop.nse" \
   #
   "https://nmap.org/nsedoc/scripts/dns-check-zone.html;\
-  ;dns-check-zone;--script dns-check-zone" \
+  ;dns-check-zone;--script=dns-check-zone" \
   #
   "https://nmap.org/nsedoc/scripts/dns-client-subnet-scan.html;\
-  ;dns-client-subnet-scan;--script dns-client-subnet-scan" \
+  ;dns-client-subnet-scan;--script=dns-client-subnet-scan" \
   #
   "https://nmap.org/nsedoc/scripts/dns-fuzz.html;\
-  ;dns-fuzz;--script dns-fuzz" \
+  ;dns-fuzz;--script=dns-fuzz" \
   #
   "https://nmap.org/nsedoc/scripts/dns-ip6-arpa-scan.html;\
-  ;dns-ip6-arpa-scan;--script dns-ip6-arpa-scan" \
+  ;dns-ip6-arpa-scan;--script=dns-ip6-arpa-scan" \
   #
   "https://nmap.org/nsedoc/scripts/dns-nsec-enum.html;\
-  ;dns-nsec-enum;--script dns-nsec-enum" \
+  ;dns-nsec-enum;--script=dns-nsec-enum" \
   #
   "https://nmap.org/nsedoc/scripts/dns-nsec3-enum.html;\
   ;dns-nsec3-enum;--script=dns-nsec3-enum" \
   #
   "https://nmap.org/nsedoc/scripts/dns-nsid.html;\
-  ;dns-nsid;--script dns-nsid" \
+  ;dns-nsid;--script=dns-nsid" \
   #
   "https://nmap.org/nsedoc/scripts/dns-random-srcport.html;\
   ;dns-random-srcport;--script=dns-random-srcport" \
@@ -154,31 +154,31 @@ function nse_dns-dhcp() {
   ;dns-service-discovery;--script=dns-service-discovery" \
   #
   "https://nmap.org/nsedoc/scripts/dns-srv-enum.html;\
-  ;dns-srv-enum;--script dns-srv-enum" \
+  ;dns-srv-enum;--script=dns-srv-enum" \
   #
   "https://nmap.org/nsedoc/scripts/dns-update.html;\
   ;dns-update;--script=dns-update" \
   #
   "https://nmap.org/nsedoc/scripts/dns-zone-transfer.html;\
-  ;dns-zone-transfer;--script dns-zone-transfer.nse" \
+  ;dns-zone-transfer;--script=dns-zone-transfer.nse" \
   #
   "https://nmap.org/nsedoc/scripts/fcrdns.html;\
-  ;fcrdns;--script fcrdns" \
+  ;fcrdns;--script=fcrdns" \
   #
   "https://nmap.org/nsedoc/scripts/hostmap-bfk.html;\
-  ;hostmap-bfk;--script hostmap-bfk" \
+  ;hostmap-bfk;--script=hostmap-bfk" \
   #
   "https://nmap.org/nsedoc/scripts/hostmap-crtsh.html;\
-  ;hostmap-crtsh;--script hostmap-crtsh" \
+  ;hostmap-crtsh;--script=hostmap-crtsh" \
   #
   "https://nmap.org/nsedoc/scripts/hostmap-ip2hosts.html;\
-  ;hostmap-ip2hosts;--script hostmap-ip2hosts" \
+  ;hostmap-ip2hosts;--script=hostmap-ip2hosts" \
   #
   "https://nmap.org/nsedoc/scripts/hostmap-robtex.html;\
-  ;hostmap-robtex;--script hostmap-robtex" \
+  ;hostmap-robtex;--script=hostmap-robtex" \
   #
   "https://nmap.org/nsedoc/scripts/llmnr-resolve.html;\
-  ;llmnr-resolve;--script llmnr-resolve" \
+  ;llmnr-resolve;--script=llmnr-resolve" \
   #
   "https://nmap.org/nsedoc/scripts/dhcp-discover.html;\
   ;dhcp-discover;--script=dhcp-discover" \

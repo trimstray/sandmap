@@ -109,49 +109,49 @@ function nse_mail() {
   _module_commands=(\
   #
   "https://nmap.org/nsedoc/scripts/imap-brute.html;\
-  ;imap-brute;--script imap-brute" \
+  ;imap-brute;--script=imap-brute" \
   #
   "https://nmap.org/nsedoc/scripts/imap-capabilities.html;\
-  ;imap-capabilities;--script imap-capabilities" \
+  ;imap-capabilities;--script=imap-capabilities" \
   #
   "https://nmap.org/nsedoc/scripts/imap-ntlm-info.html;\
-  ;imap-ntlm-info;--script imap-ntlm-info" \
+  ;imap-ntlm-info;--script=imap-ntlm-info" \
   #
   "https://nmap.org/nsedoc/scripts/pop3-brute.html;\
-  ;pop3-brute;--script pop3-brute" \
+  ;pop3-brute;--script=pop3-brute" \
   #
   "https://nmap.org/nsedoc/scripts/pop3-capabilities.html;\
-  ;pop3-capabilities;--script pop3-capabilities" \
+  ;pop3-capabilities;--script=pop3-capabilities" \
   #
   "https://nmap.org/nsedoc/scripts/pop3-ntlm-info.html;\
-  ;pop3-ntlm-info;--script pop3-ntlm-info" \
+  ;pop3-ntlm-info;--script=pop3-ntlm-info" \
   #
   "https://nmap.org/nsedoc/scripts/smtp-brute.html;\
-  ;smtp-brute;--script smtp-brute" \
+  ;smtp-brute;--script=smtp-brute" \
   #
   "https://nmap.org/nsedoc/scripts/smtp-commands.html;\
-  ;smtp-commands;--script smtp-commands" \
+  ;smtp-commands;--script=smtp-commands" \
   #
   "https://nmap.org/nsedoc/scripts/smtp-enum-users.html;\
-  ;smtp-enum-users;--script smtp-enum-users" \
+  ;smtp-enum-users;--script=smtp-enum-users" \
   #
   "https://nmap.org/nsedoc/scripts/smtp-ntlm-info.html;\
-  ;smtp-ntlm-info;--script smtp-ntlm-info" \
+  ;smtp-ntlm-info;--script=smtp-ntlm-info" \
   #
   "https://nmap.org/nsedoc/scripts/smtp-open-relay.html;\
-  ;smtp-open-relay;--script smtp-open-relay" \
+  ;smtp-open-relay;--script=smtp-open-relay" \
   #
   "https://nmap.org/nsedoc/scripts/smtp-strangeport.html;\
-  ;smtp-strangeport;--script smtp-strangeport" \
+  ;smtp-strangeport;--script=smtp-strangeport" \
   #
   "https://nmap.org/nsedoc/scripts/smtp-vuln-cve2010-4344.html;\
-  ;smtp-vuln-cve2010-4344;--script smtp-vuln-cve2010-4344" \
+  ;smtp-vuln-cve2010-4344;--script=smtp-vuln-cve2010-4344" \
   #
   "https://nmap.org/nsedoc/scripts/smtp-vuln-cve2011-1720.html;\
-  ;smtp-vuln-cve2011-1720;--script smtp-vuln-cve2011-1720" \
+  ;smtp-vuln-cve2011-1720;--script=smtp-vuln-cve2011-1720" \
   #
   "https://nmap.org/nsedoc/scripts/smtp-vuln-cve2011-1764.html;\
-  ;smtp-vuln-cve2011-1764;--script smtp-vuln-cve2011-1764" \
+  ;smtp-vuln-cve2011-1764;--script=smtp-vuln-cve2011-1764" \
   )
 
   # shellcheck disable=SC2034,SC2154

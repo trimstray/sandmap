@@ -109,7 +109,7 @@ function nse_other-version() {
   _module_commands=(\
   #
   "https://nmap.org/nsedoc/scripts/fingerprint-strings.html;\
-  ;fingerprint-strings;--script fingerprint-strings" \
+  ;fingerprint-strings;--script=fingerprint-strings" \
   )
 
   # shellcheck disable=SC2034,SC2154

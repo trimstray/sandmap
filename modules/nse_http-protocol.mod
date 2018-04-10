@@ -112,151 +112,151 @@ function nse_http-protocol() {
   ;http-affiliate-id;--script=http-affiliate-id.nse" \
   #
   "https://nmap.org/nsedoc/scripts/http-auth.html;\
-  ;http-auth;--script http-auth" \
+  ;http-auth;--script=http-auth" \
   #
   "https://nmap.org/nsedoc/scripts/http-auth-finder.html;\
-  ;http-auth-finder;--script http-auth-finder" \
+  ;http-auth-finder;--script=http-auth-finder" \
   #
   "https://nmap.org/nsedoc/scripts/http-backup-finder.html;\
   ;http-backup-finder;--script=http-backup-finder" \
   #
   "https://nmap.org/nsedoc/scripts/http-brute.html;\
-  ;http-brute;--script http-brute" \
+  ;http-brute;--script=http-brute" \
   #
   "https://nmap.org/nsedoc/scripts/http-chrono.html;\
-  ;http-chrono;--script http-chrono" \
+  ;http-chrono;--script=http-chrono" \
   #
   "https://nmap.org/nsedoc/scripts/http-comments-displayer.html;\
-  ;http-comments-displayer;--script http-comments-displayer" \
+  ;http-comments-displayer;--script=http-comments-displayer" \
   #
   "https://nmap.org/nsedoc/scripts/http-config-backup.html;\
   ;http-config-backup;--script=http-config-backup" \
   #
   "https://nmap.org/nsedoc/scripts/http-cookie-flags.html;\
-  ;http-cookie-flags;--script http-cookie-flags" \
+  ;http-cookie-flags;--script=http-cookie-flags" \
   #
   "https://nmap.org/nsedoc/scripts/http-cors.html;\
-  ;http-cors;--script http-cors" \
+  ;http-cors;--script=http-cors" \
   #
   "https://nmap.org/nsedoc/scripts/http-cross-domain-policy.html;\
-  ;http-cross-domain-policy;--script http-cross-domain-policy" \
+  ;http-cross-domain-policy;--script=http-cross-domain-policy" \
   #
   "https://nmap.org/nsedoc/scripts/http-csrf.html;\
-  ;http-csrf;--script http-csrf" \
+  ;http-csrf;--script=http-csrf" \
   #
   "https://nmap.org/nsedoc/scripts/http-date.html;\
   ;http-date;--script=http-date" \
   #
   "https://nmap.org/nsedoc/scripts/http-default-accounts.html;\
-  ;http-default-accounts;--script http-default-accounts" \
+  ;http-default-accounts;--script=http-default-accounts" \
   #
   "https://nmap.org/nsedoc/scripts/http-devframework.html;\
-  ;http-devframework;--script http-devframework" \
+  ;http-devframework;--script=http-devframework" \
   #
   "https://nmap.org/nsedoc/scripts/http-dombased-xss.html;\
-  ;http-dombased-xss;--script http-dombased-xss" \
+  ;http-dombased-xss;--script=http-dombased-xss" \
   #
   "https://nmap.org/nsedoc/scripts/http-errors.html;\
-  ;http-errors;--script http-errors" \
+  ;http-errors;--script=http-errors" \
   #
   "https://nmap.org/nsedoc/scripts/http-fileupload-exploiter.html;\
-  ;http-fileupload-exploiter;--script http-fileupload-exploiter" \
+  ;http-fileupload-exploiter;--script=http-fileupload-exploiter" \
   #
   "https://nmap.org/nsedoc/scripts/http-form-brute.html;\
-  ;http-form-brute;--script http-form-brute" \
+  ;http-form-brute;--script=http-form-brute" \
   #
   "https://nmap.org/nsedoc/scripts/http-form-fuzzer.html;\
-  ;http-form-fuzzer;--script http-form-fuzzer" \
+  ;http-form-fuzzer;--script=http-form-fuzzer" \
   #
   "https://nmap.org/nsedoc/scripts/http-frontpage-login.html;\
   ;http-frontpage-login;--script=http-frontpage-login" \
   #
   "https://nmap.org/nsedoc/scripts/http-grep.html;\
-  ;http-grep;--script http-grep" \
+  ;http-grep;--script=http-grep" \
   #
   "https://nmap.org/nsedoc/scripts/http-headers.html;\
   ;http-headers;--script=http-headers" \
   #
   "https://nmap.org/nsedoc/scripts/http-internal-ip-disclosure.html;\
-  ;http-internal-ip-disclosure;--script http-internal-ip-disclosure" \
+  ;http-internal-ip-disclosure;--script=http-internal-ip-disclosure" \
   #
   "https://nmap.org/nsedoc/scripts/http-ls.html;\
-  ;http-ls;--script http-ls" \
+  ;http-ls;--script=http-ls" \
   #
   "https://nmap.org/nsedoc/scripts/http-mcmp.html;\
   ;http-mcmp;--script=http-mcmp" \
   #
   "https://nmap.org/nsedoc/scripts/http-method-tamper.html;\
-  ;http-method-tamper;--script http-method-tamper" \
+  ;http-method-tamper;--script=http-method-tamper" \
   #
   "https://nmap.org/nsedoc/scripts/http-methods.html;\
-  ;http-methods;--script http-methods" \
+  ;http-methods;--script=http-methods" \
   #
   "https://nmap.org/nsedoc/scripts/http-open-proxy.html;\
-  ;http-open-proxy;--script http-open-proxy" \
+  ;http-open-proxy;--script=http-open-proxy" \
   #
   "https://nmap.org/nsedoc/scripts/http-open-redirect.html;\
   ;http-open-redirect;--script=http-open-redirect" \
   #
   "https://nmap.org/nsedoc/scripts/http-phpself-xss.html;\
-  ;http-phpself-xss;--script http-phpself-xss" \
+  ;http-phpself-xss;--script=http-phpself-xss" \
   #
   "https://nmap.org/nsedoc/scripts/http-proxy-brute.html;\
-  ;http-proxy-brute;--script http-proxy-brute" \
+  ;http-proxy-brute;--script=http-proxy-brute" \
   #
   "https://nmap.org/nsedoc/scripts/http-put.html;\
-  ;http-put;--script http-put" \
+  ;http-put;--script=http-put" \
   #
   "https://nmap.org/nsedoc/scripts/http-referer-checker.html;\
-  ;http-referer-checker;--script http-referer-checker" \
+  ;http-referer-checker;--script=http-referer-checker" \
   #
   "https://nmap.org/nsedoc/scripts/http-security-headers.html;\
-  ;http-security-headers;--script http-security-headers" \
+  ;http-security-headers;--script=http-security-headers" \
   #
   "https://nmap.org/nsedoc/scripts/http-server-header.html;\
-  ;http-server-header;--script http-server-header" \
+  ;http-server-header;--script=http-server-header" \
   #
   "https://nmap.org/nsedoc/scripts/http-sitemap-generator.html;\
-  ;http-sitemap-generator;--script http-sitemap-generator" \
+  ;http-sitemap-generator;--script=http-sitemap-generator" \
   #
   "https://nmap.org/nsedoc/scripts/http-shellshock.html;\
-  ;http-shellshock;--script http-shellshock" \
+  ;http-shellshock;--script=http-shellshock" \
   #
   "https://nmap.org/nsedoc/scripts/http-slowloris.html;\
-  ;http-slowloris;--script http-slowloris" \
+  ;http-slowloris;--script=http-slowloris" \
   #
   "https://nmap.org/nsedoc/scripts/http-slowloris-check.html;\
-  ;http-slowloris-check;--script http-slowloris-check" \
+  ;http-slowloris-check;--script=http-slowloris-check" \
   #
   "https://nmap.org/nsedoc/scripts/http-sql-injection.html;\
-  ;http-sql-injection;--script http-sql-injection" \
+  ;http-sql-injection;--script=http-sql-injection" \
   #
   "https://nmap.org/nsedoc/scripts/http-stored-xss.html;\
-  ;http-stored-xss;--script http-stored-xss" \
+  ;http-stored-xss;--script=http-stored-xss" \
   #
   "https://nmap.org/nsedoc/scripts/http-trace.html;\
-  ;http-trace;--script http-trace" \
+  ;http-trace;--script=http-trace" \
   #
   "https://nmap.org/nsedoc/scripts/http-traceroute.html;\
-  ;http-traceroute;--script http-traceroute" \
+  ;http-traceroute;--script=http-traceroute" \
   #
   "https://nmap.org/nsedoc/scripts/http-unsafe-output-escaping.html;\
-  ;http-unsafe-output-escaping;--script http-unsafe-output-escaping" \
+  ;http-unsafe-output-escaping;--script=http-unsafe-output-escaping" \
   #
   "https://nmap.org/nsedoc/scripts/http-useragent-tester.html;\
-  ;http-useragent-tester;--script http-useragent-tester" \
+  ;http-useragent-tester;--script=http-useragent-tester" \
   #
   "https://nmap.org/nsedoc/scripts/http-userdir-enum.html;\
-  ;http-userdir-enum;--script http-userdir-enum" \
+  ;http-userdir-enum;--script=http-userdir-enum" \
   #
   "https://nmap.org/nsedoc/scripts/http-vhosts.html;\
-  ;http-vhosts;--script http-vhosts" \
+  ;http-vhosts;--script=http-vhosts" \
   #
   "https://nmap.org/nsedoc/scripts/http-xssed.html;\
-  ;http-xssed;--script http-xssed" \
+  ;http-xssed;--script=http-xssed" \
   #
   "https://nmap.org/nsedoc/scripts/url-snarf.html;\
-  ;url-snarf;--script url-snarf" \
+  ;url-snarf;--script=url-snarf" \
   )
 
   # shellcheck disable=SC2034,SC2154

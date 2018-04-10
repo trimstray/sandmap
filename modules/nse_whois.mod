@@ -109,10 +109,10 @@ function nse_whois() {
   _module_commands=(\
   #
   "https://nmap.org/nsedoc/scripts/whois-domain.html;\
-  ;whois-domain;--script whois-domain" \
+  ;whois-domain;--script=whois-domain" \
   #
   "https://nmap.org/nsedoc/scripts/whois-ip.html;\
-  ;whois-ip;--script whois-ip" \
+  ;whois-ip;--script=whois-ip" \
   )
 
   # shellcheck disable=SC2034,SC2154

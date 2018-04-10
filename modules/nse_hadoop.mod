@@ -109,25 +109,25 @@ function nse_hadoop() {
   _module_commands=(\
   #
   "https://nmap.org/nsedoc/scripts/hadoop-datanode-info.html;\
-  ;hadoop-datanode-info;--script hadoop-datanode-info" \
+  ;hadoop-datanode-info;--script=hadoop-datanode-info" \
   #
   "https://nmap.org/nsedoc/scripts/hadoop-jobtracker-info.html;\
-  ;hadoop-jobtracker-info;--script hadoop-jobtracker-info" \
+  ;hadoop-jobtracker-info;--script=hadoop-jobtracker-info" \
   #
   "https://nmap.org/nsedoc/scripts/hadoop-namenode-info.html;\
-  ;hadoop-namenode-info;--script hadoop-namenode-info" \
+  ;hadoop-namenode-info;--script=hadoop-namenode-info" \
   #
   "https://nmap.org/nsedoc/scripts/hadoop-secondary-namenode-info.html;\
-  ;hadoop-secondary-namenode-info;--script hadoop-secondary-namenode-info" \
+  ;hadoop-secondary-namenode-info;--script=hadoop-secondary-namenode-info" \
   #
   "https://nmap.org/nsedoc/scripts/hadoop-tasktracker-info.html;\
-  ;hadoop-tasktracker-info;--script hadoop-tasktracker-info" \
+  ;hadoop-tasktracker-info;--script=hadoop-tasktracker-info" \
   #
   "https://nmap.org/nsedoc/scripts/hbase-master-info.html;\
-  ;hbase-master-info;--script hbase-master-info" \
+  ;hbase-master-info;--script=hbase-master-info" \
   #
   "https://nmap.org/nsedoc/scripts/hbase-region-info.html;\
-  ;hbase-region-info;--script hbase-region-info" \
+  ;hbase-region-info;--script=hbase-region-info" \
   )
 
   # shellcheck disable=SC2034,SC2154

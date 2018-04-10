@@ -109,25 +109,25 @@ function nse_vuln-scanners() {
   _module_commands=(\
   #
   "https://nmap.org/nsedoc/scripts/nessus-brute.html;\
-  ;nessus-brute;--script nessus-brute" \
+  ;nessus-brute;--script=nessus-brute" \
   #
   "https://nmap.org/nsedoc/scripts/nessus-xmlrpc-brute.html;\
   ;nessus-xmlrpc-brute;--script=nessus-xmlrpc-brute" \
   #
   "https://nmap.org/nsedoc/scripts/nexpose-brute.html;\
-  ;nexpose-brute;--script nexpose-brute" \
+  ;nexpose-brute;--script=nexpose-brute" \
   #
   "https://nmap.org/nsedoc/scripts/omp2-brute.html;\
-  ;omp2-brute;--script omp2-brute" \
+  ;omp2-brute;--script=omp2-brute" \
   #
   "https://nmap.org/nsedoc/scripts/omp2-enum-targets.html;\
-  ;omp2-enum-targets;--script omp2-enum-targets" \
+  ;omp2-enum-targets;--script=omp2-enum-targets" \
   #
   "https://nmap.org/nsedoc/scripts/openvas-otp-brute.html;\
   ;openvas-otp-brute;--script=openvas-otp-brute" \
   #
   "https://nmap.org/nsedoc/scripts/shodan-api.html;\
-  ;shodan-api;--script shodan-api" \
+  ;shodan-api;--script=shodan-api" \
   )
 
   # shellcheck disable=SC2034,SC2154

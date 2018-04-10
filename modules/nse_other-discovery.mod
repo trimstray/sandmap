@@ -109,13 +109,13 @@ function nse_other-discovery() {
   _module_commands=(\
   #
   "https://nmap.org/nsedoc/scripts/banner.html;\
-  ;banner;--script banner" \
+  ;banner;--script=banner" \
   #
   "https://nmap.org/nsedoc/scripts/duplicates.html;\
-  ;duplicates;--script duplicates" \
+  ;duplicates;--script=duplicates" \
   #
   "https://nmap.org/nsedoc/scripts/lltd-discovery.html;\
-  ;lltd-discovery;--script lltd-discovery" \
+  ;lltd-discovery;--script=lltd-discovery" \
   )
 
   # shellcheck disable=SC2034,SC2154

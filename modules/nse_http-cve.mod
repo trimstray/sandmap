@@ -109,70 +109,70 @@ function nse_http-cve() {
   _module_commands=(\
   #
   "https://nmap.org/nsedoc/scripts/http-vuln-cve2006-3392.html;\
-  ;http-vuln-cve2006-3392;--script http-vuln-cve2006-3392" \
+  ;http-vuln-cve2006-3392;--script=http-vuln-cve2006-3392" \
   #
   "https://nmap.org/nsedoc/scripts/http-vuln-cve2009-3960.html;\
-  ;http-vuln-cve2009-3960;--script http-vuln-cve2009-3960" \
+  ;http-vuln-cve2009-3960;--script=http-vuln-cve2009-3960" \
   #
   "https://nmap.org/nsedoc/scripts/http-vuln-cve2010-0738.html;\
-  ;http-vuln-cve2010-0738;--script http-vuln-cve2010-0738" \
+  ;http-vuln-cve2010-0738;--script=http-vuln-cve2010-0738" \
   #
   "https://nmap.org/nsedoc/scripts/http-vuln-cve2010-2861.html;\
-  ;http-vuln-cve2010-2861;--script http-vuln-cve2010-2861" \
+  ;http-vuln-cve2010-2861;--script=http-vuln-cve2010-2861" \
   #
   "https://nmap.org/nsedoc/scripts/http-vuln-cve2011-3192.html;\
-  ;http-vuln-cve2011-3192;--script http-vuln-cve2011-3192" \
+  ;http-vuln-cve2011-3192;--script=http-vuln-cve2011-3192" \
   #
   "https://nmap.org/nsedoc/scripts/http-vuln-cve2011-3368.html;\
-  ;http-vuln-cve2011-3368;--script http-vuln-cve2011-3368" \
+  ;http-vuln-cve2011-3368;--script=http-vuln-cve2011-3368" \
   #
   "https://nmap.org/nsedoc/scripts/http-vuln-cve2012-1823.html;\
-  ;http-vuln-cve2012-1823;--script http-vuln-cve2012-1823" \
+  ;http-vuln-cve2012-1823;--script=http-vuln-cve2012-1823" \
   #
   "https://nmap.org/nsedoc/scripts/http-vuln-cve2013-0156.html;\
-  ;http-vuln-cve2013-0156;--script http-vuln-cve2013-0156" \
+  ;http-vuln-cve2013-0156;--script=http-vuln-cve2013-0156" \
   #
   "https://nmap.org/nsedoc/scripts/http-vuln-cve2013-6786.html;\
-  ;http-vuln-cve2013-6786;--script http-vuln-cve2013-6786" \
+  ;http-vuln-cve2013-6786;--script=http-vuln-cve2013-6786" \
   #
   "https://nmap.org/nsedoc/scripts/http-vuln-cve2013-7091.html;\
-  ;http-vuln-cve2013-7091;--script http-vuln-cve2013-7091" \
+  ;http-vuln-cve2013-7091;--script=http-vuln-cve2013-7091" \
   #
   "https://nmap.org/nsedoc/scripts/http-vuln-cve2014-2126.html;\
-  ;http-vuln-cve2014-2126;--script http-vuln-cve2014-2126" \
+  ;http-vuln-cve2014-2126;--script=http-vuln-cve2014-2126" \
   #
   "https://nmap.org/nsedoc/scripts/http-vuln-cve2014-2127.html;\
-  ;http-vuln-cve2014-2127;--script http-vuln-cve2014-2127" \
+  ;http-vuln-cve2014-2127;--script=http-vuln-cve2014-2127" \
   #
   "https://nmap.org/nsedoc/scripts/http-vuln-cve2014-2128.html;\
-  ;http-vuln-cve2014-2128;--script http-vuln-cve2014-2128" \
+  ;http-vuln-cve2014-2128;--script=http-vuln-cve2014-2128" \
   #
   "https://nmap.org/nsedoc/scripts/http-vuln-cve2014-2129.html;\
-  ;http-vuln-cve2014-2129;--script http-vuln-cve2014-2129" \
+  ;http-vuln-cve2014-2129;--script=http-vuln-cve2014-2129" \
   #
   "https://nmap.org/nsedoc/scripts/http-vuln-cve2014-3704.html;\
-  ;http-vuln-cve2014-3704;--script http-vuln-cve2014-3704" \
+  ;http-vuln-cve2014-3704;--script=http-vuln-cve2014-3704" \
   #
   "https://nmap.org/nsedoc/scripts/http-vuln-cve2014-8877.html;\
-  ;http-vuln-cve2014-8877;--script http-vuln-cve2014-8877" \
+  ;http-vuln-cve2014-8877;--script=http-vuln-cve2014-8877" \
   #
   "https://nmap.org/nsedoc/scripts/http-vuln-cve2015-1427.html;\
-  ;http-vuln-cve2015-1427;--script http-vuln-cve2015-1427" \
+  ;http-vuln-cve2015-1427;--script=http-vuln-cve2015-1427" \
   #
   "https://nmap.org/nsedoc/scripts/http-vuln-cve2015-1635.html;\
-  ;http-vuln-cve2015-1635;--script http-vuln-cve2015-1635" \
+  ;http-vuln-cve2015-1635;--script=http-vuln-cve2015-1635" \
   #
   "https://nmap.org/nsedoc/scripts/http-vuln-cve2017-1001000.html;\
-  ;http-vuln-cve2017-1001000;--script http-vuln-cve2017-1001000" \
+  ;http-vuln-cve2017-1001000;--script=http-vuln-cve2017-1001000" \
   #
   "https://nmap.org/nsedoc/scripts/http-vuln-cve2017-5638.html;\
-  ;http-vuln-cve2017-5638;--script http-vuln-cve2017-5638" \
+  ;http-vuln-cve2017-5638;--script=http-vuln-cve2017-5638" \
   #
   "https://nmap.org/nsedoc/scripts/http-vuln-cve2017-5689.html;\
-  ;http-vuln-cve2017-5689;--script http-vuln-cve2017-5689" \
+  ;http-vuln-cve2017-5689;--script=http-vuln-cve2017-5689" \
   #
   "https://nmap.org/nsedoc/scripts/http-vuln-cve2017-8917.html;\
-  ;http-vuln-cve2017-8917;--script http-vuln-cve2017-8917" \
+  ;http-vuln-cve2017-8917;--script=http-vuln-cve2017-8917" \
   )
 
   # shellcheck disable=SC2034,SC2154

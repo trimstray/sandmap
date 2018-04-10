@@ -109,31 +109,31 @@ function nse_ftp() {
   _module_commands=(\
   #
   "https://nmap.org/nsedoc/scripts/ftp-anon.html;\
-  ;ftp-anon;--script ftp-anon" \
+  ;ftp-anon;--script=ftp-anon" \
   #
   "https://nmap.org/nsedoc/scripts/ftp-bounce.html;\
-  ;ftp-bounce;--script ftp-bounce" \
+  ;ftp-bounce;--script=ftp-bounce" \
   #
   "https://nmap.org/nsedoc/scripts/ftp-brute.html;\
-  ;ftp-brute;--script ftp-brute" \
+  ;ftp-brute;--script=ftp-brute" \
   #
   "https://nmap.org/nsedoc/scripts/ftp-libopie.html;\
-  ;ftp-libopie;--script ftp-libopie" \
+  ;ftp-libopie;--script=ftp-libopie" \
   #
   "https://nmap.org/nsedoc/scripts/ftp-proftpd-backdoor.html;\
-  ;ftp-proftpd-backdoor;--script ftp-proftpd-backdoor" \
+  ;ftp-proftpd-backdoor;--script=ftp-proftpd-backdoor" \
   #
   "https://nmap.org/nsedoc/scripts/ftp-syst.html;\
-  ;ftp-syst;--script ftp-syst" \
+  ;ftp-syst;--script=ftp-syst" \
   #
   "https://nmap.org/nsedoc/scripts/ftp-vsftpd-backdoor.html;\
-  ;ftp-vsftpd-backdoor;--script ftp-vsftpd-backdoor" \
+  ;ftp-vsftpd-backdoor;--script=ftp-vsftpd-backdoor" \
   #
   "https://nmap.org/nsedoc/scripts/ftp-vuln-cve2010-4221.html;\
-  ;ftp-vuln-cve2010-4221;--script ftp-vuln-cve2010-4221" \
+  ;ftp-vuln-cve2010-4221;--script=ftp-vuln-cve2010-4221" \
   #
   "https://nmap.org/nsedoc/scripts/tftp-enum.html;\
-  ;tftp-enum;--script tftp-enum" \
+  ;tftp-enum;--script=tftp-enum" \
   )
 
   # shellcheck disable=SC2034,SC2154
