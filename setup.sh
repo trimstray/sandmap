@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env bash 
 
 readonly _dir="$(dirname "$(readlink -f "$0")")"
 
@@ -20,6 +20,8 @@ if [[ "$1" == "install" ]] ; then
   fi
 
   printf "%s\n" "Create man page to /usr/local/man/man8"
+
+  mkdir -p /usr/local/man/man8/
 
   if [[ -e "${_dir}/doc/man8/sandmap.8" ]] ; then
 
