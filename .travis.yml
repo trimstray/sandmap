@@ -1,7 +1,7 @@
 notifications:
   email:
     recipients:
-      - git@nslab.at
+      - trimstray@gmail.com
     on_success: always
     on_failure: always
 
@@ -13,17 +13,16 @@ branches:
 language: bash
 
 sudo: required
-
-addons:
-  apt:
-    packages:
-      - bash
+dist: trusty
 
 before_install:
-  - curl -sSL "https://ftp-master.debian.org/keys/archive-key-7.0.asc" | sudo -E apt-key add -
-  - echo "deb http://ftp.us.debian.org/debian unstable main contrib non-free" | sudo tee -a /etc/apt/sources.list > /dev/null
-  - sudo apt-get update
-  - sudo apt-get install shellcheck
+  - sudo apt-add-repository "deb http://archive.ubuntu.com/ubuntu trusty-backports main restricted universe multiverse"
+  - sudo apt-get -qq update
+  - sudo apt-get -t trusty-backports install shellcheck
+  # - curl -sSL "https://ftp-master.debian.org/keys/archive-key-7.0.asc" | sudo -E apt-key add -
+  # - echo "deb http://ftp.us.debian.org/debian unstable main contrib non-free" | sudo tee -a /etc/apt/sources.list > /dev/null
+  # - sudo apt-get update
+  # - sudo apt-get install shellcheck
 
 # after_success:
 #   - test $TRAVIS_PULL_REQUEST = false && git push
