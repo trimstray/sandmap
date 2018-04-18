@@ -25,6 +25,7 @@ if [[ "$1" == "install" ]] ; then
 
     if [[ ! -e "/usr/local/man/man8/sandmap.8.gz" ]] ; then
 
+      mkdir -p /usr/local/man/man8
       cp "${_dir}/doc/man8/sandmap.8" /usr/local/man/man8
       gzip /usr/local/man/man8/sandmap.8
 
