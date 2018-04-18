@@ -115,6 +115,9 @@ function host_discovery() {
   ;list_scan;-sL" \
   #
   "https://nmap.org/book/man-host-discovery.html;\
+  ;ping_scan;-sP" \
+  #
+  "https://nmap.org/book/man-host-discovery.html;\
   ;no_port_scan;-sn" \
   #
   "https://nmap.org/book/man-host-discovery.html;\
