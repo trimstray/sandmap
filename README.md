@@ -75,7 +75,7 @@ It's simple:
 
 ```bash
 # Clone this repository
-git clone https://github.com/trimstray/sandmap
+git clone --recursive https://github.com/trimstray/sandmap
 
 # Go into the repository
 cd sandmap
