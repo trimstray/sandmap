@@ -26,7 +26,7 @@ function __main__() {
   # We check if we are a root user.
   if [[ "$EUID" -ne 0 ]] ; then
 
-    printf "EUID is not equal 0 (no root user)\n"
+    printf "EUID is not equal 0 (no root user)\\n"
     _exit_ "1"
 
   fi
@@ -100,7 +100,7 @@ function __main__() {
   # of the required commands in the commands array is not found.
   if [[ "$missing_counter" -gt 0 ]] ; then
 
-    printf "not found in PATH: %s\n" "${missing_hash[*]}" >&2
+    printf "not found in PATH: %s\\n" "${missing_hash[*]}" >&2
     _exit_ "1"
 
   fi
@@ -152,7 +152,7 @@ function __main__() {
 
         if [[ "$2" == "-" ]] || [[ ! -z "$2" ]] ; then
 
-          printf "%s: invalid option -- '%s'\n" "$_init_name" "$2"
+          printf "%s: invalid option -- '%s'\\n" "$_init_name" "$2"
           _exit_ "1"
 
         # elif [[ -z "$2" ]] ; then break ; fi

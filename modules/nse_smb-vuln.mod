@@ -87,7 +87,7 @@ function nse_smb-vuln() {
 
       if [[ "${#_module_variables[@]}" -ne 0 ]] ; then
 
-        printf "_module_variables=(\"%s\")\n" "${_module_variables[@]}" > "$_module_cfg"
+        printf "_module_variables=(\"%s\")\\n" "${_module_variables[@]}" > "$_module_cfg"
 
       fi
 

@@ -70,7 +70,7 @@ function set_config() {
 
   if [[ "$_session_num" -eq "$_bcount" ]] ; then
 
-    printf "stdout: %s\n" "unknown key"
+    printf "stdout: %s\\n" "unknown key"
 
   fi
 

@@ -32,7 +32,7 @@ function init_search() {
 
   : >"${_static_menu}"
 
-  printf "\n    \e[1;38m%-25.25s %${_cr}s %s\e[m\n    %-25.25s %${_cr}s %s\n\n" \
+  printf "\\n    \\e[1;38m%-25.25s %${_cr}s %s\\e[m\\n    %-25.25s %${_cr}s %s\\n\\n" \
          "Module" \
          "Alias" \
          "Nmap Parameters" \
@@ -54,7 +54,7 @@ function init_search() {
 
       _search_stack+=("${_key_mod};${_key_alias};${_key_cmd}")
 
-      printf "    \e[1;36m%-25.25s\e[m \e[1;34m%${_cr}s\e[m %s\n" \
+      printf "    \\e[1;36m%-25.25s\\e[m \\e[1;34m%${_cr}s\\e[m %s\\n" \
              "$_key_mod" \
              "$_key_alias" \
              "$_key_cmd" >> "${_static_menu}"
@@ -63,7 +63,7 @@ function init_search() {
 
       _search_stack+=("${_key_mod};${_key_alias};${_key_cmd}")
 
-      printf "    \e[1;36m%-25.25s\e[m \e[1;34m%${_cr}s\e[m %s\n" \
+      printf "    \\e[1;36m%-25.25s\\e[m \\e[1;34m%${_cr}s\\e[m %s\\n" \
              "$_key_mod" \
              "$_key_alias" \
              "$_key_cmd" >> "${_static_menu}"

@@ -58,18 +58,18 @@ function show_config() {
 
     if [[ -z "$_key_id" ]] ; then
 
-      printf "stdout: %s\n" "invalid session param"
+      printf "stdout: %s\\n" "invalid session param"
 
     fi
 
     # Show specific key.
     if [[ "$_session_arg" == "$_key_id" ]] ; then
 
-      printf "  Description: \e[0;37m%s\e[m\n" \
+      printf "  Description: \\e[0;37m%s\\e[m\\n" \
       "$_key_description"
-      printf "    Examples: \e[0;37m%s\e[m\n" \
+      printf "    Examples: \\e[0;37m%s\\e[m\\n" \
       "$_key_values"
-      printf "    { \"\e[0;38m%s\e[m\":\"\e[1;36m%s\e[m\" }\n\n" \
+      printf "    { \"\\e[0;38m%s\\e[m\":\"\\e[1;36m%s\\e[m\" }\\n\\n" \
       "$_key_id" \
       "$_key_var"
 
@@ -80,11 +80,11 @@ function show_config() {
       # Show all keys.
       if [[ -z "$_session_arg" ]] ; then
 
-        printf "  Description: \e[0;37m%s\e[m\n" \
+        printf "  Description: \\e[0;37m%s\\e[m\\n" \
         "$_key_description"
-        printf "    Examples: \e[0;37m%s\e[m\n" \
+        printf "    Examples: \\e[0;37m%s\\e[m\\n" \
         "$_key_values"
-        printf "    { \"\e[0;38m%s\e[m\":\"\e[1;36m%s\e[m\" }\n\n" \
+        printf "    { \"\\e[0;38m%s\\e[m\":\"\\e[1;36m%s\\e[m\" }\\n\\n" \
         "$_key_id" \
         "$_key_var"
 

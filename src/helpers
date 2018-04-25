@@ -158,7 +158,7 @@ function _logger() {
   # shellcheck disable=SC2154
   if [[ "$stdout_mode" == "debug" ]] ; then
 
-    printf "%s  %s:  [%s] %s\n" \
+    printf "%s  %s:  [%s] %s\\n" \
            "$(date +"%d/%m/%y %X")" \
            "$_init_name" \
            "$_conv_type" \
@@ -169,7 +169,7 @@ function _logger() {
   # or to a file and to standard output.
   else
 
-    printf "%s  %s:  [%s] %s\n" \
+    printf "%s  %s:  [%s] %s\\n" \
            "$(date +"%d/%m/%y %X")" \
            "$_init_name" \
            "$_conv_type" \
@@ -256,13 +256,13 @@ function _sprintf() {
       while [[ $(ps a | awk '{print $1}' | grep -w "$_pid") ]] ; do
 
         _n=$(( ( _n + 1 ) % 4 ))
-        printf "\r[%s]" "${_sc:_n:1}"
+        printf "\\r[%s]" "${_sc:_n:1}"
         sleep 0.1
 
       done
 
       # If the end, we clean.
-      printf "\r"
+      printf "\\r"
 
     else
 
@@ -407,14 +407,14 @@ function _init_cmd() {
   # shellcheck disable=SC2154
   if [[ "$_output_terminal" == "external" ]] ; then
 
-    printf "\n\e[1;39m%s\e[m:\n" "terminal"
-    printf "\e[1;39m%c\e[m \e[1;30m%s\e[m\n" ">" "$_output_terminal"
+    printf "\\n\\e[1;39m%s\\e[m:\\n" "terminal"
+    printf "\\e[1;39m%c\\e[m \\e[1;30m%s\\e[m\\n" ">" "$_output_terminal"
     _full_command+=("${_xterm}")
 
   else
 
-    printf "\n\e[1;39m%s\e[m:\n" "terminal"
-    printf "\e[1;39m%c\e[m \e[1;30m%s\e[m\n" ">" "internal"
+    printf "\\n\\e[1;39m%s\\e[m:\\n" "terminal"
+    printf "\\e[1;39m%c\\e[m \\e[1;30m%s\\e[m\\n" ">" "internal"
 
   fi
 
@@ -475,13 +475,13 @@ function _init_cmd() {
 
   if [[ "$_output_terminal" == "external" ]] ; then
 
-    printf "\n\e[1;39m%s\e[m:\n" "command"
-    printf "\e[1;39m%c\e[m \e[1;30m%s\e[m\n\n\n" ">" "${_full_command[*]}"
+    printf "\\n\\e[1;39m%s\\e[m:\\n" "command"
+    printf "\\e[1;39m%c\\e[m \\e[1;30m%s\\e[m\\n\\n\\n" ">" "${_full_command[*]}"
 
   else
 
-    printf "\n\e[1;39m%s\e[m:\n" "command"
-    printf "\e[1;39m%c\e[m \e[1;30m%s\e[m\n\n" ">" "${_full_command[*]}"
+    printf "\\n\\e[1;39m%s\\e[m:\\n" "command"
+    printf "\\e[1;39m%c\\e[m \\e[1;30m%s\\e[m\\n\\n" ">" "${_full_command[*]}"
 
   fi
 
@@ -500,11 +500,11 @@ function _init_cmd() {
 
     if [[ "$_state" -eq 0 ]] ; then
 
-      printf "\n\e[1;39m%s\e[m: \e[0;32m%s\e[m\n\n" "Result" "pass"
+      printf "\\n\\e[1;39m%s\\e[m: \\e[0;32m%s\\e[m\\n\\n" "Result" "pass"
 
     else
 
-      printf "\n\e[1;39m%s\e[m: \e[0;31m%s\e[m\n\n" "Result" "fail"
+      printf "\\n\\e[1;39m%s\\e[m: \\e[0;31m%s\\e[m\\n\\n" "Result" "fail"
 
     fi
 

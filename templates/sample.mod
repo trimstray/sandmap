@@ -85,7 +85,7 @@ function sample() {
 
       if [[ "${#_module_variables[@]}" -ne 0 ]] ; then
 
-        printf "_module_variables=(\"%s\")\n" "${_module_variables[@]}" > "$_module_cfg"
+        printf "_module_variables=(\"%s\")\\n" "${_module_variables[@]}" > "$_module_cfg"
 
       fi
 
@@ -108,9 +108,8 @@ function sample() {
   # shellcheck disable=SC2034
   _module_commands=(\
   #
-  "Sample module description.\n \
-  \n https://example.com/sample;\
-  ;sample_scan;--params $_cmd_params" \
+  "Short module description;\
+  ;sample_scan;<params>" \
   )
 
   # shellcheck disable=SC2034,SC2154

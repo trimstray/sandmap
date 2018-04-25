@@ -22,7 +22,7 @@ function module_help() {
   local _STATE=0
 
   # shellcheck disable=SC2154
-  printf "%s\n\n" "${_module_help[@]}"
+  printf "%s\\n\\n" "${_module_help[@]}"
 
   return $_STATE
 

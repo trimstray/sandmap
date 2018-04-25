@@ -32,7 +32,7 @@ function cli_show() {
 
   : >"${_static_menu}"
 
-  printf "\n\e[1;38m    %-25.25s %-12.12s %s\e[m\n    %-25.25s %-12.12s %s\n\n" \
+  printf "\\n\\e[1;38m    %-25.25s %-12.12s %s\\e[m\\n    %-25.25s %-12.12s %s\\n\\n" \
          "Module" \
          "Profiles" \
          "Description" \
@@ -61,12 +61,12 @@ function cli_show() {
     _module_commands_count=$((_module_commands_count + ${#_module_commands[*]}))
     _module_commands_count_all=$((_module_commands_count_all + _module_commands_count))
 
-    printf "    \e[1;36m%-25.25s\e[m \e[1;33m%-12.12s\e[m %s\n" \
+    printf "    \\e[1;36m%-25.25s\\e[m \\e[1;33m%-12.12s\\e[m %s\\n" \
            "$_fname" "$_module_commands_count" "$description" >> "${_static_menu}"
 
   done
 
-  printf "\n    %s:  \e[1;39m%s\e[m\n    %s: \e[1;39m%s\e[m\n\n" \
+  printf "\\n    %s:  \\e[1;39m%s\\e[m\\n    %s: \\e[1;39m%s\\e[m\\n\\n" \
          "All Modules" "$_modules_count" \
          "All Profiles" "$_module_commands_count_all" >> "${_static_menu}"
 

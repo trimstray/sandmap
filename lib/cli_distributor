@@ -56,13 +56,13 @@ function cli_distributor() {
 
       else
 
-        printf "stdout: %s\n" "unknown module"
+        printf "stdout: %s\\n" "unknown module"
 
       fi
 
     else
 
-      printf "stdout: %s\n" "unknown command"
+      printf "stdout: %s\\n" "unknown command"
 
     fi
 
@@ -70,7 +70,7 @@ function cli_distributor() {
 
     if [[ "${#_argv[1]}" -eq 0 ]] ; then
 
-      printf "stdout: %s\n" "invalid key"
+      printf "stdout: %s\\n" "invalid key"
 
     else
 
@@ -109,7 +109,7 @@ function cli_distributor() {
           _session_variables=("${_variables_stack[@]:0:${_sess_num}}")
           _module_variables=("${_variables_stack[@]:${_sess_num}}")
 
-          printf "_module_variables=(\"%s\")\n" "${_module_variables[@]}" > "$_module_cfg"
+          printf "_module_variables=(\"%s\")\\n" "${_module_variables[@]}" > "$_module_cfg"
 
         fi
 
@@ -205,7 +205,7 @@ function cli_distributor() {
 
           if [[ "$_tc" -eq ${#_variables_stack[@]} ]] ; then
 
-            printf "stdout: %s\n" "invalid key"
+            printf "stdout: %s\\n" "invalid key"
 
           fi
 
@@ -273,7 +273,7 @@ function cli_distributor() {
 
       if [[ "${#_argv[1]}" -eq 0 ]] ; then
 
-        printf "stdout: %s\n" "invalid param"
+        printf "stdout: %s\\n" "invalid param"
 
       else
 
@@ -282,7 +282,7 @@ function cli_distributor() {
           init_config
           init_session
 
-          printf "stdout: %s\n" "config reloaded"
+          printf "stdout: %s\\n" "config reloaded"
 
         elif [[ "${_argv[1]}" == "modules" ]] ; then
 
@@ -300,7 +300,7 @@ function cli_distributor() {
 
           done
 
-          printf "stdout: %s\n" "modules reloaded"
+          printf "stdout: %s\\n" "modules reloaded"
 
         fi
 
@@ -310,7 +310,7 @@ function cli_distributor() {
 
       if [[ "${#_argv[1]}" -eq 0 ]] ; then
 
-        printf "stdout: %s\n" "invalid param"
+        printf "stdout: %s\\n" "invalid param"
 
       else
 
@@ -319,7 +319,7 @@ function cli_distributor() {
           init_config
           init_session
 
-          printf "stdout: %s\n" "config reloaded"
+          printf "stdout: %s\\n" "config reloaded"
 
         fi
 
@@ -372,7 +372,7 @@ function cli_distributor() {
 
     else
 
-      printf "stdout: %s\n" "invalid module"
+      printf "stdout: %s\\n" "invalid module"
 
     fi
 
@@ -382,7 +382,7 @@ function cli_distributor() {
 
       if [[ "${#_argv[1]}" -eq 0 ]] ; then
 
-        printf "stdout: %s\n" "invalid module"
+        printf "stdout: %s\\n" "invalid module"
 
       else
 
@@ -408,7 +408,7 @@ function cli_distributor() {
 
           if [[ "$_tc" -eq ${#modules_list[@]} ]] ; then
 
-            printf "stdout: %s\n" "invalid key"
+            printf "stdout: %s\\n" "invalid key"
 
           fi
 
@@ -429,9 +429,9 @@ function cli_distributor() {
 
               module_show "${_argv[2]}"
 
-              printf "  \e[1;38m%s\e[m:\n\n" "Description"
+              printf "  \\e[1;38m%s\\e[m:\\n\\n" "Description"
 
-              printf "    %s\n\n" "$_key_id" | sed 's/\\n \+/\n    /g'
+              printf "    %s\\n\\n" "$_key_id" | sed 's/\\n \+/\n    /g'
 
             fi
 
@@ -465,9 +465,9 @@ function cli_distributor() {
 
             module_show "${_argv[1]}"
 
-            printf "  \e[1;38m%s\e[m:\n\n" "Description"
+            printf "  \\e[1;38m%s\\e[m:\\n\\n" "Description"
 
-            printf "    %s\n\n" "$_key_id" | sed 's/\\n \+/\n    /g'
+            printf "    %s\\n\\n" "$_key_id" | sed 's/\\n \+/\n    /g'
 
           else
 
@@ -479,7 +479,7 @@ function cli_distributor() {
 
         if [[ "$_tc" -eq ${#_module_commands[@]} ]] ; then
 
-          printf "stdout: %s\n" "invalid profile"
+          printf "stdout: %s\\n" "invalid profile"
 
         fi
 
@@ -544,13 +544,13 @@ function cli_distributor() {
       ### https://github.com/trimstray/sandmap/issues/53
       # if [[ "$_cmd_state" -eq 0 ]] ; then
 
-        # printf "stdout: %s\n" "unknown command"
+        # printf "stdout: %s\\n" "unknown command"
 
       # fi
 
     else
 
-      printf "stdout: %s\n" "invalid param"
+      printf "stdout: %s\\n" "invalid param"
 
     fi
 
@@ -558,7 +558,7 @@ function cli_distributor() {
 
     if [[ "${#_argv[1]}" -eq 0 ]] ; then
 
-      printf "stdout: %s\n" "invalid key"
+      printf "stdout: %s\\n" "invalid key"
 
     else
 
@@ -570,7 +570,7 @@ function cli_distributor() {
 
         else
 
-          printf "stdout: %s\n" "pushd empty"
+          printf "stdout: %s\\n" "pushd empty"
 
         fi
 
@@ -579,11 +579,11 @@ function cli_distributor() {
         if [[ "${#_pushd_stack[@]}" -ne 0 ]] ; then
 
           # shellcheck disable=SC2034
-          printf "pushd: %s\n" "${_pushd_stack[@]}"
+          printf "pushd: %s\\n" "${_pushd_stack[@]}"
 
         else
 
-          printf "stdout: %s\n" "pushd empty"
+          printf "stdout: %s\\n" "pushd empty"
 
         fi
 
@@ -592,7 +592,7 @@ function cli_distributor() {
         # shellcheck disable=SC2034
         _pushd_stack=()
 
-        printf "stdout: %s\n" "pushd flushed"
+        printf "stdout: %s\\n" "pushd flushed"
 
       else
 
@@ -624,7 +624,7 @@ function cli_distributor() {
 
         if [[ "$_cmd_state" -eq 0 ]] ; then
 
-          printf "stdout: %s\n" "unknown command"
+          printf "stdout: %s\\n" "unknown command"
 
         fi
 
@@ -638,7 +638,7 @@ function cli_distributor() {
 
   else
 
-    printf "stdout: %s\n" "unknown command"
+    printf "stdout: %s\\n" "unknown command"
 
   fi
 
