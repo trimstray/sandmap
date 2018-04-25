@@ -165,6 +165,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md).
     |-- lib                        # libraries, external functions
     |-- log                        # contains logs, created after init
     |-- modules                    # contains modules
+    |-- nse_external               # external nse scripts
     |-- src                        # includes external project files
         |-- helpers                # contains core functions
         |-- import                 # appends the contents of the lib directory
