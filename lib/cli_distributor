@@ -541,11 +541,12 @@ function cli_distributor() {
 
       done
 
-      if [[ "$_cmd_state" -eq 0 ]] ; then
+      ### https://github.com/trimstray/sandmap/issues/53
+      # if [[ "$_cmd_state" -eq 0 ]] ; then
 
-        printf "stdout: %s\n" "unknown command"
+        # printf "stdout: %s\n" "unknown command"
 
-      fi
+      # fi
 
     else
 
