@@ -113,6 +113,9 @@ function awesome() {
   #
   "Base scan;\
   ;base_scan;-sU -sT -p U:53,T:22,25,80,110,443" \
+  #
+  "Top 25 ports;\
+  ;top_25;--top-ports 20" \
   )
 
   # shellcheck disable=SC2034,SC2154
