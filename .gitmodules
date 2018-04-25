@@ -1,0 +1,3 @@
+[submodule "data/nse_external/vulscan"]
+	path = data/nse_external/vulscan
+	url = https://github.com/scipag/vulscan.git
