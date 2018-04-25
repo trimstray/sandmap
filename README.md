@@ -157,7 +157,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md).
     |-- setup.sh                   # install sandmap on the system
     |-- bin
         |-- sandmap                # main script (init)
-    |-- data                       # contains other directories/files
+    |-- data
         |-- nse_external           # external nse scripts
     |-- doc                        # includes documentation, images and manuals
         |-- man8
