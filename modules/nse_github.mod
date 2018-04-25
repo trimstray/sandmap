@@ -3,22 +3,22 @@
 # shellcheck shell=bash
 
 # ``````````````````````````````````````````````````````````````````````````````
-# Function name: nse_external()
+# Function name: nse_github()
 #
 # Description:
 #   NSE external scripts.
 #
 # Usage:
-#   nse_external
+#   nse_github
 #
 # Examples:
-#   nse_external
+#   nse_github
 #
 
-function nse_external() {
+function nse_github() {
 
   # shellcheck disable=SC2034
-  local _FUNCTION_ID="nse_external"
+  local _FUNCTION_ID="nse_github"
   local _STATE=0
 
   # User variables:
