@@ -7,3 +7,6 @@
 [submodule "data/nse_external/s4n7h0"]
 	path = data/nse_external/s4n7h0
 	url = https://github.com/s4n7h0/NSE
+[submodule "data/nse_external/michenriksen"]
+	path = data/nse_external/michenriksen
+	url = https://github.com/michenriksen/nmap-scripts.git
