@@ -157,6 +157,8 @@ See [CONTRIBUTING.md](CONTRIBUTING.md).
     |-- setup.sh                   # install sandmap on the system
     |-- bin
         |-- sandmap                # main script (init)
+    |-- data                       # contains other directories/files
+        |-- nse_external           # external nse scripts
     |-- doc                        # includes documentation, images and manuals
         |-- man8
             |-- sandmap.8          # man page for sandmap
@@ -165,7 +167,6 @@ See [CONTRIBUTING.md](CONTRIBUTING.md).
     |-- lib                        # libraries, external functions
     |-- log                        # contains logs, created after init
     |-- modules                    # contains modules
-    |-- nse_external               # external nse scripts
     |-- src                        # includes external project files
         |-- helpers                # contains core functions
         |-- import                 # appends the contents of the lib directory
