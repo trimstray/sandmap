@@ -53,7 +53,7 @@ readonly _lib="${_rel}/lib"
 readonly _cfg="${_rel}/etc"
 readonly _tmp="${_rel}/tmp"
 readonly _out="${_rel}/output"
-
+readonly _nse="${_rel}/nse_external"
 
 # shellcheck disable=SC1090,SC1091
 source "${_src}/settings"
