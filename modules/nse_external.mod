@@ -115,10 +115,16 @@ function nse_external() {
   ;vulscan-script;--script=${_nse}/vulscan/vulscan.nse" \
   #
   "https://github.com/s4n7h0/NSE;\
-  ;s4n7h0-nikto;--script=${_nse}/s4n7h0/http-nikto-scan.nse" \
+  ;http-nikto-scan;--script=${_nse}/s4n7h0/http-nikto-scan.nse" \
+  #
+  "https://github.com/s4n7h0/NSE;\
+  ;http-shellshock;--script=${_nse}/s4n7h0/http-shellshock.nse" \
   #
   "https://github.com/scipag/httprecon-nse;\
   ;httprecon-nse;--script=${_nse}/httprecon-nse/httprecon.nse" \
+  #
+  "https://github.com/michenriksen/nmap-scripts;\
+  ;http-apache-server-status;--script=${_nse}/michenriksen/http-apache-server-status.nse" \
   )
 
   # shellcheck disable=SC2034,SC2154
