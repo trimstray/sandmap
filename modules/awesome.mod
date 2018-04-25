@@ -110,6 +110,9 @@ function awesome() {
   #
   "Show only open ports;\
   ;open_ports;-F --open" \
+  #
+  "Base scan;\
+  ;base_scan;-sU -sT -p U:53,T:22,25,80,110,443" \
   )
 
   # shellcheck disable=SC2034,SC2154
