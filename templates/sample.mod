@@ -51,17 +51,19 @@ function sample() {
     Description
     -----------
 
-      Sample module template - short module description.
+      Zenmap predefined commands.
 
     Commands
     --------
 
-      help                            display module help
+      help    <module>                display module or NSE help
       show    <key>                   display module or profile info
       config  <key>                   show module configuration
       set     <key>                   set module variable value
       use     <module>                reuse module (changed env)
       pushd   <key>|init|show|flush   command line commands stack
+      search  <key>                   search key in all commands
+      init    <alias|id>              run profile
 
       Options:
 
@@ -103,10 +105,11 @@ function sample() {
   # In the given commands you can use variables from the CLI config
   # command or the etc/main.cfg file.
 
-  # ---------------------------------------------------------------------------------------\n
-
   # shellcheck disable=SC2034
   _module_commands=(\
+  #
+  # "Intense scan;\
+  # ;intense;-T4 -A -v" \
   #
   "Short module description;\
   ;sample_scan;<params>" \
