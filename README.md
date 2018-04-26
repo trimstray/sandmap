@@ -95,7 +95,7 @@ sandmap
 Available modules: **31**  
 Available scan profiles: **459**
 
-> If you want to create your own modules, take a look [Modules](https://github.com/trimstray/sandmap/wiki/Modules).
+> If you want to create your own modules, take a look **[this](https://github.com/trimstray/sandmap/wiki/Modules)**.
 
 ### Internal modules
 
