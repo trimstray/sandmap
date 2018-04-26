@@ -103,7 +103,7 @@ Sandmap supports the NSE scripts provided with Nmap. This is transparent for the
 
 ### External modules
 
-You can also provide external NSE modules that are in the `data/nse_external` directory. from version **v1.1.1** there are **4** NSE scripts available:
+You can also provide external NSE modules that are in the `data/nse_external` directory from version **v1.1.1** there are **4** NSE scripts available:
 
 ```bash
 git submodule
