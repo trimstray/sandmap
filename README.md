@@ -95,6 +95,8 @@ sandmap
 Available modules: **31**  
 Available scan profiles: **459**
 
+> If you want to create your own modules, take a look [Modules](https://github.com/trimstray/sandmap/wiki/Modules).
+
 ### Internal modules
 
 Sandmap supports the NSE scripts provided with Nmap. This is transparent for the user.
