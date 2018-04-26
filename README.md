@@ -95,6 +95,24 @@ sandmap
 Available modules: **31**  
 Available scan profiles: **459**
 
+### Internal modules
+
+Sandmap supports the NSE scripts provided with Nmap. This is transparent for the user.
+
+### External modules
+
+You can also provide external NSE modules that are in the `data/nse_external` directory. Since version **v1.1.1** are attached 4:
+
+```bash
+git submodule
+ 34579f2b0f6110a934c1fc9527e21551a5016528 data/nse_external/michenriksen (heads/master)
+ 441c7a6d6c004356fd20314552d94b1f21ae62f1 data/nse_external/s4n7h0 (heads/master)
+ 391d88e547af1ee223bf4e5a865dfe012c7f859f data/nse_external/vulners (v1.2-release)
+ a7938fb82952dc1bdda7757fdc0fc06c314d6543 data/nse_external/vulscan (heads/master)
+```
+
+> In order to download them when cloning the repository, add the `--recursive` parameter.
+
 ## Configuration file
 
 The `etc/main.cfg` configuration file has the following structure:
