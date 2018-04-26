@@ -56,7 +56,7 @@ function awesome() {
     Commands
     --------
 
-      help                            display module help
+      help    <module>                display module or NSE help
       show    <key>                   display module or profile info
       config  <key>                   show module configuration
       set     <key>                   set module variable value

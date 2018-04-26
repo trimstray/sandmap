@@ -51,20 +51,12 @@ function port_scan() {
     Description
     -----------
 
-      This section documents the dozen or so port scan techniques supported by
-      Nmap. Only one method may be used at a time, except that UDP scan (-sU)
-      and any one of the SCTP scan types (-sY, -sZ) may be combined with any one
-      of the TCP scan types. As a memory aid, port scan type options are of the
-      form -s<C>, where <C> is a prominent character in the scan name, usually
-      the first. The one exception to this is the deprecated FTP bounce scan
-      (-b). By default, Nmap performs a SYN Scan, though it substitutes a
-      connect scan if the user does not have proper privileges to send raw
-      packets (requires root access on Unix).
+      Nmap Port Scan types module.
 
     Commands
     --------
 
-      help                            display module help
+      help    <module>                display module or NSE help
       show    <key>                   display module or profile info
       config  <key>                   show module configuration
       set     <key>                   set module variable value

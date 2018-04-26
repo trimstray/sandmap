@@ -51,17 +51,12 @@ function os_detection() {
     Description
     -----------
 
-      One of Nmap's best-known features is remote OS detection using TCP/IP
-      stack fingerprinting. Nmap sends a series of TCP and UDP packets to the
-      remote host and examines practically every bit in the responses.
-
-      OS detection enables some other tests which make use of information that
-      is gathered during the process anyway.
+      Nmap OS Detection module.
 
     Commands
     --------
 
-      help                            display module help
+      help    <module>                display module or NSE help
       show    <key>                   display module or profile info
       config  <key>                   show module configuration
       set     <key>                   set module variable value

@@ -51,19 +51,12 @@ function service_detection() {
     Description
     -----------
 
-      Point Nmap at a remote machine and it might tell you that ports 25/tcp,
-      80/tcp, and 53/udp are open. Using its nmap-services database of about
-      2,200 well-known services, Nmap would report that those ports probably
-      correspond to a mail server (SMTP), web server (HTTP), and name server
-      (DNS) respectively. This lookup is usually accurate-the vast majority of
-      daemons listening on TCP port 25 are, in fact, mail servers. However, you
-      should not bet your security on this! People can and do run services on
-      strange ports.
+      Service and Version Detection module.
 
     Commands
     --------
 
-      help                            display module help
+      help    <module>                display module or NSE help
       show    <key>                   display module or profile info
       config  <key>                   show module configuration
       set     <key>                   set module variable value
