@@ -41,8 +41,20 @@ function cli_distributor() {
 
     else
 
-      init_module "${_argv[@]}"
-      module_help
+      if [[ "${#_argv[1]}" -eq 0 ]] ; then
+
+        init_module "${_argv[@]}"
+        module_help
+
+      else
+
+        echo
+
+        nmap --script-help="${_argv[1]}"
+
+        echo
+
+      fi
 
     fi
 
