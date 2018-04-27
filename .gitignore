@@ -2,10 +2,10 @@
 log/
 
 # Not tracking module config files.
-modules/*.cfg
+data/modules/*.cfg
 
 # Nmap output scans.
-output/
+data/output/
 
 # Temporary files.
 tmp/.static*

@@ -36,8 +36,8 @@ function __main__() {
   readonly _import_path="${_src}/import"
 
   # Path to modules directory.
-  # shellcheck disable=SC2034
-  readonly _modules="${_rel}/modules"
+  # shellcheck disable=SC2034,SC2154
+  readonly _modules="${_dat}/modules"
 
   # Store modules list.
   # shellcheck disable=SC2034

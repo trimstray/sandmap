@@ -52,8 +52,8 @@ readonly _src="${_rel}/src"
 readonly _lib="${_rel}/lib"
 readonly _cfg="${_rel}/etc"
 readonly _tmp="${_rel}/tmp"
-readonly _out="${_rel}/output"
 readonly _dat="${_rel}/data"
+readonly _out="${_dat}/output"
 readonly _nse="${_dat}/nse_external"
 
 # shellcheck disable=SC1090,SC1091
