@@ -653,6 +653,12 @@ function _before_init() {
   # shellcheck disable=SC2154
   : >"$_log_stdout"
 
+  if [[ ! -d "$_out" ]] ; then
+
+    mkdir -p "$_out"
+
+  fi
+
   return "$_STATE"
 
 }
