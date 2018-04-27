@@ -161,6 +161,8 @@ See [CONTRIBUTING.md](CONTRIBUTING.md).
         |-- sandmap                # main script (init)
     |-- data
         |-- nse_external           # external nse scripts
+        |-- modules                # contains modules
+        |-- output                 # contains the results of the scan
     |-- doc                        # includes documentation, images and manuals
         |-- man8
             |-- sandmap.8          # man page for sandmap
@@ -168,7 +170,6 @@ See [CONTRIBUTING.md](CONTRIBUTING.md).
     |-- etc                        # contains configuration files
     |-- lib                        # libraries, external functions
     |-- log                        # contains logs, created after init
-    |-- modules                    # contains modules
     |-- src                        # includes external project files
         |-- helpers                # contains core functions
         |-- import                 # appends the contents of the lib directory
