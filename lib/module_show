@@ -82,7 +82,12 @@ function module_show() {
 
         for i in "${_script_args[@]}" ; do
 
-          printf "    %s\\n" "$i" >> "${_static_menu}"
+          # shellcheck disable=SC2034
+          _key_arg=$(echo "$i" | awk -v FS="(=)" '{print $1}')
+          # shellcheck disable=SC2034
+          _key_value=$(echo "$i" | awk -v FS="(=)" '{print $2}')
+
+          printf "    %s (default: %s)\\n" "$_key_arg" "$_key_value" >> "${_static_menu}"
 
         done
 
