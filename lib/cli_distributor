@@ -519,7 +519,7 @@ function cli_distributor() {
         _key_arg=$(echo "$_scan" | awk -v FS="(;|;)" '{print $5}')
 
         # shellcheck disable=SC2034
-        _script_args=("$(echo "$_key_arg" | tr "," "\\n")")
+        IFS=" " read -r -a _script_args <<< "$(sed 's/,/ /g' <<< "$_key_arg")"
 
         if [[ "${_argv[1]}" == "$_key_id" ]] ; then
 
