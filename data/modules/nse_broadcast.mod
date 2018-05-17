@@ -109,7 +109,8 @@ function nse_broadcast() {
   _module_commands=(\
   #
   "https://nmap.org/nsedoc/scripts/broadcast-avahi-dos.html;\
-  ;broadcast-avahi-dos;--script=broadcast-avahi-dos" \
+  ;broadcast-avahi-dos;--script=broadcast-avahi-dos;\
+  broadcast-avahi-dos.wait" \
   #
   "https://nmap.org/nsedoc/scripts/broadcast-db2-discover.html;\
   ;broadcast-db2-discover;--script=db2-discover" \
