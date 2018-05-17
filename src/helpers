@@ -397,7 +397,7 @@ function _init_cmd() {
 
   done
 
-  _script_args_full=()
+  _script_args_full=("--script-args")
 
   # shellcheck disable=SC2034,SC2154
   if [[ "${#_script_args[@]}" -ne 0 ]] ; then
@@ -418,6 +418,10 @@ function _init_cmd() {
       fi
 
     done
+
+  else
+
+    _script_args_full=()
 
   fi
 
