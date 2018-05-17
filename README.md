@@ -132,6 +132,9 @@ terminal="internal"
 
 ## Requirements
 
+- You will need Bash (testing on 4.4.19)
+- Root access
+
 **<u>Sandmap</u>** uses external utilities to be installed before running:
 
 - [nmap](https://nmap.org/)
@@ -151,32 +154,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Project architecture
 
-    |-- LICENSE.md                 # GNU GENERAL PUBLIC LICENSE, Version 3, 29 June 2007
-    |-- README.md                  # this simple documentation
-    |-- CONTRIBUTING.md            # principles of project support
-    |-- .gitignore                 # ignore untracked files
-    |-- .travis.yml                # continuous integration with Travis CI
-    |-- setup.sh                   # install sandmap on the system
-    |-- bin
-        |-- sandmap                # main script (init)
-    |-- data
-        |-- nse_external           # external nse scripts
-        |-- modules                # contains modules
-        |-- output                 # contains the results of the scan
-    |-- doc                        # includes documentation, images and manuals
-        |-- man8
-            |-- sandmap.8          # man page for sandmap
-        |-- img                    # images (eg. gif)
-    |-- etc                        # contains configuration files
-    |-- lib                        # libraries, external functions
-    |-- log                        # contains logs, created after init
-    |-- src                        # includes external project files
-        |-- helpers                # contains core functions
-        |-- import                 # appends the contents of the lib directory
-        |-- __init__               # contains the __main__ function
-        |-- settings               # contains sandmap settings
-    |-- templates                  # contains examples and template files
-    |-- tmp                        # contains temporary files (mktemp)
+See <a href="https://github.com/trimstray/sandmap/wiki/Project-architecture">Project Architecture</a>.
 
 ## License
 
