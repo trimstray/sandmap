@@ -116,7 +116,8 @@ function nse_broadcast() {
   ;broadcast-db2-discover;--script=db2-discover" \
   #
   "https://nmap.org/nsedoc/scripts/broadcast-dhcp-discover.html;\
-  ;broadcast-dhcp-discover;--script=broadcast-dhcp-discover" \
+  ;broadcast-dhcp-discover;--script=broadcast-dhcp-discover;\
+  broadcast-dhcp-discover.timeout" \
   #
   "https://nmap.org/nsedoc/scripts/broadcast-dhcp6-discover.html;\
   ;broadcast-dhcp6-discover;--script=broadcast-dhcp6-discover -6" \
@@ -128,13 +129,18 @@ function nse_broadcast() {
   ;broadcast-dropbox-listener;--script=broadcast-dropbox-listener" \
   #
   "https://nmap.org/nsedoc/scripts/broadcast-eigrp-discovery.html;\
-  ;broadcast-eigrp-discovery;--script=broadcast-eigrp-discovery" \
+  ;broadcast-eigrp-discovery;--script=broadcast-eigrp-discovery;\
+  broadcast-eigrp-discovery.kparams,broadcast-eigrp-discovery.as,\
+  broadcast-eigrp-discovery.interface,broadcast-eigrp-discovery.timeout" \
   #
   "https://nmap.org/nsedoc/scripts/broadcast-igmp-discovery.html;\
-  ;broadcast-igmp-discovery;--script=broadcast-igmp-discovery" \
+  ;broadcast-igmp-discovery;--script=broadcast-igmp-discovery;\
+  broadcast-igmp-discovery.mgroupnamesdb,broadcast-igmp-discovery.version\
+  broadcast-igmp-discovery.timeout,broadcast-igmp-discovery.interface" \
   #
   "https://nmap.org/nsedoc/scripts/broadcast-listener.html;\
-  ;broadcast-listener;--script=broadcast-listener" \
+  ;broadcast-listener;--script=broadcast-listener;\
+  broadcast-listener.timeout" \
   #
   "https://nmap.org/nsedoc/scripts/broadcast-ms-sql-discover.html;\
   ;broadcast-ms-sql-discover;--script=broadcast-ms-sql-discover" \
@@ -146,25 +152,32 @@ function nse_broadcast() {
   ;broadcast-novell-locate;--script=broadcast-novell-locate" \
   #
   "https://nmap.org/nsedoc/scripts/broadcast-ospf2-discover.html;\
-  ;broadcast-ospf2-discover;--script=broadcast-ospf2-discover" \
+  ;broadcast-ospf2-discover;--script=broadcast-ospf2-discover;\
+  broadcast-ospf2-discover.md5_key,broadcast-ospf2-discover.router_id\
+  broadcast-ospf2-discover.timeout,broadcast-ospf2-discover.interface" \
   #
   "https://nmap.org/nsedoc/scripts/broadcast-ping.html;\
-  ;broadcast-ping;--script=broadcast-ping" \
+  ;broadcast-ping;--script=broadcast-ping;\
+  broadcast-ping.timeout,broadcast-ping.num_probes\
+  broadcast-ping.interface" \
   #
   "https://nmap.org/nsedoc/scripts/broadcast-pppoe-discover.html;\
   ;broadcast-pppoe-discover;--script=broadcast-pppoe-discover" \
   #
   "https://nmap.org/nsedoc/scripts/broadcast-rip-discover.html;\
-  ;broadcast-rip-discover;--script=broadcast-rip-discover" \
+  ;broadcast-rip-discover;--script=broadcast-rip-discover;\
+  broadcast-rip-discover.timeout" \
   #
   "https://nmap.org/nsedoc/scripts/broadcast-ripng-discover.html;\
-  ;broadcast-ripng-discover;--script=broadcast-ripng-discover" \
+  ;broadcast-ripng-discover;--script=broadcast-ripng-discover;\
+  broadcast-ripng-discover.timeout" \
   #
   "https://nmap.org/nsedoc/scripts/broadcast-upnp-info.html;\
   ;broadcast-upnp-info;--script=broadcast-upnp-info" \
   #
   "https://nmap.org/nsedoc/scripts/broadcast-db2-discover.html;\
-  ;broadcast-wake-on-lan;--script=broadcast-wake-on-lan" \
+  ;broadcast-wake-on-lan;--script=broadcast-wake-on-lan;\
+  broadcast-wake-on-lan.address,broadcast-wake-on-lan.MAC" \
   )
 
   # shellcheck disable=SC2034,SC2154
