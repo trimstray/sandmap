@@ -87,7 +87,7 @@ function module_show() {
           # shellcheck disable=SC2034
           _key_value=$(echo "$i" | awk -v FS="(=)" '{print $2}')
 
-          printf "    %s (default: %s)\\n" "$_key_arg" "$_key_value" >> "${_static_menu}"
+          printf "    %s (\\e[1;33m%s\\e[m)\\n" "$_key_arg" "$_key_value" >> "${_static_menu}"
 
         done
 
