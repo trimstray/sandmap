@@ -55,6 +55,11 @@ function module_show() {
     _key_alias=$(echo "$_svar" | awk -v FS="(;|;)" '{print $3}')
     # shellcheck disable=SC2034
     _key_cmd=$(echo "$_svar" | awk -v FS="(;|;)" '{print $4}')
+    # shellcheck disable=SC2034
+    _key_arg=$(echo "$_svar" | awk -v FS="(;|;)" '{print $5}')
+
+    # shellcheck disable=SC2034
+    IFS=" " read -r -a _script_args <<< "$(sed 's/,/ /g' <<< "$_key_arg")"
 
     if [[ "$_key_alias" == "$_marg" ]] ; then
 
@@ -70,6 +75,18 @@ function module_show() {
              "$_count" \
              "$_key_alias" \
              "$_key_cmd" >> "${_static_menu}"
+
+      if [[ ! "${#_script_args[@]}" -eq 0 ]] ; then
+
+        printf "\\n  \\e[1;38m%s\\e[m:\\n\\n" "Script arguments" >> "${_static_menu}"
+
+        for i in "${_script_args[@]}" ; do
+
+          printf "    %s\\n" "$i" >> "${_static_menu}"
+
+        done
+
+      fi
 
     elif [[ -z "$_marg" ]] ; then
 
