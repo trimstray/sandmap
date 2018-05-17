@@ -397,41 +397,46 @@ function _init_cmd() {
 
   done
 
-  _script_args_tmp=()
-  _script_args_full=("--script-args")
-  _script_args_full_tmp=()
+  # shellcheck disable=SC2154
+  if [[ "$_script_args_state" == "true" ]] ; then
 
-  #shellcheck disable=SC2034
-  _IFS="$IFS"
+    _script_args_tmp=()
+    _script_args_full=("--script-args")
+    _script_args_full_tmp=()
 
-  # shellcheck disable=SC2034,SC2154
-  if [[ "${#_script_args[@]}" -ne 0 ]] ; then
+    #shellcheck disable=SC2034
+    _IFS="$IFS"
 
-    for i in "${_script_args[@]}" ; do
+    # shellcheck disable=SC2034,SC2154
+    if [[ "${#_script_args[@]}" -ne 0 ]] ; then
 
-      # shellcheck disable=SC2034
-      read -r -p "$i: " _val
+      for i in "${_script_args[@]}" ; do
 
-      if [[ ! -z "$_val" ]] ; then
+        # shellcheck disable=SC2034
+        read -r -p "$i: " _val
 
-        _script_args_tmp+=("${i}=${_val}")
+        if [[ ! -z "$_val" ]] ; then
 
-      fi
+          _script_args_tmp+=("${i}=${_val}")
 
-    done
+        fi
 
-  else
+      done
 
-    _script_args_full=()
+    else
+
+      _script_args_full=()
+
+    fi
+
+    # shellcheck disable=SC2034
+    IFS=" " read -r -a _script_args_full_tmp <<< "$(echo "${_script_args_tmp[*]}" | tr " " ",")"
+
+    _script_args_full+=("${_script_args_full_tmp[@]}")
+
+    IFS="$_IFS"
 
   fi
-
-  # shellcheck disable=SC2034
-  IFS=" " read -r -a _script_args_full_tmp <<< "$(echo "${_script_args_tmp[*]}" | tr " " ",")"
-
-  _script_args_full+=("${_script_args_full_tmp[@]}")
-
-  IFS="$_IFS"
 
   # shellcheck disable=SC2154
   if [[ "$_tor_connection" == "true" ]] ; then
@@ -463,11 +468,27 @@ function _init_cmd() {
 
     if [[ -z "$_parameters" ]] ; then
 
-      _full_command+=("nmap" "${_cmd[@]}" "${_script_args_full[@]}" "${_destination}")
+      if [[ "$_script_args_state" == "true" ]] ; then
+
+        _full_command+=("nmap" "${_cmd[@]}" "${_script_args_full[@]}" "${_destination}")
+
+      else
+
+        _full_command+=("nmap" "${_cmd[@]}" "${_destination}")
+
+      fi
 
     else
 
-      _full_command+=("nmap" "${_cmd[@]}" "${_parameters}" "${_script_args_full[@]}" "${_destination}")
+      if [[ "$_script_args_state" == "true" ]] ; then
+
+        _full_command+=("nmap" "${_cmd[@]}" "${_parameters}" "${_script_args_full[@]}" "${_destination}")
+
+      else
+
+        _full_command+=("nmap" "${_cmd[@]}" "${_parameters}" "${_destination}")
+
+      fi
 
     fi
 
