@@ -501,6 +501,8 @@ function cli_distributor() {
 
   elif [[ "${_argv[0]}" == "init" ]] ; then
 
+    _script_args_state="false"
+
     if [[ "$_in_module" -eq 1 ]] ; then
 
       _count=0
@@ -524,30 +526,84 @@ function cli_distributor() {
         if [[ "${_argv[1]}" == "$_key_id" ]] ; then
 
           _argvA=("${_argv[@]:2}")
+          _argvB=("${_argv[@]:${#_argv[@]}-1}")
 
           if [[ "${#_argvA[@]}" -eq 0 ]] ; then
+
+            for i in "${_argvB[@]}" ; do
+
+              if [[ "$i" == "--args" ]] ; then
+
+              # shellcheck disable=SC2034
+              _script_args_state="true"
+
+              fi
+
+            done
 
             _init_cmd "${_key_var}"
             _cmd_state=1
 
           else
 
-            _init_cmd "${_key_var}" "${_argvA[@]}"
+            for i in "${_argvB[@]}" ; do
+
+              if [[ "$i" == "--args" ]] ; then
+
+              # shellcheck disable=SC2034
+              _script_args_state="true"
+
+              fi
+
+            done
+
+            _argvC=("${_argvA[@]}")
+
+            unset "_argvC[${#_argvC[@]}-1]"
+
+            _init_cmd "${_key_var}" "${_argvC[@]}"
 
           fi
 
         elif [[ "${_argv[1]}" == "$_count" ]] ; then
 
           _argvA=("${_argv[@]:2}")
+          _argvB=("${_argv[@]:${#_argv[@]}-1}")
 
           if [[ "${#_argvA[@]}" -eq 0 ]] ; then
+
+            for i in "${_argvB[@]}" ; do
+
+              if [[ "$i" == "--args" ]] ; then
+
+              # shellcheck disable=SC2034
+              _script_args_state="true"
+
+              fi
+
+            done
 
             _init_cmd "${_key_var}"
             _cmd_state=1
 
           else
 
-            _init_cmd "${_key_var}" "${_argvA[@]}"
+            for i in "${_argvB[@]}" ; do
+
+              if [[ "$i" == "--args" ]] ; then
+
+              # shellcheck disable=SC2034
+              _script_args_state="true"
+
+              fi
+
+            done
+
+            _argvC=("${_argvA[@]}")
+
+            unset "_argvC[${#_argvC[@]}-1]"
+
+            _init_cmd "${_key_var}" "${_argvC[@]}"
 
           fi
 
