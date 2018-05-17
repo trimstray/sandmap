@@ -430,6 +430,8 @@ function cli_distributor() {
 
           init_module "${_argv[@]}"
 
+          _count=0
+
           for i in "${_module_commands[@]}" ; do
 
             # shellcheck disable=SC2034
@@ -439,7 +441,7 @@ function cli_distributor() {
 
             if [[ "${_argv[2]}" == "$_key_var" ]] ; then
 
-              module_show "${_argv[2]}"
+              module_show "$_key_var"
 
               printf "  \\e[1;38m%s\\e[m:\\n\\n" "Description"
 
@@ -447,13 +449,15 @@ function cli_distributor() {
 
             elif [[ "${_argv[2]}" == "$_count" ]] ; then
 
-              module_show "${_argv[2]}"
+              module_show "$_key_var"
 
               printf "  \\e[1;38m%s\\e[m:\\n\\n" "Description"
 
               printf "    %s\\n\\n" "$_key_id" | sed 's/\\n \+/\n    /g'
 
             fi
+
+            _count=$((_count + 1))
 
           done
 
@@ -474,6 +478,8 @@ function cli_distributor() {
         _in_module=1
 
         _tc=0
+        _count=0
+
         for j in "${_module_commands[@]}" ; do
 
           # shellcheck disable=SC2034
@@ -481,9 +487,17 @@ function cli_distributor() {
           # shellcheck disable=SC2034
           _key_var=$(echo "$j" | awk -v FS="(;|;)" '{print $3}')
 
-          if [[ "$_key_var" == "${_argv[1]}" ]] ; then
+          if [[ "${_argv[1]}" == "$_key_var" ]] ; then
 
-            module_show "${_argv[1]}"
+            module_show "$_key_var"
+
+            printf "  \\e[1;38m%s\\e[m:\\n\\n" "Description"
+
+            printf "    %s\\n\\n" "$_key_id" | sed 's/\\n \+/\n    /g'
+
+          elif [[ "${_argv[1]}" == "$_count" ]] ; then
+
+            module_show "$_key_var"
 
             printf "  \\e[1;38m%s\\e[m:\\n\\n" "Description"
 
@@ -494,6 +508,8 @@ function cli_distributor() {
             _tc=$((_tc + 1))
 
           fi
+
+          _count=$((_count + 1))
 
         done
 
