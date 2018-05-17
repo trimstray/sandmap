@@ -109,7 +109,8 @@ function nse_citrix() {
   _module_commands=(\
   #
   "https://nmap.org/nsedoc/scripts/citrix-brute-xml.html;\
-  ;citrix-brute-xml;--script=citrix-brute-xml" \
+  ;citrix-brute-xml;--script=citrix-brute-xml;\
+  userdb,passdb,ntdomain" \
   #
   "https://nmap.org/nsedoc/scripts/citrix-enum-apps-xml.html;\
   ;citrix-enum-apps-xml;--script=citrix-enum-apps-xml" \
