@@ -405,7 +405,7 @@ function _init_cmd() {
     for i in "${_script_args[@]}" ; do
 
       # shellcheck disable=SC2034
-      read -r -p "$i:" _val
+      read -r -p "$i: " _val
 
       if [[ ! -z "$_val" ]] ; then
 
