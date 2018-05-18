@@ -400,24 +400,24 @@ function _init_cmd() {
   # shellcheck disable=SC2154
   if [[ "$_script_args_state" == "true" ]] ; then
 
-    _script_args_tmp=()
     _script_args_full=("--script-args")
-    _script_args_full_tmp=()
+    _script_args_tmp_full=()
+    _script_args_tmp_full_x=()
 
     #shellcheck disable=SC2034
     _IFS="$IFS"
 
     # shellcheck disable=SC2034,SC2154
-    if [[ "${#_script_args[@]}" -ne 0 ]] ; then
+    if [[ "${#_script_args_tmp[@]}" -ne 0 ]] ; then
 
-      for i in "${_script_args[@]}" ; do
+      for i in "${_script_args_tmp[@]}" ; do
 
         # shellcheck disable=SC2034
         read -r -p "$i: " _val
 
         if [[ ! -z "$_val" ]] ; then
 
-          _script_args_tmp+=("${i}=${_val}")
+          _script_args_tmp_full+=("${i}=${_val}")
 
         fi
 
@@ -430,9 +430,9 @@ function _init_cmd() {
     fi
 
     # shellcheck disable=SC2034
-    IFS=" " read -r -a _script_args_full_tmp <<< "$(echo "${_script_args_tmp[*]}" | tr " " ",")"
+    IFS=" " read -r -a _script_args_tmp_full_x <<< "$(echo "${_script_args_tmp_full[*]}" | tr " " ",")"
 
-    _script_args_full+=("${_script_args_full_tmp[@]}")
+    _script_args_full+=("${_script_args_tmp_full_x[@]}")
 
     IFS="$_IFS"
 
