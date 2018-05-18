@@ -58,8 +58,10 @@ function module_show() {
     # shellcheck disable=SC2034
     _key_arg=$(echo "$_svar" | awk -v FS="(;|;)" '{print $5}')
 
+    # echo "key: $_key_arg"
+
     # shellcheck disable=SC2034
-    IFS=" " read -r -a _script_args <<< "$(sed 's/,/ /g' <<< "$_key_arg")"
+    IFS="," read -r -a _script_args <<< "$(sed 's/,\s+/???/g' <<< "$_key_arg")"
 
     if [[ "$_key_alias" == "$_marg" ]] ; then
 
@@ -82,12 +84,23 @@ function module_show() {
 
         for i in "${_script_args[@]}" ; do
 
-          # shellcheck disable=SC2034
-          _key_arg=$(echo "$i" | awk -v FS="(=)" '{print $1}')
-          # shellcheck disable=SC2034
-          _key_value=$(echo "$i" | awk -v FS="(=)" '{print $2}')
+          # shellcheck disable=SC2001
+          _tmp_script_args=$(echo "${i}" | sed 's/^ *//g' | sed 's/???/\\n/g')
 
-          printf "    %s (\\e[1;33m%s\\e[m)\\n" "$_key_arg" "$_key_value" >> "${_static_menu}"
+          if [[ "${_tmp_script_args}" == *"="* ]] ; then
+
+            _a_arg=$(echo "${_tmp_script_args}" | tr -d '"' | cut -d "=" -f1)
+            _b_arg=$(echo "${_tmp_script_args}" | tr -d '"' | cut -d "=" -f2)
+
+            printf "    %s = '\\e[1;33m%s\\e[m'\\n" "${_a_arg}" "${_b_arg}" >> "${_static_menu}"
+
+          else
+
+            _a_arg=$(echo "${_tmp_script_args}" | tr -d '"')
+
+            printf "    %s = ''\\n" "${_a_arg}" >> "${_static_menu}"
+
+          fi
 
         done
 
