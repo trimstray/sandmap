@@ -546,6 +546,9 @@ function cli_distributor() {
         # shellcheck disable=SC2034
         _key_arg=$(echo "$_scan" | awk -v FS="(;|;)" '{print $5}')
 
+        # shellcheck disable=SC2034
+        IFS="," read -r -a _script_args <<< "$(sed 's/,\s+/???/g' <<< "$_key_arg")"
+
         if [[ "${_argv[1]}" == "$_key_id" ]] ; then
 
           _argvA=("${_argv[@]:2}")
@@ -573,24 +576,28 @@ function cli_distributor() {
 
               if [[ "$i" == "--args" ]] ; then
 
-                # shellcheck disable=SC2034
-                IFS=" " read -r -a _script_args <<< "$(sed 's/,/ /g' <<< "$_key_arg")"
-
                 for j in "${_script_args[@]}" ; do
 
-                  # shellcheck disable=SC2034
-                  _key_arg_x=$(echo "$j" | awk -v FS="(=)" '{print $1}')
-                  # shellcheck disable=SC2034
-                  _key_value_x=$(echo "$j" | awk -v FS="(=)" '{print $2}')
+                  # shellcheck disable=SC2001
+                  _tmp_script_args=$(echo "${j}" | sed 's/^ *//g' | sed 's/???/\\n/g')
+
+                  if [[ "${_tmp_script_args}" == *"="* ]] ; then
+
+                    _key_arg_x=$(echo "${_tmp_script_args}" | tr -d '"' | cut -d "=" -f1)
+                    # _key_value_x=$(echo "${_tmp_script_args}" | tr -d '"' | cut -d "=" -f2)
+
+                  else
+
+                    _key_arg_x=$(echo "${_tmp_script_args}" | tr -d '"')
+
+                  fi
 
                   _script_args_tmp+=("${_key_arg_x}")
 
+                  # shellcheck disable=SC2034
+                  _script_args_state="true"
+
                 done
-
-                _script_args=("${_script_args_tmp[@]}")
-
-                # shellcheck disable=SC2034
-                _script_args_state="true"
 
               fi
 
@@ -631,24 +638,28 @@ function cli_distributor() {
 
               if [[ "$i" == "--args" ]] ; then
 
-                # shellcheck disable=SC2034
-                IFS=" " read -r -a _script_args <<< "$(sed 's/,/ /g' <<< "$_key_arg")"
-
                 for j in "${_script_args[@]}" ; do
 
-                  # shellcheck disable=SC2034
-                  _key_arg_x=$(echo "$j" | awk -v FS="(=)" '{print $1}')
-                  # shellcheck disable=SC2034
-                  _key_value_x=$(echo "$j" | awk -v FS="(=)" '{print $2}')
+                  # shellcheck disable=SC2001
+                  _tmp_script_args=$(echo "${j}" | sed 's/^ *//g' | sed 's/???/\\n/g')
+
+                  if [[ "${_tmp_script_args}" == *"="* ]] ; then
+
+                    _key_arg_x=$(echo "${_tmp_script_args}" | tr -d '"' | cut -d "=" -f1)
+                    # _key_value_x=$(echo "${_tmp_script_args}" | tr -d '"' | cut -d "=" -f2)
+
+                  else
+
+                    _key_arg_x=$(echo "${_tmp_script_args}" | tr -d '"')
+
+                  fi
 
                   _script_args_tmp+=("${_key_arg_x}")
 
+                  # shellcheck disable=SC2034
+                  _script_args_state="true"
+
                 done
-
-                _script_args=("${_script_args_tmp[@]}")
-
-                # shellcheck disable=SC2034
-                _script_args_state="true"
 
               fi
 
