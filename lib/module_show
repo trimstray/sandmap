@@ -58,8 +58,6 @@ function module_show() {
     # shellcheck disable=SC2034
     _key_arg=$(echo "$_svar" | awk -v FS="(;|;)" '{print $5}')
 
-    # echo "key: $_key_arg"
-
     # shellcheck disable=SC2034
     IFS="," read -r -a _script_args <<< "$(sed 's/,\s+/???/g' <<< "$_key_arg")"
 
