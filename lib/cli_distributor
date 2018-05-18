@@ -546,22 +546,6 @@ function cli_distributor() {
         # shellcheck disable=SC2034
         _key_arg=$(echo "$_scan" | awk -v FS="(;|;)" '{print $5}')
 
-        # shellcheck disable=SC2034
-        IFS=" " read -r -a _script_args <<< "$(sed 's/,/ /g' <<< "$_key_arg")"
-
-        for i in "${_script_args[@]}" ; do
-
-          # shellcheck disable=SC2034
-          _key_arg_x=$(echo "$i" | awk -v FS="(=)" '{print $1}')
-          # shellcheck disable=SC2034
-          _key_value_x=$(echo "$i" | awk -v FS="(=)" '{print $2}')
-
-          _script_args_tmp+=("${_key_arg_x}")
-
-        done
-
-        _script_args=("${_script_args_tmp[@]}")
-
         if [[ "${_argv[1]}" == "$_key_id" ]] ; then
 
           _argvA=("${_argv[@]:2}")
@@ -589,8 +573,24 @@ function cli_distributor() {
 
               if [[ "$i" == "--args" ]] ; then
 
-              # shellcheck disable=SC2034
-              _script_args_state="true"
+                # shellcheck disable=SC2034
+                IFS=" " read -r -a _script_args <<< "$(sed 's/,/ /g' <<< "$_key_arg")"
+
+                for j in "${_script_args[@]}" ; do
+
+                  # shellcheck disable=SC2034
+                  _key_arg_x=$(echo "$j" | awk -v FS="(=)" '{print $1}')
+                  # shellcheck disable=SC2034
+                  _key_value_x=$(echo "$j" | awk -v FS="(=)" '{print $2}')
+
+                  _script_args_tmp+=("${_key_arg_x}")
+
+                done
+
+                _script_args=("${_script_args_tmp[@]}")
+
+                # shellcheck disable=SC2034
+                _script_args_state="true"
 
               fi
 
@@ -615,8 +615,8 @@ function cli_distributor() {
 
               if [[ "$i" == "--args" ]] ; then
 
-              # shellcheck disable=SC2034
-              _script_args_state="true"
+                # shellcheck disable=SC2034
+                _script_args_state="true"
 
               fi
 
@@ -631,8 +631,24 @@ function cli_distributor() {
 
               if [[ "$i" == "--args" ]] ; then
 
-              # shellcheck disable=SC2034
-              _script_args_state="true"
+                # shellcheck disable=SC2034
+                IFS=" " read -r -a _script_args <<< "$(sed 's/,/ /g' <<< "$_key_arg")"
+
+                for j in "${_script_args[@]}" ; do
+
+                  # shellcheck disable=SC2034
+                  _key_arg_x=$(echo "$j" | awk -v FS="(=)" '{print $1}')
+                  # shellcheck disable=SC2034
+                  _key_value_x=$(echo "$j" | awk -v FS="(=)" '{print $2}')
+
+                  _script_args_tmp+=("${_key_arg_x}")
+
+                done
+
+                _script_args=("${_script_args_tmp[@]}")
+
+                # shellcheck disable=SC2034
+                _script_args_state="true"
 
               fi
 
