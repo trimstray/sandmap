@@ -36,7 +36,6 @@ function nse_snmp() {
   # shellcheck disable=SC2034
   author="trimstray"
   contact="trimstray@gmail.com"
-  version="1.0"
   description="NSE SNMP Protocol Module"
 
   # shellcheck disable=SC2034,SC2154
@@ -45,8 +44,10 @@ function nse_snmp() {
   touch "$_module_cfg"
 
   # shellcheck disable=SC2034,SC2154
-  _module_help=$(printf "%s" "
-  Module: ${module_name}
+  _module_help=$(printf "%s: \\e[1;32m%s\\e[m" "
+  Module" "${module_name}")
+
+  _module_help+=$(printf "%s" "
 
     Description
     -----------
@@ -63,7 +64,7 @@ function nse_snmp() {
       use     <module>                reuse module (changed env)
       pushd   <key>|init|show|flush   command line commands stack
       search  <key>                   search key in all commands
-      init    <alias|id>              run profile
+      init    <alias|id> [--args]     run profile
 
       Options:
 
@@ -109,7 +110,8 @@ function nse_snmp() {
   _module_commands=(\
   #
   "https://nmap.org/nsedoc/scripts/snmp-brute.html;\
-  ;snmp-brute;--script=snmp-brute" \
+  ;snmp-brute;--script=snmp-brute;\
+  \"snmp-brute.communitiesdb\"" \
   #
   "https://nmap.org/nsedoc/scripts/snmp-hh3c-logins.html;\
   ;snmp-hh3c-logins;--script=snmp-hh3c-logins" \
@@ -118,10 +120,12 @@ function nse_snmp() {
   ;snmp-info;--script=snmp-info" \
   #
   "https://nmap.org/nsedoc/scripts/snmp-interfaces.html;\
-  ;snmp-interfaces;--script=snmp-interfaces" \
+  ;snmp-interfaces;--script=snmp-interfaces;\
+  \"snmp-interfaces.host\",\"snmp-interfaces.port=161\"" \
   #
   "https://nmap.org/nsedoc/scripts/snmp-ios-config.html;\
-  ;snmp-ios-config;--script=snmp-ios-config" \
+  ;snmp-ios-config;--script=snmp-ios-config;\
+  \"snmp-ios-config.tftproot\"" \
   #
   "https://nmap.org/nsedoc/scripts/snmp-netstat.html;\
   ;snmp-netstat;--script=snmp-netstat" \
@@ -148,7 +152,6 @@ function nse_snmp() {
   # shellcheck disable=SC2034,SC2154
   _module_show=(\
       "${module_name}" \
-      "${version}" \
       "${#_module_commands[@]}" \
       "${author}" \
       "${contact}" \
