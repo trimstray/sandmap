@@ -31,7 +31,7 @@
 <p align="center">
    <a href="#description">Description</a>
  • <a href="#how-to-use">How To Use</a>
- • <a href="#cli">Command Line</a>
+ • <a href="#command-line">Command Line</a>
  • <a href="#configuration">Configuration</a>
  • <a href="#requirements">Requirements</a>
  • <a href="#modules">Modules</a>
