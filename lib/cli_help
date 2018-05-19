@@ -37,7 +37,7 @@ function cli_help() {
     reload  <modules|config>        reload all modules cache or configuration
     banner                          show banner
 
-    nmap    <nmap_params>           clear nmap command
+    nmap    <nmap_params>           pure nmap engine
 
     Options:
 
@@ -54,6 +54,7 @@ function cli_help() {
     use     <module>                reuse module (changed env)
     pushd   <key>|init|show|flush   command line commands stack (experimental)
     search  <key>                   search key in all commands
+    init    <alias|id> [--args]     run profile
 
   Examples
   --------
