@@ -36,7 +36,6 @@ function nse_smb-vuln() {
   # shellcheck disable=SC2034
   author="trimstray"
   contact="trimstray@gmail.com"
-  version="1.0"
   description="NSE SMB Protocol Vulnerability Module"
 
   # shellcheck disable=SC2034,SC2154
@@ -45,8 +44,10 @@ function nse_smb-vuln() {
   touch "$_module_cfg"
 
   # shellcheck disable=SC2034,SC2154
-  _module_help=$(printf "%s" "
-  Module: ${module_name}
+  _module_help=$(printf "%s: \\e[1;32m%s\\e[m" "
+  Module" "${module_name}")
+
+  _module_help+=$(printf "%s" "
 
     Description
     -----------
@@ -63,7 +64,7 @@ function nse_smb-vuln() {
       use     <module>                reuse module (changed env)
       pushd   <key>|init|show|flush   command line commands stack
       search  <key>                   search key in all commands
-      init    <alias|id>              run profile
+      init    <alias|id> [--args]     run profile
 
       Options:
 
@@ -115,7 +116,8 @@ function nse_smb-vuln() {
   ;smb-vuln-conficker;--script=smb-vuln-conficker" \
   #
   "https://nmap.org/nsedoc/scripts/smb-vuln-cve-2017-7494.html;\
-  ;smb-vuln-cve-2017-7494;--script=smb-vuln-cve-2017-7494" \
+  ;smb-vuln-cve-2017-7494;--script=smb-vuln-cve-2017-7494;\
+  \"smb-vuln-cve-2017-7494.check-version=false\"" \
   #
   "https://nmap.org/nsedoc/scripts/smb-vuln-cve2009-3103.html;\
   ;smb-vuln-cve2009-3103;--script=smb-vuln-cve2009-3103" \
@@ -130,13 +132,16 @@ function nse_smb-vuln() {
   ;smb-vuln-ms08-067;--script=smb-vuln-ms08-067" \
   #
   "https://nmap.org/nsedoc/scripts/smb-vuln-ms10-054.html;\
-  ;smb-vuln-ms10-054;--script=smb-vuln-ms10-054" \
+  ;smb-vuln-ms10-054;--script=smb-vuln-ms10-054;\
+  \"smb-vuln-ms10-054.share=ShareDocs\",\"unsafe\"" \
   #
   "https://nmap.org/nsedoc/scripts/smb-vuln-ms10-061.html;\
-  ;smb-vuln-ms10-061;--script=smb-vuln-ms10-061" \
+  ;smb-vuln-ms10-061;--script=smb-vuln-ms10-061;\
+  \"printer\"" \
   #
   "https://nmap.org/nsedoc/scripts/smb-vuln-ms17-010.html;\
-  ;smb-vuln-ms17-010;--script=smb-vuln-ms17-010" \
+  ;smb-vuln-ms17-010;--script=smb-vuln-ms17-010;\
+  \"smb-vuln-ms17-010.sharename=IPC$\"" \
   #
   "https://nmap.org/nsedoc/scripts/smb-vuln-regsvc-dos.html;\
   ;smb-vuln-regsvc-dos;--script=smb-vuln-regsvc-dos" \
@@ -145,7 +150,6 @@ function nse_smb-vuln() {
   # shellcheck disable=SC2034,SC2154
   _module_show=(\
       "${module_name}" \
-      "${version}" \
       "${#_module_commands[@]}" \
       "${author}" \
       "${contact}" \
