@@ -31,9 +31,10 @@
 <p align="center">
    <a href="#description">Description</a>
  • <a href="#how-to-use">How To Use</a>
- • <a href="#modules">Modules</a>
- • <a href="#configuration-file">Configuration File</a>
+ • <a href="#cli">CLI</a>
+ • <a href="#configuration">Configuration</a>
  • <a href="#requirements">Requirements</a>
+ • <a href="#modules">Modules</a>
  • <a href="#contributing">Contributing</a>
  • <a href="#project-architecture">Project Architecture</a>
  • <a href="#license">License</a>
@@ -89,14 +90,11 @@ sandmap
 > * symlink to `bin/sandmap` is placed in `/usr/local/bin`
 > * man page is placed in `/usr/local/man/man8`
 
-## Modules
+## CLI
 
-Available modules: **31**  
-Available scan profiles: **459**
+Before using the Sandmap read the <a href="https://github.com/trimstray/sandmap/wiki/CLI">CLI manual</a>.
 
-> If you want to create your own modules, take a look **[this](https://github.com/trimstray/sandmap/wiki/Modules)**.
-
-## Configuration file
+## Configuration
 
 The `etc/main.cfg` configuration file has the following structure:
 
@@ -144,6 +142,13 @@ This tool working with:
 - **Nmap** (testing on 7.70)
 
 Also you will need **root access**.
+
+## Modules
+
+Available modules: **31**  
+Available scan profiles: **459**
+
+> If you want to create your own modules, take a look **[this](https://github.com/trimstray/sandmap/wiki/Modules)**.
 
 ## Contributing
 
