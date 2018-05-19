@@ -36,7 +36,6 @@ function nse_broadcast() {
   # shellcheck disable=SC2034
   author="trimstray"
   contact="trimstray@gmail.com"
-  version="1.0"
   description="NSE Broadcast Module"
 
   # shellcheck disable=SC2034,SC2154
@@ -184,7 +183,6 @@ function nse_broadcast() {
   # shellcheck disable=SC2034,SC2154
   _module_show=(\
       "${module_name}" \
-      "${version}" \
       "${#_module_commands[@]}" \
       "${author}" \
       "${contact}" \
