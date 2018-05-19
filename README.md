@@ -52,8 +52,8 @@
 <br>
 
 <p align="center">
-    <img src="https://i.imgur.com/iy5xeB3h.gif"
-        alt="Master">
+    <img src="https://i.imgur.com/iy5xeB3.gif"
+         alt="Master">
 </p>
 
 ## Description
