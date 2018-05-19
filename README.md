@@ -64,7 +64,7 @@
 
 - simple **CLI** with the ability to run pure **Nmap engine**
 - predefined scans included in the **modules**
-- support **Nmap Scripting Engine** (NSE) with arguments
+- support **Nmap Scripting Engine** (NSE) with scripts arguments
 - **TOR** support (with proxychains)
 - multiple scans at one time
 - at this point: **31** modules with **459** scan profiles
@@ -138,10 +138,10 @@ terminal="internal"
 - [xterm](https://invisible-island.net/xterm/)
 - [proxychains](http://proxychains.sourceforge.net/)
 
-This tool has been tested on:
+This tool working with:
 
-- GNU/Linux or BSD (testing on Debian, CentOS and FreeBSD)
-- Bash (testing on 4.4.19)
+- **GNU/Linux** or **BSD** (testing on Debian, CentOS and FreeBSD)
+- **Bash** (testing on 4.4.19)
 
 Also you will need **root access**.
 
