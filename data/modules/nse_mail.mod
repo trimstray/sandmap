@@ -36,7 +36,6 @@ function nse_mail() {
   # shellcheck disable=SC2034
   author="trimstray"
   contact="trimstray@gmail.com"
-  version="1.0"
   description="NSE Mail Services Module"
 
   # shellcheck disable=SC2034,SC2154
@@ -45,8 +44,10 @@ function nse_mail() {
   touch "$_module_cfg"
 
   # shellcheck disable=SC2034,SC2154
-  _module_help=$(printf "%s" "
-  Module: ${module_name}
+  _module_help=$(printf "%s: \\e[1;32m%s\\e[m" "
+  Module" "${module_name}")
+
+  _module_help+=$(printf "%s" "
 
     Description
     -----------
@@ -63,7 +64,7 @@ function nse_mail() {
       use     <module>                reuse module (changed env)
       pushd   <key>|init|show|flush   command line commands stack
       search  <key>                   search key in all commands
-      init    <alias|id>              run profile
+      init    <alias|id> [--args]     run profile
 
       Options:
 
@@ -109,7 +110,8 @@ function nse_mail() {
   _module_commands=(\
   #
   "https://nmap.org/nsedoc/scripts/imap-brute.html;\
-  ;imap-brute;--script=imap-brute" \
+  ;imap-brute;--script=imap-brute;\
+  \"imap-brute.auth\"" \
   #
   "https://nmap.org/nsedoc/scripts/imap-capabilities.html;\
   ;imap-capabilities;--script=imap-capabilities" \
@@ -118,7 +120,8 @@ function nse_mail() {
   ;imap-ntlm-info;--script=imap-ntlm-info" \
   #
   "https://nmap.org/nsedoc/scripts/pop3-brute.html;\
-  ;pop3-brute;--script=pop3-brute" \
+  ;pop3-brute;--script=pop3-brute;\
+  \"pop3loginmethod=USER\",\"" \
   #
   "https://nmap.org/nsedoc/scripts/pop3-capabilities.html;\
   ;pop3-capabilities;--script=pop3-capabilities" \
@@ -127,37 +130,44 @@ function nse_mail() {
   ;pop3-ntlm-info;--script=pop3-ntlm-info" \
   #
   "https://nmap.org/nsedoc/scripts/smtp-brute.html;\
-  ;smtp-brute;--script=smtp-brute" \
+  ;smtp-brute;--script=smtp-brute;\
+  \"smtp-brute.auth\"" \
   #
   "https://nmap.org/nsedoc/scripts/smtp-commands.html;\
-  ;smtp-commands;--script=smtp-commands" \
+  ;smtp-commands;--script=smtp-commands;\
+  \"smtp-commands.domain\"" \
   #
   "https://nmap.org/nsedoc/scripts/smtp-enum-users.html;\
-  ;smtp-enum-users;--script=smtp-enum-users" \
+  ;smtp-enum-users;--script=smtp-enum-users;\
+  \"smtp-enum-users.domain\",\"smtp-enum-users.methods\"" \
   #
   "https://nmap.org/nsedoc/scripts/smtp-ntlm-info.html;\
   ;smtp-ntlm-info;--script=smtp-ntlm-info" \
   #
   "https://nmap.org/nsedoc/scripts/smtp-open-relay.html;\
-  ;smtp-open-relay;--script=smtp-open-relay" \
+  ;smtp-open-relay;--script=smtp-open-relay;\
+  \"smtp-open-relay.ip\",\"smtp-open-relay.to=relaytest\",\
+  \"smtp-open-relay.domain=nmap.scanme.org\",\"smtp-open-relay.from=antispam\"" \
   #
   "https://nmap.org/nsedoc/scripts/smtp-strangeport.html;\
   ;smtp-strangeport;--script=smtp-strangeport" \
   #
   "https://nmap.org/nsedoc/scripts/smtp-vuln-cve2010-4344.html;\
-  ;smtp-vuln-cve2010-4344;--script=smtp-vuln-cve2010-4344" \
+  ;smtp-vuln-cve2010-4344;--script=smtp-vuln-cve2010-4344;\
+  \"exploit.cmd\",\"smtp-vuln-cve2010-4344.mailto\",\
+  \"smtp-vuln-cve2010-4344.mailfrom\",\"smtp-vuln-cve2010-4344.exploit\"" \
   #
   "https://nmap.org/nsedoc/scripts/smtp-vuln-cve2011-1720.html;\
   ;smtp-vuln-cve2011-1720;--script=smtp-vuln-cve2011-1720" \
   #
   "https://nmap.org/nsedoc/scripts/smtp-vuln-cve2011-1764.html;\
-  ;smtp-vuln-cve2011-1764;--script=smtp-vuln-cve2011-1764" \
+  ;smtp-vuln-cve2011-1764;--script=smtp-vuln-cve2011-1764;\
+  \"smtp-vuln-cve2011-1764.mailto\",\"smtp-vuln-cve2011-1764.mailfrom\"" \
   )
 
   # shellcheck disable=SC2034,SC2154
   _module_show=(\
       "${module_name}" \
-      "${version}" \
       "${#_module_commands[@]}" \
       "${author}" \
       "${contact}" \

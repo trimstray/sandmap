@@ -36,7 +36,6 @@ function nse_other-discovery() {
   # shellcheck disable=SC2034
   author="trimstray"
   contact="trimstray@gmail.com"
-  version="1.0"
   description="NSE Other Discovery Module"
 
   # shellcheck disable=SC2034,SC2154
@@ -45,8 +44,10 @@ function nse_other-discovery() {
   touch "$_module_cfg"
 
   # shellcheck disable=SC2034,SC2154
-  _module_help=$(printf "%s" "
-  Module: ${module_name}
+  _module_help=$(printf "%s: \\e[1;32m%s\\e[m" "
+  Module" "${module_name}")
+
+  _module_help+=$(printf "%s" "
 
     Description
     -----------
@@ -63,7 +64,7 @@ function nse_other-discovery() {
       use     <module>                reuse module (changed env)
       pushd   <key>|init|show|flush   command line commands stack
       search  <key>                   search key in all commands
-      init    <alias|id>              run profile
+      init    <alias|id> [--args]     run profile
 
       Options:
 
@@ -109,19 +110,20 @@ function nse_other-discovery() {
   _module_commands=(\
   #
   "https://nmap.org/nsedoc/scripts/banner.html;\
-  ;banner;--script=banner" \
+  ;banner;--script=banner;\
+  \"banner.timeout=5s\",\"banner.ports\"" \
   #
   "https://nmap.org/nsedoc/scripts/duplicates.html;\
   ;duplicates;--script=duplicates" \
   #
   "https://nmap.org/nsedoc/scripts/lltd-discovery.html;\
-  ;lltd-discovery;--script=lltd-discovery" \
+  ;lltd-discovery;--script=lltd-discovery;\
+  \"lltd-discovery.interface\",\"lltd-discovery.timeout=30s\"" \
   )
 
   # shellcheck disable=SC2034,SC2154
   _module_show=(\
       "${module_name}" \
-      "${version}" \
       "${#_module_commands[@]}" \
       "${author}" \
       "${contact}" \

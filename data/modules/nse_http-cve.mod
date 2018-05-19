@@ -36,7 +36,6 @@ function nse_http-cve() {
   # shellcheck disable=SC2034
   author="trimstray"
   contact="trimstray@gmail.com"
-  version="1.0"
   description="NSE HTTP Vulnerability CVE Module"
 
   # shellcheck disable=SC2034,SC2154
@@ -45,8 +44,10 @@ function nse_http-cve() {
   touch "$_module_cfg"
 
   # shellcheck disable=SC2034,SC2154
-  _module_help=$(printf "%s" "
-  Module: ${module_name}
+  _module_help=$(printf "%s: \\e[1;32m%s\\e[m" "
+  Module" "${module_name}")
+
+  _module_help+=$(printf "%s" "
 
     Description
     -----------
@@ -63,7 +64,7 @@ function nse_http-cve() {
       use     <module>                reuse module (changed env)
       pushd   <key>|init|show|flush   command line commands stack
       search  <key>                   search key in all commands
-      init    <alias|id>              run profile
+      init    <alias|id> [--args]     run profile
 
       Options:
 
@@ -109,34 +110,42 @@ function nse_http-cve() {
   _module_commands=(\
   #
   "https://nmap.org/nsedoc/scripts/http-vuln-cve2006-3392.html;\
-  ;http-vuln-cve2006-3392;--script=http-vuln-cve2006-3392" \
+  ;http-vuln-cve2006-3392;--script=http-vuln-cve2006-3392;\
+  \"http-vuln-cve2006-3392.file=/etc/passwd\"" \
   #
   "https://nmap.org/nsedoc/scripts/http-vuln-cve2009-3960.html;\
-  ;http-vuln-cve2009-3960;--script=http-vuln-cve2009-3960" \
+  ;http-vuln-cve2009-3960;--script=http-vuln-cve2009-3960;\
+  \"http-vuln-cve2009-3960.root/\",\"http-vuln-cve2009-3960.readfile=/etc/passwd\"" \
   #
   "https://nmap.org/nsedoc/scripts/http-vuln-cve2010-0738.html;\
-  ;http-vuln-cve2010-0738;--script=http-vuln-cve2010-0738" \
+  ;http-vuln-cve2010-0738;--script=http-vuln-cve2010-0738;\
+  \"http-vuln-cve2010-0738.paths={\"/jmx-console/\"}\"" \
   #
   "https://nmap.org/nsedoc/scripts/http-vuln-cve2010-2861.html;\
   ;http-vuln-cve2010-2861;--script=http-vuln-cve2010-2861" \
   #
   "https://nmap.org/nsedoc/scripts/http-vuln-cve2011-3192.html;\
-  ;http-vuln-cve2011-3192;--script=http-vuln-cve2011-3192" \
+  ;http-vuln-cve2011-3192;--script=http-vuln-cve2011-3192;\
+  \"http-vuln-cve2011-3192.path\",\"http-vuln-cve2011-3192.hostname\"" \
   #
   "https://nmap.org/nsedoc/scripts/http-vuln-cve2011-3368.html;\
-  ;http-vuln-cve2011-3368;--script=http-vuln-cve2011-3368" \
+  ;http-vuln-cve2011-3368;--script=http-vuln-cve2011-3368;\
+  \"http-vuln-cve2011-3368.prefix\"" \
   #
   "https://nmap.org/nsedoc/scripts/http-vuln-cve2012-1823.html;\
-  ;http-vuln-cve2012-1823;--script=http-vuln-cve2012-1823" \
+  ;http-vuln-cve2012-1823;--script=http-vuln-cve2012-1823;\
+  \"http-vuln-cve2012-1823.uri=/index.php\",\"http-vuln-cve2012-1823.cmd=uname -a\"" \
   #
   "https://nmap.org/nsedoc/scripts/http-vuln-cve2013-0156.html;\
-  ;http-vuln-cve2013-0156;--script=http-vuln-cve2013-0156" \
+  ;http-vuln-cve2013-0156;--script=http-vuln-cve2013-0156;\
+  \"http-vuln-cve2013-0156.uri=/\"" \
   #
   "https://nmap.org/nsedoc/scripts/http-vuln-cve2013-6786.html;\
   ;http-vuln-cve2013-6786;--script=http-vuln-cve2013-6786" \
   #
   "https://nmap.org/nsedoc/scripts/http-vuln-cve2013-7091.html;\
-  ;http-vuln-cve2013-7091;--script=http-vuln-cve2013-7091" \
+  ;http-vuln-cve2013-7091;--script=http-vuln-cve2013-7091;\
+  \"http-vuln-cve2013-7091.uri=/zimbra\"" \
   #
   "https://nmap.org/nsedoc/scripts/http-vuln-cve2014-2126.html;\
   ;http-vuln-cve2014-2126;--script=http-vuln-cve2014-2126" \
@@ -151,34 +160,41 @@ function nse_http-cve() {
   ;http-vuln-cve2014-2129;--script=http-vuln-cve2014-2129" \
   #
   "https://nmap.org/nsedoc/scripts/http-vuln-cve2014-3704.html;\
-  ;http-vuln-cve2014-3704;--script=http-vuln-cve2014-3704" \
+  ;http-vuln-cve2014-3704;--script=http-vuln-cve2014-3704;\
+  \"http-vuln-cve2014-3704.uri=/\",\"http-vuln-cve2014-3704.cmd\",\
+  \"http-vuln-cve2014-3704.cleanup=true\"" \
   #
   "https://nmap.org/nsedoc/scripts/http-vuln-cve2014-8877.html;\
-  ;http-vuln-cve2014-8877;--script=http-vuln-cve2014-8877" \
+  ;http-vuln-cve2014-8877;--script=http-vuln-cve2014-8877;\
+  \"http-vuln-cve2014-8877.cmd\",\"http-vuln-cve2014-8877.uri=/\"" \
   #
   "https://nmap.org/nsedoc/scripts/http-vuln-cve2015-1427.html;\
-  ;http-vuln-cve2015-1427;--script=http-vuln-cve2015-1427" \
+  ;http-vuln-cve2015-1427;--script=http-vuln-cve2015-1427;\
+  \"command\",\"invasive\"" \
   #
   "https://nmap.org/nsedoc/scripts/http-vuln-cve2015-1635.html;\
-  ;http-vuln-cve2015-1635;--script=http-vuln-cve2015-1635" \
+  ;http-vuln-cve2015-1635;--script=http-vuln-cve2015-1635;\
+  \"http-vuln-cve2015-1635.uri=/\"" \
   #
   "https://nmap.org/nsedoc/scripts/http-vuln-cve2017-1001000.html;\
-  ;http-vuln-cve2017-1001000;--script=http-vuln-cve2017-1001000" \
+  ;http-vuln-cve2017-1001000;--script=http-vuln-cve2017-1001000;\
+  \"http-vuln-cve2017-1001000.uri=/\"" \
   #
   "https://nmap.org/nsedoc/scripts/http-vuln-cve2017-5638.html;\
-  ;http-vuln-cve2017-5638;--script=http-vuln-cve2017-5638" \
+  ;http-vuln-cve2017-5638;--script=http-vuln-cve2017-5638;\
+  \"http-vuln-cve2017-5638.path=/\",\"http-vuln-cve2017-5638.method=GET\"" \
   #
   "https://nmap.org/nsedoc/scripts/http-vuln-cve2017-5689.html;\
   ;http-vuln-cve2017-5689;--script=http-vuln-cve2017-5689" \
   #
   "https://nmap.org/nsedoc/scripts/http-vuln-cve2017-8917.html;\
-  ;http-vuln-cve2017-8917;--script=http-vuln-cve2017-8917" \
+  ;http-vuln-cve2017-8917;--script=http-vuln-cve2017-8917;\
+  \"http-vuln-cve2017-8917.uri\"" \
   )
 
   # shellcheck disable=SC2034,SC2154
   _module_show=(\
       "${module_name}" \
-      "${version}" \
       "${#_module_commands[@]}" \
       "${author}" \
       "${contact}" \

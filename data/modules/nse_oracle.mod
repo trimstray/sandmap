@@ -36,7 +36,6 @@ function nse_oracle() {
   # shellcheck disable=SC2034
   author="trimstray"
   contact="trimstray@gmail.com"
-  version="1.0"
   description="NSE Oracle Services Module"
 
   # shellcheck disable=SC2034,SC2154
@@ -45,8 +44,10 @@ function nse_oracle() {
   touch "$_module_cfg"
 
   # shellcheck disable=SC2034,SC2154
-  _module_help=$(printf "%s" "
-  Module: ${module_name}
+  _module_help=$(printf "%s: \\e[1;32m%s\\e[m" "
+  Module" "${module_name}")
+
+  _module_help+=$(printf "%s" "
 
     Description
     -----------
@@ -63,7 +64,7 @@ function nse_oracle() {
       use     <module>                reuse module (changed env)
       pushd   <key>|init|show|flush   command line commands stack
       search  <key>                   search key in all commands
-      init    <alias|id>              run profile
+      init    <alias|id> [--args]     run profile
 
       Options:
 
@@ -109,16 +110,21 @@ function nse_oracle() {
   _module_commands=(\
   #
   "https://nmap.org/nsedoc/scripts/oracle-brute-stealth.html;\
-  ;oracle-brute-stealth;--script=oracle-brute-stealth" \
+  ;oracle-brute-stealth;--script=oracle-brute-stealth;\
+  \"oracle-brute-stealth.johnfile\",\"oracle-brute-stealth.accounts\",\
+  \"oracle-brute-stealth.sid\",\"oracle-brute-stealth.nodefault\"" \
   #
   "https://nmap.org/nsedoc/scripts/oracle-brute.html;\
-  ;oracle-brute;--script=oracle-brute" \
+  ;oracle-brute;--script=oracle-brute;\
+  \"oracle-brute.sid\",\"oracle-brute.nodefault\"" \
   #
   "https://nmap.org/nsedoc/scripts/oracle-enum-users.html;\
-  ;oracle-enum-users;--script=oracle-enum-users" \
+  ;oracle-enum-users;--script=oracle-enum-users;\
+  \"oracle-enum-users.sid\"" \
   #
   "https://nmap.org/nsedoc/scripts/oracle-sid-brute.html;\
-  ;oracle-sid-brute;--script=oracle-sid-brute" \
+  ;oracle-sid-brute;--script=oracle-sid-brute;\
+  \"oraclesids\"" \
   #
   "https://nmap.org/nsedoc/scripts/oracle-tns-version.html;\
   ;oracle-tns-version;--script=oracle-tns-version" \
@@ -130,7 +136,6 @@ function nse_oracle() {
   # shellcheck disable=SC2034,SC2154
   _module_show=(\
       "${module_name}" \
-      "${version}" \
       "${#_module_commands[@]}" \
       "${author}" \
       "${contact}" \
