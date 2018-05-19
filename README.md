@@ -34,7 +34,6 @@
  • <a href="#modules">Modules</a>
  • <a href="#configuration-file">Configuration File</a>
  • <a href="#requirements">Requirements</a>
- • <a href="#logging">Logging</a>
  • <a href="#contributing">Contributing</a>
  • <a href="#project-architecture">Project Architecture</a>
  • <a href="#license">License</a>
@@ -145,13 +144,6 @@ This tool working with:
 - **Nmap** (testing on 7.70)
 
 Also you will need **root access**.
-
-## Logging
-
-After running the script, the `log/` directory is created and in it the following files with logs:
-
-* `<script_name>.<date>.log` - all `_logger()` function calls are saved in it
-* `stdout.log` - a standard output and errors from the `_init_cmd()` function are written in it. If you want to redirect the output from command, use the following structure: `your_command >>"$_log_stdout" 2>&1 &`
 
 ## Contributing
 
