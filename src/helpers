@@ -410,16 +410,30 @@ function _init_cmd() {
     # shellcheck disable=SC2034,SC2154
     if [[ "${#_script_args_tmp[@]}" -ne 0 ]] ; then
 
+      _count=0
       for i in "${_script_args_tmp[@]}" ; do
 
+        if [[ -z "${_script_value_tmp[$_count]}" ]] ; then
+
+          _x_value=""
+
+        else
+
+          _x_value="${_script_value_tmp[$_count]}"
+
+        fi
+
         # shellcheck disable=SC2034
-        read -r -p "$i: " _val
+        printf "%s (\\e[1;33m%s\\e[m): " "${i}" "${_x_value}"
+        read -r _val
 
         if [[ ! -z "$_val" ]] ; then
 
           _script_args_tmp_full+=("${i}=${_val}")
 
         fi
+
+        _count=$((_count +1))
 
       done
 

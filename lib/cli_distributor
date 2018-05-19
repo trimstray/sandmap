@@ -584,15 +584,17 @@ function cli_distributor() {
                   if [[ "${_tmp_script_args}" == *"="* ]] ; then
 
                     _key_arg_x=$(echo "${_tmp_script_args}" | tr -d '"' | cut -d "=" -f1)
-                    # _key_value_x=$(echo "${_tmp_script_args}" | tr -d '"' | cut -d "=" -f2)
+                    _key_value_x=$(echo "${_tmp_script_args}" | tr -d '"' | cut -d "=" -f2)
 
                   else
 
                     _key_arg_x=$(echo "${_tmp_script_args}" | tr -d '"')
+                    _key_value_x=""
 
                   fi
 
                   _script_args_tmp+=("${_key_arg_x}")
+                  _script_value_tmp+=("${_key_value_x}")
 
                   # shellcheck disable=SC2034
                   _script_args_state="true"
@@ -646,15 +648,17 @@ function cli_distributor() {
                   if [[ "${_tmp_script_args}" == *"="* ]] ; then
 
                     _key_arg_x=$(echo "${_tmp_script_args}" | tr -d '"' | cut -d "=" -f1)
-                    # _key_value_x=$(echo "${_tmp_script_args}" | tr -d '"' | cut -d "=" -f2)
+                    _key_value_x=$(echo "${_tmp_script_args}" | tr -d '"' | cut -d "=" -f2)
 
                   else
 
                     _key_arg_x=$(echo "${_tmp_script_args}" | tr -d '"')
+                    _key_value_x=""
 
                   fi
 
                   _script_args_tmp+=("${_key_arg_x}")
+                  _script_value_tmp+=("${_key_value_x}")
 
                   # shellcheck disable=SC2034
                   _script_args_state="true"
