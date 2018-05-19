@@ -47,7 +47,8 @@ function nse_broadcast() {
   _module_help=$(printf "%s: \\e[1;32m%s\\e[m" "
   Module" "${module_name}")
 
-  _module_help+=$(printf "\\n%s" "
+  _module_help+=$(printf "%s" "
+
     Description
     -----------
 
