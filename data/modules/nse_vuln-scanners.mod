@@ -36,7 +36,6 @@ function nse_vuln-scanners() {
   # shellcheck disable=SC2034
   author="trimstray"
   contact="trimstray@gmail.com"
-  version="1.0"
   description="NSE Vulnerability Scanners Module"
 
   # shellcheck disable=SC2034,SC2154
@@ -45,8 +44,10 @@ function nse_vuln-scanners() {
   touch "$_module_cfg"
 
   # shellcheck disable=SC2034,SC2154
-  _module_help=$(printf "%s" "
-  Module: ${module_name}
+  _module_help=$(printf "%s: \\e[1;32m%s\\e[m" "
+  Module" "${module_name}")
+
+  _module_help+=$(printf "%s" "
 
     Description
     -----------
@@ -63,7 +64,7 @@ function nse_vuln-scanners() {
       use     <module>                reuse module (changed env)
       pushd   <key>|init|show|flush   command line commands stack
       search  <key>                   search key in all commands
-      init    <alias|id>              run profile
+      init    <alias|id> [--args]     run profile
 
       Options:
 
@@ -112,7 +113,8 @@ function nse_vuln-scanners() {
   ;nessus-brute;--script=nessus-brute" \
   #
   "https://nmap.org/nsedoc/scripts/nessus-xmlrpc-brute.html;\
-  ;nessus-xmlrpc-brute;--script=nessus-xmlrpc-brute" \
+  ;nessus-xmlrpc-brute;--script=nessus-xmlrpc-brute;\
+  \"nessus-xmlrpc-brute.timeout=5s\",\"nessus-xmlrpc-brute.threads\"" \
   #
   "https://nmap.org/nsedoc/scripts/nexpose-brute.html;\
   ;nexpose-brute;--script=nexpose-brute" \
@@ -124,16 +126,17 @@ function nse_vuln-scanners() {
   ;omp2-enum-targets;--script=omp2-enum-targets" \
   #
   "https://nmap.org/nsedoc/scripts/openvas-otp-brute.html;\
-  ;openvas-otp-brute;--script=openvas-otp-brute" \
+  ;openvas-otp-brute;--script=openvas-otp-brute;\
+  \"openvas-otp-brute.threads=4\"" \
   #
   "https://nmap.org/nsedoc/scripts/shodan-api.html;\
-  ;shodan-api;--script=shodan-api" \
+  ;shodan-api;--script=shodan-api;\
+  \"shodan-api.target\",\"shodan-api.apikey\",\"shodan-api.outfile\"" \
   )
 
   # shellcheck disable=SC2034,SC2154
   _module_show=(\
       "${module_name}" \
-      "${version}" \
       "${#_module_commands[@]}" \
       "${author}" \
       "${contact}" \
