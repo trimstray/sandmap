@@ -411,6 +411,7 @@ function _init_cmd() {
     if [[ "${#_script_args_tmp[@]}" -ne 0 ]] ; then
 
       _count=0
+
       for i in "${_script_args_tmp[@]}" ; do
 
         if [[ -z "${_script_value_tmp[$_count]}" ]] ; then
@@ -429,13 +430,16 @@ function _init_cmd() {
 
         if [[ ! -z "$_val" ]] ; then
 
-          _script_args_tmp_full+=("${i}=${_val}")
+          _x_val=$(echo "${_val}" | tr " " "???")
+          _script_args_tmp_full+=("${i}=\"${_x_val}\"")
 
         fi
 
         _count=$((_count +1))
 
       done
+
+      _script_args_tmp=()
 
     else
 
@@ -444,7 +448,7 @@ function _init_cmd() {
     fi
 
     # shellcheck disable=SC2034
-    IFS=" " read -r -a _script_args_tmp_full_x <<< "$(echo "${_script_args_tmp_full[*]}" | tr " " ",")"
+    IFS=" " read -r -a _script_args_tmp_full_x <<< "$(echo "${_script_args_tmp_full[*]}" | tr " " "," | tr "???" " ")"
 
     _script_args_full+=("${_script_args_tmp_full_x[@]}")
 
