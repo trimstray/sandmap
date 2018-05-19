@@ -36,7 +36,6 @@ function nse_external() {
   # shellcheck disable=SC2034
   author="trimstray"
   contact="trimstray@gmail.com"
-  version="1.0"
   description="NSE External scripts (eg. from github)"
 
   # shellcheck disable=SC2034,SC2154
@@ -45,8 +44,10 @@ function nse_external() {
   touch "$_module_cfg"
 
   # shellcheck disable=SC2034,SC2154
-  _module_help=$(printf "%s" "
-  Module: ${module_name}
+  _module_help=$(printf "%s: \\e[1;32m%s\\e[m" "
+  Module" "${module_name}")
+
+  _module_help+=$(printf "%s" "
 
     Description
     -----------
@@ -63,7 +64,7 @@ function nse_external() {
       use     <module>                reuse module (changed env)
       pushd   <key>|init|show|flush   command line commands stack
       search  <key>                   search key in all commands
-      init    <alias|id>              run profile
+      init    <alias|id> [--args]     run profile
 
       Options:
 
@@ -109,16 +110,21 @@ function nse_external() {
   _module_commands=(\
   #
   "https://github.com/vulnersCom/nmap-vulners;\
-  ;vulners-script;--script=${_nse}/vulners/vulners.nse" \
+  ;vulners-script;--script=${_nse}/vulners/vulners.nse;\
+  \"mincvss\"" \
   #
   "https://github.com/scipag/vulscan;\
-  ;vulscan-script;--script=${_nse}/vulscan/vulscan.nse" \
+  ;vulscan-script;--script=${_nse}/vulscan/vulscan.nse;\
+  \"vulscandb\"" \
   #
   "https://github.com/s4n7h0/NSE;\
-  ;http-nikto-scan;--script=${_nse}/s4n7h0/http-nikto-scan.nse" \
+  ;http-nikto-scan;--script=${_nse}/s4n7h0/http-nikto-scan.nse;\
+  \"http-nikto-scan.display=off\"" \
   #
   "https://github.com/s4n7h0/NSE;\
-  ;http-shellshock;--script=${_nse}/s4n7h0/http-shellshock.nse" \
+  ;http-shellshock;--script=${_nse}/s4n7h0/http-shellshock.nse;\
+  \"http-shockshock.depth=20\",\"http-shockshock.cookie\",\
+  \"http-shellshock.startpath=/\",\"http-shellshock.uri\"" \
   #
   "https://github.com/scipag/httprecon-nse;\
   ;httprecon-nse;--script=${_nse}/httprecon-nse/httprecon.nse" \
@@ -130,7 +136,6 @@ function nse_external() {
   # shellcheck disable=SC2034,SC2154
   _module_show=(\
       "${module_name}" \
-      "${version}" \
       "${#_module_commands[@]}" \
       "${author}" \
       "${contact}" \
