@@ -64,8 +64,7 @@
 
 - simple **CLI** with the ability to run pure **Nmap engine**
 - predefined scans included in the **modules**
-- support **Nmap Scripting Engine** (NSE)
-- support NSE **scripts arguments**
+- support **Nmap Scripting Engine** (NSE) with arguments
 - **TOR** support (with proxychains)
 - multiple scans at one time
 - at this point: **31** modules with **459** scan profiles
@@ -93,7 +92,7 @@ sandmap
 
 ## Modules
 
-Available modules: **31**
+Available modules: **31**  
 Available scan profiles: **459**
 
 > If you want to create your own modules, take a look **[this](https://github.com/trimstray/sandmap/wiki/Modules)**.
