@@ -36,7 +36,6 @@ function nse_hadoop() {
   # shellcheck disable=SC2034
   author="trimstray"
   contact="trimstray@gmail.com"
-  version="1.0"
   description="NSE Hadoop Services Module"
 
   # shellcheck disable=SC2034,SC2154
@@ -45,8 +44,10 @@ function nse_hadoop() {
   touch "$_module_cfg"
 
   # shellcheck disable=SC2034,SC2154
-  _module_help=$(printf "%s" "
-  Module: ${module_name}
+  _module_help=$(printf "%s: \\e[1;32m%s\\e[m" "
+  Module" "${module_name}")
+
+  _module_help+=$(printf "%s" "
 
     Description
     -----------
@@ -63,7 +64,7 @@ function nse_hadoop() {
       use     <module>                reuse module (changed env)
       pushd   <key>|init|show|flush   command line commands stack
       search  <key>                   search key in all commands
-      init    <alias|id>              run profile
+      init    <alias|id> [--args]     run profile
 
       Options:
 
@@ -112,7 +113,8 @@ function nse_hadoop() {
   ;hadoop-datanode-info;--script=hadoop-datanode-info" \
   #
   "https://nmap.org/nsedoc/scripts/hadoop-jobtracker-info.html;\
-  ;hadoop-jobtracker-info;--script=hadoop-jobtracker-info" \
+  ;hadoop-jobtracker-info;--script=hadoop-jobtracker-info;\
+  \"hadoop-jobtracker-info.userinfo=false\"" \
   #
   "https://nmap.org/nsedoc/scripts/hadoop-namenode-info.html;\
   ;hadoop-namenode-info;--script=hadoop-namenode-info" \
@@ -133,7 +135,6 @@ function nse_hadoop() {
   # shellcheck disable=SC2034,SC2154
   _module_show=(\
       "${module_name}" \
-      "${version}" \
       "${#_module_commands[@]}" \
       "${author}" \
       "${contact}" \
