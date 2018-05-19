@@ -53,7 +53,7 @@
 
 <p align="center">
     <img src="https://i.imgur.com/iy5xeB3.gif"
-         alt="Master">
+        alt="Master">
 </p>
 
 ## Description
