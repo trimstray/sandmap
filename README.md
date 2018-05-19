@@ -52,7 +52,7 @@
 <br>
 
 <p align="center">
-    <img src="/doc/img/Sandmap_v1.2.0.gif?raw=true"
+    <img src="/doc/img/sandmap_v1.2.0.gif?raw=true"
          alt="Master">
 </p>
 
