@@ -52,7 +52,7 @@
 <br>
 
 <p align="center">
-    <img src="https://i.imgur.com/OvJ11kP.gif"
+    <img src="https://i.imgur.com/iy5xeB3h.gif"
         alt="Master">
 </p>
 
@@ -142,6 +142,7 @@ This tool working with:
 
 - **GNU/Linux** or **BSD** (testing on Debian, CentOS and FreeBSD)
 - **Bash** (testing on 4.4.19)
+- **Nmap** (testing on 7.70)
 
 Also you will need **root access**.
 
