@@ -184,7 +184,7 @@ function nse_databases() {
   #
   "https://nmap.org/nsedoc/scripts/mysql-brute.html;\
   ;mysql-brute;--script=mysql-brute;\
-  \"mysql-brute.timeout=5\"" \
+  \"mysql-brute.timeout=5s\"" \
   #
   "https://nmap.org/nsedoc/scripts/mysql-databases.html;\
   ;mysql-databases;--script=mysql-databases;\
@@ -199,7 +199,7 @@ function nse_databases() {
   #
   "https://nmap.org/nsedoc/scripts/mysql-enum.html;\
   ;mysql-enum;--script=mysql-enum;\
-  \"mysql-enum.timeout=5\"" \
+  \"mysql-enum.timeout=5s\"" \
   #
   "https://nmap.org/nsedoc/scripts/mysql-info.html;\
   ;mysql-info;--script=mysql-info" \
@@ -220,7 +220,7 @@ function nse_databases() {
   "https://nmap.org/nsedoc/scripts/mysql-vuln-cve2012-2122.html;\
   ;mysql-vuln-cve2012-2122;--script=mysql-vuln-cve2012-2122;\
   \"mysql-vuln-cve2012-2122.pass=nmapFTW\",\"mysql-vuln-cve2012-2122.user=root\",\
-  \"mysql-vuln-cve2012-2122.iterations=1500\",\"mysql-vuln-cve2012-2122.socket_timeout=5\"" \
+  \"mysql-vuln-cve2012-2122.iterations=1500\",\"mysql-vuln-cve2012-2122.socket_timeout=5s\"" \
   #
   "https://nmap.org/nsedoc/scripts/pgsql-brute.html;\
   ;pgsql-brute;--script=pgsql-brute;\
