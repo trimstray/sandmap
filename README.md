@@ -7,8 +7,8 @@
     <img src="https://img.shields.io/badge/Branch-master-green.svg"
         alt="Branch">
   </a>
-  <a href="https://img.shields.io/badge/Version-v1.1.1-lightgrey.svg">
-    <img src="https://img.shields.io/badge/Version-v1.1.1-lightgrey.svg"
+  <a href="https://img.shields.io/badge/Version-v1.2.0-lightgrey.svg">
+    <img src="https://img.shields.io/badge/Version-v1.2.0-lightgrey.svg"
         alt="Version">
   </a>
   <a href="https://img.shields.io/badge/Modules-31-red.svg">
@@ -58,13 +58,14 @@
 
 ## Description
 
-**Sandmap** is a tool supporting network and system reconnaissance using the massive **Nmap engine**. It provides a user-friendly interface, automates and speeds up scanning and allows you to easily use many advanced scanning techniques.
+**<u>Sandmap</u>** is a tool supporting network and system reconnaissance using the massive **Nmap engine**. It provides a user-friendly interface, automates and speeds up scanning and allows you to easily use many advanced scanning techniques.
 
 ### Key Features
 
 - simple **CLI** with the ability to run pure **Nmap engine**
 - predefined scans included in the **modules**
 - support **Nmap Scripting Engine** (NSE)
+- support NSE **scripts arguments**
 - **TOR** support (with proxychains)
 - multiple scans at one time
 - at this point: **31** modules with **459** scan profiles
@@ -92,7 +93,7 @@ sandmap
 
 ## Modules
 
-Available modules: **31**  
+Available modules: **31**
 Available scan profiles: **459**
 
 > If you want to create your own modules, take a look **[this](https://github.com/trimstray/sandmap/wiki/Modules)**.
@@ -132,14 +133,18 @@ terminal="internal"
 
 ## Requirements
 
-- You will need Bash (testing on 4.4.19)
-- Root access
-
 **<u>Sandmap</u>** uses external utilities to be installed before running:
 
 - [nmap](https://nmap.org/)
 - [xterm](https://invisible-island.net/xterm/)
 - [proxychains](http://proxychains.sourceforge.net/)
+
+This tool has been tested on:
+
+- GNU/Linux or BSD (testing on Debian, CentOS and FreeBSD)
+- Bash (testing on 4.4.19)
+
+Also you will need **root access**.
 
 ## Logging
 
