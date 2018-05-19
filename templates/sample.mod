@@ -36,7 +36,6 @@ function sample() {
   # shellcheck disable=SC2034
   author=""
   contact=""
-  version=""
   description="Sample module template"
 
   # shellcheck disable=SC2034,SC2154
@@ -45,13 +44,15 @@ function sample() {
   touch "$_module_cfg"
 
   # shellcheck disable=SC2034,SC2154
-  _module_help=$(printf "%s" "
-  Module: ${module_name}
+  _module_help=$(printf "%s: \\e[1;32m%s\\e[m" "
+  Module" "${module_name}")
+
+  _module_help+=$(printf "%s" "
 
     Description
     -----------
 
-      Zenmap predefined commands.
+      Sample predefined commands.
 
     Commands
     --------
@@ -63,7 +64,7 @@ function sample() {
       use     <module>                reuse module (changed env)
       pushd   <key>|init|show|flush   command line commands stack
       search  <key>                   search key in all commands
-      init    <alias|id>              run profile
+      init    <alias|id> [--args]     run profile
 
       Options:
 
