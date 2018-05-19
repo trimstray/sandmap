@@ -36,7 +36,6 @@ function nse_smb() {
   # shellcheck disable=SC2034
   author="trimstray"
   contact="trimstray@gmail.com"
-  version="1.0"
   description="NSE SMB Protocol Module"
 
   # shellcheck disable=SC2034,SC2154
@@ -45,8 +44,10 @@ function nse_smb() {
   touch "$_module_cfg"
 
   # shellcheck disable=SC2034,SC2154
-  _module_help=$(printf "%s" "
-  Module: ${module_name}
+  _module_help=$(printf "%s: \\e[1;32m%s\\e[m" "
+  Module" "${module_name}")
+
+  _module_help+=$(printf "%s" "
 
     Description
     -----------
@@ -63,7 +64,7 @@ function nse_smb() {
       use     <module>                reuse module (changed env)
       pushd   <key>|init|show|flush   command line commands stack
       search  <key>                   search key in all commands
-      init    <alias|id>              run profile
+      init    <alias|id> [--args]     run profile
 
       Options:
 
@@ -109,7 +110,8 @@ function nse_smb() {
   _module_commands=(\
   #
   "https://nmap.org/nsedoc/scripts/smb-brute.html;\
-  ;smb-brute;--script=smb-brute" \
+  ;smb-brute;--script=smb-brute;\
+  \"smblockout\",\"canaries=3\",\"brutelimit=5000\"" \
   #
   "https://nmap.org/nsedoc/scripts/smb-double-pulsar-backdoor.html;\
   ;smb-double-pulsar-backdoor;--script=smb-double-pulsar-backdoor" \
@@ -133,28 +135,36 @@ function nse_smb() {
   ;smb-enum-shares;--script=smb-enum-shares" \
   #
   "https://nmap.org/nsedoc/scripts/smb-enum-users.html;\
-  ;smb-enum-users;--script=smb-enum-users" \
+  ;smb-enum-users;--script=smb-enum-users;\
+  \"samronly\",\"lsaonly\"" \
   #
   "https://nmap.org/nsedoc/scripts/smb-flood.html;\
   ;smb-flood;--script=smb-flood" \
   #
   "https://nmap.org/nsedoc/scripts/smb-ls.html;\
-  ;smb-ls;--script=smb-ls" \
+  ;smb-ls;--script=smb-ls;\
+  \"smb-ls.path=/\",\"smb-ls.pattern=*\",\"smb-ls.share(s)\",\
+  \"smb-ls.checksum=false\"" \
   #
   "https://nmap.org/nsedoc/scripts/smb-mbenum.html;\
-  ;smb-mbenum;--script=smb-mbenum" \
+  ;smb-mbenum;--script=smb-mbenum;\
+  \"smb-mbenum.format=3\",\"smb-mbenum.domain\",\
+  \"smb-mbenum.filter\"" \
   #
   "https://nmap.org/nsedoc/scripts/smb-os-discovery.html;\
   ;smb-os-discovery;--script=smb-os-discovery" \
   #
   "https://nmap.org/nsedoc/scripts/smb-print-text.html;\
-  ;smb-print-text;--script=smb-print-text" \
+  ;smb-print-text;--script=smb-print-text;\
+  \"text\",\"filename\",\"printer\"" \
   #
   "https://nmap.org/nsedoc/scripts/smb-protocols.html;\
   ;smb-protocols;--script=smb-protocols" \
   #
   "https://nmap.org/nsedoc/scripts/smb-psexec.html;\
-  ;smb-psexec;--script=smb-psexec" \
+  ;smb-psexec;--script=smb-psexec;\
+  \"nohide\",\"cleanup\",\"nocipher\",\"sharepath\",\
+  \"config\",\"time=15s\",\"nocleanup\",\"key\",\"share\"" \
   #
   "https://nmap.org/nsedoc/scripts/smb-security-mode.html;\
   ;smb-security-mode;--script=smb-security-mode" \
@@ -175,13 +185,13 @@ function nse_smb() {
   ;smb2-time;--script=smb2-time" \
   #
   "https://nmap.org/nsedoc/scripts/smb2-vuln-uptime.html;\
-  ;smb2-vuln-uptime;--script=smb2-vuln-uptime" \
+  ;smb2-vuln-uptime;--script=smb2-vuln-uptime;\
+  \"smb2-vuln-uptime.skip-os\"" \
   )
 
   # shellcheck disable=SC2034,SC2154
   _module_show=(\
       "${module_name}" \
-      "${version}" \
       "${#_module_commands[@]}" \
       "${author}" \
       "${contact}" \
