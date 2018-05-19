@@ -111,14 +111,14 @@ function nse_broadcast() {
   #
   "https://nmap.org/nsedoc/scripts/broadcast-avahi-dos.html;\
   ;broadcast-avahi-dos;--script=broadcast-avahi-dos;\
-  \"broadcast-avahi-dos.wait=20\"" \
+  \"broadcast-avahi-dos.wait=20s\"" \
   #
   "https://nmap.org/nsedoc/scripts/broadcast-db2-discover.html;\
   ;broadcast-db2-discover;--script=db2-discover" \
   #
   "https://nmap.org/nsedoc/scripts/broadcast-dhcp-discover.html;\
   ;broadcast-dhcp-discover;--script=broadcast-dhcp-discover;\
-  \"broadcast-dhcp-discover.timeout=10\"" \
+  \"broadcast-dhcp-discover.timeout=10s\"" \
   #
   "https://nmap.org/nsedoc/scripts/broadcast-dhcp6-discover.html;\
   ;broadcast-dhcp6-discover;--script=broadcast-dhcp6-discover -6" \
@@ -132,16 +132,16 @@ function nse_broadcast() {
   "https://nmap.org/nsedoc/scripts/broadcast-eigrp-discovery.html;\
   ;broadcast-eigrp-discovery;--script=broadcast-eigrp-discovery;\
   \"broadcast-eigrp-discovery.kparams=101000\",\"broadcast-eigrp-discovery.as=224.0.0.10\",\
-  \"broadcast-eigrp-discovery.interface\",\"broadcast-eigrp-discovery.timeout=10\"" \
+  \"broadcast-eigrp-discovery.interface\",\"broadcast-eigrp-discovery.timeout=10s\"" \
   #
   "https://nmap.org/nsedoc/scripts/broadcast-igmp-discovery.html;\
   ;broadcast-igmp-discovery;--script=broadcast-igmp-discovery;\
   \"broadcast-igmp-discovery.mgroupnamesdb\",\"broadcast-igmp-discovery.version=2\",\
-  \"broadcast-igmp-discovery.timeout=5\",\"broadcast-igmp-discovery.interface\"" \
+  \"broadcast-igmp-discovery.timeout=5s\",\"broadcast-igmp-discovery.interface\"" \
   #
   "https://nmap.org/nsedoc/scripts/broadcast-listener.html;\
   ;broadcast-listener;--script=broadcast-listener;\
-  \"broadcast-listener.timeout=30\"" \
+  \"broadcast-listener.timeout=30s\"" \
   #
   "https://nmap.org/nsedoc/scripts/broadcast-ms-sql-discover.html;\
   ;broadcast-ms-sql-discover;--script=broadcast-ms-sql-discover" \
@@ -155,11 +155,11 @@ function nse_broadcast() {
   "https://nmap.org/nsedoc/scripts/broadcast-ospf2-discover.html;\
   ;broadcast-ospf2-discover;--script=broadcast-ospf2-discover;\
   \"broadcast-ospf2-discover.md5_key\",\"broadcast-ospf2-discover.router_id=0.0.0.1\",\
-  \"broadcast-ospf2-discover.timeout=10\",\"broadcast-ospf2-discover.interface\"" \
+  \"broadcast-ospf2-discover.timeout=10s\",\"broadcast-ospf2-discover.interface\"" \
   #
   "https://nmap.org/nsedoc/scripts/broadcast-ping.html;\
   ;broadcast-ping;--script=broadcast-ping;\
-  \"broadcast-ping.timeout=3\",\"broadcast-ping.num_probes=1\"\
+  \"broadcast-ping.timeout=3s\",\"broadcast-ping.num_probes=1\"\
   \"broadcast-ping.interface\"" \
   #
   "https://nmap.org/nsedoc/scripts/broadcast-pppoe-discover.html;\
@@ -167,11 +167,11 @@ function nse_broadcast() {
   #
   "https://nmap.org/nsedoc/scripts/broadcast-rip-discover.html;\
   ;broadcast-rip-discover;--script=broadcast-rip-discover;\
-  \"broadcast-rip-discover.timeout=5\"" \
+  \"broadcast-rip-discover.timeout=5s\"" \
   #
   "https://nmap.org/nsedoc/scripts/broadcast-ripng-discover.html;\
   ;broadcast-ripng-discover;--script=broadcast-ripng-discover;\
-  \"broadcast-ripng-discover.timeout=5\"" \
+  \"broadcast-ripng-discover.timeout=5s\"" \
   #
   "https://nmap.org/nsedoc/scripts/broadcast-upnp-info.html;\
   ;broadcast-upnp-info;--script=broadcast-upnp-info" \
