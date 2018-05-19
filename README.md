@@ -31,7 +31,7 @@
 <p align="center">
    <a href="#description">Description</a>
  • <a href="#how-to-use">How To Use</a>
- • <a href="#cli">CLI</a>
+ • <a href="#cli">Command Line</a>
  • <a href="#configuration">Configuration</a>
  • <a href="#requirements">Requirements</a>
  • <a href="#modules">Modules</a>
@@ -90,9 +90,9 @@ sandmap
 > * symlink to `bin/sandmap` is placed in `/usr/local/bin`
 > * man page is placed in `/usr/local/man/man8`
 
-## CLI
+## Command Line
 
-Before using the Sandmap read the <a href="https://github.com/trimstray/sandmap/wiki/CLI">CLI manual</a>.
+Before using the **Sandmap** read the **<a href="https://github.com/trimstray/sandmap/wiki/CLI">Command Line manual</a>**.
 
 ## Configuration
 
