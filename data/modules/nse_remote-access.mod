@@ -36,7 +36,6 @@ function nse_remote-access() {
   # shellcheck disable=SC2034
   author="trimstray"
   contact="trimstray@gmail.com"
-  version="1.0"
   description="NSE Remote Access Module"
 
   # shellcheck disable=SC2034,SC2154
@@ -45,8 +44,10 @@ function nse_remote-access() {
   touch "$_module_cfg"
 
   # shellcheck disable=SC2034,SC2154
-  _module_help=$(printf "%s" "
-  Module: ${module_name}
+  _module_help=$(printf "%s: \\e[1;32m%s\\e[m" "
+  Module" "${module_name}")
+
+  _module_help+=$(printf "%s" "
 
     Description
     -----------
@@ -63,7 +64,7 @@ function nse_remote-access() {
       use     <module>                reuse module (changed env)
       pushd   <key>|init|show|flush   command line commands stack
       search  <key>                   search key in all commands
-      init    <alias|id>              run profile
+      init    <alias|id> [--args]     run profile
 
       Options:
 
@@ -121,16 +122,22 @@ function nse_remote-access() {
   ;ssh-auth-methods;--script=ssh-auth-methods" \
   #
   "https://nmap.org/nsedoc/scripts/ssh-brute.html;\
-  ;ssh-brute;--script=ssh-brute" \
+  ;ssh-brute;--script=ssh-brute;\
+  \"ssh-brute.timeout=5s\"" \
   #
   "https://nmap.org/nsedoc/scripts/ssh-hostkey.html;\
-  ;ssh-hostkey;--script=ssh-hostkey" \
+  ;ssh-hostkey;--script=ssh-hostkey;\
+  \"ssh-hostkey.known-hosts\",\"ssh-hostkey.known-hosts-path\"" \
   #
   "https://nmap.org/nsedoc/scripts/ssh-publickey-acceptance.html;\
-  ;ssh-publickey-acceptance;--script=ssh-publickey-acceptance" \
+  ;ssh-publickey-acceptance;--script=ssh-publickey-acceptance;\
+  \"knownbad\",\"ssh.privatekeys\",\"publickeydb\",\
+  \"ssh.usernames\",\"ssh.publickeys\",\"ssh.passphrases\"" \
   #
   "https://nmap.org/nsedoc/scripts/ssh-run.html;\
-  ;ssh-run;--script=ssh-run" \
+  ;ssh-run;--script=ssh-run;\
+  \"ssh-run.username\",\"ssh-run.cmd\",\"ssh-run.password\",\
+  \"ssh-run.privatekey\",\"ssh-run.passphrase\"" \
   #
   "https://nmap.org/nsedoc/scripts/ssh2-enum-algos.html;\
   ;ssh2-enum-algos;--script=ssh2-enum-algos" \
@@ -139,7 +146,8 @@ function nse_remote-access() {
   ;sshv1;--script=sshv1" \
   #
   "https://nmap.org/nsedoc/scripts/telnet-brute.html;\
-  ;telnet-brute;--script=telnet-brute" \
+  ;telnet-brute;--script=telnet-brute;\
+  \"telnet-brute.autosize=true\",\"telnet-brute.timeout=5s\"" \
   #
   "https://nmap.org/nsedoc/scripts/telnet-encryption.html;\
   ;telnet-encryption;--script=telnet-encryption" \
@@ -148,7 +156,8 @@ function nse_remote-access() {
   ;telnet-ntlm-info;--script=telnet-ntlm-info" \
   #
   "https://nmap.org/nsedoc/scripts/vnc-brute.html;\
-  ;vnc-brute;--script=vnc-brute" \
+  ;vnc-brute;--script=vnc-brute;\
+  \"vnc-brute.bruteusers=false\"" \
   #
   "https://nmap.org/nsedoc/scripts/vnc-info.html;\
   ;vnc-info;--script=vnc-info" \
@@ -160,7 +169,6 @@ function nse_remote-access() {
   # shellcheck disable=SC2034,SC2154
   _module_show=(\
       "${module_name}" \
-      "${version}" \
       "${#_module_commands[@]}" \
       "${author}" \
       "${contact}" \
