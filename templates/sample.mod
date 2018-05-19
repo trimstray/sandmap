@@ -119,7 +119,6 @@ function sample() {
   # shellcheck disable=SC2034,SC2154
   _module_show=(\
       "${module_name}" \
-      "${version}" \
       "${#_module_commands[@]}" \
       "${author}" \
       "${contact}" \
