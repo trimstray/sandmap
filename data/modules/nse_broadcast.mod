@@ -159,7 +159,7 @@ function nse_broadcast() {
   #
   "https://nmap.org/nsedoc/scripts/broadcast-ping.html;\
   ;broadcast-ping;--script=broadcast-ping;\
-  \"broadcast-ping.timeout=3s\",\"broadcast-ping.num_probes=1\"\
+  \"broadcast-ping.timeout=3s\",\"broadcast-ping.num_probes=1\",\
   \"broadcast-ping.interface\"" \
   #
   "https://nmap.org/nsedoc/scripts/broadcast-pppoe-discover.html;\
