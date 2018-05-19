@@ -121,7 +121,7 @@ function nse_mail() {
   #
   "https://nmap.org/nsedoc/scripts/pop3-brute.html;\
   ;pop3-brute;--script=pop3-brute;\
-  \"pop3loginmethod=USER\",\"" \
+  \"pop3loginmethod=USER\"" \
   #
   "https://nmap.org/nsedoc/scripts/pop3-capabilities.html;\
   ;pop3-capabilities;--script=pop3-capabilities" \
