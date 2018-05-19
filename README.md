@@ -52,8 +52,8 @@
 <br>
 
 <p align="center">
-    <img src="https://i.imgur.com/iy5xeB3.gif"
-        alt="Master">
+    <img src="/doc/img/Sandmap_v1.2.0.gif?raw=true"
+         alt="Master">
 </p>
 
 ## Description
