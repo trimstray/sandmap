@@ -88,7 +88,7 @@ sandmap
 > * symlink to `bin/sandmap` is placed in `/usr/local/bin`
 > * man page is placed in `/usr/local/man/man8`
 
-### Command Line
+## Command Line
 
 Before using the **Sandmap** read the **<a href="https://github.com/trimstray/sandmap/wiki/CLI">Command Line</a>** introduction.
 
