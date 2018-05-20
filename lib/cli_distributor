@@ -529,7 +529,7 @@ function cli_distributor() {
 
     _script_args_state="false"
 
-    if [[ "$_in_module" -eq 1 ]] ; then
+    if [[ "$_in_module" -eq 1 ]] && [[ ! -z "${_argv[1]}" ]] ; then
 
       _count=0
       _cmd_state=0
@@ -690,6 +690,10 @@ function cli_distributor() {
         # printf "stdout: %s\\n" "unknown command"
 
       # fi
+
+    elif [[ -z "${_argv[1]}" ]] ; then
+
+      printf "stdout: %s\\n" "invalid key"
 
     else
 
