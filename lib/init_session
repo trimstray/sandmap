@@ -23,7 +23,7 @@ function init_session() {
 
   _session_variables=(\
   "Destination;'127.0.0.1,example.com';dest;$_cmd_dest" \
-  "Nmap Parameters;'--script ssl-ccs-injection -p 443';params;$_cmd_params" \
+  "Global parameters;'--script ssl-ccs-injection -p 443';params;$_cmd_params" \
   "Report type;'nmap|xml|grep';report;$_cmd_report" \
   "Pass through TOR;'true|false';tor;$_cmd_tor" \
   "Terminal type;'internal|external';terminal;$_cmd_terminal")
