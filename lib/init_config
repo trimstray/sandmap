@@ -6,7 +6,7 @@
 # Function name: init_config()
 #
 # Description:
-#   Show help in cli.
+#   Init configuration.
 #
 # Usage:
 #   init_config
