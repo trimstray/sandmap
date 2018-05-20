@@ -58,12 +58,6 @@
 
 **<u>Sandmap</u>** is a tool supporting network and system reconnaissance using the massive **Nmap engine**. It provides a user-friendly interface, automates and speeds up scanning and allows you to easily use many advanced scanning techniques.
 
-<p align="right">
-### Command Line
-
-Before using the **Sandmap** read the **<a href="https://github.com/trimstray/sandmap/wiki/CLI">Command Line</a>** introduction.
-</p>
-
 ### Key Features
 
 - simple **CLI** with the ability to run pure **Nmap engine**
@@ -93,6 +87,10 @@ sandmap
 
 > * symlink to `bin/sandmap` is placed in `/usr/local/bin`
 > * man page is placed in `/usr/local/man/man8`
+
+### Command Line
+
+Before using the **Sandmap** read the **<a href="https://github.com/trimstray/sandmap/wiki/CLI">Command Line</a>** introduction.
 
 ## Configuration
 
