@@ -21,7 +21,7 @@ function load_modules() {
   local _FUNCTION_ID="load_modules"
   local _STATE=0
 
-  export _profiles_list=()
+  _profiles_list=()
 
   _sprintf "head" "Please wait, loading modules..."
 

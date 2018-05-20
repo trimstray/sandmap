@@ -21,14 +21,15 @@ function init_session() {
   local _FUNCTION_ID="init_session"
   local _STATE=0
 
-  export _session_variables=(\
+  _session_variables=(\
   "Destination;'127.0.0.1,example.com';dest;$_cmd_dest" \
   "Nmap Parameters;'--script ssl-ccs-injection -p 443';params;$_cmd_params" \
   "Report type;'nmap|xml|grep';report;$_cmd_report" \
   "Pass through TOR;'true|false';tor;$_cmd_tor" \
   "Terminal type;'internal|external';terminal;$_cmd_terminal")
 
-  export _variables_stack=("${_session_variables[@]}")
+  # shellcheck disable=SC2034
+  _variables_stack=("${_session_variables[@]}")
 
   return $_STATE
 

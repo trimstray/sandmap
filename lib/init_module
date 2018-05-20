@@ -15,6 +15,10 @@
 #   init_module
 #
 
+export module_name=""
+export module_args=""
+export module_path=""
+
 function init_module() {
 
   # shellcheck disable=SC2034
@@ -28,11 +32,11 @@ function init_module() {
   if [[ "$_in_module" -eq 0 ]] ; then
 
     # shellcheck disable=SC2034
-    export module_name="${_argv[1]}"
+    module_name="${_argv[1]}"
     # shellcheck disable=SC2034
-    export module_args=("${_argv[@]:2}")
+    module_args=("${_argv[@]:2}")
     # shellcheck disable=SC2154
-    export module_path="${_modules}/${module_name}.mod"
+    module_path="${_modules}/${module_name}.mod"
 
     if [[ -e "${module_path}" ]] ; then
 
@@ -46,11 +50,11 @@ function init_module() {
   elif [[ "$_in_module" -eq 1 ]] ; then
 
     # shellcheck disable=SC2034
-    export module_name="$_ld_module"
+    module_name="$_ld_module"
     # shellcheck disable=SC2034
-    export module_args=("${_argv[@]:1}")
+    module_args=("${_argv[@]:1}")
     # shellcheck disable=SC2154
-    export module_path="${_modules}/${module_name}.mod"
+    module_path="${_modules}/${module_name}.mod"
 
     if [[ -e "${module_path}" ]] ; then
 

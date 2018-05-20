@@ -23,6 +23,11 @@ _module_cfg=""
 # shellcheck disable=SC2034
 _pushd_stack=()
 
+export _session_variables=()
+export _variables_stack=()
+
+export _profiles_list=()
+
 # shellcheck disable=SC2034
 # Store xterm params (for external type of terminal).
 readonly _xterm="xterm -hold -fa monaco -fs 10 -bg black -e"
