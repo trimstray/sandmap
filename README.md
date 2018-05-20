@@ -34,9 +34,7 @@
  • <a href="#command-line">Command Line</a>
  • <a href="#configuration">Configuration</a>
  • <a href="#requirements">Requirements</a>
- • <a href="#modules">Modules</a>
- • <a href="#contributing">Contributing</a>
- • <a href="#project-architecture">Project Architecture</a>
+ • <a href="#other">Other</a>
  • <a href="#license">License</a>
  • <a href="https://github.com/trimstray/sandmap/wiki">Wiki</a>
 </p>
@@ -59,6 +57,12 @@
 ## Description
 
 **<u>Sandmap</u>** is a tool supporting network and system reconnaissance using the massive **Nmap engine**. It provides a user-friendly interface, automates and speeds up scanning and allows you to easily use many advanced scanning techniques.
+
+<p align="right">
+### Command Line
+
+Before using the **Sandmap** read the **<a href="https://github.com/trimstray/sandmap/wiki/CLI">Command Line</a>** introduction.
+</p>
 
 ### Key Features
 
@@ -89,10 +93,6 @@ sandmap
 
 > * symlink to `bin/sandmap` is placed in `/usr/local/bin`
 > * man page is placed in `/usr/local/man/man8`
-
-## Command Line
-
-Before using the **Sandmap** read the **<a href="https://github.com/trimstray/sandmap/wiki/CLI">Command Line manual</a>**.
 
 ## Configuration
 
@@ -143,20 +143,22 @@ This tool working with:
 
 Also you will need **root access**.
 
-## Modules
+## Other
+
+### Modules
 
 Available modules: **31**  
 Available scan profiles: **459**
 
 > If you want to create your own modules, take a look **[this](https://github.com/trimstray/sandmap/wiki/Modules)**.
 
-## Contributing
+### Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md).
+See **[this](CONTRIBUTING.md)**.
 
-## Project architecture
+### Project architecture
 
-See <a href="https://github.com/trimstray/sandmap/wiki/Project-architecture">Project Architecture</a>.
+See **<a href="https://github.com/trimstray/sandmap/wiki/Project-architecture">this</a>**.
 
 ## License
 
