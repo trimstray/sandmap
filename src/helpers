@@ -406,7 +406,7 @@ function _init_cmd() {
   # shellcheck disable=SC2154
   if [[ "$_script_args_state" == "true" ]] ; then
 
-    _script_args_full=("--script-args")
+    _script_args_full=()
     _script_args_tmp_full=()
     _script_args_tmp_full_x=()
 
@@ -494,7 +494,15 @@ function _init_cmd() {
 
       if [[ "$_script_args_state" == "true" ]] ; then
 
-        _full_command+=("nmap" "${_cmd[@]}" "${_script_args_full[@]}" "${_destination}")
+        if [[ "${#_script_args_full[@]}" -ne 0 ]] ; then
+
+          _full_command+=("nmap" "${_cmd[@]}" "--script-args ${_script_args_full[@]}" "${_destination}")
+
+        else
+
+          _full_command+=("nmap" "${_cmd[@]}" "${_destination}")
+
+        fi
 
       else
 
@@ -506,7 +514,15 @@ function _init_cmd() {
 
       if [[ "$_script_args_state" == "true" ]] ; then
 
-        _full_command+=("nmap" "${_cmd[@]}" "${_parameters}" "${_script_args_full[@]}" "${_destination}")
+        if [[ "${#_script_args_full[@]}" -ne 0 ]] ; then
+
+          _full_command+=("nmap" "${_cmd[@]}" "${_parameters}" "--script-args ${_script_args_full[@]}" "${_destination}")
+
+        else
+
+          _full_command+=("nmap" "${_cmd[@]}" "${_parameters}" "${_destination}")
+
+        fi
 
       else
 
