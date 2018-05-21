@@ -50,7 +50,7 @@
 <br>
 
 <p align="center">
-    <img src="/doc/img/sandmap_v1.2.0.gif?raw=true"
+    <img src="https://i.imgur.com/9a97M2S.gif"
          alt="Master">
 </p>
 
