@@ -13,6 +13,8 @@ _in_module=0
 
 _motd_status=0
 
+_cmd_state=0
+
 # shellcheck disable=SC2034
 _ld_module=""
 # shellcheck disable=SC2034
@@ -148,6 +150,9 @@ function init_cli() {
   while [[ "${input_array[0]}" != "exit" ]] ; do
 
     cstate="1"
+
+    # shellcheck disable=SC2034
+    _cmd_state="0"
 
     # shellcheck disable=SC2354
     printf "\\e[1;38m%s\\e[m(\\e[0;38m%s\\e[m)\\e[4;32m>\\e[m " "${__cli_prompt}" "${__cli_banner}" && read -ra input_array

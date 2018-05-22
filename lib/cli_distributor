@@ -532,156 +532,161 @@ function cli_distributor() {
     if [[ "$_in_module" -eq 1 ]] && [[ ! -z "${_argv[1]}" ]] ; then
 
       _count=0
-      _cmd_state=0
 
       # shellcheck disable=SC2034
       _variables_stack=("${_session_variables[@]}" "${_module_variables[@]}")
 
       for _scan in "${_module_commands[@]}" ; do
 
-        # shellcheck disable=SC2034
-        _key_id=$(echo "$_scan" | awk -v FS="(;|;)" '{print $3}')
-        # shellcheck disable=SC2034
-        _key_var=$(echo "$_scan" | awk -v FS="(;|;)" '{print $4}')
-        # shellcheck disable=SC2034
-        _key_arg=$(echo "$_scan" | awk -v FS="(;|;)" '{print $5}')
+        if [[ "$_cmd_state" -eq 0 ]] ; then
 
-        # shellcheck disable=SC2034
-        IFS="," read -r -a _script_args <<< "$(sed 's/,\s+/???/g' <<< "$_key_arg")"
+          # shellcheck disable=SC2034
+          _key_id=$(echo "$_scan" | awk -v FS="(;|;)" '{print $3}')
+          # shellcheck disable=SC2034
+          _key_var=$(echo "$_scan" | awk -v FS="(;|;)" '{print $4}')
+          # shellcheck disable=SC2034
+          _key_arg=$(echo "$_scan" | awk -v FS="(;|;)" '{print $5}')
 
-        if [[ "${_argv[1]}" == "$_key_id" ]] ; then
+          # shellcheck disable=SC2034
+          IFS="," read -r -a _script_args <<< "$(sed 's/,\s+/???/g' <<< "$_key_arg")"
 
-          _argvA=("${_argv[@]:2}")
-          _argvB=("${_argv[@]:${#_argv[@]}-1}")
+          if [[ "${_argv[1]}" == "$_key_id" ]] ; then
 
-          if [[ "${#_argvA[@]}" -eq 0 ]] ; then
+            _argvA=("${_argv[@]:2}")
+            _argvB=("${_argv[@]:${#_argv[@]}-1}")
 
-            for i in "${_argvB[@]}" ; do
+            if [[ "${#_argvA[@]}" -eq 0 ]] ; then
 
-              if [[ "$i" == "--args" ]] ; then
+              for i in "${_argvB[@]}" ; do
 
-              # shellcheck disable=SC2034
-              _script_args_state="true"
-
-              fi
-
-            done
-
-            _init_cmd "${_key_var}"
-            _cmd_state=1
-
-          else
-
-            for i in "${_argvB[@]}" ; do
-
-              if [[ "$i" == "--args" ]] ; then
-
-                for j in "${_script_args[@]}" ; do
-
-                  # shellcheck disable=SC2001
-                  _tmp_script_args=$(echo "${j}" | sed 's/^ *//g' | sed 's/???/\\n/g')
-
-                  if [[ "${_tmp_script_args}" == *"="* ]] ; then
-
-                    _key_arg_x=$(echo "${_tmp_script_args}" | tr -d '"' | cut -d "=" -f1)
-                    _key_value_x=$(echo "${_tmp_script_args}" | tr -d '"' | cut -d "=" -f2)
-
-                  else
-
-                    _key_arg_x=$(echo "${_tmp_script_args}" | tr -d '"')
-                    _key_value_x=""
-
-                  fi
-
-                  _script_args_tmp+=("${_key_arg_x}")
-                  _script_value_tmp+=("${_key_value_x}")
-
-                  # shellcheck disable=SC2034
-                  _script_args_state="true"
-
-                done
-
-                _argvC=("${_argvA[@]}")
-
-                unset "_argvC[${#_argvC[@]}-1]"
-
-              else
-
-                _argvC=("${_argvA[@]}")
-
-              fi
-
-            done
-
-            _init_cmd "${_key_var}" "${_argvC[@]}"
-
-          fi
-
-        elif [[ "${_argv[1]}" == "$_count" ]] ; then
-
-          _argvA=("${_argv[@]:2}")
-          _argvB=("${_argv[@]:${#_argv[@]}-1}")
-
-          if [[ "${#_argvA[@]}" -eq 0 ]] ; then
-
-            for i in "${_argvB[@]}" ; do
-
-              if [[ "$i" == "--args" ]] ; then
+                if [[ "$i" == "--args" ]] ; then
 
                 # shellcheck disable=SC2034
                 _script_args_state="true"
 
-              fi
+                fi
 
-            done
+              done
 
-            _init_cmd "${_key_var}"
-            _cmd_state=1
+              _init_cmd "${_key_var}"
+              _cmd_state=1
 
-          else
+            else
 
-            for i in "${_argvB[@]}" ; do
+              for i in "${_argvB[@]}" ; do
 
-              if [[ "$i" == "--args" ]] ; then
+                if [[ "$i" == "--args" ]] ; then
 
-                for j in "${_script_args[@]}" ; do
+                  for j in "${_script_args[@]}" ; do
 
-                  # shellcheck disable=SC2001
-                  _tmp_script_args=$(echo "${j}" | sed 's/^ *//g' | sed 's/???/\\n/g')
+                    # shellcheck disable=SC2001
+                    _tmp_script_args=$(echo "${j}" | sed 's/^ *//g' | sed 's/???/\\n/g')
 
-                  if [[ "${_tmp_script_args}" == *"="* ]] ; then
+                    if [[ "${_tmp_script_args}" == *"="* ]] ; then
 
-                    _key_arg_x=$(echo "${_tmp_script_args}" | tr -d '"' | cut -d "=" -f1)
-                    _key_value_x=$(echo "${_tmp_script_args}" | tr -d '"' | cut -d "=" -f2)
+                      _key_arg_x=$(echo "${_tmp_script_args}" | tr -d '"' | cut -d "=" -f1)
+                      _key_value_x=$(echo "${_tmp_script_args}" | tr -d '"' | cut -d "=" -f2)
 
-                  else
+                    else
 
-                    _key_arg_x=$(echo "${_tmp_script_args}" | tr -d '"')
-                    _key_value_x=""
+                      _key_arg_x=$(echo "${_tmp_script_args}" | tr -d '"')
+                      _key_value_x=""
 
-                  fi
+                    fi
 
-                  _script_args_tmp+=("${_key_arg_x}")
-                  _script_value_tmp+=("${_key_value_x}")
+                    _script_args_tmp+=("${_key_arg_x}")
+                    _script_value_tmp+=("${_key_value_x}")
+
+                    # shellcheck disable=SC2034
+                    _script_args_state="true"
+
+                  done
+
+                  _argvC=("${_argvA[@]}")
+
+                  unset "_argvC[${#_argvC[@]}-1]"
+
+                else
+
+                  _argvC=("${_argvA[@]}")
+
+                fi
+
+              done
+
+              _init_cmd "${_key_var}" "${_argvC[@]}"
+              _cmd_state=1
+
+            fi
+
+          elif [[ "${_argv[1]}" == "$_count" ]] ; then
+
+            _argvA=("${_argv[@]:2}")
+            _argvB=("${_argv[@]:${#_argv[@]}-1}")
+
+            if [[ "${#_argvA[@]}" -eq 0 ]] ; then
+
+              for i in "${_argvB[@]}" ; do
+
+                if [[ "$i" == "--args" ]] ; then
 
                   # shellcheck disable=SC2034
                   _script_args_state="true"
 
-                done
+                fi
 
-                _argvC=("${_argvA[@]}")
+              done
 
-                unset "_argvC[${#_argvC[@]}-1]"
+              _init_cmd "${_key_var}"
+              _cmd_state=1
 
-              else
+            else
 
-                _argvC=("${_argvA[@]}")
+              for i in "${_argvB[@]}" ; do
 
-              fi
+                if [[ "$i" == "--args" ]] ; then
 
-            done
+                  for j in "${_script_args[@]}" ; do
 
-            _init_cmd "${_key_var}" "${_argvC[@]}"
+                    # shellcheck disable=SC2001
+                    _tmp_script_args=$(echo "${j}" | sed 's/^ *//g' | sed 's/???/\\n/g')
+
+                    if [[ "${_tmp_script_args}" == *"="* ]] ; then
+
+                      _key_arg_x=$(echo "${_tmp_script_args}" | tr -d '"' | cut -d "=" -f1)
+                      _key_value_x=$(echo "${_tmp_script_args}" | tr -d '"' | cut -d "=" -f2)
+
+                    else
+
+                      _key_arg_x=$(echo "${_tmp_script_args}" | tr -d '"')
+                      _key_value_x=""
+
+                    fi
+
+                    _script_args_tmp+=("${_key_arg_x}")
+                    _script_value_tmp+=("${_key_value_x}")
+
+                    # shellcheck disable=SC2034
+                    _script_args_state="true"
+
+                  done
+
+                  _argvC=("${_argvA[@]}")
+
+                  unset "_argvC[${#_argvC[@]}-1]"
+
+                else
+
+                  _argvC=("${_argvA[@]}")
+
+                fi
+
+              done
+
+              _init_cmd "${_key_var}" "${_argvC[@]}"
+              _cmd_state=1
+
+            fi
 
           fi
 

@@ -450,6 +450,7 @@ function _init_cmd() {
     else
 
       _script_args_full=()
+      _script_args_tmp=()
 
     fi
 
@@ -459,6 +460,11 @@ function _init_cmd() {
     _script_args_full+=("${_script_args_tmp_full_x[@]}")
 
     IFS="$_IFS"
+
+  else
+
+    _script_args_full=()
+    _script_args_tmp=()
 
   fi
 
@@ -621,6 +627,10 @@ function _init_cmd() {
     unset "$i"
 
   done
+
+  _script_args_full=()
+  _script_args_tmp_full=()
+  _script_args_tmp_full_x=()
 
   _STATE=$_state
 
