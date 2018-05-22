@@ -601,13 +601,17 @@ function cli_distributor() {
 
                 done
 
+                _argvC=("${_argvA[@]}")
+
+                unset "_argvC[${#_argvC[@]}-1]"
+
+              else
+
+                _argvC=("${_argvA[@]}")
+
               fi
 
             done
-
-            _argvC=("${_argvA[@]}")
-
-            unset "_argvC[${#_argvC[@]}-1]"
 
             _init_cmd "${_key_var}" "${_argvC[@]}"
 
@@ -665,13 +669,17 @@ function cli_distributor() {
 
                 done
 
+                _argvC=("${_argvA[@]}")
+
+                unset "_argvC[${#_argvC[@]}-1]"
+
+              else
+
+                _argvC=("${_argvA[@]}")
+
               fi
 
             done
-
-            _argvC=("${_argvA[@]}")
-
-            unset "_argvC[${#_argvC[@]}-1]"
 
             _init_cmd "${_key_var}" "${_argvC[@]}"
 
