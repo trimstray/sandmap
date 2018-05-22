@@ -10,3 +10,6 @@
 [submodule "data/nse_external/michenriksen"]
 	path = data/nse_external/michenriksen
 	url = https://github.com/michenriksen/nmap-scripts.git
+[submodule "data/nse_external/httprecon-nse"]
+	path = data/nse_external/httprecon-nse
+	url = https://github.com/scipag/httprecon-nse.git
