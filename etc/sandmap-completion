@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+set -o emacs
+
+function _tab_init() {
+
+  READLINE_LINE=""
+  READLINE_POINT=$(echo -en "${#READLINE_LINE}" ; echo)
+
+}
+
+bind -x '"\t":"_tab_init"'

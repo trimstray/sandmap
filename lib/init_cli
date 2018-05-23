@@ -158,7 +158,8 @@ function init_cli() {
     _cmd_state="0"
 
     # shellcheck disable=SC2354
-    _ansi_prompt=$(printf "\\e[1;38m%s\\e[m(\\e[0;38m%s\\e[m)\\e[4;32m»\\e[m " "${__cli_prompt}" "${__cli_banner}")
+    # > or »
+    _ansi_prompt=$(printf "\\e[1;38m%s\\e[m(\\e[0;38m%s\\e[m)\\e[4;32m>\\e[m " "${__cli_prompt}" "${__cli_banner}")
     read -r -p "$_ansi_prompt" -e -a input_array
 
     case ${input_array[0]} in
