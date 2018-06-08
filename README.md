@@ -135,7 +135,7 @@ terminal="internal"
 
 This tool working with:
 
-- **GNU/Linux** or **BSD** (testing on Debian, CentOS and FreeBSD)
+- **GNU/Linux** (testing on Debian and CentOS)
 - **Bash** (testing on 4.4.19)
 - **Nmap** (testing on 7.70)
 
