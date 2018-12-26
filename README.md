@@ -1,6 +1,4 @@
-<h1 align="center">Sandmap</h1>
-
-<h4 align="center">Sandmap is a tool supporting network and system reconnaissance using the massive Nmap engine.</h4>
+<h1 align="center">sandmap</h1>
 
 <p align="center">
   <a href="https://img.shields.io/badge/Branch-master-green.svg">
@@ -28,15 +26,23 @@
   </a>
 </p>
 
-<p align="center">
+<h5 align="center">
    <a href="#description">Description</a>
  • <a href="#how-to-use">How To Use</a>
  • <a href="#command-line">Command Line</a>
  • <a href="#configuration">Configuration</a>
  • <a href="#requirements">Requirements</a>
  • <a href="#other">Other</a>
+ • <a href="#contributing">Contributing</a>
  • <a href="#license">License</a>
  • <a href="https://github.com/trimstray/sandmap/wiki">Wiki</a>
+</h5>
+
+<br>
+
+<p align="center">
+    <img src="https://i.imgur.com/9a97M2S.gif"
+         alt="Master">
 </p>
 
 <div align="center">
@@ -49,14 +55,9 @@
 
 <br>
 
-<p align="center">
-    <img src="https://i.imgur.com/9a97M2S.gif"
-         alt="Master">
-</p>
-
 ## Description
 
-**<u>Sandmap</u>** is a tool supporting network and system reconnaissance using the massive **Nmap engine**. It provides a user-friendly interface, automates and speeds up scanning and allows you to easily use many advanced scanning techniques.
+`sandmap` is a tool supporting network and system reconnaissance using the massive **Nmap engine**. It provides a user-friendly interface, automates and speeds up scanning and allows you to easily use many advanced scanning techniques.
 
 ### Key Features
 
@@ -90,7 +91,7 @@ sandmap
 
 ## Command Line
 
-Before using the **Sandmap** read the **<a href="https://github.com/trimstray/sandmap/wiki/CLI">Command Line</a>** introduction.
+Before using the `sandmap` read the **<a href="https://github.com/trimstray/sandmap/wiki/CLI">Command Line</a>** introduction.
 
 ## Configuration
 
@@ -127,7 +128,7 @@ terminal="internal"
 
 ## Requirements
 
-**<u>Sandmap</u>** uses external utilities to be installed before running:
+`sandmap` uses external utilities to be installed before running:
 
 - [nmap](https://nmap.org/)
 - [xterm](https://invisible-island.net/xterm/)
@@ -145,18 +146,18 @@ Also you will need **root access**.
 
 ### Modules
 
-Available modules: **31**  
+Available modules: **31**
 Available scan profiles: **459**
 
 > If you want to create your own modules, take a look **[this](https://github.com/trimstray/sandmap/wiki/Modules)**.
 
-### Contributing
-
-See **[this](CONTRIBUTING.md)**.
-
 ### Project architecture
 
 See **<a href="https://github.com/trimstray/sandmap/wiki/Project-architecture">this</a>**.
+
+## Contributing
+
+See **[this](CONTRIBUTING.md)**.
 
 ## License
 
