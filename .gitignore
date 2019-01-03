@@ -2,6 +2,10 @@
 log/*
 !/log/.gitkeep
 
+# Temporary files.
+tmp/*
+!/tmp/.gitkeep
+
 # Not tracking module config files.
 data/modules/*.cfg
 
