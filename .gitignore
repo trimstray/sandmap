@@ -1,5 +1,6 @@
 # This is where the result of the script output.
-log/
+log/*
+!/log/.gitkeep
 
 # Not tracking module config files.
 data/modules/*.cfg
