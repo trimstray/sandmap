@@ -48,9 +48,7 @@
 <div align="center">
   <sub>Created by
   <a href="https://twitter.com/trimstray">trimstray</a> and
-  <a href="https://github.com/trimstray/sandmap/graphs/contributors">
-    contributors
-  </a>
+  <a href="https://github.com/trimstray/sandmap/graphs/contributors">contributors</a>
 </div>
 
 <br>
