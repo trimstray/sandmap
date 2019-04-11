@@ -33,7 +33,7 @@
 <br>
 
 <p align="center">
-    <img src="https://i.imgur.com/9a97M2S.gif" alt="Master">
+  <img src="https://i.imgur.com/9a97M2S.gif" alt="Master">
 </p>
 
 <div align="center">
