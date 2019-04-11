@@ -1,28 +1,20 @@
 <h1 align="center">sandmap</h1>
 
 <p align="center">
-  <a href="https://img.shields.io/badge/Branch-master-green.svg">
-    <img src="https://img.shields.io/badge/Branch-master-green.svg"
-        alt="Branch">
+  <a href="https://travis-ci.org/trimstray/sandmap">
+    <img src="https://travis-ci.org/trimstray/sandmap.svg?branch=master" alt="Travis-CI">
   </a>
   <a href="https://img.shields.io/badge/Version-v1.2.0-lightgrey.svg">
-    <img src="https://img.shields.io/badge/Version-v1.2.0-lightgrey.svg"
-        alt="Version">
+    <img src="https://img.shields.io/badge/Version-v1.2.0-lightgrey.svg" alt="Version">
   </a>
   <a href="https://img.shields.io/badge/Modules-31-red.svg">
-    <img src="https://img.shields.io/badge/Modules-31-red.svg"
-        alt="Modules">
+    <img src="https://img.shields.io/badge/Modules-31-red.svg" alt="Modules">
   </a>
   <a href="https://img.shields.io/badge/Profiles-459-orange.svg">
-    <img src="https://img.shields.io/badge/Profiles-459-orange.svg"
-        alt="Profiles">
+    <img src="https://img.shields.io/badge/Profiles-459-orange.svg" alt="Profiles">
   </a>
-  <a href="https://travis-ci.org/trimstray/sandmap">
-    <img src="https://travis-ci.org/trimstray/sandmap.svg?branch=master"
-        alt="Travis-CI">
   <a href="http://www.gnu.org/licenses/">
-    <img src="https://img.shields.io/badge/license-GNU-blue.svg"
-        alt="License">
+    <img src="https://img.shields.io/badge/license-GNU-blue.svg" alt="License">
   </a>
 </p>
 
@@ -41,8 +33,7 @@
 <br>
 
 <p align="center">
-    <img src="https://i.imgur.com/9a97M2S.gif"
-         alt="Master">
+    <img src="https://i.imgur.com/9a97M2S.gif" alt="Master">
 </p>
 
 <div align="center">
@@ -151,7 +142,7 @@ Available scan profiles: **459**
 
 ### Project architecture
 
-See **<a href="https://github.com/trimstray/sandmap/wiki/Project-architecture">this</a>**.
+See **[this](https://github.com/trimstray/sandmap/wiki/Project-architecture)**.
 
 ## Contributing
 
