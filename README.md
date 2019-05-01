@@ -18,6 +18,8 @@
   </a>
 </p>
 
+<br>
+
 <h5 align="center">
    <a href="#description">Description</a>
  • <a href="#how-to-use">How To Use</a>
@@ -29,6 +31,18 @@
  • <a href="#license">License</a>
  • <a href="https://github.com/trimstray/sandmap/wiki">Wiki</a>
 </h5>
+
+<br>
+
+<sup>
+  <p align="center">This tool is available in:</p>
+</sup>
+
+<p align="center">
+  <a href="https://blackarch.org/tools.html">
+    <img src="https://github.com/trimstray/sandmap/blob/master/static/img/sandmap_blackarch.png" alt="Blackarch">
+  </a>
+</p>
 
 <br>
 
