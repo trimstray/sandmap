@@ -7,12 +7,6 @@
   <a href="https://img.shields.io/badge/Version-v1.2.0-lightgrey.svg">
     <img src="https://img.shields.io/badge/Version-v1.2.0-lightgrey.svg" alt="Version">
   </a>
-  <a href="https://img.shields.io/badge/Modules-31-red.svg">
-    <img src="https://img.shields.io/badge/Modules-31-red.svg" alt="Modules">
-  </a>
-  <a href="https://img.shields.io/badge/Profiles-459-orange.svg">
-    <img src="https://img.shields.io/badge/Profiles-459-orange.svg" alt="Profiles">
-  </a>
   <a href="http://www.gnu.org/licenses/">
     <img src="https://img.shields.io/badge/license-GNU-blue.svg" alt="License">
   </a>
