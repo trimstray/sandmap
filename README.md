@@ -7,6 +7,12 @@
   <a href="https://img.shields.io/badge/Version-v1.2.0-lightgrey.svg">
     <img src="https://img.shields.io/badge/Version-v1.2.0-lightgrey.svg" alt="Version">
   </a>
+  <a href="https://inventory.rawsec.ml/tools.html#Sandmap">
+    <img src="https://inventory.rawsec.ml/img/badges/Rawsec-inventoried-FF5050_flat.svg" alt="Rawsec's CyberSecurity Inventory">
+  </a>
+  <a href="https://blackarch.org/tools.html">
+    <img src="https://img.shields.io/badge/BlackArch-available-red.svg" alt="BlackArch Repository">
+  </a>
   <a href="http://www.gnu.org/licenses/">
     <img src="https://img.shields.io/badge/license-GNU-blue.svg" alt="License">
   </a>
@@ -23,18 +29,6 @@
  • <a href="#license">License</a>
  • <a href="https://github.com/trimstray/sandmap/wiki">Wiki</a>
 </h5>
-
-<br>
-
-<sup>
-  <p align="center">This tool is available in:</p>
-</sup>
-
-<p align="center">
-  <a href="https://blackarch.org/tools.html">
-    <img src="https://github.com/trimstray/sandmap/blob/master/static/img/sandmap_blackarch.png" alt="Blackarch">
-  </a>
-</p>
 
 <br>
 
