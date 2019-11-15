@@ -146,7 +146,7 @@ See **[this](https://github.com/trimstray/sandmap/wiki/Project-architecture)**.
 
 ## Contributing
 
-See **[this](CONTRIBUTING.md)**.
+See **[this](.github/CONTRIBUTING.md)**.
 
 ## License
 
