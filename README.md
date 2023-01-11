@@ -7,8 +7,8 @@
   <a href="https://img.shields.io/badge/Version-v1.2.0-lightgrey.svg">
     <img src="https://img.shields.io/badge/Version-v1.2.0-lightgrey.svg" alt="Version">
   </a>
-  <a href="https://inventory.rawsec.ml/tools.html#Sandmap">
-    <img src="https://inventory.rawsec.ml/img/badges/Rawsec-inventoried-FF5050_flat.svg" alt="Rawsec's CyberSecurity Inventory">
+  <a href="https://inventory.raw.pm/tools.html#Sandmap">
+    <img src="https://inventory.raw.pm/img/badges/Rawsec-inventoried-FF5050_flat.svg" alt="Rawsec's CyberSecurity Inventory">
   </a>
   <a href="https://blackarch.org/tools.html">
     <img src="https://img.shields.io/badge/BlackArch-available-red.svg" alt="BlackArch Repository">
