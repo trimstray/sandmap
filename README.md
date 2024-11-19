@@ -36,12 +36,6 @@
   <img src="https://i.imgur.com/9a97M2S.gif" alt="Master">
 </p>
 
-<div align="center">
-  <sub>Created by
-  <a href="https://twitter.com/trimstray">trimstray</a> and
-  <a href="https://github.com/trimstray/sandmap/graphs/contributors">contributors</a>
-</div>
-
 <br>
 
 ## Description
